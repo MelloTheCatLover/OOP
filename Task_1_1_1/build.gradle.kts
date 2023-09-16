@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id("jacoco")
 }
 
 group = "ru.nsu.bykova"
@@ -16,4 +17,16 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks {
+    "jacocoTestReport"(JacocoReport::class){
+
+        reports {
+            xml.required.set(true)
+            html.required.set(true)
+            html.outputLocation.set(layout.buildDirectory.dir("$buildDir/jacoco/jacoco/jacocoHtml"))
+        }
+
+    }
 }
