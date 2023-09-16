@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8e7313b-93a6-44c0-b553-081ca1a0d5e8" name="Changes" comment="Fourth try" />
+    <list default="true" id="d8e7313b-93a6-44c0-b553-081ca1a0d5e8" name="Changes" comment="fifth try">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/bykova/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bykova/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/bykova/TestHeapsort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/bykova/TestHeapsort.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +63,7 @@
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.TestHeapsort">
+  <component name="RunManager" selected="Gradle.TestHeapsort.testVeryLargeArray">
     <configuration name="TestHeapsort" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -182,9 +186,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TestHeapsort.testVeryLargeArray" />
         <item itemvalue="Gradle.TestHeapsort" />
         <item itemvalue="Gradle.TestHeapsort.ReversedSortedArray" />
-        <item itemvalue="Gradle.TestHeapsort.testVeryLargeArray" />
         <item itemvalue="Gradle.TestHeapsort.testNegativeNumbers" />
         <item itemvalue="Gradle.TestHeapsort.testLargeArray" />
       </list>
@@ -215,12 +219,21 @@
       <option name="project" value="LOCAL" />
       <updated>1694866784617</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fifth try">
+      <option name="closed" value="true" />
+      <created>1694866901779</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694866901779</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Third Try" />
     <MESSAGE value="Fourth try" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fourth try" />
+    <MESSAGE value="fifth try" />
+    <option name="LAST_COMMIT_MESSAGE" value="fifth try" />
   </component>
 </project>

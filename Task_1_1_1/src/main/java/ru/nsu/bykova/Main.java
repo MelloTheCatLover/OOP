@@ -1,7 +1,10 @@
 package ru.nsu.bykova;
 
-public class Main{
-    public static void heapSort(int[] array){
+/**
+ * Этот класс предоставляет реализацию алгоритма сортировки HeapSort или пирамидальной сортировки.
+ */
+public class Main {
+    public static void heapSort(int[] array) {
         int arraySize = array.length;
         for(int i = arraySize / 2 - 1; i >= 0; i--){
             heapify(array, arraySize, i);
@@ -12,7 +15,7 @@ public class Main{
         }
     }
 
-    private static void heapify(int[] array, int arraySize, int i){
+    private static void heapify(int[] array, int arraySize, int i) {
         int largest = i;
         int leftChild = 2 * i + 1;
         int rightChild = 2 * i + 2;
@@ -28,7 +31,7 @@ public class Main{
         }
     }
 
-    private static void swap(int[] array, int i, int j){
+    private static void swap(int[] array, int i, int j) {
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
