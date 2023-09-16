@@ -1,49 +1,36 @@
 package ru.nsu.bykova;
 
-
-
-
-public class Main {
-
-    public static void heapSort(int[] arr) {
-        int n = arr.length;
-
-        // Build a max heap
-        for (int i = n / 2 - 1; i >= 0; i--) {
-            heapify(arr, n, i);
+public class Main{
+    public static void heapSort(int[] array){
+        int arraySize = array.length;
+        for(int i = arraySize / 2 - 1; i >= 0; i--){
+            heapify(array, arraySize, i);
         }
-
-        // Extract elements one by one from the heap
-        for (int i = n - 1; i >= 0; i--) {
-            // Move the current root to the end
-            int temp = arr[0];
-            arr[0] = arr[i];
-            arr[i] = temp;
-
-            // Call max heapify on the reduced heap
-            heapify(arr, i, 0);
+        for(int i = arraySize - 1; i > 0; i--){
+            swap(array, 0, i);
+            heapify(array, i, 0);
         }
     }
 
-    private static void heapify(int[] arr, int n, int i) {
+    private static void heapify(int[] array, int arraySize, int i){
         int largest = i;
-        int left = 2 * i + 1;
-        int right = 2 * i + 2;
-
-        if (left < n && arr[left] > arr[largest]) {
-            largest = left;
+        int leftChild = 2 * i + 1;
+        int rightChild = 2 * i + 2;
+        if (leftChild < arraySize && array[leftChild] > array[largest]){
+            largest = leftChild;
         }
-
-        if (right < n && arr[right] > arr[largest]) {
-            largest = right;
+        if (rightChild < arraySize && array[rightChild] > array[largest]){
+            largest = rightChild;
         }
-
         if (largest != i) {
-            int swap = arr[i];
-            arr[i] = arr[largest];
-            arr[largest] = swap;
-
-            heapify(arr, n, largest);
+            swap(array, i, largest);
+            heapify(array, arraySize, largest);
         }
+    }
+
+    private static void swap(int[] array, int i, int j){
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
 }
