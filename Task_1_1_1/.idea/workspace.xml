@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8e7313b-93a6-44c0-b553-081ca1a0d5e8" name="Changes" comment="fifth try">
+    <list default="true" id="d8e7313b-93a6-44c0-b553-081ca1a0d5e8" name="Changes" comment="Добавил изменения исходя из советов по стилю. Разделил методы, убрал один с большим кол-вом символов. Убрал .* в import.....Asertions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/bykova/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bykova/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/bykova/TestHeapsort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/bykova/TestHeapsort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +43,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -52,18 +54,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Task__1__1__1",
-    "onboarding.tips.debug.path": "C:/Users/misha/OneDrive/Рабочий стол/NSU/2/OOP/Sample/Task_1_1_1/src/main/java/ru/nsu/bykova/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Task__1__1__1&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/misha/OneDrive/Рабочий стол/NSU/2/OOP/Sample/Task_1_1_1/src/main/java/ru/nsu/bykova/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Gradle.TestHeapsort.testVeryLargeArray">
+}</component>
+  <component name="RunManager" selected="Gradle.TestHeapsort">
     <configuration name="TestHeapsort" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -186,8 +188,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TestHeapsort.testVeryLargeArray" />
         <item itemvalue="Gradle.TestHeapsort" />
+        <item itemvalue="Gradle.TestHeapsort.testVeryLargeArray" />
         <item itemvalue="Gradle.TestHeapsort.ReversedSortedArray" />
         <item itemvalue="Gradle.TestHeapsort.testNegativeNumbers" />
         <item itemvalue="Gradle.TestHeapsort.testLargeArray" />
@@ -227,13 +229,31 @@
       <option name="project" value="LOCAL" />
       <updated>1694866901779</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Six try">
+      <option name="closed" value="true" />
+      <created>1694867881173</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694867881173</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Добавил изменения исходя из советов по стилю. Разделил методы, убрал один с большим кол-вом символов. Убрал .* в import.....Asertions">
+      <option name="closed" value="true" />
+      <created>1694868266358</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1694868266358</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Third Try" />
     <MESSAGE value="Fourth try" />
     <MESSAGE value="fifth try" />
-    <option name="LAST_COMMIT_MESSAGE" value="fifth try" />
+    <MESSAGE value="Six try" />
+    <MESSAGE value="Добавил изменения исходя из советов по стилю. Разделил методы, убрал один с большим кол-вом символов. Убрал .* в import.....Asertions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил изменения исходя из советов по стилю. Разделил методы, убрал один с большим кол-вом символов. Убрал .* в import.....Asertions" />
   </component>
 </project>

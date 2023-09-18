@@ -1,28 +1,41 @@
 package ru.nsu.bykova;
 
 /**
- * Этот класс предоставляет реализацию алгоритма сортировки HeapSort или пирамидальной сортировки.
+ * Этот класс предоставляет реализацию алгоритма пирамидальной сортировки HeapSort.
  */
 public class Main {
+
+    /**
+     * Сортирует целочисленный массив.
+     *
+     * @param array Массив, который нужно отсортировать.
+     */
     public static void heapSort(int[] array) {
         int arraySize = array.length;
-        for(int i = arraySize / 2 - 1; i >= 0; i--){
+        for (int i = arraySize / 2 - 1; i >= 0; i--) {
             heapify(array, arraySize, i);
         }
-        for(int i = arraySize - 1; i > 0; i--){
+        for (int i = arraySize - 1; i > 0; i--) {
             swap(array, 0, i);
             heapify(array, i, 0);
         }
     }
 
+    /**
+     * Превращает поддерево с корнем в узле 'i' в кучу.
+     *
+     * @param array     Массив, который нужно отсортировать.
+     * @param arraySize Размер массива.
+     * @param i         Индекс корня поддерева.
+     */
     private static void heapify(int[] array, int arraySize, int i) {
         int largest = i;
         int leftChild = 2 * i + 1;
         int rightChild = 2 * i + 2;
-        if (leftChild < arraySize && array[leftChild] > array[largest]){
+        if (leftChild < arraySize && array[leftChild] > array[largest]) {
             largest = leftChild;
         }
-        if (rightChild < arraySize && array[rightChild] > array[largest]){
+        if (rightChild < arraySize && array[rightChild] > array[largest]) {
             largest = rightChild;
         }
         if (largest != i) {
@@ -31,6 +44,13 @@ public class Main {
         }
     }
 
+    /**
+     * Обменивает местами два элемента в массиве.
+     *
+     * @param array Массив, в котором происходит обмен элементов.
+     * @param i     Индекс первого элемента.
+     * @param j     Индекс второго элемента.
+     */
     private static void swap(int[] array, int i, int j) {
         int temp = array[i];
         array[i] = array[j];
