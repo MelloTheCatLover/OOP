@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8e7313b-93a6-44c0-b553-081ca1a0d5e8" name="Changes" comment="Добавил изменения исходя из советов по стилю. Разделил методы, убрал один с большим кол-вом символов. Убрал .* в import.....Asertions">
+    <list default="true" id="d8e7313b-93a6-44c0-b553-081ca1a0d5e8" name="Changes" comment="Добавил точку входа в программу и комментарии к ней">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/bykova/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bykova/Main.java" afterDir="false" />
     </list>
@@ -65,7 +65,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.TestHeapsort">
+  <component name="RunManager">
     <configuration name="TestHeapsort" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -245,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694868266358</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Добавил javadoc комментарии. Исправил стилевые ошибки с for.">
+      <option name="closed" value="true" />
+      <created>1695018153213</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1695018153213</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -254,6 +262,8 @@
     <MESSAGE value="fifth try" />
     <MESSAGE value="Six try" />
     <MESSAGE value="Добавил изменения исходя из советов по стилю. Разделил методы, убрал один с большим кол-вом символов. Убрал .* в import.....Asertions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил изменения исходя из советов по стилю. Разделил методы, убрал один с большим кол-вом символов. Убрал .* в import.....Asertions" />
+    <MESSAGE value="Добавил javadoc комментарии. Исправил стилевые ошибки с for." />
+    <MESSAGE value="Добавил точку входа в программу и комментарии к ней" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил точку входа в программу и комментарии к ней" />
   </component>
 </project>

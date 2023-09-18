@@ -2,11 +2,13 @@ package ru.nsu.bykova;
 
 /**
  * Этот класс предоставляет реализацию алгоритма пирамидальной сортировки HeapSort.
+ * HeapSort - это алгоритм сортировки, который использует структуру данных бинарной кучи
+ * для построения упорядоченного массива.
  */
 public class Main {
 
     /**
-     * Сортирует целочисленный массив.
+     * Сортирует целочисленный массив с использованием алгоритма HeapSort.
      *
      * @param array Массив, который нужно отсортировать.
      */
@@ -26,7 +28,6 @@ public class Main {
      *
      * @param array     Массив, который нужно отсортировать.
      * @param arraySize Размер массива.
-     * @param i         Индекс корня поддерева.
      */
     private static void heapify(int[] array, int arraySize, int i) {
         int largest = i;
@@ -47,13 +48,32 @@ public class Main {
     /**
      * Обменивает местами два элемента в массиве.
      *
-     * @param array Массив, в котором происходит обмен элементов.
-     * @param i     Индекс первого элемента.
-     * @param j     Индекс второго элемента.
      */
     private static void swap(int[] array, int i, int j) {
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
+    }
+
+    /**
+     * Точка входа в программу.
+     */
+    public static void main(String[] args) {
+        int[] array = {1, 3, 2};
+
+        // Вывод несортированного массива
+        System.out.println("Unsorted Array:");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+
+        // Сортировка массива
+        heapSort(array);
+
+        // Вывод отсортированного массива
+        System.out.println("\nSorted Array:");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
     }
 }
