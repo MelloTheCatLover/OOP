@@ -61,12 +61,6 @@ public class Main {
     public static void main(String[] args) {
         int[] array = {1, 3, 2};
 
-        // Вывод несортированного массива
-        System.out.println("Unsorted Array:");
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
-
         // Сортировка массива
         heapSort(array);
 
