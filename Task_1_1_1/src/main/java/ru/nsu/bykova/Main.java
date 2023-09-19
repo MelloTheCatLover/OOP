@@ -65,8 +65,8 @@ public class Main {
         heapSort(array);
 
         // Вывод отсортированного массива
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
+        for (int j : array) {
+            System.out.print(j + " ");
         }
     }
 }
