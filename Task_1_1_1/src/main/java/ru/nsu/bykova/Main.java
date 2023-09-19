@@ -59,6 +59,14 @@ public class Main {
      * Точка входа в программу.
      */
     public static void main(String[] args) {
+        int[] array = {1, 3, 2};
 
+        // Сортировка массива
+        heapSort(array);
+
+        // Вывод отсортированного массива
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
     }
 }

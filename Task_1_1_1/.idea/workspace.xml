@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8e7313b-93a6-44c0-b553-081ca1a0d5e8" name="Changes" comment="Добавил точку входа в программу и комментарии к ней">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/bykova/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bykova/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="d8e7313b-93a6-44c0-b553-081ca1a0d5e8" name="Changes" comment="Убрал все из main, ради покрытия" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -242,7 +239,31 @@
       <option name="project" value="LOCAL" />
       <updated>1695018153213</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Добавил точку входа в программу и комментарии к ней">
+      <option name="closed" value="true" />
+      <created>1695039213759</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1695039213759</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Попытка исправить проблему с покрытием">
+      <option name="closed" value="true" />
+      <created>1695039388469</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1695039388469</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Убрал все из main, ради покрытия">
+      <option name="closed" value="true" />
+      <created>1695039597325</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1695039597325</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -253,6 +274,8 @@
     <MESSAGE value="Добавил изменения исходя из советов по стилю. Разделил методы, убрал один с большим кол-вом символов. Убрал .* в import.....Asertions" />
     <MESSAGE value="Добавил javadoc комментарии. Исправил стилевые ошибки с for." />
     <MESSAGE value="Добавил точку входа в программу и комментарии к ней" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил точку входа в программу и комментарии к ней" />
+    <MESSAGE value="Попытка исправить проблему с покрытием" />
+    <MESSAGE value="Убрал все из main, ради покрытия" />
+    <option name="LAST_COMMIT_MESSAGE" value="Убрал все из main, ради покрытия" />
   </component>
 </project>
