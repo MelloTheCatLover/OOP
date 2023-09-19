@@ -27,6 +27,9 @@ public class Main {
 
     /**
      * Превращает поддерево с корнем в узле 'i' в кучу.
+     *
+     * @param array     Массив, который нужно отсортировать.
+     * @param arraySize Размер массива.
      */
     private static void heapify(int[] array, int arraySize, int i) {
         int largest = i;
@@ -50,14 +53,21 @@ public class Main {
      * Точка входа в программу.
      */
     public static void main(String[] args) {
-        int[] array = {1, 3, 2};
+        int[] array = {4, 1, 7, 3, 9, 2, 5};
+
+        // Вывод несортированного массива
+        System.out.println("Unsorted Array:");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
 
         // Сортировка массива
         heapSort(array);
 
         // Вывод отсортированного массива
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
+        System.out.println("\nSorted Array:");
+        for (int num : array) {
+            System.out.print(num + " ");
         }
     }
 }

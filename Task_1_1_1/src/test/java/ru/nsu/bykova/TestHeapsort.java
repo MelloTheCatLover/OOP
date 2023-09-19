@@ -9,6 +9,12 @@ import  org.junit.jupiter.api.Test;
 class TestHeapsort {
 
     @Test
+    public void  testMain() {
+        Main.main(new String[0]);
+    }
+
+
+    @Test
     public void testHeapSort() {
         int[] fedArray = {13, 12, 2, 13, 3, 10, 7};
         int[] expectedArray = {2, 3, 7, 10, 12, 13, 13};
@@ -53,6 +59,14 @@ class TestHeapsort {
     public void testLargeNumbers() {
         int[] fedArray = {10000, 100000, 1000000, 100, 1000, 10};
         int[] expectedArray = {10, 100, 1000, 10000, 100000, 1000000};
+        Main.heapSort(fedArray);
+        assertArrayEquals(expectedArray, fedArray);
+    }
+
+    @Test
+    public void testLargeNegativeNumbers() {
+        int[] fedArray = {-10000, -100000, -1000000, -100, -1000, -10};
+        int[] expectedArray = {-1000000, -100000, -10000, -1000, -100, -10};
         Main.heapSort(fedArray);
         assertArrayEquals(expectedArray, fedArray);
     }

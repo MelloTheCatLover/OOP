@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8e7313b-93a6-44c0-b553-081ca1a0d5e8" name="Changes" comment="Балансировка покрытия 2">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/bykova/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bykova/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/bykova/TestHeapsort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/bykova/TestHeapsort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +67,7 @@
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Gradle.TestHeapsort">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.nsu.bykova.Main" />
       <module name="Task_1_1_1.main" />
@@ -129,7 +129,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="TestHeapsort.testNegativeNumbers" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestHeapsort.testMain" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -142,7 +142,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.nsu.bykova.TestHeapsort.testNegativeNumbers&quot;" />
+            <option value="&quot;ru.nsu.bykova.TestHeapsort.testMain&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -179,18 +179,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="Gradle.TestHeapsort.testMain" />
       <item itemvalue="Gradle.TestHeapsort" />
       <item itemvalue="Gradle.TestHeapsort.ReversedSortedArray" />
-      <item itemvalue="Gradle.TestHeapsort.testNegativeNumbers" />
       <item itemvalue="Gradle.TestHeapsort.testVeryLargeArray" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.TestHeapsort" />
+        <item itemvalue="Gradle.TestHeapsort.testMain" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.TestHeapsort.testVeryLargeArray" />
         <item itemvalue="Gradle.TestHeapsort.ReversedSortedArray" />
-        <item itemvalue="Gradle.TestHeapsort.testNegativeNumbers" />
       </list>
     </recent_temporary>
   </component>
@@ -307,7 +307,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695092008185</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Балансировка покрытия 2">
+      <option name="closed" value="true" />
+      <created>1695094339661</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1695094339661</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -325,7 +333,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="Балансировка покрытия 2" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Task_1_1_1$Main.ic" NAME="Main Coverage Results" MODIFIED="1695094043945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Task_1_1_1$Main.ic" NAME="Main Coverage Results" MODIFIED="1695094292552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.nsu.bykova.*</FILTER>
     </SUITE>
   </component>
