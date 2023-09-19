@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8e7313b-93a6-44c0-b553-081ca1a0d5e8" name="Changes" comment="Балансировка покрытия 2" />
+    <list default="true" id="d8e7313b-93a6-44c0-b553-081ca1a0d5e8" name="Changes" comment="Балансировка покрытия 2">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,22 +55,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Task__1__1__1&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/misha/OneDrive/Рабочий стол/NSU/2/OOP/Sample/Task_1_1_1/src/main/java/ru/nsu/bykova/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Task__1__1__1",
+    "onboarding.tips.debug.path": "C:/Users/misha/OneDrive/Рабочий стол/NSU/2/OOP/Sample/Task_1_1_1/src/main/java/ru/nsu/bykova/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.nsu.bykova.Main" />
       <module name="Task_1_1_1.main" />
-      <extension name="coverage">
+      <extension name="coverage" sample_coverage="false">
         <pattern>
           <option name="PATTERN" value="ru.nsu.bykova.*" />
           <option name="ENABLED" value="true" />
@@ -172,6 +177,13 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Gradle.TestHeapsort" />
+      <item itemvalue="Gradle.TestHeapsort.ReversedSortedArray" />
+      <item itemvalue="Gradle.TestHeapsort.testNegativeNumbers" />
+      <item itemvalue="Gradle.TestHeapsort.testVeryLargeArray" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -287,7 +299,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695091837289</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Балансировка покрытия 2">
+      <option name="closed" value="true" />
+      <created>1695092008185</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1695092008185</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -303,5 +323,10 @@
     <MESSAGE value="Балансировка покрытия" />
     <MESSAGE value="Балансировка покрытия 2" />
     <option name="LAST_COMMIT_MESSAGE" value="Балансировка покрытия 2" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Task_1_1_1$Main.ic" NAME="Main Coverage Results" MODIFIED="1695094043945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ru.nsu.bykova.*</FILTER>
+    </SUITE>
   </component>
 </project>

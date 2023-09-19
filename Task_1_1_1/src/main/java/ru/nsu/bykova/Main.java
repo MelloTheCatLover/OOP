@@ -27,9 +27,6 @@ public class Main {
 
     /**
      * Превращает поддерево с корнем в узле 'i' в кучу.
-     *
-     * @param array     Массив, который нужно отсортировать.
-     * @param arraySize Размер массива.
      */
     private static void heapify(int[] array, int arraySize, int i) {
         int largest = i;
