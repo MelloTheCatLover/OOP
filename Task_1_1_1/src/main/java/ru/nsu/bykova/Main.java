@@ -18,7 +18,9 @@ public class Main {
             heapify(array, arraySize, i);
         }
         for (int i = arraySize - 1; i > 0; i--) {
-            swap(array, 0, i);
+            int temp = array[i];
+            array[i] = array[0];
+            array[0] = temp;
             heapify(array, i, 0);
         }
     }
@@ -40,19 +42,11 @@ public class Main {
             largest = rightChild;
         }
         if (largest != i) {
-            swap(array, i, largest);
+            int temp = array[i];
+            array[i] = array[largest];
+            array[largest] = temp;
             heapify(array, arraySize, largest);
         }
-    }
-
-    /**
-     * Обменивает местами два элемента в массиве.
-     *
-     */
-    private static void swap(int[] array, int i, int j) {
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
     }
 
     /**
@@ -65,8 +59,8 @@ public class Main {
         heapSort(array);
 
         // Вывод отсортированного массива
-        for (int j : array) {
-            System.out.print(j + " ");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
         }
     }
 }
