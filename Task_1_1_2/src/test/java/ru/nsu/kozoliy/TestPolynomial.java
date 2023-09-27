@@ -99,3 +99,4 @@ public class TestPolynomial {
         assertEquals(expected, result);
     }
 }
+
