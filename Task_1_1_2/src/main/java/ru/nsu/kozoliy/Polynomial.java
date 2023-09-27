@@ -1,12 +1,25 @@
 package ru.nsu.kozoliy;
 
+/**
+ * Класс являет представление многочлена некоторой степени n.
+ */
 public class Polynomial {
     private final int[] coefficients;
 
+    /**
+     * Конструктор для того, чтобы задавать полином с заданными коэффициентами.
+     * Коэффициенты являются массивом coefficients, с некоторой длинной. в массиве они идут по возрастанию степеней.
+     */
     public Polynomial(int[] coefficients) {
         this.coefficients = coefficients;
     }
 
+    /**
+     * Метод для сложения двух полиномов.
+     *
+     * @param other - Некоторый другой полином.
+     * @return - Возвращаемый результат.
+     */
     public Polynomial plus(Polynomial other) {
         int maxLength = Math.max(this.coefficients.length, other.coefficients.length);
         int[] ans = new int[maxLength];
@@ -22,7 +35,12 @@ public class Polynomial {
         return new Polynomial(ans);
     }
 
-
+    /**
+     * Метод для вычитания двух полиномов.
+     *
+     * @param other - Некоторый другой полином.
+     * @return - Возвращаемый результат.
+     */
     public Polynomial minus(Polynomial other) {
         int maxLength = Math.max(this.coefficients.length, other.coefficients.length);
         int[] ans = new int[maxLength];
@@ -38,7 +56,12 @@ public class Polynomial {
         return new Polynomial(ans);
     }
 
-
+    /**
+     * Метод для перемножения двух полиномов.
+     *
+     * @param other - Некоторый другой полином.
+     * @return - Возвращаемый результат.
+     */
     public Polynomial times(Polynomial other) {
         int[] ans = new int[this.coefficients.length + other.coefficients.length - 1];
 
@@ -51,6 +74,12 @@ public class Polynomial {
         return new Polynomial(ans);
     }
 
+    /**
+     * Метод для вычисления значения полинома в некоторой точке, релизуется подстановкой.
+     *
+     * @param x - Некоторый другой полином.
+     * @return - Возвращаемый результат.
+     */
     public int evaluate(int x) {
         int result = 0;
         int power = 1;
@@ -63,6 +92,12 @@ public class Polynomial {
         return result;
     }
 
+    /**
+     * Метод для вычисления производной. Степень производной задает пользователь.
+     *
+     * @param i Степень дифференцирования.
+     * @return Результат дифференцирования многочлена.
+     */
     public Polynomial differentiate(int i) {
         int n = coefficients.length;
         int[] ans = new int[n - i];
@@ -121,17 +156,20 @@ public class Polynomial {
         return sb.toString();
     }
 
+    /**
+     * Точка входа в программу.
+     */
     public static void main(String[] args) {
-        int[] coefficients1 = {4, 3, 6, 7};
-        int[] coefficients2 = {3, 2, 8};
+        int[] testPolynom1 = {4, 3, 6, 7};
+        int[] testPolynom2 = {3, 2, 8};
 
-        Polynomial p1 = new Polynomial(coefficients1);
-        Polynomial p2 = new Polynomial(coefficients2);
+        Polynomial p1 = new Polynomial(testPolynom1);
+        Polynomial p2 = new Polynomial(testPolynom2);
 
         Polynomial result1 = p1.plus(p2.differentiate(1));
         Polynomial result2 = p1.times(p2);
 
-        System.out.println(result1.toString()); // Выводит: 7x^3 + 6x^2 + 19x + 6
-        System.out.println(result2.evaluate(2)); // Выводит: 3510
+        System.out.println(result1.toString());
+        System.out.println(result2.evaluate(2));
     }
 }
