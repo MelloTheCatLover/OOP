@@ -56,6 +56,14 @@ public class TestPolynomial {
         assertEquals(expected, result);
     }
 
+    @Test
+    public void testMultiplicationLargeExponent() {
+        Polynomial result = polynomial2.times(polynomial2.times(polynomial2.times(polynomial2)));
+        Polynomial expected = new Polynomial(new int[]{81, 216, 1080, 1824, 4624, 4864, 7680, 4096, 4096});
+
+        assertEquals(expected, result);
+    }
+
     /**
      * Тест для проверки операции вычисления значения многочлена в точке.
      */
@@ -67,6 +75,24 @@ public class TestPolynomial {
         assertEquals(expected, result);
     }
 
+    @Test
+    public void testEvaluateNegative() {
+        int result = polynomial1.evaluate(-10);
+        int expected = -6426;
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testEvaluateZeroPolynomial() {
+        Polynomial zeroPolynom = new Polynomial(new int[]{0});
+        int result = zeroPolynom.evaluate(12);
+        int expected = 0;
+
+        assertEquals(expected, result);
+    }
+
+
     /**
      * Тест для проверки операции взятия производной многочлена.
      */
@@ -74,6 +100,15 @@ public class TestPolynomial {
     public void testDifferentiate() {
         Polynomial result = polynomial1.differentiate(1);
         Polynomial expected = new Polynomial(new int[]{3, 12, 21});
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testSecondDifferentiate() {
+        Polynomial result = new Polynomial(new int[]{3, 6, 45, 12, 13});
+        result = result.differentiate(2);
+        Polynomial expected = new Polynomial(new int[]{90, 72, 156});
 
         assertEquals(expected, result);
     }
