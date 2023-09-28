@@ -1,20 +1,18 @@
 package ru.nsu.kozoliy;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Класс для различных тестов проверки работоспособности функционала класса Polynomial.
+ * Класс для тестирования функциональности класса Polynomial.
  */
 public class TestPolynomial {
     private Polynomial polynomial1;
     private Polynomial polynomial2;
 
     /**
-     * Стартовые коэффициенты полиномов, которые используются в последующих тестах.
+     * Перед каждым тестовым методом инициализирует объекты Polynomial с тестовыми коэффициентами.
      */
     @BeforeEach
     public void setUp() {
@@ -26,48 +24,40 @@ public class TestPolynomial {
     }
 
     /**
-     * Тест для проверки вывода решения примера.
-     */
-    @Test
-    public void  testMain() {
-        Polynomial.main(new String[0]);
-    }
-
-    /**
-     * Тест для проверки правильности метода по сложению двух полиномов.
+     * Тест для проверки операции сложения многочленов.
      */
     @Test
     public void testAddition() {
         Polynomial result = polynomial1.plus(polynomial2);
         Polynomial expected = new Polynomial(new int[]{7, 5, 14, 7});
 
-        assertTrue(result.equals(expected));
+        assertEquals(expected, result);
     }
 
     /**
-     * Тест для проверки правильности метода по вычитанию двух полиномов.
+     * Тест для проверки операции вычитания многочленов.
      */
     @Test
     public void testSubtraction() {
         Polynomial result = polynomial1.minus(polynomial2);
         Polynomial expected = new Polynomial(new int[]{1, 1, -2, 7});
 
-        assertTrue(result.equals(expected));
+        assertEquals(expected, result);
     }
 
     /**
-     * Тест для проверки правильности метода по умножению двух полиномов.
+     * Тест для проверки операции умножения многочленов.
      */
     @Test
     public void testMultiplication() {
         Polynomial result = polynomial1.times(polynomial2);
         Polynomial expected = new Polynomial(new int[]{12, 17, 56, 57, 62, 56});
 
-        assertTrue(result.equals(expected));
+        assertEquals(expected, result);
     }
 
     /**
-     * Тест для проверки выводимого значения многочлена в некоторой точке.
+     * Тест для проверки операции вычисления значения многочлена в точке.
      */
     @Test
     public void testEvaluate() {
@@ -78,18 +68,18 @@ public class TestPolynomial {
     }
 
     /**
-     * Тест для проверки расчета производной заданной степени у многочлена.
+     * Тест для проверки операции взятия производной многочлена.
      */
     @Test
     public void testDifferentiate() {
         Polynomial result = polynomial1.differentiate(1);
         Polynomial expected = new Polynomial(new int[]{3, 12, 21});
 
-        assertTrue(result.equals(expected));
+        assertEquals(expected, result);
     }
 
     /**
-     * Тест для проверки вывода многочлена.
+     * Тест для проверки преобразования многочлена в строковое представление.
      */
     @Test
     public void testToString() {
@@ -99,4 +89,3 @@ public class TestPolynomial {
         assertEquals(expected, result);
     }
 }
-

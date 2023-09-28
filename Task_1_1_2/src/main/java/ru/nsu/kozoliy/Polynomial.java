@@ -8,7 +8,8 @@ public class Polynomial {
 
     /**
      * Конструктор для того, чтобы задавать полином с заданными коэффициентами.
-     * Коэффициенты являются массивом coefficients, с некоторой длинной. в массиве они идут по возрастанию степеней.
+     * Коэффициенты являются массивом coefficients, с некоторой длинной.
+     * В массиве они идут по возрастанию степеней.
      */
     public Polynomial(int[] coefficients) {
         this.coefficients = coefficients;
@@ -113,17 +114,23 @@ public class Polynomial {
         return new Polynomial(ans);
     }
 
-    public boolean equals(Polynomial other) {
-        if (other == null || this.coefficients.length != other.coefficients.length) {
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-
+        Polynomial other = (Polynomial) obj;
+        if (this.coefficients.length != other.coefficients.length) {
+            return false;
+        }
         for (int i = 0; i < this.coefficients.length; i++) {
             if (this.coefficients[i] != other.coefficients[i]) {
                 return false;
             }
         }
-
         return true;
     }
 
@@ -166,7 +173,7 @@ public class Polynomial {
         Polynomial p1 = new Polynomial(testPolynom1);
         Polynomial p2 = new Polynomial(testPolynom2);
 
-        Polynomial result1 = p1.plus(p2.differentiate(1));
+        Polynomial result1 = p1.plus(p2.differentiate(2));
         Polynomial result2 = p1.times(p2);
 
         System.out.println(result1.toString());
