@@ -36,6 +36,23 @@ public class TestPolynomial {
         assertEquals(expected, result);
     }
 
+    @Test
+    public void testAdditionAndSubtraction() {
+        Polynomial expected = polynomial1;
+        Polynomial result = polynomial1.plus(polynomial2);
+        result = result.minus(polynomial2);
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testAdditionAndMultiplicationByTwo() {
+        Polynomial twoAddition = polynomial1.plus(polynomial1);
+        Polynomial multiByTwo  = polynomial1.times(new Polynomial(new int[]{2}));
+
+        assertEquals(twoAddition, multiByTwo);
+    }
+
     /**
      * Тест для проверки операции вычитания многочленов.
      */
@@ -79,9 +96,12 @@ public class TestPolynomial {
     }
 
     @Test
-    public void testEvaluateNegative() {
-        int result = polynomial1.evaluate(-10);
-        int expected = -6426;
+    public void testAllInOne() {
+        Polynomial polynomial3 = new Polynomial(new int[] {10, 2, 12, 4, 5});
+        Polynomial polynomial4 = new Polynomial(new int[] {1, 2, 3});
+        int result = (polynomial1.plus(polynomial2.times((polynomial3.differentiate(2))
+            .minus(polynomial4)))).evaluate(10);
+        int expected = 4898723;
 
         assertEquals(expected, result);
     }
