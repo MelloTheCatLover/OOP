@@ -62,7 +62,7 @@ public class TestPolynomial {
     public void testMultiplicationLargeExponent() {
         Polynomial result = polynomial2.times(polynomial2.times(polynomial2.times(polynomial2)));
         Polynomial expected = new Polynomial(new int[]{81, 216, 1080, 1824, 4624,
-                                                           4864, 7680, 4096, 4096});
+            4864, 7680, 4096, 4096});
 
         assertEquals(expected, result);
     }
