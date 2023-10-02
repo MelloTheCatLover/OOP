@@ -1,5 +1,7 @@
 package ru.nsu.kozoliy;
 
+import java.util.Arrays;
+
 /**
  * Класс являет представление многочлена некоторой степени n.
  */
@@ -7,12 +9,16 @@ public class Polynomial {
     private final int[] coefficients;
 
     /**
-     * Конструктор для того, чтобы задавать полином с заданными коэффициентами.
+     * Конструктор для того, чтобы создавать копию массиваБ для того, чтобы исключить возможность изменять его извне.
      * Коэффициенты являются массивом coefficients, с некоторой длинной.
      * В массиве они идут по возрастанию степеней.
      */
     public Polynomial(int[] coefficients) {
-        this.coefficients = coefficients;
+        if (coefficients.length == 0) {
+            this.coefficients = new int[]{0};
+        } else {
+            this.coefficients = Arrays.copyOf(coefficients, coefficients.length);
+        }
     }
 
     /**
@@ -131,6 +137,7 @@ public class Polynomial {
                 return false;
             }
         }
+
         return true;
     }
 
