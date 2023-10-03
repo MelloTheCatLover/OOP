@@ -1,6 +1,7 @@
 package ru.nsu.kozoliy;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,6 +24,13 @@ public class TestPolynomial {
 
         polynomial1 = new Polynomial(coefficients1);
         polynomial2 = new Polynomial(coefficients2);
+    }
+
+    @Test
+    void voidSum() {
+        Polynomial voidPolynomial = new Polynomial(new int[]{});
+
+        assertEquals(voidPolynomial.plus(polynomial1), polynomial1);
     }
 
     /**
@@ -135,6 +143,15 @@ public class TestPolynomial {
 
         assertEquals(expected, result);
     }
+
+    @Test
+    void testNotEqual() {
+        Polynomial p1 = new Polynomial(new int[]{5, 2, 2, 1});
+        Polynomial p2 = new Polynomial(new int[]{4, 2, 2, 1});
+        assertNotEquals(p1, p2);
+    }
+
+
 
     /**
      * Тест для проверки преобразования многочлена в строковое представление.
