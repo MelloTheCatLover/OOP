@@ -1,6 +1,7 @@
 package ru.nsu.kozoliy;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * Класс являет представление многочлена некоторой степени n.
@@ -9,7 +10,8 @@ public class Polynomial {
     private final int[] coefficients;
 
     /**
-     * Конструктор для того, чтобы создавать копию массиваБ для того, чтобы исключить возможность изменять его извне.
+     * Конструктор для того, чтобы создавать копию массиваБ для того,
+     * чтобы исключить возможность изменять его извне.
      * Коэффициенты являются массивом coefficients, с некоторой длинной.
      * В массиве они идут по возрастанию степеней.
      */
@@ -120,6 +122,8 @@ public class Polynomial {
         return new Polynomial(ans);
     }
 
+
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -132,13 +136,13 @@ public class Polynomial {
         if (this.coefficients.length != other.coefficients.length) {
             return false;
         }
-        for (int i = 0; i < this.coefficients.length; i++) {
-            if (this.coefficients[i] != other.coefficients[i]) {
-                return false;
-            }
-        }
+        return Arrays.equals(coefficients, other.coefficients);
+    }
 
-        return true;
+    @Override
+    public int hashCode() {
+        int prime = 31;
+        return prime * Objects.hash(Arrays.hashCode(coefficients));
     }
 
     @Override
