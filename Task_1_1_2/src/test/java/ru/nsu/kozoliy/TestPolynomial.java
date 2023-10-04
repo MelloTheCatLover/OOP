@@ -151,6 +151,13 @@ public class TestPolynomial {
         assertNotEquals(p1, p2);
     }
 
+    @Test
+    void testVoidEqual() {
+        Polynomial p1 = new Polynomial(new int[]{});
+        Polynomial p2 = new Polynomial(new int[]{});
+        assertEquals(p1, p2);
+    }
+
 
 
     /**
