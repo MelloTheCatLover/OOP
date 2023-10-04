@@ -186,23 +186,25 @@ public class TestPolynomial {
 
     @Test
     void testSumToZero() {
-        Polynomial p1 = new Polynomial(new int[]{});
-        Polynomial p2 = new Polynomial(new int[]{3, 2, 1});
-        assertEquals(p1.plus(p2), p2);
+        Polynomial polynomial3 = new Polynomial(new int[]{});
+        Polynomial polynomial4 = new Polynomial(new int[]{3, 2, 1});
+        assertEquals(polynomial3.plus(polynomial4), polynomial4);
     }
 
     @Test
-    void mltVoidFirst() {
-        Polynomial p1 = new Polynomial(new int[]{});
-        Polynomial p2 = new Polynomial(new int[]{3, -2, 1});
-        assertEquals(p1.times(p2), new Polynomial(new int[]{0}));
+    void testMultiplicationVoidFirst() {
+        Polynomial polynomial3 = new Polynomial(new int[]{});
+        Polynomial polynomial4 = new Polynomial(new int[]{2, 5, 4});
+        Polynomial expected = new Polynomial(new int[]{});
+        assertEquals(polynomial3.times(polynomial4), expected);
     }
 
     @Test
-    void mltVoidSecond() {
-        Polynomial p1 = new Polynomial(new int[]{1, 2, 3});
-        Polynomial p2 = new Polynomial(new int[]{});
-        assertEquals(p1.times(p2), new Polynomial(new int[]{0}));
+    void testMultiplicationVoidSecond() {
+        Polynomial polynomial3 = new Polynomial(new int[]{2, 5, 4});
+        Polynomial polynomial4 = new Polynomial(new int[]{});
+        Polynomial expected = new Polynomial(new int[]{});
+        assertEquals(polynomial3.times(polynomial4), expected);
     }
 
     /**
