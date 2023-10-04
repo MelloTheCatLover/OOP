@@ -159,11 +159,20 @@ public class TestPolynomial {
     }
 
     @Test
-    void lowerZerosSub() {
+    void testLowerZerosSub() {
         Polynomial polynomial3 = new Polynomial(new int[]{0, 0, 0, 2});
         Polynomial polynomial4 = new Polynomial(new int[]{5, 4, 2});
         Polynomial result = polynomial3.minus(polynomial4);
         Polynomial expected = new Polynomial(new int[]{-5, -4, -2, 2});
+        assertEquals(result, expected);
+    }
+
+    @Test
+    void testLowerZerosSum() {
+        Polynomial polynomial3 = new Polynomial(new int[]{0, 0, 0, 2});
+        Polynomial polynomial4 = new Polynomial(new int[]{5, -4, 2});
+        Polynomial result = polynomial3.plus(polynomial4);
+        Polynomial expected = new Polynomial(new int[]{5, -4, 2, 2});
         assertEquals(result, expected);
     }
 
@@ -177,5 +186,6 @@ public class TestPolynomial {
 
         assertEquals(expected, result);
     }
+
 }
 
