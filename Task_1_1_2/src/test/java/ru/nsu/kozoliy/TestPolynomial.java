@@ -146,19 +146,26 @@ public class TestPolynomial {
 
     @Test
     void testNotEqual() {
-        Polynomial p1 = new Polynomial(new int[]{5, 2, 2, 1});
-        Polynomial p2 = new Polynomial(new int[]{4, 2, 2, 1});
-        assertNotEquals(p1, p2);
+        Polynomial polynomial3 = new Polynomial(new int[]{5, 2, 2, 1});
+        Polynomial polynomial4 = new Polynomial(new int[]{4, 2, 2, 1});
+        assertNotEquals(polynomial3, polynomial4);
     }
 
     @Test
     void testVoidEqual() {
-        Polynomial p1 = new Polynomial(new int[]{});
-        Polynomial p2 = new Polynomial(new int[]{});
-        assertEquals(p1, p2);
+        Polynomial polynomial3 = new Polynomial(new int[]{});
+        Polynomial polynomial4 = new Polynomial(new int[]{});
+        assertEquals(polynomial3, polynomial4);
     }
 
-
+    @Test
+    void lowerZerosSub() {
+        Polynomial polynomial3 = new Polynomial(new int[]{0, 0, 0, 2});
+        Polynomial polynomial4 = new Polynomial(new int[]{5, 4, 2});
+        Polynomial result = polynomial3.minus(polynomial4);
+        Polynomial expected = new Polynomial(new int[]{-5, -4, -2, 2});
+        assertEquals(result, expected);
+    }
 
     /**
      * Тест для проверки преобразования многочлена в строковое представление.
