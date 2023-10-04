@@ -184,6 +184,27 @@ public class TestPolynomial {
         assertEquals(result, expected);
     }
 
+    @Test
+    void testSumToZero() {
+        Polynomial p1 = new Polynomial(new int[]{});
+        Polynomial p2 = new Polynomial(new int[]{3, 2, 1});
+        assertEquals(p1.plus(p2), p2);
+    }
+
+    @Test
+    void mltVoidFirst() {
+        Polynomial p1 = new Polynomial(new int[]{});
+        Polynomial p2 = new Polynomial(new int[]{3, -2, 1});
+        assertEquals(p1.times(p2), new Polynomial(new int[]{0}));
+    }
+
+    @Test
+    void mltVoidSecond() {
+        Polynomial p1 = new Polynomial(new int[]{1, 2, 3});
+        Polynomial p2 = new Polynomial(new int[]{});
+        assertEquals(p1.times(p2), new Polynomial(new int[]{0}));
+    }
+
     /**
      * Тест для проверки преобразования многочлена в строковое представление.
      */
