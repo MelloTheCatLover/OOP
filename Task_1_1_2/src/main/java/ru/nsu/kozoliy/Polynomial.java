@@ -7,7 +7,7 @@ import java.util.Objects;
  * Класс являет представление многочлена некоторой степени n.
  */
 public class Polynomial {
-    private final int[] coefficients;
+    private int[] coefficients;
 
     /**
      * Конструктор для того, чтобы создавать копию массиваБ для того,
@@ -21,6 +21,17 @@ public class Polynomial {
         } else {
             this.coefficients = Arrays.copyOf(coefficients, coefficients.length);
         }
+    }
+
+    private void reduce() {
+        int meaninglessZeros = 0;
+        while (this.coefficients.length - 1 - meaninglessZeros > 0
+                && this.coefficients[this.coefficients.length - 1 - meaninglessZeros] == 0) {
+            meaninglessZeros++;
+        }
+        this.coefficients = Arrays.copyOf(
+                this.coefficients, this.coefficients.length - meaninglessZeros
+        );
     }
 
     /**
@@ -41,7 +52,9 @@ public class Polynomial {
             ans[i] += other.coefficients[i];
         }
 
-        return new Polynomial(ans);
+        var result = new Polynomial(ans);
+        result.reduce();
+        return result;
     }
 
     /**
@@ -62,7 +75,9 @@ public class Polynomial {
             ans[i] -= other.coefficients[i];
         }
 
-        return new Polynomial(ans);
+        var result = new Polynomial(ans);
+        result.reduce();
+        return result;
     }
 
     /**
@@ -80,7 +95,9 @@ public class Polynomial {
             }
         }
 
-        return new Polynomial(ans);
+        var result = new Polynomial(ans);
+        result.reduce();
+        return result;
     }
 
     /**
@@ -119,16 +136,15 @@ public class Polynomial {
             ans[j] = coeff;
         }
 
-        return new Polynomial(ans);
+        var result = new Polynomial(ans);
+        result.reduce();
+        return result;
     }
 
 
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }

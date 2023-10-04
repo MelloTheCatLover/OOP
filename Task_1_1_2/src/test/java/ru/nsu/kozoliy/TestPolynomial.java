@@ -176,6 +176,14 @@ public class TestPolynomial {
         assertEquals(result, expected);
     }
 
+    @Test
+    void testSubToZero() {
+        Polynomial polynomial3 = new Polynomial(new int[]{3, -2, 1});
+        Polynomial expected = new Polynomial(new int[]{});
+        Polynomial result = polynomial3.minus(polynomial3);
+        assertEquals(result, expected);
+    }
+
     /**
      * Тест для проверки преобразования многочлена в строковое представление.
      */
