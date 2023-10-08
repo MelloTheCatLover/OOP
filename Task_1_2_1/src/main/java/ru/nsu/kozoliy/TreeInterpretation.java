@@ -99,9 +99,10 @@ public class TreeInterpretation {
 
         @Override
         public boolean equals(Object obj) {
-            if (!(obj instanceof Tree<?> otherTree)) {
+            if (!(obj instanceof Tree<?>)) {
                 return false;
             }
+            Tree<T> otherTree = (Tree<T>) obj;
             if (!otherTree.value.equals(this.value)) {
                 return false;
             }
