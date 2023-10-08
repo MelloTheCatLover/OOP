@@ -96,6 +96,7 @@ public class TreeInterpretation {
             }
         }
 
+
         @Override
         public boolean equals(Object obj) {
             if (!(obj instanceof Tree<?> otherTree)) {
