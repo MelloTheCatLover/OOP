@@ -94,6 +94,10 @@ public class TestTreeInterpretation {
         assertFalse(tree.getChildren().contains(a));
     }
 
+    @Test
+    public void  testMain() {
+        TreeInterpretation.main(new String[0]);
+    }
 
 
 }
