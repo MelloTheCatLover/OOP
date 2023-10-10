@@ -1,12 +1,22 @@
 package ru.nsu.kozoliy;
 
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Objects;
+import java.util.Comparator;
+
 
 /**
  * Класс для представления графов деревьев.
  */
 public class TreeInterpretation {
+
+    /**
+     * Точка входа в программу.
+     */
     public static void main(String[] args) {
         Tree<String> tree = new Tree<>("R1");
         tree.addChild("A");
