@@ -1,11 +1,10 @@
 package ru.nsu.kozoliy;
 
+
 import java.util.*;
 
 /**
  * Класс для представления графов деревьев.
- *
- * @param <T> Тип данных, хранящихся в узлах дерева.
  */
 public class TreeInterpretation {
     public static void main(String[] args) {
@@ -139,9 +138,10 @@ public class TreeInterpretation {
          */
         @Override
         public boolean equals(Object obj) {
-            if (!(obj instanceof Tree<?> otherTree)) {
+            if (!(obj instanceof Tree<?>)) {
                 return false;
             }
+            Tree<?> otherTree = (Tree<?>) obj;
             if (!otherTree.value.equals(this.value)) {
                 return false;
             }
