@@ -28,25 +28,20 @@ public class TreeInterpretation {
         var removeMe = c2.addChild("RemoveMe");
         removeMe.remove();
 
-        System.out.println("BFS traversal:");
-        tree.breadthFirstTraversal();
+        System.out.println("\nBFS traversal:\n" + tree.breadthFirstTraversal());
 
-        System.out.println("\nDFS traversal:");
-        tree.depthFirstTraversal();
+        System.out.println("\nDFS traversal:\n" + tree.depthFirstTraversal());
 
-        System.out.println("\nBFS2 traversal:");
-        tree2.breadthFirstTraversal();
+        System.out.println("\nBFS2 traversal:\n" + tree2.breadthFirstTraversal());
 
-        System.out.println("\nDFS2 traversal:");
-        tree2.depthFirstTraversal();
+        System.out.println("\nDFS2 traversal:\n" + tree2.depthFirstTraversal());
 
         System.out.println("\n");
 
-        tree2.printTree();
-        tree.printTree();
-
         System.out.println(tree.printTree());
         System.out.println("\n" + tree2.printTree());
+
+        System.out.println(tree.equals(tree2));
     }
 
     /**
@@ -104,30 +99,38 @@ public class TreeInterpretation {
         /**
          * Выполняет обход дерева в ширину и выводит значения узлов в порядке обхода.
          */
-        public void breadthFirstTraversal() {
+        public String breadthFirstTraversal(StringBuilder bfsString) {
             Queue<Tree<T>> queue = new LinkedList<>();
             queue.add(this);
 
             while (!queue.isEmpty()) {
                 Tree<T> current = queue.poll();
-                System.out.print(current.value + " ");
+                bfsString.append(current.value).append(" ");
                 queue.addAll(current.children);
             }
+
+            return bfsString.toString();
+        }
+
+        public String breadthFirstTraversal() {
+            return breadthFirstTraversal(new StringBuilder());
         }
 
         /**
          * Выполняет обход дерева в глубину и выводит значения узлов в порядке обхода.
          */
-        public void depthFirstTraversal() {
-            depthFirstTraversal(this);
+        public String depthFirstTraversal() {
+            return depthFirstTraversal(this, new StringBuilder());
         }
 
-        private void depthFirstTraversal(Tree<T> node) {
-            System.out.print(node.value + " ");
+        private String depthFirstTraversal(Tree<T> node, StringBuilder dfsString) {
+            dfsString.append(node.value).append(" ");
 
             for (Tree<T> child : node.children) {
-                depthFirstTraversal(child);
+                depthFirstTraversal(child, dfsString);
             }
+
+            return dfsString.toString();
         }
 
         /**

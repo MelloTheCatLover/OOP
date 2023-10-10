@@ -10,11 +10,6 @@ public class TestTreeInterpretation {
 
     private TreeInterpretation.Tree<String> tree;
 
-    @BeforeEach
-    public void setUp() {
-        tree = new TreeInterpretation.Tree<>("Root");
-    }
-
     @Test
     public void testEquality() {
         TreeInterpretation.Tree<String> tree1 = new TreeInterpretation.Tree<>("Root");
@@ -42,5 +37,35 @@ public class TestTreeInterpretation {
 
         String expected = "R1\n  A\n  B\n  R2\n    C\n    E\n";
         assertEquals(expected, tree.printTree());
+    }
+
+
+    @Test
+    public void testBFS() {
+        tree = new TreeInterpretation.Tree<>("R1");
+        tree.addChild("A");
+        tree.addChild("B");
+        TreeInterpretation.Tree<String> subtree = new TreeInterpretation.Tree<>("R2");
+        subtree.addChild("C");
+        subtree.addChild("E");
+        tree.addChild(subtree);
+
+        String expected = "R1 A B R2 C E ";
+        assertEquals(expected, tree.breadthFirstTraversal());
+    }
+
+    @Test
+    public void testDFS() {
+        tree = new TreeInterpretation.Tree<>("R1");
+        tree.addChild("A");
+        tree.addChild("B");
+        TreeInterpretation.Tree<String> subtree = new TreeInterpretation.Tree<>("R2");
+        subtree.addChild("C");
+        subtree.addChild("E");
+        tree.addChild(subtree);
+        tree.addChild("F");
+
+        String expected = "R1 A B R2 C E F ";
+        assertEquals(expected, tree.depthFirstTraversal());
     }
 }
