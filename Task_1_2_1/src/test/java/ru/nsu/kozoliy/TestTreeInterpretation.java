@@ -1,9 +1,8 @@
 package ru.nsu.kozoliy;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestTreeInterpretation {
 
@@ -79,22 +78,20 @@ public class TestTreeInterpretation {
     @Test
     void testAddChild() {
         tree = new TreeInterpretation.Tree<>("ROOT");
-        tree.addChild("A");
+        var a = tree.addChild("A");
 
-        String expected = "ROOT\n  A\n";
-        assertEquals(expected, tree.printTree());
+        assertTrue(tree.getChildren().contains(a));
     }
 
     @Test
     void testRemoveChild() {
         tree = new TreeInterpretation.Tree<>("ROOT");
-        tree.addChild("A");
+        var a = tree.addChild("A");
 
-        String expected = "ROOT\n  A\n";
-        assertEquals(expected, tree.printTree());
+        assertTrue(tree.getChildren().contains(a));
 
-        String expectedRemove = "ROOT\n";
-        assertEquals(expected, tree.printTree());
+        a.remove();
+        assertFalse(tree.getChildren().contains(a));
     }
 
 
