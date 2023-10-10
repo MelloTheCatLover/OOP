@@ -81,11 +81,7 @@ public class TestTreeInterpretation {
         tree = new TreeInterpretation.Tree<>("ROOT");
         tree.addChild("A");
 
-        String expected =
-                """
-                ROOT
-                  A
-                """;
+        String expected = "ROOT\n  A\n";
         assertEquals(expected, tree.printTree());
     }
 
@@ -94,17 +90,10 @@ public class TestTreeInterpretation {
         tree = new TreeInterpretation.Tree<>("ROOT");
         tree.addChild("A");
 
-        String expected =
-                """
-                ROOT
-                  A
-                """;
+        String expected = "ROOT\n  A\n";
         assertEquals(expected, tree.printTree());
 
-        String expectedRemove =
-                """
-                ROOT
-                """;
+        String expectedRemove = "ROOT\n";
         assertEquals(expected, tree.printTree());
     }
 
