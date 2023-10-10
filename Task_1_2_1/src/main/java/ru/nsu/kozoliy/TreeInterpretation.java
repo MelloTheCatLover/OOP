@@ -2,11 +2,11 @@ package ru.nsu.kozoliy;
 
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.LinkedList;
-import java.util.Queue;
+import java.util.List;
 import java.util.Objects;
 import java.util.Comparator;
+import java.util.Queue;
 
 
 /**
@@ -166,7 +166,8 @@ public class TreeInterpretation {
             if (!otherTree.value.equals(this.value)) {
                 return false;
             }
-            if (this.value == otherTree.value && this.children.size() == otherTree.children.size()) {
+            if (this.value == otherTree.value
+                    && this.children.size() == otherTree.children.size()) {
                 otherTree.sortChildren();
                 this.sortChildren();
                 for (int i = 0; i < this.children.size(); i++) {

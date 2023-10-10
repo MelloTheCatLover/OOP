@@ -1,9 +1,16 @@
 package ru.nsu.kozoliy;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Тесты для методов работы с классом представления деревьев.
+ */
 public class TestTreeInterpretation {
 
     private TreeInterpretation.Tree<String> tree;
@@ -39,7 +46,7 @@ public class TestTreeInterpretation {
 
 
     @Test
-    public void testBFS() {
+    public void testBfs() {
         tree = new TreeInterpretation.Tree<>("R1");
         tree.addChild("A");
         tree.addChild("B");
@@ -53,7 +60,7 @@ public class TestTreeInterpretation {
     }
 
     @Test
-    public void testDFS() {
+    public void testDfs() {
         tree = new TreeInterpretation.Tree<>("R1");
         tree.addChild("A");
         tree.addChild("B");
@@ -68,7 +75,7 @@ public class TestTreeInterpretation {
     }
 
     @Test
-    public void testZeroTreeDFS() {
+    public void testZeroTreeDfs() {
         tree = new TreeInterpretation.Tree<>("");
 
         String expected = " ";
@@ -98,6 +105,4 @@ public class TestTreeInterpretation {
     public void  testMain() {
         TreeInterpretation.main(new String[0]);
     }
-
-
 }
