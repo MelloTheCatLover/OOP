@@ -6,12 +6,13 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
 public class TestTreeInterpretation {
+
+    private TreeInterpretation.Tree<String> tree;
 
     @BeforeEach
     public void setUp() {
-        TreeInterpretation.Tree<String> tree = new TreeInterpretation.Tree<>("Root");
+        tree = new TreeInterpretation.Tree<>("Root");
     }
 
     @Test
@@ -31,7 +32,7 @@ public class TestTreeInterpretation {
 
     @Test
     public void testBuildAndPrint() {
-        TreeInterpretation.Tree<String> tree = new TreeInterpretation.Tree<>("R1");
+        tree = new TreeInterpretation.Tree<>("R1");
         tree.addChild("A");
         tree.addChild("B");
         TreeInterpretation.Tree<String> subtree = new TreeInterpretation.Tree<>("R2");
@@ -40,7 +41,6 @@ public class TestTreeInterpretation {
         tree.addChild(subtree);
 
         String expected = "R1\n  A\n  B\n  R2\n    C\n    E\n";
-        assertEquals(tree.printTree(), expected);
+        assertEquals(expected, tree.printTree());
     }
-
 }
