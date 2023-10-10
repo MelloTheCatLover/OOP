@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -199,46 +199,51 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>void</code></td>
+<td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#breadthFirstTraversal()">breadthFirstTraversal</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#breadthFirstTraversal(java.lang.StringBuilder)">breadthFirstTraversal</a></span>&#8203;(java.lang.StringBuilder&nbsp;bfsString)</code></th>
 <td class="colLast">
 <div class="block">Выполняет обход дерева в ширину и выводит значения узлов в порядке обхода.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
-<td class="colFirst"><code>void</code></td>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#depthFirstTraversal()">depthFirstTraversal</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Выполняет обход дерева в глубину и выводит значения узлов в порядке обхода.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#equals(java.lang.Object)">equals</a></span>&#8203;(java.lang.Object&nbsp;obj)</code></th>
 <td class="colLast">
 <div class="block">Переопределение метода `equals` для сравнения двух деревьев.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hashCode()">hashCode</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#printTree()">printTree</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Генерирует строковое представление дерева.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#remove()">remove</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Удаляет узел и всех его потомков из дерева.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sortChildren()">sortChildren</a></span>()</code></th>
 <td class="colLast">
@@ -337,14 +342,23 @@ extends java.lang.Object</pre>
 <div class="block">Удаляет узел и всех его потомков из дерева.</div>
 </li>
 </ul>
+<a id="breadthFirstTraversal(java.lang.StringBuilder)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>breadthFirstTraversal</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;breadthFirstTraversal&#8203;(java.lang.StringBuilder&nbsp;bfsString)</pre>
+<div class="block">Выполняет обход дерева в ширину и выводит значения узлов в порядке обхода.</div>
+</li>
+</ul>
 <a id="breadthFirstTraversal()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>breadthFirstTraversal</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;breadthFirstTraversal()</pre>
-<div class="block">Выполняет обход дерева в ширину и выводит значения узлов в порядке обхода.</div>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;breadthFirstTraversal()</pre>
 </li>
 </ul>
 <a id="depthFirstTraversal()">
@@ -353,7 +367,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>depthFirstTraversal</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;depthFirstTraversal()</pre>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;depthFirstTraversal()</pre>
 <div class="block">Выполняет обход дерева в глубину и выводит значения узлов в порядке обхода.</div>
 </li>
 </ul>
