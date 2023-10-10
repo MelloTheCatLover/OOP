@@ -3,7 +3,6 @@ package ru.nsu.kozoliy;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class TestTreeInterpretation {
@@ -68,4 +67,47 @@ public class TestTreeInterpretation {
         String expected = "R1 A B R2 C E F ";
         assertEquals(expected, tree.depthFirstTraversal());
     }
+
+    @Test
+    public void testZeroTreeDFS() {
+        tree = new TreeInterpretation.Tree<>("");
+
+        String expected = " ";
+        assertEquals(expected, tree.depthFirstTraversal());
+    }
+
+    @Test
+    void testAddChild() {
+        tree = new TreeInterpretation.Tree<>("ROOT");
+        tree.addChild("A");
+
+        String expected =
+                """
+                ROOT
+                  A
+                """;
+        assertEquals(expected, tree.printTree());
+    }
+
+    @Test
+    void testRemoveChild() {
+        tree = new TreeInterpretation.Tree<>("ROOT");
+        tree.addChild("A");
+
+        String expected =
+                """
+                ROOT
+                  A
+                """;
+        assertEquals(expected, tree.printTree());
+
+        String expectedRemove =
+                """
+                ROOT
+                """;
+        assertEquals(expected, tree.printTree());
+    }
+
+
+
 }
