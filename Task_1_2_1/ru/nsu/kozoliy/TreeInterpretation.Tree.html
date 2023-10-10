@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -130,12 +130,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - Тип данных, хранящихся в узлах дерева.</dd>
+</dl>
+<dl>
 <dt>Enclosing class:</dt>
 <dd><a href="TreeInterpretation.html" title="class in ru.nsu.kozoliy">TreeInterpretation</a></dd>
 </dl>
 <hr>
 <pre>public static class <span class="typeNameLabel">TreeInterpretation.Tree&lt;T&gt;</span>
 extends java.lang.Object</pre>
+<div class="block">Обобщенный класс для представления деревьев.</div>
 </li>
 </ul>
 </div>
@@ -157,7 +162,9 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(T)">Tree</a></span>&#8203;(<a href="TreeInterpretation.Tree.html" title="type parameter in TreeInterpretation.Tree">T</a>&nbsp;value)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Конструктор для того, чтобы создавать потомка дерева с уже переданным значением.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -178,59 +185,65 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="TreeInterpretation.Tree.html" title="class in ru.nsu.kozoliy">TreeInterpretation.Tree</a>&lt;<a href="TreeInterpretation.Tree.html" title="type parameter in TreeInterpretation.Tree">T</a>&gt;</code></td>
+<td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addChild(ru.nsu.kozoliy.TreeInterpretation.Tree)">addChild</a></span>&#8203;(<a href="TreeInterpretation.Tree.html" title="class in ru.nsu.kozoliy">TreeInterpretation.Tree</a>&lt;<a href="TreeInterpretation.Tree.html" title="type parameter in TreeInterpretation.Tree">T</a>&gt;&nbsp;child)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Добавляет подддерево к текущему узлу.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="TreeInterpretation.Tree.html" title="class in ru.nsu.kozoliy">TreeInterpretation.Tree</a>&lt;<a href="TreeInterpretation.Tree.html" title="type parameter in TreeInterpretation.Tree">T</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addChild(T)">addChild</a></span>&#8203;(<a href="TreeInterpretation.Tree.html" title="type parameter in TreeInterpretation.Tree">T</a>&nbsp;value)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Добавляет новый узел, который является листом, то есть у него нет потомков.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#breadthFirstTraversal()">breadthFirstTraversal</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Выполняет обход дерева в ширину и выводит значения узлов в порядке обхода.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#depthFirstTraversal()">depthFirstTraversal</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Выполняет обход дерева в глубину и выводит значения узлов в порядке обхода.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#equals(java.lang.Object)">equals</a></span>&#8203;(java.lang.Object&nbsp;obj)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Переопределение метода `equals` для сравнения двух деревьев.</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="TreeInterpretation.Tree.html" title="type parameter in TreeInterpretation.Tree">T</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getValue()">getValue</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i6" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hashCode()">hashCode</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#printTree()">printTree</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Генерирует строковое представление дерева.</div>
+</td>
+</tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#printChildren()">printChildren</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#remove()">remove</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Удаляет узел и всех его потомков из дерева.</div>
+</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#printTree()">printTree</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i9" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#remove()">remove</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i10" class="altColor">
-<td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sortChildren()">sortChildren</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Сортирует потомков текущего узла по значению.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -265,6 +278,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>Tree</h4>
 <pre>public&nbsp;Tree&#8203;(<a href="TreeInterpretation.Tree.html" title="type parameter in TreeInterpretation.Tree">T</a>&nbsp;value)</pre>
+<div class="block">Конструктор для того, чтобы создавать потомка дерева с уже переданным значением.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>value</code> - Значение узла.</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -286,6 +304,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>addChild</h4>
 <pre class="methodSignature">public&nbsp;<a href="TreeInterpretation.Tree.html" title="class in ru.nsu.kozoliy">TreeInterpretation.Tree</a>&lt;<a href="TreeInterpretation.Tree.html" title="type parameter in TreeInterpretation.Tree">T</a>&gt;&nbsp;addChild&#8203;(<a href="TreeInterpretation.Tree.html" title="type parameter in TreeInterpretation.Tree">T</a>&nbsp;value)</pre>
+<div class="block">Добавляет новый узел, который является листом, то есть у него нет потомков.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>value</code> - Значение узла-потомка.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Новый узел-потомок.</dd>
+</dl>
 </li>
 </ul>
 <a id="addChild(ru.nsu.kozoliy.TreeInterpretation.Tree)">
@@ -294,7 +319,12 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>addChild</h4>
-<pre class="methodSignature">public&nbsp;<a href="TreeInterpretation.Tree.html" title="class in ru.nsu.kozoliy">TreeInterpretation.Tree</a>&lt;<a href="TreeInterpretation.Tree.html" title="type parameter in TreeInterpretation.Tree">T</a>&gt;&nbsp;addChild&#8203;(<a href="TreeInterpretation.Tree.html" title="class in ru.nsu.kozoliy">TreeInterpretation.Tree</a>&lt;<a href="TreeInterpretation.Tree.html" title="type parameter in TreeInterpretation.Tree">T</a>&gt;&nbsp;child)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;addChild&#8203;(<a href="TreeInterpretation.Tree.html" title="class in ru.nsu.kozoliy">TreeInterpretation.Tree</a>&lt;<a href="TreeInterpretation.Tree.html" title="type parameter in TreeInterpretation.Tree">T</a>&gt;&nbsp;child)</pre>
+<div class="block">Добавляет подддерево к текущему узлу.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>child</code> - Узел-потомок для добавления.</dd>
+</dl>
 </li>
 </ul>
 <a id="remove()">
@@ -304,6 +334,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>remove</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;remove()</pre>
+<div class="block">Удаляет узел и всех его потомков из дерева.</div>
 </li>
 </ul>
 <a id="breadthFirstTraversal()">
@@ -313,6 +344,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>breadthFirstTraversal</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;breadthFirstTraversal()</pre>
+<div class="block">Выполняет обход дерева в ширину и выводит значения узлов в порядке обхода.</div>
 </li>
 </ul>
 <a id="depthFirstTraversal()">
@@ -322,6 +354,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>depthFirstTraversal</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;depthFirstTraversal()</pre>
+<div class="block">Выполняет обход дерева в глубину и выводит значения узлов в порядке обхода.</div>
 </li>
 </ul>
 <a id="equals(java.lang.Object)">
@@ -331,9 +364,14 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>equals</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;equals&#8203;(java.lang.Object&nbsp;obj)</pre>
+<div class="block">Переопределение метода `equals` для сравнения двух деревьев.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code>equals</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>obj</code> - Объект для сравнения.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>`true`, если деревья равны, иначе `false`.</dd>
 </dl>
 </li>
 </ul>
@@ -357,33 +395,17 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>sortChildren</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;sortChildren()</pre>
+<div class="block">Сортирует потомков текущего узла по значению.</div>
 </li>
 </ul>
 <a id="printTree()">
 <!--   -->
 </a>
-<ul class="blockList">
-<li class="blockList">
-<h4>printTree</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;printTree()</pre>
-</li>
-</ul>
-<a id="printChildren()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>printChildren</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;printChildren()</pre>
-</li>
-</ul>
-<a id="getValue()">
-<!--   -->
-</a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>getValue</h4>
-<pre class="methodSignature">public&nbsp;<a href="TreeInterpretation.Tree.html" title="type parameter in TreeInterpretation.Tree">T</a>&nbsp;getValue()</pre>
+<h4>printTree</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;printTree()</pre>
+<div class="block">Генерирует строковое представление дерева.</div>
 </li>
 </ul>
 </li>
