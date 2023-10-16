@@ -1,12 +1,7 @@
 package ru.nsu.kozoliy;
 
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Comparator;
-import java.util.Queue;
+import java.util.*;
 
 
 /**
@@ -17,6 +12,7 @@ public class TreeInterpretation {
     /**
      * Точка входа в программу.
      */
+    @ExcludeFromJacocoGeneratedReport
     public static void main(String[] args) {
         Tree<String> tree = new Tree<>("R1");
         tree.addChild("A");
@@ -24,8 +20,11 @@ public class TreeInterpretation {
         var c = tree.addChild("B");
         b.addChild("D");
         b.addChild("E");
-        c.addChild("F");
+        var d = c.addChild("F");
+        var t = d.addChild("T");
+        t.addChild("E");
 
+        
         Tree<String> tree2 = new Tree<>("R1");
         tree2.addChild("A");
         var b2 = tree2.addChild("B");
@@ -38,20 +37,19 @@ public class TreeInterpretation {
         var removeMe = c2.addChild("RemoveMe");
         removeMe.remove();
 
-        System.out.println("\nBFS traversal:\n" + tree.breadthFirstTraversal());
 
-        System.out.println("\nDFS traversal:\n" + tree.depthFirstTraversal());
+        System.out.println("BFS traversal:");
+        Iterator<String> bfsIterator = tree.bfsIterator();
+        while (bfsIterator.hasNext()) {
+            System.out.print(bfsIterator.next() + " ");
+        }
 
-        System.out.println("\nBFS2 traversal:\n" + tree2.breadthFirstTraversal());
+        System.out.println("\nDFS traversal:");
+        Iterator<String> dfsIterator = tree.dfsIterator();
+        while (dfsIterator.hasNext()) {
+            System.out.print(dfsIterator.next() + " ");
+        }
 
-        System.out.println("\nDFS2 traversal:\n" + tree2.depthFirstTraversal());
-
-        System.out.println("\n");
-
-        System.out.println(tree.printTree());
-        System.out.println("\n" + tree2.printTree());
-
-        System.out.println(tree.equals(tree2));
     }
 
     /**
@@ -59,10 +57,11 @@ public class TreeInterpretation {
      *
      * @param <T> Тип данных, хранящихся в узлах дерева.
      */
-    public static class Tree<T> {
+    public static class Tree<T> implements Iterable<T> {
         private final T value;
         private final List<Tree<T>> children = new ArrayList<>();
         private Tree<T> parent;
+        private int countM;
 
         /**
          * Конструктор для того, чтобы создавать потомка дерева с уже переданным значением.
@@ -117,39 +116,101 @@ public class TreeInterpretation {
         /**
          * Выполняет обход дерева в ширину и выводит значения узлов в порядке обхода.
          */
-        public String breadthFirstTraversal(StringBuilder bfsString) {
-            Queue<Tree<T>> queue = new LinkedList<>();
-            queue.add(this);
-
-            while (!queue.isEmpty()) {
-                Tree<T> current = queue.poll();
-                bfsString.append(current.value).append(" ");
-                queue.addAll(current.children);
-            }
-
-            return bfsString.toString();
+        @Override
+        public Iterator<T> iterator() {
+            return new TreeIterator();
         }
 
-        public String breadthFirstTraversal() {
-            return breadthFirstTraversal(new StringBuilder());
+        public Iterator<T> bfsIterator() {
+            return new bfs();
+        }
+
+        public Iterator<T> dfsIterator() {
+            return new dfs();
+        }
+
+        private class TreeIterator implements Iterator<T> {
+            private int cursor;
+            private final int expected = countM;
+
+            @Override
+            public boolean hasNext() {
+                return cursor < children.size();
+            }
+
+            @Override
+            public T next() {
+                if (expected != countM) {
+                    throw new ConcurrentModificationException("ERROR: Concurrent modification!");
+                }
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                Tree<T> child = children.get(cursor);
+                cursor++;
+                return child.value;
+            }
+        }
+
+        private class bfs implements Iterator<T> {
+            private final Queue<Tree<T>> queue = new LinkedList<>();
+            private final int expected = countM;
+
+            bfs() {
+                queue.add(Tree.this);
+            }
+
+            @Override
+            public boolean hasNext() {
+                return !queue.isEmpty();
+            }
+
+            @Override
+            public T next() {
+                if (expected != countM) {
+                    throw new ConcurrentModificationException("ERROR: Concurrent modification!");
+                }
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                Tree<T> current = queue.poll();
+                queue.addAll(current.children);
+                return current.value;
+            }
         }
 
         /**
          * Выполняет обход дерева в глубину и выводит значения узлов в порядке обхода.
          */
-        public String depthFirstTraversal() {
-            return depthFirstTraversal(this, new StringBuilder());
-        }
+        private class dfs implements Iterator<T> {
+            private final Stack<Tree<T>> stack = new Stack<>();
+            private final int expected = countM;
 
-        private String depthFirstTraversal(Tree<T> node, StringBuilder dfsString) {
-            dfsString.append(node.value).append(" ");
-
-            for (Tree<T> child : node.children) {
-                depthFirstTraversal(child, dfsString);
+            dfs() {
+                stack.push(Tree.this);
             }
 
-            return dfsString.toString();
+            @Override
+            public boolean hasNext() {
+                return !stack.isEmpty();
+            }
+
+            @Override
+            public T next() {
+                if (expected != countM) {
+                    throw new ConcurrentModificationException("ERROR: Concurrent modification!");
+                }
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                Tree<T> current = stack.pop();
+                for (int i = current.children.size() - 1; i >= 0; i--) {
+                    stack.push(current.children.get(i));
+                }
+                return current.value;
+            }
         }
+
 
         /**
          * Переопределение метода `equals` для сравнения двух деревьев.
@@ -211,5 +272,6 @@ public class TreeInterpretation {
             }
             return treeString.toString();
         }
+
     }
 }
