@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.kozoliy","l":"TreeInterpretation.Tree"},{"p":"ru.nsu.kozoliy","l":"TreeInterpretation"}]
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.kozoliy","l":"ExcludeFromJacocoGeneratedReport"},{"p":"ru.nsu.kozoliy","l":"TreeInterpretation.Tree"},{"p":"ru.nsu.kozoliy","l":"TreeInterpretation"}]
