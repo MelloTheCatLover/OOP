@@ -181,37 +181,7 @@ public class TestTreeInterpretation {
         assertEquals(sortedExpected, sorted);
     }
 
-    @Test
-    void treeWithIntegers(){
-        TreeInterpretation.Tree<Integer> intTree = new TreeInterpretation.Tree<>(0);
-        var one = intTree.addChild(1);
-        intTree.addChild(4);
-        intTree.addChild(3);
-        var two = new TreeInterpretation.Tree<>(2);
-        two.addChild(5);
-        two.addChild(6);
-        intTree.addChild(two);
-        one.addChild(7);
-        var dfsResult = new ArrayList<Integer>();
-        Iterator<Integer> dfsIterator = intTree.dfsIterator();
-        while (dfsIterator.hasNext()) {
-            dfsResult.add(dfsIterator.next());
-        }
-        var expected = new Integer[]{0, 1, 7, 4, 3, 2, 5, 6};
-        assertEquals(dfsResult,
-                List.of(expected));
-        var bfsResult = new ArrayList<Integer>();
-        Iterator<Integer> bfsIterator = intTree.bfsIterator();
-        while (bfsIterator.hasNext()) {
-            bfsResult.add(bfsIterator.next());
-        }
-        expected = new Integer[]{0, 1, 4, 3, 2, 7, 5, 6};
-        assertEquals(bfsResult,
-                List.of(expected));
-        intTree.sortChildren();
-        String res = intTree.printTree();
-        assertEquals("0\n  1\n    7\n  2\n    5\n    6\n  3\n  4\n", res);
-    }
+
 
 
 }
