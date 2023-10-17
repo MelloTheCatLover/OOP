@@ -142,6 +142,7 @@ public class TestTreeInterpretation {
         var f = c.addChild("F");
         var t = f.addChild("T");
         t.addChild("E");
+
         StringBuilder resultAfterFirstDfs = new StringBuilder();
         Iterator<String> dfsIterator = tree.dfsIterator();
         while (dfsIterator.hasNext()) {
@@ -160,9 +161,6 @@ public class TestTreeInterpretation {
         assertEquals(expectedSecondDfs, resultAfterSecondDfs.toString());
     }
 
-
-
-
     @Test
     void testSort() {
         TreeInterpretation.Tree<String> sortMe = new TreeInterpretation.Tree<>("ROOT");
@@ -172,16 +170,16 @@ public class TestTreeInterpretation {
         sortMe.addChild("C");
         sortMe.addChild("C");
         sortMe.addChild("E");
+
         String unsorted = sortMe.printTree();
         String unsortedExpected = "ROOT\n  B\n  A\n  D\n  C\n  C\n  E\n";
         assertEquals(unsortedExpected, unsorted);
+
         sortMe.sortChildren();
+
         String sorted = sortMe.printTree();
         String sortedExpected = "ROOT\n  A\n  B\n  C\n  C\n  D\n  E\n";
         assertEquals(sortedExpected, sorted);
     }
-
-
-
 
 }
