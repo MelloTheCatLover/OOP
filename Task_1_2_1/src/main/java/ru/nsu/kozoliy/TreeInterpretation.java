@@ -82,6 +82,7 @@ public class TreeInterpretation {
             Tree<T> newLeaf = new Tree<>(value);
             newLeaf.parent = this;
             this.children.add(newLeaf);
+            countM++;
             return newLeaf;
         }
 
@@ -99,9 +100,9 @@ public class TreeInterpretation {
          * Удаляет узел и всех его потомков из дерева.
          */
         public void remove() {
-            this.children.clear();
-            if (this.parent != null) {
-                this.parent.children.remove(this);
+            if (parent != null) {
+                parent.children.remove(this);
+                parent.countM++;
             }
         }
 

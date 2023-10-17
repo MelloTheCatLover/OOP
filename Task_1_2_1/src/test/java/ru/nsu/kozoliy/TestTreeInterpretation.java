@@ -81,6 +81,82 @@ public class TestTreeInterpretation {
         assertEquals(expected, result.toString());
     }
 
+    @Test
+    void testConcurrentModificationExceptionInBFS() {
+        Iterator<String> bfsIterator = tree.bfsIterator();
+        try {
+            while (bfsIterator.hasNext()) {
+                String value = bfsIterator.next();
+                // Simulate a concurrent modification
+                if (value.equals("A")) {
+                    tree.addChild("NewNode");
+                }
+            }
+            fail("Expected ConcurrentModificationException");
+        } catch (ConcurrentModificationException e) {
+            // This is expected
+        }
+    }
+
+    @Test
+    void testConcurrentModificationDfs() {
+        Iterator<String> dfsIterator = tree.dfsIterator();
+        tree.addChild("New");
+        assertThrows(ConcurrentModificationException.class, dfsIterator::next);
+    }
+
+    @Test
+    void testConcurrentModificationBfs() {
+        Iterator<String> bfsIterator = tree.bfsIterator();
+        tree.addChild("New");
+        assertThrows(ConcurrentModificationException.class, bfsIterator::next);
+    }
+
+    @Test
+    void testRemoveConcurrentExceptionDfs() {
+        var removeMe = tree.addChild("RemoveMe");
+        Iterator<String> dfsIterator = tree.dfsIterator();
+        removeMe.remove();
+        assertThrows(ConcurrentModificationException.class, dfsIterator::next);
+    }
+
+    @Test
+    void testRemoveConcurrentExceptionBfs() {
+        var removeMe = tree.addChild("RemoveMe");
+        Iterator<String> bfsIterator = tree.bfsIterator();
+        removeMe.remove();
+        assertThrows(ConcurrentModificationException.class, bfsIterator::next);
+    }
+
+    @Test
+    void testDfsAndBfs() {
+        tree = new TreeInterpretation.Tree<>("R1");
+        tree.addChild("A");
+        var b = tree.addChild("B");
+        var c = tree.addChild("C");
+        b.addChild("D");
+        b.addChild("E");
+        var f = c.addChild("F");
+        var t = f.addChild("T");
+        t.addChild("E");
+        StringBuilder resultAfterFirstDfs = new StringBuilder();
+        Iterator<String> dfsIterator = tree.dfsIterator();
+        while (dfsIterator.hasNext()) {
+            resultAfterFirstDfs.append(dfsIterator.next()).append(" ");
+        }
+        String expectedFirstDfs = "R1 A B D E C F T E ";
+        assertEquals(expectedFirstDfs, resultAfterFirstDfs.toString());
+
+        b.remove();
+        StringBuilder resultAfterSecondDfs = new StringBuilder();
+        dfsIterator = tree.dfsIterator();
+        while (dfsIterator.hasNext()) {
+            resultAfterSecondDfs.append(dfsIterator.next()).append(" ");
+        }
+        String expectedSecondDfs = "R1 A C F T E ";
+        assertEquals(expectedSecondDfs, resultAfterSecondDfs.toString());
+    }
+
 
     @Test
     void testAddChild() {
@@ -100,5 +176,7 @@ public class TestTreeInterpretation {
         a.remove();
         assertFalse(tree.getChildren().contains(a));
     }
+
+
 
 }
