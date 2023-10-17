@@ -1,16 +1,14 @@
 package ru.nsu.kozoliy;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * Тесты для методов работы с классом представления деревьев.
@@ -85,7 +83,7 @@ public class TestTreeInterpretation {
     }
 
     @Test
-    void testConcurrentModificationExceptionInBFS() {
+    void testConcurrentModificationExceptionInBfs() {
         Iterator<String> bfsIterator = tree.bfsIterator();
         try {
             while (bfsIterator.hasNext()) {
