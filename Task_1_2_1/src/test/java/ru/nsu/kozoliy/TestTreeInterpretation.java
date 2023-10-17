@@ -49,6 +49,23 @@ public class TestTreeInterpretation {
     }
 
     @Test
+    public void testEqualityWithSubTree() {
+        TreeInterpretation.Tree<String> tree2 = new TreeInterpretation.Tree<>("R1");
+        tree2.addChild("A");
+        var b =  new TreeInterpretation.Tree<>("B");
+        var c = tree2.addChild("C");
+        b.addChild("D");
+        b.addChild("E");
+        var f = c.addChild("F");
+        var t = f.addChild("T");
+        t.addChild("E");
+        tree2.addChild(b);
+
+        assertEquals(tree, tree2);
+    }
+
+
+    @Test
     public void testBuildAndPrint() {
         tree = new TreeInterpretation.Tree<>("R1");
         tree.addChild("A");
