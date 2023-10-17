@@ -65,6 +65,7 @@ public class TestTreeInterpretation {
     }
 
 
+
     @Test
     public void testBuildAndPrint() {
         tree = new TreeInterpretation.Tree<>("R1");
