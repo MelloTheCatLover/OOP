@@ -123,11 +123,11 @@ public class TreeInterpretation {
         }
 
         public Iterator<T> bfsIterator() {
-            return new bfs();
+            return new Bfs();
         }
 
         public Iterator<T> dfsIterator() {
-            return new dfs();
+            return new Dfs();
         }
 
         private class TreeIterator implements Iterator<T> {
@@ -153,11 +153,11 @@ public class TreeInterpretation {
             }
         }
 
-        private class bfs implements Iterator<T> {
+        private class Bfs implements Iterator<T> {
             private final Queue<Tree<T>> queue = new LinkedList<>();
             private final int expected = countM;
 
-            bfs() {
+            Bfs() {
                 queue.add(Tree.this);
             }
 
@@ -184,11 +184,11 @@ public class TreeInterpretation {
         /**
          * Выполняет обход дерева в глубину и выводит значения узлов в порядке обхода.
          */
-        private class dfs implements Iterator<T> {
+        private class Dfs implements Iterator<T> {
             private final Stack<Tree<T>> stack = new Stack<>();
             private final int expected = countM;
 
-            dfs() {
+            Dfs() {
                 stack.push(Tree.this);
             }
 
