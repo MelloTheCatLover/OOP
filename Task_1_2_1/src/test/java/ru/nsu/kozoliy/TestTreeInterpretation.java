@@ -4,8 +4,11 @@ package ru.nsu.kozoliy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,12 +23,12 @@ public class TestTreeInterpretation {
     void setup() {
         tree = new TreeInterpretation.Tree<>("R1");
         tree.addChild("A");
-        var b = tree.addChild("C");
-        var c = tree.addChild("B");
+        var b = tree.addChild("B");
+        var c = tree.addChild("C");
         b.addChild("D");
         b.addChild("E");
-        var d = c.addChild("F");
-        var t = d.addChild("T");
+        var f = c.addChild("F");
+        var t = f.addChild("T");
         t.addChild("E");
     }
 
@@ -61,7 +64,7 @@ public class TestTreeInterpretation {
 
     @Test
     void testBfs() {
-        String expected = "R1 A C B D E F T E ";
+        String expected = "R1 A B C D E F T E ";
         StringBuilder result = new StringBuilder();
         Iterator<String> bfsIterator = tree.bfsIterator();
         while (bfsIterator.hasNext()) {
@@ -72,7 +75,7 @@ public class TestTreeInterpretation {
 
     @Test
     void testDfs() {
-        String expected = "R1 A C D E B F T E ";
+        String expected = "R1 A B D E C F T E ";
         StringBuilder result = new StringBuilder();
         Iterator<String> dfsIterator = tree.dfsIterator();
         while (dfsIterator.hasNext()) {
@@ -158,25 +161,57 @@ public class TestTreeInterpretation {
     }
 
 
-    @Test
-    void testAddChild() {
-        tree = new TreeInterpretation.Tree<>("ROOT");
-        var a = tree.addChild("A");
 
-        assertTrue(tree.getChildren().contains(a));
+
+    @Test
+    void testSort() {
+        TreeInterpretation.Tree<String> sortMe = new TreeInterpretation.Tree<>("ROOT");
+        sortMe.addChild("B");
+        sortMe.addChild("A");
+        sortMe.addChild("D");
+        sortMe.addChild("C");
+        sortMe.addChild("C");
+        sortMe.addChild("E");
+        String unsorted = sortMe.printTree();
+        String unsortedExpected = "ROOT\n  B\n  A\n  D\n  C\n  C\n  E\n";
+        assertEquals(unsortedExpected, unsorted);
+        sortMe.sortChildren();
+        String sorted = sortMe.printTree();
+        String sortedExpected = "ROOT\n  A\n  B\n  C\n  C\n  D\n  E\n";
+        assertEquals(sortedExpected, sorted);
     }
 
     @Test
-    void testRemoveChild() {
-        tree = new TreeInterpretation.Tree<>("ROOT");
-        var a = tree.addChild("A");
-
-        assertTrue(tree.getChildren().contains(a));
-
-        a.remove();
-        assertFalse(tree.getChildren().contains(a));
+    void treeWithIntegers(){
+        TreeInterpretation.Tree<Integer> intTree = new TreeInterpretation.Tree<>(0);
+        var one = intTree.addChild(1);
+        intTree.addChild(4);
+        intTree.addChild(3);
+        var two = new TreeInterpretation.Tree<>(2);
+        two.addChild(5);
+        two.addChild(6);
+        intTree.addChild(two);
+        one.addChild(7);
+        var dfsResult = new ArrayList<Integer>();
+        Iterator<Integer> dfsIterator = intTree.dfsIterator();
+        while (dfsIterator.hasNext()) {
+            dfsResult.add(dfsIterator.next());
+        }
+        var expected = new Integer[]{0, 1, 7, 4, 3, 2, 5, 6};
+        assertEquals(dfsResult,
+                List.of(expected));
+        var bfsResult = new ArrayList<Integer>();
+        Iterator<Integer> bfsIterator = intTree.bfsIterator();
+        while (bfsIterator.hasNext()) {
+            bfsResult.add(bfsIterator.next());
+        }
+        expected = new Integer[]{0, 1, 4, 3, 2, 7, 5, 6};
+        assertEquals(bfsResult,
+                List.of(expected));
+        intTree.sortChildren();
+        String res = intTree.printTree();
+        assertEquals("0\n  1\n    7\n  2\n    5\n    6\n  3\n  4\n", res);
     }
-
 
 
 }

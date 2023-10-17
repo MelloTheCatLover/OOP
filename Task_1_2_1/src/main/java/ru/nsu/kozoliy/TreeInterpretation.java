@@ -108,13 +108,6 @@ public class TreeInterpretation {
 
 
         /**
-         * Геттер потомков элемента дерева.
-         */
-        public List<Tree<T>> getChildren() {
-            return children;
-        }
-
-        /**
          * Выполняет обход дерева в ширину и выводит значения узлов в порядке обхода.
          */
         @Override
