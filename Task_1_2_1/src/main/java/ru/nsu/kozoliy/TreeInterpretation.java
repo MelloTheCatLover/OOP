@@ -175,6 +175,7 @@ public class TreeInterpretation {
                     throw new NoSuchElementException();
                 }
                 Tree<T> current = queue.poll();
+                assert current != null;
                 queue.addAll(current.children);
                 return current.value;
             }
