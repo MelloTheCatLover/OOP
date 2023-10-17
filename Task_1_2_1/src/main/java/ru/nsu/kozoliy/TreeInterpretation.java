@@ -273,6 +273,9 @@ public class TreeInterpretation {
         }
 
         private String printTreeRecursive(Tree<T> elem, int depth, StringBuilder treeString) {
+            if (elem.value == "") {
+                return "";
+            }
             treeString.append("  ".repeat(Math.max(0, depth))).append(elem.value).append("\n");
 
             for (Tree<T> child : elem.children) {

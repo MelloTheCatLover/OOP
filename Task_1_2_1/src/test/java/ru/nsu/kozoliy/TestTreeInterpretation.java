@@ -197,4 +197,10 @@ public class TestTreeInterpretation {
         a.remove();
         assertFalse(tree.getChildren().contains(a));
     }
+
+    @Test
+    void tesZeroPrinting() {
+        TreeInterpretation.Tree<String> zero = new TreeInterpretation.Tree<>("");
+        assertEquals("", zero.printTree());
+    }
 }
