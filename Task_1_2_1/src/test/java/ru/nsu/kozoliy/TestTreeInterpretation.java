@@ -1,8 +1,10 @@
 package ru.nsu.kozoliy;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.ConcurrentModificationException;
@@ -180,4 +182,19 @@ public class TestTreeInterpretation {
         assertEquals(sortedExpected, sorted);
     }
 
+    @Test
+    void testAddChild() {
+        tree = new TreeInterpretation.Tree<>("ROOT");
+        var a = tree.addChild("A");
+
+        assertTrue(tree.getChildren().contains(a));
+    }
+    @Test
+    void testRemoveChild() {
+        tree = new TreeInterpretation.Tree<>("ROOT");
+        var a = tree.addChild("A");
+        assertTrue(tree.getChildren().contains(a));
+        a.remove();
+        assertFalse(tree.getChildren().contains(a));
+    }
 }
