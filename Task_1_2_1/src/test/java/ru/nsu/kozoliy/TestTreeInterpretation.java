@@ -64,6 +64,12 @@ public class TestTreeInterpretation {
         assertEquals(tree, tree2);
     }
 
+    @Test
+    public void zeroEquality() {
+        TreeInterpretation.Tree<String> tree1 = new TreeInterpretation.Tree<>(null);
+
+    }
+
 
 
     @Test
@@ -221,4 +227,12 @@ public class TestTreeInterpretation {
         TreeInterpretation.Tree<String> zero = new TreeInterpretation.Tree<>("");
         assertEquals("", zero.printTree());
     }
+
+    @Test
+    void testHash() {
+        TreeInterpretation.Tree<String> first = new TreeInterpretation.Tree<>("ROOT");
+        TreeInterpretation.Tree<String> second = new TreeInterpretation.Tree<>("ROOT1");
+        assertNotEquals(first.hashCode(), second.hashCode());
+    }
+
 }
