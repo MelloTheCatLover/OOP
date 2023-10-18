@@ -73,7 +73,9 @@ public class TreeInterpretation {
          * Выполняет обход дерева в ширину и выводит значения узлов в порядке обхода.
          */
         @Override
-        public Iterator<T> iterator() { return new Bfs(); }
+        public Iterator<T> iterator() {
+            return new Bfs();
+        }
 
         public Iterator<T> bfsIterator() {
             return new Bfs();
@@ -152,6 +154,7 @@ public class TreeInterpretation {
          * Деревья считаются равными, в том случае, если значения во всех его элементах равны.
          * Даже если элементы добавлены в разной последовательности.
          * Сравниваются именно значения
+         *
          * @param obj Объект для сравнения.
          * @return `true`, если деревья равны, иначе `false`.
          */
