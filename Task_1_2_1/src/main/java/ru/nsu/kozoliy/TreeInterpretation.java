@@ -15,50 +15,6 @@ import java.util.Stack;
  * Класс для представления графов деревьев.
  */
 public class TreeInterpretation {
-
-    /**
-     * Точка входа в программу.
-     */
-    @ExcludeFromJacocoGeneratedReport
-    public static void main(String[] args) {
-        Tree<String> tree = new Tree<>("R1");
-        tree.addChild("A");
-        var b = tree.addChild("C");
-        var c = tree.addChild("B");
-        b.addChild("D");
-        b.addChild("E");
-        var d = c.addChild("F");
-        var t = d.addChild("T");
-        t.addChild("E");
-
-        
-        Tree<String> tree2 = new Tree<>("R1");
-        tree2.addChild("A");
-        var b2 = tree2.addChild("B");
-        var c2 = new Tree<>("C");
-        c2.addChild("E");
-        c2.addChild("D");
-        b2.addChild("F");
-        tree2.addChild(c2);
-
-        var removeMe = c2.addChild("RemoveMe");
-        removeMe.remove();
-
-
-        System.out.println("BFS traversal:");
-        Iterator<String> bfsIterator = tree.bfsIterator();
-        while (bfsIterator.hasNext()) {
-            System.out.print(bfsIterator.next() + " ");
-        }
-
-        System.out.println("\nDFS traversal:");
-        Iterator<String> dfsIterator = tree.dfsIterator();
-        while (dfsIterator.hasNext()) {
-            System.out.print(dfsIterator.next() + " ");
-        }
-
-    }
-
     /**
      * Обобщенный класс для представления деревьев.
      *
@@ -68,7 +24,7 @@ public class TreeInterpretation {
         private final T value;
         private final List<Tree<T>> children = new ArrayList<>();
         private Tree<T> parent;
-        private int countM;
+        private int countModifications = 0;
 
         /**
          * Конструктор для того, чтобы создавать потомка дерева с уже переданным значением.
@@ -89,7 +45,7 @@ public class TreeInterpretation {
             Tree<T> newLeaf = new Tree<>(value);
             newLeaf.parent = this;
             this.children.add(newLeaf);
-            countM++;
+            countModifications++;
             return newLeaf;
         }
 
@@ -109,24 +65,15 @@ public class TreeInterpretation {
         public void remove() {
             if (parent != null) {
                 parent.children.remove(this);
-                parent.countM++;
+                parent.countModifications++;
             }
-        }
-
-        /**
-         * Геттер потомков элемента дерева.
-         */
-        public List<Tree<T>> getChildren() {
-            return children;
         }
 
         /**
          * Выполняет обход дерева в ширину и выводит значения узлов в порядке обхода.
          */
         @Override
-        public Iterator<T> iterator() {
-            return new TreeIterator();
-        }
+        public Iterator<T> iterator() { return new Bfs(); }
 
         public Iterator<T> bfsIterator() {
             return new Bfs();
@@ -136,32 +83,12 @@ public class TreeInterpretation {
             return new Dfs();
         }
 
-        private class TreeIterator implements Iterator<T> {
-            private int cursor;
-            private final int expected = countM;
-
-            @Override
-            public boolean hasNext() {
-                return cursor < children.size();
-            }
-
-            @Override
-            public T next() {
-                if (expected != countM) {
-                    throw new ConcurrentModificationException("ERROR: Concurrent modification!");
-                }
-                if (!hasNext()) {
-                    throw new NoSuchElementException();
-                }
-                Tree<T> child = children.get(cursor);
-                cursor++;
-                return child.value;
-            }
-        }
-
+        /**
+         * Выполняет обход дерева в ширину и выводит значения узлов в порядке обхода.
+         */
         private class Bfs implements Iterator<T> {
             private final Queue<Tree<T>> queue = new LinkedList<>();
-            private final int expected = countM;
+            private final int expected = countModifications;
 
             Bfs() {
                 queue.add(Tree.this);
@@ -174,7 +101,7 @@ public class TreeInterpretation {
 
             @Override
             public T next() {
-                if (expected != countM) {
+                if (expected != countModifications) {
                     throw new ConcurrentModificationException("ERROR: Concurrent modification!");
                 }
                 if (!hasNext()) {
@@ -192,7 +119,7 @@ public class TreeInterpretation {
          */
         private class Dfs implements Iterator<T> {
             private final Stack<Tree<T>> stack = new Stack<>();
-            private final int expected = countM;
+            private final int expected = countModifications;
 
             Dfs() {
                 stack.push(Tree.this);
@@ -205,7 +132,7 @@ public class TreeInterpretation {
 
             @Override
             public T next() {
-                if (expected != countM) {
+                if (expected != countModifications) {
                     throw new ConcurrentModificationException("ERROR: Concurrent modification!");
                 }
                 if (!hasNext()) {
@@ -222,7 +149,9 @@ public class TreeInterpretation {
 
         /**
          * Переопределение метода `equals` для сравнения двух деревьев.
-         *
+         * Деревья считаются равными, в том случае, если значения во всех его элементах равны.
+         * Даже если элементы добавлены в разной последовательности.
+         * Сравниваются именно значения
          * @param obj Объект для сравнения.
          * @return `true`, если деревья равны, иначе `false`.
          */
@@ -285,4 +214,49 @@ public class TreeInterpretation {
         }
 
     }
+
+
+    /**
+     * Точка входа в программу.
+     */
+    @ExcludeFromJacocoGeneratedReport
+    public static void main(String[] args) {
+        Tree<String> tree = new Tree<>("R1");
+        tree.addChild("A");
+        var b = tree.addChild("C");
+        var c = tree.addChild("B");
+        b.addChild("D");
+        b.addChild("E");
+        var d = c.addChild("F");
+        var t = d.addChild("T");
+        t.addChild("E");
+
+
+        Tree<String> tree2 = new Tree<>("R1");
+        tree2.addChild("A");
+        var b2 = tree2.addChild("B");
+        var c2 = new Tree<>("C");
+        c2.addChild("E");
+        c2.addChild("D");
+        b2.addChild("F");
+        tree2.addChild(c2);
+
+        var removeMe = c2.addChild("RemoveMe");
+        removeMe.remove();
+
+
+        System.out.println("BFS traversal:");
+        Iterator<String> bfsIterator = tree.bfsIterator();
+        while (bfsIterator.hasNext()) {
+            System.out.print(bfsIterator.next() + " ");
+        }
+
+        System.out.println("\nDFS traversal:");
+        Iterator<String> dfsIterator = tree.dfsIterator();
+        while (dfsIterator.hasNext()) {
+            System.out.print(dfsIterator.next() + " ");
+        }
+
+    }
+
 }

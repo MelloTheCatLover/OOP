@@ -1,10 +1,8 @@
 package ru.nsu.kozoliy;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.ConcurrentModificationException;
@@ -32,7 +30,6 @@ public class TestTreeInterpretation {
         t.addChild("E");
     }
 
-
     @Test
     public void testEquality() {
         TreeInterpretation.Tree<String> tree1 = new TreeInterpretation.Tree<>("Root");
@@ -52,7 +49,7 @@ public class TestTreeInterpretation {
     public void testEqualityWithSubTree() {
         TreeInterpretation.Tree<String> tree2 = new TreeInterpretation.Tree<>("R1");
         tree2.addChild("A");
-        var b =  new TreeInterpretation.Tree<>("B");
+        var b = new TreeInterpretation.Tree<>("B");
         var c = tree2.addChild("C");
         b.addChild("D");
         b.addChild("E");
@@ -63,14 +60,6 @@ public class TestTreeInterpretation {
 
         assertEquals(tree, tree2);
     }
-
-    @Test
-    public void zeroEquality() {
-        TreeInterpretation.Tree<String> tree1 = new TreeInterpretation.Tree<>(null);
-
-    }
-
-
 
     @Test
     public void testBuildAndPrint() {
@@ -204,22 +193,6 @@ public class TestTreeInterpretation {
         String sorted = sortMe.printTree();
         String sortedExpected = "ROOT\n  A\n  B\n  C\n  C\n  D\n  E\n";
         assertEquals(sortedExpected, sorted);
-    }
-
-    @Test
-    void testAddChild() {
-        tree = new TreeInterpretation.Tree<>("ROOT");
-        var a = tree.addChild("A");
-
-        assertTrue(tree.getChildren().contains(a));
-    }
-    @Test
-    void testRemoveChild() {
-        tree = new TreeInterpretation.Tree<>("ROOT");
-        var a = tree.addChild("A");
-        assertTrue(tree.getChildren().contains(a));
-        a.remove();
-        assertFalse(tree.getChildren().contains(a));
     }
 
     @Test
