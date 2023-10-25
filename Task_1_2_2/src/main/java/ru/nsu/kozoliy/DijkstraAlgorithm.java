@@ -2,13 +2,29 @@ package ru.nsu.kozoliy;
 
 import java.util.*;
 
+/**
+ * Реализация алгоритма Дейкстры для поиска кратчайших путей в графе.
+ *
+ * @param <T> Тип вершин в графе.
+ */
 public class DijkstraAlgorithm<T> {
     private final GraphLaws<T> representation;
 
+    /**
+     * Конструктор класса DijkstraAlgorithm.
+     *
+     * @param representation Представление графа, для которого будет выполняться поиск кратчайших путей.
+     */
     public DijkstraAlgorithm(GraphLaws<T> representation) {
         this.representation = representation;
     }
 
+    /**
+     * Находит кратчайшие пути от указанной стартовой вершины до остальных вершин в графе.
+     *
+     * @param startVertex Начальная вершина, от которой начинается поиск кратчайших путей.
+     * @return Строка, представляющая кратчайшие пути от начальной вершины до остальных вершин.
+     */
     public String findShortestPaths(T startVertex) {
         List<T> vertices = representation.getVertexes();
         int vertexCount = vertices.size();
@@ -67,32 +83,4 @@ public class DijkstraAlgorithm<T> {
 
         return result.toString();
     }
-
-
-
-    public static void main(String[] args) {
-        AdjacencyListInterpretation<String> graphRepresentation = new AdjacencyListInterpretation<>();
-        DijkstraAlgorithm<String> graph = new DijkstraAlgorithm<>(graphRepresentation);
-
-        // Добавляем вершины
-        graphRepresentation.addVertex("A");
-        graphRepresentation.addVertex("B");
-        graphRepresentation.addVertex("C");
-        graphRepresentation.addVertex("D");
-        graphRepresentation.addVertex("E");
-        graphRepresentation.addVertex("G");
-
-        // Добавляем рёбра
-        graphRepresentation.addEdge(new Edge<>("A", "B", 2));
-        graphRepresentation.addEdge(new Edge<>("A", "D", 5));
-        graphRepresentation.addEdge(new Edge<>("B", "C", 1));
-        graphRepresentation.addEdge(new Edge<>("B", "E", 3));
-        graphRepresentation.addEdge(new Edge<>("D", "E", 4));
-
-        String startVertex = "A";
-        String shortestPaths = graph.findShortestPaths(startVertex);
-
-        System.out.println(startVertex + ": " + shortestPaths);
-    }
 }
-

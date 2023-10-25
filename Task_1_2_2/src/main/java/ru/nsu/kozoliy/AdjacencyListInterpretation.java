@@ -2,12 +2,22 @@ package ru.nsu.kozoliy;
 
 import java.util.*;
 
+/**
+ * Класс для представления графа в виде списка смежности.
+ *
+ * @param <T> Тип вершин графа.
+ */
 public class AdjacencyListInterpretation<T> implements GraphLaws<T> {
     private final Map<T, LinkedList<Edge<T>>> adjacencyList;
 
+    /**
+     * Конструктор класса AdjacencyListInterpretation.
+     * Инициализирует пустой список смежности.
+     */
     public AdjacencyListInterpretation() {
         adjacencyList = new HashMap<>();
     }
+
 
     @Override
     public void addVertex(T vertexToAdd) {
@@ -15,6 +25,7 @@ public class AdjacencyListInterpretation<T> implements GraphLaws<T> {
             adjacencyList.put(vertexToAdd, new LinkedList<>());
         }
     }
+
 
     @Override
     public void removeVertex(T vertexToAdd) {
@@ -24,17 +35,20 @@ public class AdjacencyListInterpretation<T> implements GraphLaws<T> {
         }
     }
 
+
     @Override
     public void addEdge(Edge<T> edgeToAdd) {
         adjacencyList.computeIfAbsent(edgeToAdd.source, k -> new LinkedList<>())
                 .add(new Edge<>(edgeToAdd.source, edgeToAdd.destination, edgeToAdd.weight));
     }
 
+
     @Override
     public void removeEdge(Edge<T> edgeToRemove) {
         adjacencyList.getOrDefault(edgeToRemove.source, new LinkedList<>())
                 .removeIf(edge -> edge.destination.equals(edgeToRemove.destination));
     }
+
 
     @Override
     public void changeVertex(T oldVertex, T newVertex) {
@@ -50,6 +64,7 @@ public class AdjacencyListInterpretation<T> implements GraphLaws<T> {
         }
     }
 
+
     @Override
     public void changeEdge(Edge<T> oldEdge, Edge<T> newEdge) {
         LinkedList<Edge<T>> edges = adjacencyList.get(oldEdge.source);
@@ -60,6 +75,7 @@ public class AdjacencyListInterpretation<T> implements GraphLaws<T> {
             }
         }
     }
+
 
     @Override
     public ArrayList<T> getVertexes() {
@@ -77,6 +93,9 @@ public class AdjacencyListInterpretation<T> implements GraphLaws<T> {
         return neighbors;
     }
 
+    /**
+     * Выводит список смежности графа в консоль.
+     */
     public void printAdjacencyList() {
         for (T vertex : adjacencyList.keySet()) {
             System.out.print(vertex + ": ");
@@ -87,27 +106,4 @@ public class AdjacencyListInterpretation<T> implements GraphLaws<T> {
             System.out.println();
         }
     }
-
-
-    public static void main(String[] args) {
-        AdjacencyListInterpretation<String> testGraph = new AdjacencyListInterpretation<>();
-
-        // Добавление вершин
-        testGraph.addVertex("A");
-        testGraph.addVertex("B");
-        testGraph.addVertex("C");
-        testGraph.addVertex("D");
-
-        // Добавление рёбер
-        testGraph.addEdge(new Edge<>("A", "B", 2));
-        testGraph.addEdge(new Edge<>("A", "C", 3));
-        testGraph.addEdge(new Edge<>("B", "C", 1));
-        testGraph.addEdge(new Edge<>("C", "D", 4));
-
-        // Вывод списка смежности
-        testGraph.printAdjacencyList();
-
-        System.out.println(testGraph.getVertexes());
-    }
-
 }

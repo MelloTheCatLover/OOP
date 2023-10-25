@@ -1,21 +1,30 @@
 package ru.nsu.kozoliy;
 
 import java.util.ArrayList;
-import java.util.List;
 
+/**
+ * Реализация графа с использованием матрицы смежности.
+ *
+ * @param <T> Тип вершин в графе.
+ */
 public class AdjacencyMatrixInterpretation<T> implements GraphLaws<T> {
-
     private final ArrayList<ArrayList<Integer>> adjacencyMatrix;
     private final ArrayList<T> vertexes;
     private final int serviceVar = -100;
 
+    /**
+     * Конструктор для создания графа на основе списка вершин и рёбер.
+     *
+     * @param vertexes Список вершин графа.
+     * @param edges    Список рёбер графа.
+     */
     public AdjacencyMatrixInterpretation(ArrayList<T> vertexes, ArrayList<Edge<T>> edges) {
         this.adjacencyMatrix = new ArrayList<>();
         this.vertexes = vertexes;
 
         for (int i = 0; i < vertexes.size(); i++) {
             ArrayList<Integer> tmp = new ArrayList<>();
-            for(int j = 0; j < vertexes.size(); j++){
+            for (int j = 0; j < vertexes.size(); j++) {
                 tmp.add(serviceVar);
             }
             this.adjacencyMatrix.add(tmp);
@@ -26,8 +35,6 @@ public class AdjacencyMatrixInterpretation<T> implements GraphLaws<T> {
             int col = this.vertexes.indexOf(edge.destination);
             this.adjacencyMatrix.get(row).set(col, edge.weight);
         }
-
-
     }
 
     @Override
@@ -114,52 +121,4 @@ public class AdjacencyMatrixInterpretation<T> implements GraphLaws<T> {
 
         return incidentEdges;
     }
-
-    public void printAdjacencyMatrix() {
-        System.out.print("    "); // Пустая ячейка для вершин
-
-        // Выводим названия вершин в первой строке
-        for (T vertex : vertexes) {
-            System.out.print(vertex + "  ");
-        }
-        System.out.println();
-
-        for (int i = 0; i < vertexes.size(); i++) {
-            System.out.print(vertexes.get(i) + "  "); // Выводим название вершины
-
-            for (int j = 0; j < vertexes.size(); j++) {
-                int weight = adjacencyMatrix.get(i).get(j);
-                if (weight == serviceVar) {
-                    System.out.print("X   "); // Отсутствие ребра
-                } else {
-                    System.out.printf("%d   ", weight); // Вес ребра
-                }
-            }
-            System.out.println();
-        }
-    }
-
-    public static void main(String[] args) {
-        // Создаем список вершин
-        ArrayList<String> vertexes = new ArrayList<>();
-        vertexes.add("A");
-        vertexes.add("B");
-        vertexes.add("C");
-        vertexes.add("D");
-        vertexes.add("К");
-
-        // Создаем список рёбер
-        ArrayList<Edge<String>> edges = new ArrayList<>();
-        edges.add(new Edge<>("A", "B", 2));
-        edges.add(new Edge<>("A", "C", 1));
-        edges.add(new Edge<>("B", "C", 3));
-        edges.add(new Edge<>("C", "D", 4));
-
-        // Создаем объект матрицы смежности
-        AdjacencyMatrixInterpretation<String> adjacencyMatrix = new AdjacencyMatrixInterpretation<>(vertexes, edges);
-
-        // Выводим матрицу смежности
-        adjacencyMatrix.printAdjacencyMatrix();
-    }
-
 }

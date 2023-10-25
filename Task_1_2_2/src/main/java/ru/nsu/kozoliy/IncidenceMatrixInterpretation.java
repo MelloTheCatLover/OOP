@@ -2,19 +2,30 @@ package ru.nsu.kozoliy;
 
 import java.util.ArrayList;
 
-public class IncidenceMatrixInterpretation<T> implements GraphLaws<T>{
+/**
+ * Класс для представления графа в виде матрицы инцидентности.
+ *
+ * @param <T> Тип вершин графа.
+ */
+public class IncidenceMatrixInterpretation<T> implements GraphLaws<T> {
 
     private ArrayList<ArrayList<EdgeStatus<T>>> incidenceMatrix;
     private ArrayList<T> vertexes;
-
     private ArrayList<Edge<T>> edges;
     private final int serviceVar = 8;
 
+    /**
+     * Конструктор класса IncidenceMatrixInterpretation.
+     * Инициализирует матрицу инцидентности на основе списка вершин и рёбер графа.
+     *
+     * @param vertexes Список вершин графа.
+     * @param edges    Список рёбер графа.
+     */
     public IncidenceMatrixInterpretation(ArrayList<T> vertexes, ArrayList<Edge<T>> edges) {
-
         this.vertexes = vertexes;
         this.edges = edges;
         this.incidenceMatrix = new ArrayList<>();
+
         for (T vertex : vertexes) {
             ArrayList<EdgeStatus<T>> cur = new ArrayList<>();
             for (Edge<T> edge : edges) {
@@ -32,9 +43,11 @@ public class IncidenceMatrixInterpretation<T> implements GraphLaws<T>{
         }
     }
 
-
-
-
+    /**
+     * Добавляет новую вершину в граф.
+     *
+     * @param vertexToAdd Вершина для добавления.
+     */
     @Override
     public void addVertex(T vertexToAdd) {
         if (!this.vertexes.contains(vertexToAdd)) {
@@ -47,6 +60,11 @@ public class IncidenceMatrixInterpretation<T> implements GraphLaws<T>{
         }
     }
 
+    /**
+     * Добавляет новое ребро в граф.
+     *
+     * @param edgeToAdd Ребро для добавления.
+     */
     @Override
     public void addEdge(Edge<T> edgeToAdd) {
         if (this.vertexes.contains(edgeToAdd.source) && this.vertexes.contains(edgeToAdd.destination)
@@ -73,6 +91,11 @@ public class IncidenceMatrixInterpretation<T> implements GraphLaws<T>{
         }
     }
 
+    /**
+     * Удаляет вершину из графа.
+     *
+     * @param vertexToRemove Вершина для удаления.
+     */
     @Override
     public void removeVertex(T vertexToRemove) {
         if (this.vertexes.contains(vertexToRemove)) {
@@ -102,6 +125,11 @@ public class IncidenceMatrixInterpretation<T> implements GraphLaws<T>{
         }
     }
 
+    /**
+     * Удаляет ребро из графа.
+     *
+     * @param edgeToRemove Ребро для удаления.
+     */
     @Override
     public void removeEdge(Edge<T> edgeToRemove) {
         if (this.edges.contains(edgeToRemove)) {
@@ -114,6 +142,12 @@ public class IncidenceMatrixInterpretation<T> implements GraphLaws<T>{
         }
     }
 
+    /**
+     * Изменяет вершину в графе.
+     *
+     * @param oldVertex Старая вершина.
+     * @param newVertex Новая вершина.
+     */
     @Override
     public void changeVertex(T oldVertex, T newVertex) {
         if (this.vertexes.contains(oldVertex)) {
@@ -129,6 +163,12 @@ public class IncidenceMatrixInterpretation<T> implements GraphLaws<T>{
         }
     }
 
+    /**
+     * Изменяет ребро в графе.
+     *
+     * @param oldEdge Старое ребро.
+     * @param newEdge Новое ребро.
+     */
     @Override
     public void changeEdge(Edge<T> oldEdge, Edge<T> newEdge) {
         if (this.edges.contains(oldEdge)) {
@@ -146,11 +186,22 @@ public class IncidenceMatrixInterpretation<T> implements GraphLaws<T>{
         }
     }
 
+    /**
+     * Возвращает список вершин графа.
+     *
+     * @return Список вершин.
+     */
     @Override
     public ArrayList<T> getVertexes() {
         return vertexes;
     }
 
+    /**
+     * Возвращает список инцидентных рёбер для заданной вершины.
+     *
+     * @param vertex Вершина, для которой ищутся инцидентные рёбра.
+     * @return Список инцидентных рёбер.
+     */
     @Override
     public ArrayList<Edge<T>> getNeighbors(T vertex) {
         ArrayList<Edge<T>> outgoingEdges = new ArrayList<>();
@@ -169,6 +220,12 @@ public class IncidenceMatrixInterpretation<T> implements GraphLaws<T>{
 
         return outgoingEdges;
     }
+
+    /**
+     * Внутренний класс для представления статуса ребра в матрице инцидентности.
+     *
+     * @param <T> Тип вершин графа.
+     */
     private static class EdgeStatus<T> {
         int status;
         Edge<T> edge;
@@ -179,6 +236,9 @@ public class IncidenceMatrixInterpretation<T> implements GraphLaws<T>{
         }
     }
 
+    /**
+     * Выводит матрицу инцидентности на экран.
+     */
     public void printIncidenceMatrix() {
         System.out.print("    "); // Пустая ячейка для вершин
         for (Edge<T> edge : edges) {
@@ -207,32 +267,4 @@ public class IncidenceMatrixInterpretation<T> implements GraphLaws<T>{
             System.out.println();
         }
     }
-
-
-    public static void main(String[] args) {
-        ArrayList<String> vertexes = new ArrayList<>();
-        vertexes.add("A");
-        vertexes.add("B");
-        vertexes.add("C");
-        vertexes.add("D");
-        vertexes.add("G");
-
-
-
-
-        ArrayList<Edge<String>> edges = new ArrayList<>();
-        edges.add(new Edge<>("A", "B", 2));
-        edges.add(new Edge<>("A", "D", 6));
-
-        IncidenceMatrixInterpretation<String> incidenceMatrix = new IncidenceMatrixInterpretation<>(vertexes, edges);
-
-
-
-        incidenceMatrix.printIncidenceMatrix();
-    }
 }
-
-
-
-
-

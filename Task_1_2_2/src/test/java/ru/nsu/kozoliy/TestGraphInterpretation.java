@@ -32,11 +32,15 @@ public class TestGraphInterpretation {
         AdjacencyMatrixInterpretation<String> graphRepresentation = new AdjacencyMatrixInterpretation<>(vertexes, edges);
         DijkstraAlgorithm<String> graph = new DijkstraAlgorithm<>(graphRepresentation);
 
+        graphRepresentation.removeVertex("D");
+        graphRepresentation.removeEdge(new Edge<>("B", "E", 3));
+        graphRepresentation.changeVertex("B", "G");
+        graphRepresentation.changeEdge(new Edge<>("D", "E", 4), new Edge<>("D", "E", 16));
 
 
         String startVertex = "A";
         String result = graph.findShortestPaths(startVertex);
-        assertEquals("[B - 2, C - 1, D - 5, K - inf]", result);
+        assertEquals("[G - 2, C - 1, K - inf]", result);
     }
 
     @Test
@@ -69,4 +73,39 @@ public class TestGraphInterpretation {
         String result = graph.findShortestPaths(startVertex);
         assertEquals("[C - 3, E - inf, G - 2]", result);
     }
+
+
+    @Test
+    public void testShortestPathsIncidenceMatrix() {
+
+
+        // Добавляем вершины
+        ArrayList<String> vertexes = new ArrayList<>();
+        vertexes.add("A");
+        vertexes.add("B");
+        vertexes.add("C");
+        vertexes.add("D");
+        vertexes.add("K");
+
+        // Создаем список рёбер
+        ArrayList<Edge<String>> edges = new ArrayList<>();
+        edges.add(new Edge<>("A", "B", 2));
+        edges.add(new Edge<>("A", "C", 1));
+        edges.add(new Edge<>("B", "C", 3));
+        edges.add(new Edge<>("C", "D", 4));
+
+        IncidenceMatrixInterpretation<String> graphRepresentation = new IncidenceMatrixInterpretation<>(vertexes, edges);
+        DijkstraAlgorithm<String> graph = new DijkstraAlgorithm<>(graphRepresentation);
+
+        graphRepresentation.removeVertex("D");
+        graphRepresentation.removeEdge(new Edge<>("B", "E", 3));
+        graphRepresentation.changeVertex("B", "G");
+        graphRepresentation.changeEdge(new Edge<>("A", "G", 2), new Edge<>("A", "G", 4));
+
+
+        String startVertex = "A";
+        String result = graph.findShortestPaths(startVertex);
+        assertEquals("[G - 2, C - 1, K - inf]", result);
+    }
+
 }
