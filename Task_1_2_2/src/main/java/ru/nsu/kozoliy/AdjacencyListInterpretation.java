@@ -82,6 +82,7 @@ public class AdjacencyListInterpretation<T> implements GraphLaws<T> {
         return new ArrayList<>(adjacencyList.keySet());
     }
 
+    @Override
     public ArrayList<Edge<T>> getNeighbors(T vertex) {
         ArrayList<Edge<T>> neighbors = new ArrayList<>();
         LinkedList<Edge<T>> edges = adjacencyList.get(vertex);

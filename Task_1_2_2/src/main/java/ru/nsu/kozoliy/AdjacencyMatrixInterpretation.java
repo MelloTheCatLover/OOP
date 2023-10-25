@@ -54,7 +54,8 @@ public class AdjacencyMatrixInterpretation<T> implements GraphLaws<T> {
 
     @Override
     public void addEdge(Edge<T> edgeToAdd) {
-        if (this.vertexes.contains(edgeToAdd.source) && this.vertexes.contains(edgeToAdd.destination)) {
+        if (this.vertexes.contains(edgeToAdd.source)
+                && this.vertexes.contains(edgeToAdd.destination)) {
             int row = this.vertexes.indexOf(edgeToAdd.source);
             int col = this.vertexes.indexOf(edgeToAdd.destination);
             this.adjacencyMatrix.get(row).set(col, edgeToAdd.weight);
@@ -94,7 +95,8 @@ public class AdjacencyMatrixInterpretation<T> implements GraphLaws<T> {
 
     @Override
     public void changeEdge(Edge<T> oldEdge, Edge<T> newEdge) {
-        if (this.vertexes.contains(oldEdge.source) && this.vertexes.contains(oldEdge.destination)) {
+        if (this.vertexes.contains(oldEdge.source)
+                && this.vertexes.contains(oldEdge.destination)) {
             int row = this.vertexes.indexOf(oldEdge.source);
             int col = this.vertexes.indexOf(oldEdge.destination);
             this.adjacencyMatrix.get(row).set(col, newEdge.weight);

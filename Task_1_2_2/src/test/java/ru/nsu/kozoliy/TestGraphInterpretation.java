@@ -2,10 +2,14 @@ package ru.nsu.kozoliy;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
+import org.junit.jupiter.api.Test;
 
 
+/**
+ * Тесты для 1.2.2.
+ *
+ */
 public class TestGraphInterpretation {
 
     @Test
@@ -27,7 +31,8 @@ public class TestGraphInterpretation {
         edges.add(new Edge<>("B", "C", 3));
         edges.add(new Edge<>("C", "D", 4));
 
-        AdjacencyMatrixInterpretation<String> graphRepresentation = new AdjacencyMatrixInterpretation<>(vertexes, edges);
+        AdjacencyMatrixInterpretation<String> graphRepresentation =
+                new AdjacencyMatrixInterpretation<>(vertexes, edges);
         DijkstraAlgorithm<String> graph = new DijkstraAlgorithm<>(graphRepresentation);
 
         graphRepresentation.addVertex("Test");
@@ -35,7 +40,8 @@ public class TestGraphInterpretation {
         graphRepresentation.removeVertex("D");
         graphRepresentation.removeEdge(new Edge<>("B", "E", 3));
         graphRepresentation.changeVertex("B", "G");
-        graphRepresentation.changeEdge(new Edge<>("D", "E", 4), new Edge<>("D", "E", 16));
+        graphRepresentation.changeEdge(new Edge<>("D", "E", 4),
+                new Edge<>("D", "E", 16));
 
 
         String startVertex = "A";
@@ -45,7 +51,8 @@ public class TestGraphInterpretation {
 
     @Test
     public void testShortestPathsAdjacencyList() {
-        AdjacencyListInterpretation<String> graphRepresentation = new AdjacencyListInterpretation<>();
+        AdjacencyListInterpretation<String> graphRepresentation
+                = new AdjacencyListInterpretation<>();
         DijkstraAlgorithm<String> graph = new DijkstraAlgorithm<>(graphRepresentation);
 
         // Добавляем вершины
@@ -68,7 +75,8 @@ public class TestGraphInterpretation {
         graphRepresentation.removeVertex("D");
         graphRepresentation.removeEdge(new Edge<>("B", "E", 3));
         graphRepresentation.changeVertex("B", "G");
-        graphRepresentation.changeEdge(new Edge<>("D", "E", 4), new Edge<>("D", "E", 16));
+        graphRepresentation.changeEdge(new Edge<>("D", "E", 4),
+                new Edge<>("D", "E", 16));
 
         String startVertex = "A";
         String result = graph.findShortestPaths(startVertex);
@@ -95,7 +103,8 @@ public class TestGraphInterpretation {
         edges.add(new Edge<>("B", "C", 3));
         edges.add(new Edge<>("C", "D", 4));
 
-        IncidenceMatrixInterpretation<String> graphRepresentation = new IncidenceMatrixInterpretation<>(vertexes, edges);
+        IncidenceMatrixInterpretation<String> graphRepresentation
+                = new IncidenceMatrixInterpretation<>(vertexes, edges);
         DijkstraAlgorithm<String> graph = new DijkstraAlgorithm<>(graphRepresentation);
 
 
@@ -103,7 +112,8 @@ public class TestGraphInterpretation {
         graphRepresentation.removeVertex("D");
         graphRepresentation.removeEdge(new Edge<>("B", "E", 3));
         graphRepresentation.changeVertex("B", "G");
-        graphRepresentation.changeEdge(new Edge<>("A", "G", 2), new Edge<>("A", "G", 4));
+        graphRepresentation.changeEdge(new Edge<>("A", "G", 2),
+                new Edge<>("A", "G", 4));
 
 
         String startVertex = "A";
