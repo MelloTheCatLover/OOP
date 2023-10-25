@@ -9,9 +9,9 @@ import java.util.ArrayList;
  */
 public class IncidenceMatrixInterpretation<T> implements GraphLaws<T> {
 
-    private ArrayList<ArrayList<EdgeStatus<T>>> incidenceMatrix;
-    private ArrayList<T> vertexes;
-    private ArrayList<Edge<T>> edges;
+    private final ArrayList<ArrayList<EdgeStatus<T>>> incidenceMatrix;
+    private final ArrayList<T> vertexes;
+    private final ArrayList<Edge<T>> edges;
     private final int serviceVar = 8;
 
     /**
@@ -152,12 +152,22 @@ public class IncidenceMatrixInterpretation<T> implements GraphLaws<T> {
     @Override
     public void changeVertex(T oldVertex, T newVertex) {
         if (this.vertexes.contains(oldVertex)) {
-            for (Edge<T> edgeToAdd : this.edges) {
-                if (edgeToAdd.source == oldVertex) {
-                    edgeToAdd.source = newVertex;
+            int index = this.vertexes.indexOf(oldVertex);
+            int len = this.edges.size();
+            for (int i = 0; i < len; i++) {
+                if (this.edges.get(i).source == oldVertex) {
+                    this.edges.get(i).source = newVertex;
                 }
-                if (edgeToAdd.destination == oldVertex) {
-                    edgeToAdd.destination = newVertex;
+                if (this.edges.get(i).destination == oldVertex) {
+                    this.edges.get(i).destination = newVertex;
+                }
+                if (this.incidenceMatrix.get(index).get(i).status != 0) {
+                    if (this.incidenceMatrix.get(index).get(i).edge.source == oldVertex) {
+                        this.incidenceMatrix.get(index).get(i).edge.source = oldVertex;
+                    }
+                    if (this.incidenceMatrix.get(index).get(i).edge.destination == oldVertex) {
+                        this.incidenceMatrix.get(index).get(i).edge.destination = oldVertex;
+                    }
                 }
             }
             this.vertexes.set(this.vertexes.indexOf(oldVertex), newVertex);
@@ -174,16 +184,19 @@ public class IncidenceMatrixInterpretation<T> implements GraphLaws<T> {
     public void changeEdge(Edge<T> oldEdge, Edge<T> newEdge) {
         if (this.edges.contains(oldEdge)) {
             int index = this.edges.indexOf(oldEdge);
-            for (int i = 0; i < this.vertexes.size(); i++) {
+            this.edges.set(index, newEdge);
+            int len = this.vertexes.size();
+            for (int i = 0; i < len; i++) {
+                if (this.incidenceMatrix.get(i).get(index).status == 1) {
+                    this.incidenceMatrix.get(i).get(index).edge = newEdge;
+                }
+                if (this.incidenceMatrix.get(i).get(index).status == -1) {
+                    this.incidenceMatrix.get(i).get(index).edge = newEdge;
+                }
                 if (this.incidenceMatrix.get(i).get(index).status == 2) {
-                    this.incidenceMatrix.get(i).set(index, new EdgeStatus<>(2, newEdge));
-                } else if (this.incidenceMatrix.get(i).get(index).status == -1) {
-                    this.incidenceMatrix.get(i).set(index, new EdgeStatus<>(-1, newEdge));
-                } else if (this.incidenceMatrix.get(i).get(index).status == 1) {
-                    this.incidenceMatrix.get(i).set(index, new EdgeStatus<>(1, newEdge));
+                    this.incidenceMatrix.get(i).get(index).edge = newEdge;
                 }
             }
-            this.edges.set(index, newEdge);
         }
     }
 
@@ -205,21 +218,21 @@ public class IncidenceMatrixInterpretation<T> implements GraphLaws<T> {
      */
     @Override
     public ArrayList<Edge<T>> getNeighbors(T vertex) {
-        ArrayList<Edge<T>> outgoingEdges = new ArrayList<>();
+        ArrayList<Edge<T>> incidentEdges = new ArrayList<>();
         int vertexIndex = vertexes.indexOf(vertex);
 
         if (vertexIndex != -1) {
             for (int i = 0; i < edges.size(); i++) {
                 int status = incidenceMatrix.get(vertexIndex).get(i).status;
 
-                if (status == 1) { // Выход из вершины
+                if (status == 1 || status == -1 || status == 2) {
                     Edge<T> edge = incidenceMatrix.get(vertexIndex).get(i).edge;
-                    outgoingEdges.add(edge);
+                    incidentEdges.add(edge);
                 }
             }
         }
 
-        return outgoingEdges;
+        return incidentEdges;
     }
 
     /**

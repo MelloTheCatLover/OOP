@@ -109,16 +109,17 @@ public class TestGraphInterpretation {
 
 
         graphRepresentation.addVertex("Test");
+        graphRepresentation.addEdge(new Edge<>("A", "Test", 666));
         graphRepresentation.removeVertex("D");
         graphRepresentation.removeEdge(new Edge<>("B", "E", 3));
         graphRepresentation.changeVertex("B", "G");
-        graphRepresentation.changeEdge(new Edge<>("A", "G", 2),
-                new Edge<>("A", "G", 4));
+        graphRepresentation.changeEdge(new Edge<>("A", "C", 1),
+                new Edge<>("A", "C", 70));
 
 
         String startVertex = "A";
         String result = graph.findShortestPaths(startVertex);
-        assertEquals("[G - 2, C - 1, K - inf, Test - inf]", result);
+        assertEquals("[G - 2, C - 1, K - inf, Test - 666]", result);
     }
 
 }
