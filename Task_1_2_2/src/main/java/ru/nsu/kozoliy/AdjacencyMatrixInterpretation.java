@@ -76,7 +76,8 @@ public class AdjacencyMatrixInterpretation<T> implements GraphLaws<T> {
 
     @Override
     public void removeEdge(Edge<T> edgeToRemove) {
-        if (this.vertexes.contains(edgeToRemove.source) && this.vertexes.contains(edgeToRemove.destination)) {
+        if (this.vertexes.contains(edgeToRemove.source) 
+            && this.vertexes.contains(edgeToRemove.destination)) {
             int row = this.vertexes.indexOf(edgeToRemove.source);
             int col = this.vertexes.indexOf(edgeToRemove.destination);
             this.adjacencyMatrix.get(row).set(col, serviceVar);
