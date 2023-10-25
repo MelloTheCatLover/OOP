@@ -36,7 +36,7 @@ public class TestGraphInterpretation {
 
         String startVertex = "A";
         String result = graph.findShortestPaths(startVertex);
-        assertEquals("[C - 3, E - inf, G - 2]", result);
+        assertEquals("[B - 2, C - 1, D - 5, K - inf]", result);
     }
 
     @Test
@@ -67,6 +67,6 @@ public class TestGraphInterpretation {
 
         String startVertex = "A";
         String result = graph.findShortestPaths(startVertex);
-        assertEquals("[B - 2, C - 1, D - 5, K - inf]", result);
+        assertEquals("[C - 3, E - inf, G - 2]", result);
     }
 }
