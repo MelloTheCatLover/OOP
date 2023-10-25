@@ -235,36 +235,4 @@ public class IncidenceMatrixInterpretation<T> implements GraphLaws<T> {
             this.edge = edge;
         }
     }
-
-    /**
-     * Выводит матрицу инцидентности на экран.
-     */
-    public void printIncidenceMatrix() {
-        System.out.print("    "); // Пустая ячейка для вершин
-        for (Edge<T> edge : edges) {
-            System.out.printf("E%d  ", edges.indexOf(edge) + 1); // Печатаем индексы рёбер
-        }
-        System.out.println();
-
-        for (T vertex : vertexes) {
-            System.out.print(vertex + "  "); // Выводим название вершины
-            int vertexIndex = vertexes.indexOf(vertex);
-
-            for (Edge<T> edge : edges) {
-                int edgeIndex = edges.indexOf(edge);
-                int status = incidenceMatrix.get(vertexIndex).get(edgeIndex).status;
-
-                if (status == 1) {
-                    System.out.print("+1   "); // Вершина инцидентна ребру как конечная
-                } else if (status == -1) {
-                    System.out.print("-1   "); // Вершина инцидентна ребру как начальная
-                } else if (status == 2) {
-                    System.out.print("2    "); // Вершина инцидентна ребру как начальная и конечная
-                } else {
-                    System.out.print("0    "); // Вершина не инцидентна ребру
-                }
-            }
-            System.out.println();
-        }
-    }
 }

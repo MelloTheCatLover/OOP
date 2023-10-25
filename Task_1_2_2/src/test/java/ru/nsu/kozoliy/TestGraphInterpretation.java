@@ -1,12 +1,10 @@
 package ru.nsu.kozoliy;
 
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+import java.util.ArrayList;
+
 
 public class TestGraphInterpretation {
 
@@ -32,6 +30,8 @@ public class TestGraphInterpretation {
         AdjacencyMatrixInterpretation<String> graphRepresentation = new AdjacencyMatrixInterpretation<>(vertexes, edges);
         DijkstraAlgorithm<String> graph = new DijkstraAlgorithm<>(graphRepresentation);
 
+        graphRepresentation.addVertex("Test");
+        graphRepresentation.addEdge(new Edge<>("B", "Test", 6));
         graphRepresentation.removeVertex("D");
         graphRepresentation.removeEdge(new Edge<>("B", "E", 3));
         graphRepresentation.changeVertex("B", "G");
@@ -40,7 +40,7 @@ public class TestGraphInterpretation {
 
         String startVertex = "A";
         String result = graph.findShortestPaths(startVertex);
-        assertEquals("[G - 2, C - 1, K - inf]", result);
+        assertEquals("[G - 2, C - 1, K - inf, Test - 8]", result);
     }
 
     @Test
@@ -63,7 +63,8 @@ public class TestGraphInterpretation {
         graphRepresentation.addEdge(new Edge<>("B", "E", 3));
         graphRepresentation.addEdge(new Edge<>("D", "E", 4));
 
-
+        graphRepresentation.addVertex("Test");
+        graphRepresentation.addEdge(new Edge<>("B", "Test", 6));
         graphRepresentation.removeVertex("D");
         graphRepresentation.removeEdge(new Edge<>("B", "E", 3));
         graphRepresentation.changeVertex("B", "G");
@@ -71,7 +72,7 @@ public class TestGraphInterpretation {
 
         String startVertex = "A";
         String result = graph.findShortestPaths(startVertex);
-        assertEquals("[C - 3, E - inf, G - 2]", result);
+        assertEquals("[C - 3, E - inf, Test - 8, G - 2]", result);
     }
 
 
@@ -97,6 +98,8 @@ public class TestGraphInterpretation {
         IncidenceMatrixInterpretation<String> graphRepresentation = new IncidenceMatrixInterpretation<>(vertexes, edges);
         DijkstraAlgorithm<String> graph = new DijkstraAlgorithm<>(graphRepresentation);
 
+
+        graphRepresentation.addVertex("Test");
         graphRepresentation.removeVertex("D");
         graphRepresentation.removeEdge(new Edge<>("B", "E", 3));
         graphRepresentation.changeVertex("B", "G");
@@ -105,7 +108,7 @@ public class TestGraphInterpretation {
 
         String startVertex = "A";
         String result = graph.findShortestPaths(startVertex);
-        assertEquals("[G - 2, C - 1, K - inf]", result);
+        assertEquals("[G - 2, C - 1, K - inf, Test - inf]", result);
     }
 
 }

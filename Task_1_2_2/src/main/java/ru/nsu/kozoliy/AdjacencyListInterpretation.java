@@ -92,18 +92,4 @@ public class AdjacencyListInterpretation<T> implements GraphLaws<T> {
 
         return neighbors;
     }
-
-    /**
-     * Выводит список смежности графа в консоль.
-     */
-    public void printAdjacencyList() {
-        for (T vertex : adjacencyList.keySet()) {
-            System.out.print(vertex + ": ");
-            LinkedList<Edge<T>> edges = adjacencyList.get(vertex);
-            for (Edge<T> edge : edges) {
-                System.out.print("(" + edge.destination + ", " + edge.weight + ") ");
-            }
-            System.out.println();
-        }
-    }
 }
