@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":9};
-var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var data = {"i0":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -129,9 +129,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - Тип вершин в графе.</dd>
+</dl>
 <hr>
 <pre>public class <span class="typeNameLabel">DijkstraAlgorithm&lt;T&gt;</span>
 extends java.lang.Object</pre>
+<div class="block">Реализация алгоритма Дейкстры для поиска кратчайших путей в графе.</div>
 </li>
 </ul>
 </div>
@@ -153,7 +158,9 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(ru.nsu.kozoliy.GraphLaws)">DijkstraAlgorithm</a></span>&#8203;(<a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaws</a>&lt;<a href="DijkstraAlgorithm.html" title="type parameter in DijkstraAlgorithm">T</a>&gt;&nbsp;representation)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Конструктор класса DijkstraAlgorithm.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -167,7 +174,7 @@ extends java.lang.Object</pre>
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -176,12 +183,9 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#findShortestPaths(T)">findShortestPaths</a></span>&#8203;(<a href="DijkstraAlgorithm.html" title="type parameter in DijkstraAlgorithm">T</a>&nbsp;startVertex)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i1" class="rowColor">
-<td class="colFirst"><code>static void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#main(java.lang.String%5B%5D)">main</a></span>&#8203;(java.lang.String[]&nbsp;args)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Находит кратчайшие пути от указанной стартовой вершины до остальных вершин в графе.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -214,6 +218,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>DijkstraAlgorithm</h4>
 <pre>public&nbsp;DijkstraAlgorithm&#8203;(<a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaws</a>&lt;<a href="DijkstraAlgorithm.html" title="type parameter in DijkstraAlgorithm">T</a>&gt;&nbsp;representation)</pre>
+<div class="block">Конструктор класса DijkstraAlgorithm.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>representation</code> - Представление графа, для которого будет выполняться поиск кратчайших путей.</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -231,19 +240,17 @@ extends java.lang.Object</pre>
 </a><a id="findShortestPaths(T)">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>findShortestPaths</h4>
 <pre class="methodSignature">public&nbsp;java.lang.String&nbsp;findShortestPaths&#8203;(<a href="DijkstraAlgorithm.html" title="type parameter in DijkstraAlgorithm">T</a>&nbsp;startVertex)</pre>
-</li>
-</ul>
-<a id="main(java.lang.String[])">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>main</h4>
-<pre class="methodSignature">public static&nbsp;void&nbsp;main&#8203;(java.lang.String[]&nbsp;args)</pre>
+<div class="block">Находит кратчайшие пути от указанной стартовой вершины до остальных вершин в графе.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>startVertex</code> - Начальная вершина, от которой начинается поиск кратчайших путей.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Строка, представляющая кратчайшие пути от начальной вершины до остальных вершин.</dd>
+</dl>
 </li>
 </ul>
 </li>

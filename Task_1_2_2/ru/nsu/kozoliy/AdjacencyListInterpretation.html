@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":9,"i7":10,"i8":10,"i9":10};
-var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -130,6 +130,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - Тип вершин графа.</dd>
+</dl>
+<dl>
 <dt>All Implemented Interfaces:</dt>
 <dd><code><a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaws</a>&lt;T&gt;</code></dd>
 </dl>
@@ -137,6 +141,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">AdjacencyListInterpretation&lt;T&gt;</span>
 extends java.lang.Object
 implements <a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaws</a>&lt;T&gt;</pre>
+<div class="block">Класс для представления графа в виде списка смежности.</div>
 </li>
 </ul>
 </div>
@@ -158,7 +163,9 @@ implements <a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaw
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">AdjacencyListInterpretation</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Конструктор класса AdjacencyListInterpretation.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -172,7 +179,7 @@ implements <a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaw
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -181,54 +188,67 @@ implements <a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaw
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addEdge(ru.nsu.kozoliy.Edge)">addEdge</a></span>&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;&nbsp;edgeToAdd)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Добавляет ребро в граф.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addVertex(T)">addVertex</a></span>&#8203;(<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&nbsp;vertexToAdd)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Добавляет вершину в граф.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#changeEdge(ru.nsu.kozoliy.Edge,ru.nsu.kozoliy.Edge)">changeEdge</a></span>&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;&nbsp;oldEdge,
           <a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;&nbsp;newEdge)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Заменяет одно ребро другим.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#changeVertex(T,T)">changeVertex</a></span>&#8203;(<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&nbsp;oldVertex,
             <a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&nbsp;newVertex)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Заменяет одну вершину на другую.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>java.util.ArrayList&lt;<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNeighbors(T)">getNeighbors</a></span>&#8203;(<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&nbsp;vertex)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Возвращает список рёбер, инцидентных заданной вершине.</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>java.util.ArrayList&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVertexes()">getVertexes</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Возвращает список вершин в графе.</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>static void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#main(java.lang.String%5B%5D)">main</a></span>&#8203;(java.lang.String[]&nbsp;args)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#printAdjacencyList()">printAdjacencyList</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Выводит список смежности графа в консоль.</div>
+</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#printAdjacencyList()">printAdjacencyList</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeEdge(ru.nsu.kozoliy.Edge)">removeEdge</a></span>&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;&nbsp;edgeToRemove)</code></th>
+<td class="colLast">
+<div class="block">Удаляет ребро из графа.</div>
+</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeEdge(ru.nsu.kozoliy.Edge)">removeEdge</a></span>&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;&nbsp;edgeToRemove)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i9" class="rowColor">
-<td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeVertex(T)">removeVertex</a></span>&#8203;(<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&nbsp;vertexToAdd)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Удаляет вершину из графа.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -261,6 +281,8 @@ implements <a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaw
 <li class="blockList">
 <h4>AdjacencyListInterpretation</h4>
 <pre>public&nbsp;AdjacencyListInterpretation()</pre>
+<div class="block">Конструктор класса AdjacencyListInterpretation.
+ Инициализирует пустой список смежности.</div>
 </li>
 </ul>
 </li>
@@ -282,9 +304,13 @@ implements <a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaw
 <li class="blockList">
 <h4>addVertex</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;addVertex&#8203;(<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&nbsp;vertexToAdd)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="GraphLaws.html#addVertex(T)">GraphLaws</a></code></span></div>
+<div class="block">Добавляет вершину в граф.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GraphLaws.html#addVertex(T)">addVertex</a></code>&nbsp;in interface&nbsp;<code><a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaws</a>&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>vertexToAdd</code> - Вершина для добавления.</dd>
 </dl>
 </li>
 </ul>
@@ -297,9 +323,13 @@ implements <a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaw
 <li class="blockList">
 <h4>removeVertex</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;removeVertex&#8203;(<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&nbsp;vertexToAdd)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="GraphLaws.html#removeVertex(T)">GraphLaws</a></code></span></div>
+<div class="block">Удаляет вершину из графа.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GraphLaws.html#removeVertex(T)">removeVertex</a></code>&nbsp;in interface&nbsp;<code><a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaws</a>&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>vertexToAdd</code> - Вершина для удаления.</dd>
 </dl>
 </li>
 </ul>
@@ -310,9 +340,13 @@ implements <a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaw
 <li class="blockList">
 <h4>addEdge</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;addEdge&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;&nbsp;edgeToAdd)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="GraphLaws.html#addEdge(ru.nsu.kozoliy.Edge)">GraphLaws</a></code></span></div>
+<div class="block">Добавляет ребро в граф.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GraphLaws.html#addEdge(ru.nsu.kozoliy.Edge)">addEdge</a></code>&nbsp;in interface&nbsp;<code><a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaws</a>&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>edgeToAdd</code> - Ребро для добавления.</dd>
 </dl>
 </li>
 </ul>
@@ -323,9 +357,13 @@ implements <a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaw
 <li class="blockList">
 <h4>removeEdge</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;removeEdge&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;&nbsp;edgeToRemove)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="GraphLaws.html#removeEdge(ru.nsu.kozoliy.Edge)">GraphLaws</a></code></span></div>
+<div class="block">Удаляет ребро из графа.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GraphLaws.html#removeEdge(ru.nsu.kozoliy.Edge)">removeEdge</a></code>&nbsp;in interface&nbsp;<code><a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaws</a>&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>edgeToRemove</code> - Ребро для удаления.</dd>
 </dl>
 </li>
 </ul>
@@ -339,9 +377,14 @@ implements <a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaw
 <h4>changeVertex</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;changeVertex&#8203;(<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&nbsp;oldVertex,
                          <a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&nbsp;newVertex)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="GraphLaws.html#changeVertex(T,T)">GraphLaws</a></code></span></div>
+<div class="block">Заменяет одну вершину на другую.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GraphLaws.html#changeVertex(T,T)">changeVertex</a></code>&nbsp;in interface&nbsp;<code><a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaws</a>&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>oldVertex</code> - Старая вершина.</dd>
+<dd><code>newVertex</code> - Новая вершина.</dd>
 </dl>
 </li>
 </ul>
@@ -353,9 +396,14 @@ implements <a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaw
 <h4>changeEdge</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;changeEdge&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;&nbsp;oldEdge,
                        <a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;&nbsp;newEdge)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="GraphLaws.html#changeEdge(ru.nsu.kozoliy.Edge,ru.nsu.kozoliy.Edge)">GraphLaws</a></code></span></div>
+<div class="block">Заменяет одно ребро другим.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GraphLaws.html#changeEdge(ru.nsu.kozoliy.Edge,ru.nsu.kozoliy.Edge)">changeEdge</a></code>&nbsp;in interface&nbsp;<code><a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaws</a>&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>oldEdge</code> - Старое ребро.</dd>
+<dd><code>newEdge</code> - Новое ребро.</dd>
 </dl>
 </li>
 </ul>
@@ -366,9 +414,13 @@ implements <a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaw
 <li class="blockList">
 <h4>getVertexes</h4>
 <pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;&nbsp;getVertexes()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="GraphLaws.html#getVertexes()">GraphLaws</a></code></span></div>
+<div class="block">Возвращает список вершин в графе.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GraphLaws.html#getVertexes()">getVertexes</a></code>&nbsp;in interface&nbsp;<code><a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaws</a>&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Список вершин.</dd>
 </dl>
 </li>
 </ul>
@@ -381,28 +433,26 @@ implements <a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaw
 <li class="blockList">
 <h4>getNeighbors</h4>
 <pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;&gt;&nbsp;getNeighbors&#8203;(<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&nbsp;vertex)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="GraphLaws.html#getNeighbors(T)">GraphLaws</a></code></span></div>
+<div class="block">Возвращает список рёбер, инцидентных заданной вершине.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GraphLaws.html#getNeighbors(T)">getNeighbors</a></code>&nbsp;in interface&nbsp;<code><a href="GraphLaws.html" title="interface in ru.nsu.kozoliy">GraphLaws</a>&lt;<a href="AdjacencyListInterpretation.html" title="type parameter in AdjacencyListInterpretation">T</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>vertex</code> - Вершина, для которой необходимо получить список инцидентных рёбер.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Список инцидентных рёбер.</dd>
 </dl>
 </li>
 </ul>
 <a id="printAdjacencyList()">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>printAdjacencyList</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;printAdjacencyList()</pre>
-</li>
-</ul>
-<a id="main(java.lang.String[])">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>main</h4>
-<pre class="methodSignature">public static&nbsp;void&nbsp;main&#8203;(java.lang.String[]&nbsp;args)</pre>
+<div class="block">Выводит список смежности графа в консоль.</div>
 </li>
 </ul>
 </li>

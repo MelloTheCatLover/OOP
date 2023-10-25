@@ -123,9 +123,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - Тип вершин, соединенных ребром.</dd>
+</dl>
 <hr>
 <pre>public class <span class="typeNameLabel">Edge&lt;T&gt;</span>
 extends java.lang.Object</pre>
+<div class="block">Класс, представляющий ребро в графе.</div>
 </li>
 </ul>
 </div>
@@ -149,17 +154,23 @@ extends java.lang.Object</pre>
 <tr class="altColor">
 <td class="colFirst"><code><a href="Edge.html" title="type parameter in Edge">T</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#destination">destination</a></span></code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Конечная вершина ребра.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="Edge.html" title="type parameter in Edge">T</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#source">source</a></span></code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Начальная вершина ребра.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#weight">weight</a></span></code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Вес ребра (длина, стоимость и т.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -182,7 +193,9 @@ extends java.lang.Object</pre>
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(T,T,int)">Edge</a></span>&#8203;(<a href="Edge.html" title="type parameter in Edge">T</a>&nbsp;source,
     <a href="Edge.html" title="type parameter in Edge">T</a>&nbsp;destination,
     int&nbsp;weight)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Конструктор класса Edge.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -225,6 +238,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>source</h4>
 <pre>public&nbsp;<a href="Edge.html" title="type parameter in Edge">T</a> source</pre>
+<div class="block">Начальная вершина ребра.</div>
 </li>
 </ul>
 <a id="destination">
@@ -234,6 +248,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>destination</h4>
 <pre>public&nbsp;<a href="Edge.html" title="type parameter in Edge">T</a> destination</pre>
+<div class="block">Конечная вершина ребра.</div>
 </li>
 </ul>
 <a id="weight">
@@ -243,6 +258,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>weight</h4>
 <pre>public final&nbsp;int weight</pre>
+<div class="block">Вес ребра (длина, стоимость и т. д.).</div>
 </li>
 </ul>
 </li>
@@ -266,6 +282,13 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;Edge&#8203;(<a href="Edge.html" title="type parameter in Edge">T</a>&nbsp;source,
             <a href="Edge.html" title="type parameter in Edge">T</a>&nbsp;destination,
             int&nbsp;weight)</pre>
+<div class="block">Конструктор класса Edge.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - Начальная вершина ребра.</dd>
+<dd><code>destination</code> - Конечная вершина ребра.</dd>
+<dd><code>weight</code> - Вес ребра.</dd>
+</dl>
 </li>
 </ul>
 </li>
