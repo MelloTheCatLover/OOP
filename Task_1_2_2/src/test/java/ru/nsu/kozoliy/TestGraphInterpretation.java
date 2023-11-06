@@ -1,7 +1,12 @@
 package ru.nsu.kozoliy;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
@@ -13,113 +18,126 @@ import org.junit.jupiter.api.Test;
 public class TestGraphInterpretation {
 
     @Test
-    public void testShortestPathsAdjacencyMatrix() {
-
-
-        // Добавляем вершины
-        ArrayList<String> vertexes = new ArrayList<>();
-        vertexes.add("A");
-        vertexes.add("B");
-        vertexes.add("C");
-        vertexes.add("D");
-        vertexes.add("K");
-
-        // Создаем список рёбер
+    public void  graphAdjacencyMatrixTest() {
+        ArrayList<Vertex<String>> vertices = new ArrayList<>();
         ArrayList<Edge<String>> edges = new ArrayList<>();
-        edges.add(new Edge<>("A", "B", 2));
-        edges.add(new Edge<>("A", "C", 1));
-        edges.add(new Edge<>("B", "C", 3));
-        edges.add(new Edge<>("C", "D", 4));
+        try {
+            File file = new File("info.txt");
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+            int vertexLen = Integer.parseInt(br.readLine());
+            for (int i = 0; i < vertexLen; i++) {
+                String cur = br.readLine();
+                vertices.add(new Vertex<>(cur));
+            }
+            int edgeLen = Integer.parseInt(br.readLine());
+            for (int i = 0; i < edgeLen; i++) {
+                String[] curArr = br.readLine().split(" ");
+                edges.add(new Edge<>(new Vertex<>(curArr[0]), new Vertex<>(curArr[1]),
+                        Integer.parseInt(curArr[2])));
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
 
-        AdjacencyMatrixInterpretation<String> graphRepresentation =
-                new AdjacencyMatrixInterpretation<>(vertexes, edges);
-        DijkstraAlgorithm<String> graph = new DijkstraAlgorithm<>(graphRepresentation);
+        AdjacencyMatrixInterpretation<String> graph = new AdjacencyMatrixInterpretation<>(vertices, edges);
+        graph.addVertex(new Vertex<>("F"));
+        graph.addEdge(new Edge<>(new Vertex<>("A"), new Vertex<>("F"), 10));
+        graph.removeEdge(new Edge<>(new Vertex<>("A"), new Vertex<>("B"), 10));
+        graph.removeVertex(new Vertex<>("D"));
+        graph.changeEdge(new Edge<>(new Vertex<>("A"), new Vertex<>("F"), 10),
+                new Edge<>(new Vertex<>("A"), new Vertex<>("F"), 11));
+        graph.changeVertex(new Vertex<>("C"), new Vertex<>("D"));
 
-        graphRepresentation.addVertex("Test");
-        graphRepresentation.addEdge(new Edge<>("B", "Test", 6));
-        graphRepresentation.removeVertex("D");
-        graphRepresentation.removeEdge(new Edge<>("B", "E", 3));
-        graphRepresentation.changeVertex("B", "G");
-        graphRepresentation.changeEdge(new Edge<>("D", "E", 4),
-                new Edge<>("D", "E", 16));
-
-
-        String startVertex = "A";
-        String result = graph.findShortestPaths(startVertex);
-        assertEquals("[G - 2, C - 1, K - inf, Test - 8]", result);
-    }
-
-    @Test
-    public void testShortestPathsAdjacencyList() {
-        AdjacencyListInterpretation<String> graphRepresentation
-                = new AdjacencyListInterpretation<>();
-        DijkstraAlgorithm<String> graph = new DijkstraAlgorithm<>(graphRepresentation);
-
-        // Добавляем вершины
-        graphRepresentation.addVertex("A");
-        graphRepresentation.addVertex("B");
-        graphRepresentation.addVertex("C");
-        graphRepresentation.addVertex("D");
-        graphRepresentation.addVertex("E");
-        graphRepresentation.addVertex("G");
-
-        // Добавляем рёбра
-        graphRepresentation.addEdge(new Edge<>("A", "B", 2));
-        graphRepresentation.addEdge(new Edge<>("A", "D", 5));
-        graphRepresentation.addEdge(new Edge<>("B", "C", 1));
-        graphRepresentation.addEdge(new Edge<>("B", "E", 3));
-        graphRepresentation.addEdge(new Edge<>("D", "E", 4));
-
-        graphRepresentation.addVertex("Test");
-        graphRepresentation.addEdge(new Edge<>("B", "Test", 6));
-        graphRepresentation.removeVertex("D");
-        graphRepresentation.removeEdge(new Edge<>("B", "E", 3));
-        graphRepresentation.changeVertex("B", "G");
-        graphRepresentation.changeEdge(new Edge<>("D", "E", 4),
-                new Edge<>("D", "E", 16));
-
-        String startVertex = "A";
-        String result = graph.findShortestPaths(startVertex);
-        assertEquals("[C - 3, E - inf, Test - 8, G - 2]", result);
+        ArrayList<Vertex<String>> expectedResult = new ArrayList<>();
+        expectedResult.add(new Vertex<>("A"));
+        expectedResult.add(new Vertex<>("F"));
+        expectedResult.add(new Vertex<>("D"));
+        expectedResult.add(new Vertex<>("B"));
+        ArrayList<Vertex<String>> result = graph.shortestPath(new Vertex<>("A"));
+        assertArrayEquals(result.toArray(), expectedResult.toArray());
     }
 
 
     @Test
-    public void testShortestPathsIncidenceMatrix() {
-
-
-        // Добавляем вершины
-        ArrayList<String> vertexes = new ArrayList<>();
-        vertexes.add("A");
-        vertexes.add("B");
-        vertexes.add("C");
-        vertexes.add("D");
-        vertexes.add("K");
-
-        // Создаем список рёбер
+    public void graphIncidenceMatrixTest() {
+        ArrayList<Vertex<String>> vertices = new ArrayList<>();
         ArrayList<Edge<String>> edges = new ArrayList<>();
-        edges.add(new Edge<>("A", "B", 2));
-        edges.add(new Edge<>("A", "C", 1));
-        edges.add(new Edge<>("B", "C", 3));
-        edges.add(new Edge<>("C", "D", 4));
+        try {
+            File file = new File("info.txt");
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+            int vertexLen = Integer.parseInt(br.readLine());
+            for (int i = 0; i < vertexLen; i++) {
+                String cur = br.readLine();
+                vertices.add(new Vertex<>(cur));
+            }
+            int edgeLen = Integer.parseInt(br.readLine());
+            for (int i = 0; i < edgeLen; i++) {
+                String[] curArr = br.readLine().split(" ");
+                edges.add(new Edge<>(new Vertex<>(curArr[0]), new Vertex<>(curArr[1]),
+                        Integer.parseInt(curArr[2])));
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
 
-        IncidenceMatrixInterpretation<String> graphRepresentation
-                = new IncidenceMatrixInterpretation<>(vertexes, edges);
-        DijkstraAlgorithm<String> graph = new DijkstraAlgorithm<>(graphRepresentation);
+        IncidenceMatrixInterpretation<String> graph = new IncidenceMatrixInterpretation<>(vertices, edges);
+        graph.addVertex(new Vertex<>("F"));
+        graph.addEdge(new Edge<>(new Vertex<>("A"), new Vertex<>("F"), 10));
+        graph.removeEdge(new Edge<>(new Vertex<>("A"), new Vertex<>("B"), 10));
+        graph.removeVertex(new Vertex<>("D"));
+        graph.changeEdge(new Edge<>(new Vertex<>("A"), new Vertex<>("F"), 10),
+                new Edge<>(new Vertex<>("A"), new Vertex<>("F"), 12));
+        graph.changeVertex(new Vertex<>("C"), new Vertex<>("D"));
 
-
-        graphRepresentation.addVertex("Test");
-        graphRepresentation.addEdge(new Edge<>("A", "Test", 666));
-        graphRepresentation.removeVertex("D");
-        graphRepresentation.removeEdge(new Edge<>("B", "E", 3));
-        graphRepresentation.changeVertex("B", "G");
-        graphRepresentation.changeEdge(new Edge<>("A", "C", 1),
-                new Edge<>("A", "C", 70));
-
-
-        String startVertex = "A";
-        String result = graph.findShortestPaths(startVertex);
-        assertEquals("[G - 2, C - 1, K - inf, Test - 666]", result);
+        ArrayList<Vertex<String>> expectedResult = new ArrayList<>();
+        expectedResult.add(new Vertex<>("A"));
+        expectedResult.add(new Vertex<>("F"));
+        expectedResult.add(new Vertex<>("D"));
+        expectedResult.add(new Vertex<>("B"));
+        ArrayList<Vertex<String>> result = graph.shortestPath(new Vertex<>("A"));
+        assertArrayEquals(result.toArray(), expectedResult.toArray());
     }
 
+    @Test
+    public void graphAdjacencyListTest() {
+        ArrayList<Vertex<String>> vertices = new ArrayList<>();
+        ArrayList<Edge<String>> edges = new ArrayList<>();
+        try {
+            File file = new File("info.txt");
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+            int vertexLen = Integer.parseInt(br.readLine());
+            for (int i = 0; i < vertexLen; i++) {
+                String cur = br.readLine();
+                vertices.add(new Vertex<>(cur));
+            }
+            int edgeLen = Integer.parseInt(br.readLine());
+            for (int i = 0; i < edgeLen; i++) {
+                String[] curArr = br.readLine().split(" ");
+                edges.add(new Edge<>(new Vertex<>(curArr[0]), new Vertex<>(curArr[1]),
+                        Integer.parseInt(curArr[2])));
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        AdjacencyListInterpretation<String> graph = new AdjacencyListInterpretation<>(vertices, edges);
+        graph.addVertex(new Vertex<>("G"));
+        graph.addEdge(new Edge<>(new Vertex<>("A"), new Vertex<>("G"), 10));
+        graph.removeEdge(new Edge<>(new Vertex<>("A"), new Vertex<>("B"), 10));
+        graph.removeVertex(new Vertex<>("D"));
+        graph.changeEdge(new Edge<>(new Vertex<>("A"), new Vertex<>("G"), 10),
+                new Edge<>(new Vertex<>("A"), new Vertex<>("G"), 22));
+        graph.changeVertex(new Vertex<>("C"), new Vertex<>("D"));
+
+        ArrayList<Vertex<String>> expectedResult = new ArrayList<>();
+        expectedResult.add(new Vertex<>("A"));
+        expectedResult.add(new Vertex<>("G"));
+        expectedResult.add(new Vertex<>("D"));
+        expectedResult.add(new Vertex<>("B"));
+        ArrayList<Vertex<String>> result = graph.shortestPath(new Vertex<>("A"));
+        assertArrayEquals(result.toArray(), expectedResult.toArray());
+    }
 }

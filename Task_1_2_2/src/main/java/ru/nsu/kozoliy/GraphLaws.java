@@ -1,69 +1,113 @@
 package ru.nsu.kozoliy;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
-/**
- * Интерфейс для представления различных видов графов.
- *
- * @param <T> Тип вершин в графе.
- */
-public interface GraphLaws<T> {
-    /**
-     * Добавляет вершину в граф.
-     *
-     * @param vertexToAdd Вершина для добавления.
-     */
-    void addVertex(T vertexToAdd);
 
-    /**
-     * Добавляет ребро в граф.
-     *
-     * @param edgeToAdd Ребро для добавления.
-     */
-    void addEdge(Edge<T> edgeToAdd);
+public abstract class GraphLaws<T> {
+    protected ArrayList<Vertex<T>> vertexes;
+    protected ArrayList<Edge<T>> edges;
+    protected static final int serviceVar = Integer.MAX_VALUE;
 
-    /**
-     * Удаляет вершину из графа.
-     *
-     * @param vertexToRemove Вершина для удаления.
-     */
-    void removeVertex(T vertexToRemove);
 
-    /**
-     * Удаляет ребро из графа.
-     *
-     * @param edgeToRemove Ребро для удаления.
-     */
-    void removeEdge(Edge<T> edgeToRemove);
+    public abstract boolean addVertex(Vertex<T> vertex);
 
-    /**
-     * Заменяет одну вершину на другую.
-     *
-     * @param oldVertex Старая вершина.
-     * @param newVertex Новая вершина.
-     */
-    void changeVertex(T oldVertex, T newVertex);
+    public abstract void removeVertex(Vertex<T> vertex);
 
-    /**
-     * Заменяет одно ребро другим.
-     *
-     * @param oldEdge Старое ребро.
-     * @param newEdge Новое ребро.
-     */
-    void changeEdge(Edge<T> oldEdge, Edge<T> newEdge);
+    public abstract void changeVertex(Vertex<T> oldVertex, Vertex<T> newVertex);
 
-    /**
-     * Возвращает список вершин в графе.
-     *
-     * @return Список вершин.
-     */
-    ArrayList<T> getVertexes();
+    public abstract void addEdge(Edge<T> edge);
 
-    /**
-     * Возвращает список рёбер, инцидентных заданной вершине.
-     *
-     * @param vertex Вершина, для которой необходимо получить список инцидентных рёбер.
-     * @return Список инцидентных рёбер.
-     */
-    ArrayList<Edge<T>> getNeighbors(T vertex);
+    public abstract void removeEdge(Edge<T> edge);
+
+    public abstract void changeEdge(Edge<T> oldEdge, Edge<T> newEdge);
+
+
+    public ArrayList<Edge<T>> getEdge(Vertex<T> vertex) {
+        ArrayList<Edge<T>> result = new ArrayList<>();
+        for (Edge<T> tEdge : this.edges) {
+            if (tEdge.getSource().equals(vertex)) {
+                result.add(tEdge);
+            }
+        }
+        return result;
+    }
+
+
+    public ArrayList<Vertex<T>> shortestPath(Vertex<T> vertex) {
+        int vertexLen = this.vertexes.size();
+        int[] distance = new int[vertexLen];
+        Arrays.fill(distance, serviceVar);
+        distance[this.vertexes.indexOf(vertex)] = 0;
+        boolean[] mark = new boolean[vertexLen];
+        Arrays.fill(mark, false);
+
+        for (int i = 0; i < vertexLen; i++) {
+            int shortest = -1;
+            for (int j = 0; j < vertexLen; j++) {
+                if (!mark[j] && (shortest == -1 || distance[shortest] > distance[j])) {
+                    shortest = j;
+                }
+            }
+            if (distance[shortest] == serviceVar) {
+                break;
+            }
+            mark[shortest] = true;
+
+            ArrayList<Edge<T>> adjacentEdge = getEdge(this.vertexes.get(shortest));
+            for (Edge<T> cur : adjacentEdge) {
+                if (distance[shortest] + cur.getWeight()
+                        < distance[this.vertexes.indexOf(cur.getDestination())]) {
+                    distance[this.vertexes.indexOf(cur.getDestination())]
+                            = distance[shortest] + cur.getWeight();
+                }
+            }
+        }
+
+        ArrayList<VertexDistance<T>> sortArray = new ArrayList<>();
+        for (int i = 0; i < vertexLen; i++) {
+            sortArray.add(new VertexDistance<>(this.vertexes.get(i), distance[i]));
+        }
+        Collections.sort(sortArray);
+        ArrayList<Vertex<T>> result = new ArrayList<>();
+        int len = sortArray.size();
+        for (VertexDistance<T> tVertexDistance : sortArray) {
+            result.add(tVertexDistance.vertex);
+        }
+        return result;
+    }
+
+    protected class VertexDistance<T> implements Comparable<VertexDistance> {
+        protected Vertex<T> vertex;
+        protected int distance;
+
+        /**
+         * Class constructor.
+         *
+         * @param vertex   - vertex
+         * @param distance - distance
+         */
+        VertexDistance(Vertex<T> vertex, int distance) {
+            this.vertex = vertex;
+            this.distance = distance;
+        }
+
+        /**
+         * Override compareTo method.
+         *
+         * @param vertexDistance - vertexDistance object
+         * @return positive, negative number or zero
+         */
+        @Override
+        public int compareTo(VertexDistance vertexDistance) {
+            return this.distance - vertexDistance.distance;
+        }
+    }
+
+
+    @ExcludeFromJacocoGeneratedTestReport
+    public static void main(String[] args) {
+
+    }
 }

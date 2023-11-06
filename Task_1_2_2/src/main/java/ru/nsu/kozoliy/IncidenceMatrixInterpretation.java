@@ -2,118 +2,83 @@ package ru.nsu.kozoliy;
 
 import java.util.ArrayList;
 
-/**
- * Класс для представления графа в виде матрицы инцидентности.
- *
- * @param <T> Тип вершин графа.
- */
-public class IncidenceMatrixInterpretation<T> implements GraphLaws<T> {
-
+public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
     private final ArrayList<ArrayList<EdgeStatus<T>>> incidenceMatrix;
-    private final ArrayList<T> vertexes;
-    private final ArrayList<Edge<T>> edges;
-    private final int serviceVar = 8;
 
-    /**
-     * Конструктор класса IncidenceMatrixInterpretation.
-     * Инициализирует матрицу инцидентности на основе списка вершин и рёбер графа.
-     *
-     * @param vertexes Список вершин графа.
-     * @param edges    Список рёбер графа.
-     */
-    public IncidenceMatrixInterpretation(ArrayList<T> vertexes, ArrayList<Edge<T>> edges) {
+    public IncidenceMatrixInterpretation(ArrayList<Vertex<T>> vertexes, ArrayList<Edge<T>> edges) {
+        this.incidenceMatrix = new ArrayList<>();
         this.vertexes = vertexes;
         this.edges = edges;
-        this.incidenceMatrix = new ArrayList<>();
 
-        for (T vertex : vertexes) {
-            ArrayList<EdgeStatus<T>> cur = new ArrayList<>();
+        for (Vertex<T> vertex : vertexes) {
+            ArrayList<EdgeStatus<T>> row = new ArrayList<>();
             for (Edge<T> edge : edges) {
-                if (vertex == edge.source && vertex == edge.destination) {
-                    cur.add(new EdgeStatus<>(2, edge));
-                } else if (vertex == edge.source) {
-                    cur.add(new EdgeStatus<>(1, edge));
-                } else if (vertex == edge.destination) {
-                    cur.add(new EdgeStatus<>(-1, edge));
+                if (vertex.equals(edge.getSource()) && vertex.equals(edge.getDestination())) {
+                    row.add(new EdgeStatus<>(edge, 2));
+                } else if (vertex.equals(edge.getSource())) {
+                    row.add(new EdgeStatus<>(edge, 1));
+                } else if (vertex.equals(edge.getDestination())) {
+                    row.add(new EdgeStatus<>(edge, -1));
                 } else {
-                    cur.add(new EdgeStatus<>(0, null));
+                    row.add(new EdgeStatus<>(null, 0));
                 }
             }
-            this.incidenceMatrix.add(cur);
+            this.incidenceMatrix.add(row);
         }
     }
 
-    /**
-     * Добавляет новую вершину в граф.
-     *
-     * @param vertexToAdd Вершина для добавления.
-     */
     @Override
-    public void addVertex(T vertexToAdd) {
+    public boolean addVertex(Vertex<T> vertexToAdd) {
         if (!this.vertexes.contains(vertexToAdd)) {
             this.vertexes.add(vertexToAdd);
-            ArrayList<EdgeStatus<T>> additionalVertex = new ArrayList<>();
-            for (int i = 0; i < edges.size(); i++) {
-                additionalVertex.add(new EdgeStatus<>(serviceVar, null));
+            ArrayList<EdgeStatus<T>> row = new ArrayList<>();
+            for (int i = 0; i < this.edges.size(); i++) {
+                row.add(new EdgeStatus<>(null, 0));
             }
-            this.incidenceMatrix.add(additionalVertex);
+            this.incidenceMatrix.add(row);
+            return true;
         }
+        return false;
     }
 
-    /**
-     * Добавляет новое ребро в граф.
-     *
-     * @param edgeToAdd Ребро для добавления.
-     */
     @Override
     public void addEdge(Edge<T> edgeToAdd) {
-        if (this.vertexes.contains(edgeToAdd.source)
-                && this.vertexes.contains(edgeToAdd.destination)
-                && !this.edges.contains(edgeToAdd)) {
-            int len = this.vertexes.size();
-            for (int i = 0; i < len; i++) {
-                T source = edgeToAdd.source;
-                T destination = edgeToAdd.destination;
-                if (this.vertexes.get(i) == source && source == destination) {
-                    EdgeStatus<T> cur = new EdgeStatus<>(2, edgeToAdd);
-                    this.incidenceMatrix.get(i).add(cur);
-                } else if (this.vertexes.get(i) == source) {
-                    EdgeStatus<T> cur = new EdgeStatus<>(-1, edgeToAdd);
-                    this.incidenceMatrix.get(i).add(cur);
-                } else if (this.vertexes.get(i) == destination) {
-                    EdgeStatus<T> cur = new EdgeStatus<>(1, edgeToAdd);
-                    this.incidenceMatrix.get(i).add(cur);
+        if (this.vertexes.contains(edgeToAdd.getSource()) && this.vertexes.contains(edgeToAdd.getDestination())) {
+            Vertex<T> src = edgeToAdd.getSource();
+            Vertex<T> dest = edgeToAdd.getDestination();
+            for (int i = 0; i < this.vertexes.size(); i++) {
+                if (this.vertexes.get(i).equals(src) && src.equals(dest)) {
+                    this.incidenceMatrix.get(i).add(new EdgeStatus<>(edgeToAdd, 2));
+                } else if (this.vertexes.get(i).equals(src)) {
+                    this.incidenceMatrix.get(i).add(new EdgeStatus<>(edgeToAdd, 1));
+                } else if (this.vertexes.get(i).equals(dest)) {
+                    this.incidenceMatrix.get(i).add(new EdgeStatus<>(edgeToAdd, -1));
                 } else {
-                    EdgeStatus<T> cur = new EdgeStatus<>(0, null);
-                    this.incidenceMatrix.get(i).add(cur);
+                    this.incidenceMatrix.get(i).add(new EdgeStatus<>(null, 0));
                 }
             }
             this.edges.add(edgeToAdd);
         }
     }
 
-    /**
-     * Удаляет вершину из графа.
-     *
-     * @param vertexToRemove Вершина для удаления.
-     */
     @Override
-    public void removeVertex(T vertexToRemove) {
+    public void removeVertex(Vertex<T> vertexToRemove) {
         if (this.vertexes.contains(vertexToRemove)) {
             int index = this.vertexes.indexOf(vertexToRemove);
             for (int i = 0; i < this.edges.size(); i++) {
-                EdgeStatus<T> cur = new EdgeStatus<>(serviceVar, null);
+                EdgeStatus<T> cur = new EdgeStatus<>(null, 0);
                 this.incidenceMatrix.get(index).set(i, cur);
             }
+
             for (int i = 0; i < this.edges.size(); i++) {
                 int count = 0;
                 for (int j = 0; j < this.vertexes.size(); j++) {
                     if (this.incidenceMatrix.get(j).get(i).status == 1
                             || this.incidenceMatrix.get(j).get(i).status == -1) {
-                        count++;
+                        count = count + 1;
                     }
                     if (this.incidenceMatrix.get(j).get(i).status == 2) {
-                        count += 2;
+                        count = count + 2;
                     }
                 }
                 if (count < 2) {
@@ -121,132 +86,75 @@ public class IncidenceMatrixInterpretation<T> implements GraphLaws<T> {
                     i--;
                 }
             }
-            this.vertexes.remove(vertexToRemove);
             this.incidenceMatrix.remove(index);
+            this.vertexes.remove(vertexToRemove);
         }
     }
 
-    /**
-     * Удаляет ребро из графа.
-     *
-     * @param edgeToRemove Ребро для удаления.
-     */
     @Override
     public void removeEdge(Edge<T> edgeToRemove) {
         if (this.edges.contains(edgeToRemove)) {
-            int len = this.vertexes.size();
             int index = this.edges.indexOf(edgeToRemove);
-            for (int i = 0; i < len; i++) {
+            for (int i = 0; i < this.vertexes.size(); i++) {
                 this.incidenceMatrix.get(i).remove(index);
             }
             this.edges.remove(index);
         }
     }
 
-    /**
-     * Изменяет вершину в графе.
-     *
-     * @param oldVertex Старая вершина.
-     * @param newVertex Новая вершина.
-     */
     @Override
-    public void changeVertex(T oldVertex, T newVertex) {
-        if (this.vertexes.contains(oldVertex)) {
+    public void changeVertex(Vertex<T> oldVertex, Vertex<T> newVertex) {
+        if (this.vertexes.contains(oldVertex) && !this.vertexes.contains(newVertex)) {
             int index = this.vertexes.indexOf(oldVertex);
-            int len = this.edges.size();
-            for (int i = 0; i < len; i++) {
-                if (this.edges.get(i).source == oldVertex) {
-                    this.edges.get(i).source = newVertex;
+            this.vertexes.set(index, newVertex);
+            for (Edge<T> edge : this.edges) {
+                if (edge.getSource().equals(oldVertex)) {
+                    edge.setSource(newVertex);
                 }
-                if (this.edges.get(i).destination == oldVertex) {
-                    this.edges.get(i).destination = newVertex;
+                if (edge.getDestination().equals(oldVertex)) {
+                    edge.setDestination(newVertex);
                 }
-                if (this.incidenceMatrix.get(index).get(i).status != 0) {
-                    if (this.incidenceMatrix.get(index).get(i).edge.source == oldVertex) {
-                        this.incidenceMatrix.get(index).get(i).edge.source = oldVertex;
-                    }
-                    if (this.incidenceMatrix.get(index).get(i).edge.destination == oldVertex) {
-                        this.incidenceMatrix.get(index).get(i).edge.destination = oldVertex;
+            }
+
+            for (int i = 0; i < this.vertexes.size(); i++) {
+                for (int j = 0; j < this.edges.size(); j++) {
+                    if (this.incidenceMatrix.get(i).get(j).edge != null) {
+                        if (this.incidenceMatrix.get(i).get(j).edge.getSource().equals(oldVertex)) {
+                            this.incidenceMatrix.get(i).get(j).edge.setSource(newVertex);
+                        }
+                        if (this.incidenceMatrix.get(i).get(j).edge.getDestination().equals(oldVertex)) {
+                            this.incidenceMatrix.get(i).get(j).edge.setDestination(newVertex);
+                        }
                     }
                 }
             }
-            this.vertexes.set(this.vertexes.indexOf(oldVertex), newVertex);
         }
     }
 
-    /**
-     * Изменяет ребро в графе.
-     *
-     * @param oldEdge Старое ребро.
-     * @param newEdge Новое ребро.
-     */
     @Override
     public void changeEdge(Edge<T> oldEdge, Edge<T> newEdge) {
-        if (this.edges.contains(oldEdge)) {
-            int index = this.edges.indexOf(oldEdge);
-            this.edges.set(index, newEdge);
-            int len = this.vertexes.size();
-            for (int i = 0; i < len; i++) {
-                if (this.incidenceMatrix.get(i).get(index).status == 1) {
-                    this.incidenceMatrix.get(i).get(index).edge = newEdge;
-                }
-                if (this.incidenceMatrix.get(i).get(index).status == -1) {
-                    this.incidenceMatrix.get(i).get(index).edge = newEdge;
-                }
-                if (this.incidenceMatrix.get(i).get(index).status == 2) {
-                    this.incidenceMatrix.get(i).get(index).edge = newEdge;
+        if (oldEdge.getSource().equals(newEdge.getSource())
+                && oldEdge.getDestination().equals(newEdge.getDestination())) {
+            if (this.edges.contains(oldEdge)) {
+                int index = this.edges.indexOf(oldEdge);
+                this.edges.set(index, newEdge);
+                int len = this.vertexes.size();
+                for (int i = 0; i < len; i++) {
+                    if (this.incidenceMatrix.get(i).get(index).status != 0) {
+                        this.incidenceMatrix.get(i).get(index).edge = newEdge;
+                    }
                 }
             }
         }
     }
 
-    /**
-     * Возвращает список вершин графа.
-     *
-     * @return Список вершин.
-     */
-    @Override
-    public ArrayList<T> getVertexes() {
-        return vertexes;
-    }
+    private class EdgeStatus<T> {
+        private Edge<T> edge;
+        private int status;
 
-    /**
-     * Возвращает список инцидентных рёбер для заданной вершины.
-     *
-     * @param vertex Вершина, для которой ищутся инцидентные рёбра.
-     * @return Список инцидентных рёбер.
-     */
-    @Override
-    public ArrayList<Edge<T>> getNeighbors(T vertex) {
-        ArrayList<Edge<T>> incidentEdges = new ArrayList<>();
-        int vertexIndex = vertexes.indexOf(vertex);
-
-        if (vertexIndex != -1) {
-            for (int i = 0; i < edges.size(); i++) {
-                int status = incidenceMatrix.get(vertexIndex).get(i).status;
-
-                if (status == 1 || status == -1 || status == 2) {
-                    Edge<T> edge = incidenceMatrix.get(vertexIndex).get(i).edge;
-                    incidentEdges.add(edge);
-                }
-            }
-        }
-
-        return incidentEdges;
-    }
-
-    /**
-     * Внутренний класс для представления статуса ребра в матрице инцидентности.
-     *
-     * @param <T> Тип вершин графа.
-     */
-    private static class EdgeStatus<T> {
-        int status;
-        Edge<T> edge;
-
-        public EdgeStatus(int status, Edge<T> edge) {
-            this.status = status;
+        EdgeStatus(Edge<T> edge, int status) {
             this.edge = edge;
+            this.status = status;
         }
     }
 }
