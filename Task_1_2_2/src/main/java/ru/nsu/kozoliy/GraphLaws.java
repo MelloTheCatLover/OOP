@@ -4,26 +4,67 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-
+/**
+ * Абстрактный класс, представляющий законы для работы с графом.
+ *
+ * @param <T> Тип вершин в графе.
+ */
 public abstract class GraphLaws<T> {
     protected ArrayList<Vertex<T>> vertexes;
     protected ArrayList<Edge<T>> edges;
     protected static final int serviceVar = Integer.MAX_VALUE;
 
-
+    /**
+     * Абстрактный метод для добавления вершины в граф.
+     *
+     * @param vertex Вершина для добавления.
+     * @return true, если вершина успешно добавлена, в противном случае - false.
+     */
     public abstract boolean addVertex(Vertex<T> vertex);
 
+    /**
+     * Абстрактный метод для удаления вершины из графа.
+     *
+     * @param vertex Вершина для удаления.
+     */
     public abstract void removeVertex(Vertex<T> vertex);
 
+    /**
+     * Абстрактный метод для изменения вершины в графе.
+     *
+     * @param oldVertex Старая вершина.
+     * @param newVertex Новая вершина.
+     */
     public abstract void changeVertex(Vertex<T> oldVertex, Vertex<T> newVertex);
 
+    /**
+     * Абстрактный метод для добавления ребра в граф.
+     *
+     * @param edge Ребро для добавления.
+     */
     public abstract void addEdge(Edge<T> edge);
 
+    /**
+     * Абстрактный метод для удаления ребра из графа.
+     *
+     * @param edge Ребро для удаления.
+     */
     public abstract void removeEdge(Edge<T> edge);
 
+    /**
+     * Абстрактный метод для изменения ребра в графе.
+     *
+     * @param oldEdge Старое ребро.
+     * @param newEdge Новое ребро.
+     */
     public abstract void changeEdge(Edge<T> oldEdge, Edge<T> newEdge);
 
-
+    /**
+     * Возвращает список рёбер, связанных с заданной вершиной.
+     *
+     * @param vertex Вершина, для которой нужно получить список рёбер.
+     * @return Список рёбер, связанных с вершиной.
+     */
     public ArrayList<Edge<T>> getEdge(Vertex<T> vertex) {
         ArrayList<Edge<T>> result = new ArrayList<>();
         for (Edge<T> tEdge : this.edges) {
@@ -34,7 +75,12 @@ public abstract class GraphLaws<T> {
         return result;
     }
 
-
+    /**
+     * Вычисляет кратчайший путь от заданной вершины до всех остальных вершин в графе.
+     *
+     * @param vertex Вершина, от которой начинается поиск кратчайшего пути.
+     * @return Список вершин, представляющих кратчайший путь от заданной вершины.
+     */
     public ArrayList<Vertex<T>> shortestPath(Vertex<T> vertex) {
         int vertexLen = this.vertexes.size();
         int[] distance = new int[vertexLen];
@@ -83,10 +129,10 @@ public abstract class GraphLaws<T> {
         protected int distance;
 
         /**
-         * Class constructor.
+         * Конструктор класса VertexDistance.
          *
-         * @param vertex   - vertex
-         * @param distance - distance
+         * @param vertex   Вершина.
+         * @param distance Расстояние.
          */
         VertexDistance(Vertex<T> vertex, int distance) {
             this.vertex = vertex;
@@ -94,17 +140,16 @@ public abstract class GraphLaws<T> {
         }
 
         /**
-         * Override compareTo method.
+         * Переопределение метода compareTo.
          *
-         * @param vertexDistance - vertexDistance object
-         * @return positive, negative number or zero
+         * @param vertexDistance Объект VertexDistance.
+         * @return Положительное, отрицательное число или ноль.
          */
         @Override
         public int compareTo(VertexDistance vertexDistance) {
             return this.distance - vertexDistance.distance;
         }
     }
-
 
     @ExcludeFromJacocoGeneratedTestReport
     public static void main(String[] args) {

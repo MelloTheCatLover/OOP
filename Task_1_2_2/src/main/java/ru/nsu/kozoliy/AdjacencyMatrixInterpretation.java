@@ -2,9 +2,20 @@ package ru.nsu.kozoliy;
 
 import java.util.ArrayList;
 
+/**
+ * Реализация графа с использованием матрицы смежности.
+ *
+ * @param <T> Тип вершин в графе.
+ */
 public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
-    private ArrayList<ArrayList<Integer>> adjacencyMatrix;
+    private final ArrayList<ArrayList<Integer>> adjacencyMatrix;
 
+    /**
+     * Конструктор для создания экземпляра AdjacencyMatrixInterpretation.
+     *
+     * @param vertexes Список вершин графа.
+     * @param edges    Список рёбер графа.
+     */
     public AdjacencyMatrixInterpretation(ArrayList<Vertex<T>> vertexes, ArrayList<Edge<T>> edges) {
         this.adjacencyMatrix = new ArrayList<>();
         this.vertexes = vertexes;
@@ -25,6 +36,12 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
         }
     }
 
+    /**
+     * Добавляет новую вершину в граф.
+     *
+     * @param vertex Вершина для добавления.
+     * @return true, если вершина успешно добавлена, в противном случае - false.
+     */
     @Override
     public boolean addVertex(Vertex<T> vertex) {
         if (!this.vertexes.contains(vertex)) {
@@ -41,6 +58,11 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
         return false;
     }
 
+    /**
+     * Добавляет новое ребро в граф.
+     *
+     * @param edgeToAdd Ребро для добавления.
+     */
     @Override
     public void addEdge(Edge<T> edgeToAdd) {
         if (this.vertexes.contains(edgeToAdd.getSource()) && this.vertexes.contains(edgeToAdd.getDestination())) {
@@ -51,6 +73,11 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
         }
     }
 
+    /**
+     * Удаляет вершину из графа.
+     *
+     * @param vertexToRemove Вершина для удаления.
+     */
     @Override
     public void removeVertex(Vertex<T> vertexToRemove) {
         if (this.vertexes.contains(vertexToRemove)) {
@@ -71,6 +98,11 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
         }
     }
 
+    /**
+     * Удаляет ребро из графа.
+     *
+     * @param edgeToRemove Ребро для удаления.
+     */
     @Override
     public void removeEdge(Edge<T> edgeToRemove) {
         if (this.edges.contains(edgeToRemove)) {
@@ -81,23 +113,34 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
         }
     }
 
+    /**
+     * Заменяет вершину в графе.
+     *
+     * @param oldVertex Старая вершина.
+     * @param newVertex Новая вершина.
+     */
     @Override
     public void changeVertex(Vertex<T> oldVertex, Vertex<T> newVertex) {
         if (this.vertexes.contains(oldVertex) && !this.vertexes.contains(newVertex)) {
             int index = this.vertexes.indexOf(oldVertex);
             this.vertexes.set(index, newVertex);
-            int len = this.edges.size();
-            for (int i = 0; i < len; i++) {
-                if (this.edges.get(i).getSource().equals(oldVertex)) {
-                    this.edges.get(i).setSource(newVertex);
+            for (Edge<T> edge : this.edges) {
+                if (edge.getSource().equals(oldVertex)) {
+                    edge.setSource(newVertex);
                 }
-                if (this.edges.get(i).getDestination().equals(oldVertex)) {
-                    this.edges.get(i).setDestination(newVertex);
+                if (edge.getDestination().equals(oldVertex)) {
+                    edge.setDestination(newVertex);
                 }
             }
         }
     }
 
+    /**
+     * Изменяет ребро в графе.
+     *
+     * @param oldEdge Старое ребро.
+     * @param newEdge Новое ребро.
+     */
     @Override
     public void changeEdge(Edge<T> oldEdge, Edge<T> newEdge) {
         if (oldEdge.getSource().equals(newEdge.getSource())

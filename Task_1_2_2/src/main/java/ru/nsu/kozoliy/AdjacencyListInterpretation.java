@@ -2,9 +2,20 @@ package ru.nsu.kozoliy;
 
 import java.util.ArrayList;
 
+/**
+ * Реализация графа с использованием списка смежности.
+ *
+ * @param <T> Тип вершин в графе.
+ */
 public class AdjacencyListInterpretation<T> extends GraphLaws<T> {
     private ArrayList<ArrayList<Vertex<T>>> adjacencyList;
 
+    /**
+     * Конструктор для создания экземпляра AdjacencyListInterpretation.
+     *
+     * @param vertexes Список вершин графа.
+     * @param edges    Список рёбер графа.
+     */
     public AdjacencyListInterpretation(ArrayList<Vertex<T>> vertexes, ArrayList<Edge<T>> edges) {
         this.adjacencyList = new ArrayList<>();
         this.vertexes = vertexes;
@@ -20,6 +31,12 @@ public class AdjacencyListInterpretation<T> extends GraphLaws<T> {
         }
     }
 
+    /**
+     * Добавляет новую вершину в граф.
+     *
+     * @param vertexToAdd Вершина для добавления.
+     * @return true, если вершина успешно добавлена, в противном случае - false.
+     */
     @Override
     public boolean addVertex(Vertex<T> vertexToAdd) {
         if (!vertexes.contains(vertexToAdd)) {
@@ -30,6 +47,11 @@ public class AdjacencyListInterpretation<T> extends GraphLaws<T> {
         return false;
     }
 
+    /**
+     * Удаляет вершину из графа.
+     *
+     * @param vertexToRemove Вершина для удаления.
+     */
     @Override
     public void removeVertex(Vertex<T> vertexToRemove) {
         if (vertexes.contains(vertexToRemove)) {
@@ -43,6 +65,12 @@ public class AdjacencyListInterpretation<T> extends GraphLaws<T> {
         }
     }
 
+    /**
+     * Заменяет вершину в графе.
+     *
+     * @param oldVertex Старая вершина.
+     * @param newVertex Новая вершина.
+     */
     @Override
     public void changeVertex(Vertex<T> oldVertex, Vertex<T> newVertex) {
         if (vertexes.contains(oldVertex) && !vertexes.contains(newVertex)) {
@@ -64,6 +92,11 @@ public class AdjacencyListInterpretation<T> extends GraphLaws<T> {
         }
     }
 
+    /**
+     * Добавляет новое ребро в граф.
+     *
+     * @param edgeToAdd Ребро для добавления.
+     */
     @Override
     public void addEdge(Edge<T> edgeToAdd) {
         if (vertexes.contains(edgeToAdd.getSource()) && vertexes.contains(edgeToAdd.getDestination())) {
@@ -73,6 +106,11 @@ public class AdjacencyListInterpretation<T> extends GraphLaws<T> {
         }
     }
 
+    /**
+     * Удаляет ребро из графа.
+     *
+     * @param edgeToRemove Ребро для удаления.
+     */
     @Override
     public void removeEdge(Edge<T> edgeToRemove) {
         if (edges.contains(edgeToRemove)) {
@@ -82,6 +120,12 @@ public class AdjacencyListInterpretation<T> extends GraphLaws<T> {
         }
     }
 
+    /**
+     * Изменяет ребро в графе.
+     *
+     * @param oldEdge Старое ребро.
+     * @param newEdge Новое ребро.
+     */
     @Override
     public void changeEdge(Edge<T> oldEdge, Edge<T> newEdge) {
         if (edges.contains(oldEdge)) {

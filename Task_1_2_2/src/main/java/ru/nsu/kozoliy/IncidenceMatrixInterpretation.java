@@ -2,9 +2,21 @@ package ru.nsu.kozoliy;
 
 import java.util.ArrayList;
 
+/**
+ * Класс для представления графа в виде матрицы инцидентности.
+ *
+ * @param <T> Тип вершин графа.
+ */
 public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
+
     private final ArrayList<ArrayList<EdgeStatus<T>>> incidenceMatrix;
 
+    /**
+     * Конструктор для создания экземпляра IncidenceMatrixInterpretation.
+     *
+     * @param vertexes Список вершин графа.
+     * @param edges    Список рёбер графа.
+     */
     public IncidenceMatrixInterpretation(ArrayList<Vertex<T>> vertexes, ArrayList<Edge<T>> edges) {
         this.incidenceMatrix = new ArrayList<>();
         this.vertexes = vertexes;
@@ -27,6 +39,12 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
         }
     }
 
+    /**
+     * Добавляет новую вершину в граф.
+     *
+     * @param vertexToAdd Вершина для добавления.
+     * @return true, если вершина успешно добавлена, в противном случае - false.
+     */
     @Override
     public boolean addVertex(Vertex<T> vertexToAdd) {
         if (!this.vertexes.contains(vertexToAdd)) {
@@ -41,6 +59,11 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
         return false;
     }
 
+    /**
+     * Добавляет новое ребро в граф.
+     *
+     * @param edgeToAdd Ребро для добавления.
+     */
     @Override
     public void addEdge(Edge<T> edgeToAdd) {
         if (this.vertexes.contains(edgeToAdd.getSource()) && this.vertexes.contains(edgeToAdd.getDestination())) {
@@ -61,6 +84,11 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
         }
     }
 
+    /**
+     * Удаляет вершину из графа.
+     *
+     * @param vertexToRemove Вершина для удаления.
+     */
     @Override
     public void removeVertex(Vertex<T> vertexToRemove) {
         if (this.vertexes.contains(vertexToRemove)) {
@@ -91,6 +119,11 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
         }
     }
 
+    /**
+     * Удаляет ребро из графа.
+     *
+     * @param edgeToRemove Ребро для удаления.
+     */
     @Override
     public void removeEdge(Edge<T> edgeToRemove) {
         if (this.edges.contains(edgeToRemove)) {
@@ -102,6 +135,12 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
         }
     }
 
+    /**
+     * Заменяет вершину в графе.
+     *
+     * @param oldVertex Старая вершина.
+     * @param newVertex Новая вершина.
+     */
     @Override
     public void changeVertex(Vertex<T> oldVertex, Vertex<T> newVertex) {
         if (this.vertexes.contains(oldVertex) && !this.vertexes.contains(newVertex)) {
@@ -122,7 +161,8 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
                         if (this.incidenceMatrix.get(i).get(j).edge.getSource().equals(oldVertex)) {
                             this.incidenceMatrix.get(i).get(j).edge.setSource(newVertex);
                         }
-                        if (this.incidenceMatrix.get(i).get(j).edge.getDestination().equals(oldVertex)) {
+                        if (this.incidenceMatrix.get(i).get(j)
+                                .edge.getDestination().equals(oldVertex)) {
                             this.incidenceMatrix.get(i).get(j).edge.setDestination(newVertex);
                         }
                     }
@@ -131,6 +171,12 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
         }
     }
 
+    /**
+     * Изменяет ребро в графе.
+     *
+     * @param oldEdge Старое ребро.
+     * @param newEdge Новое ребро.
+     */
     @Override
     public void changeEdge(Edge<T> oldEdge, Edge<T> newEdge) {
         if (oldEdge.getSource().equals(newEdge.getSource())
@@ -148,10 +194,21 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
         }
     }
 
-    private class EdgeStatus<T> {
+    /**
+     * Класс для представления статуса рёбра в матрице инцидентности.
+     *
+     * @param <T> Тип вершины.
+     */
+    private static class EdgeStatus<T> {
         private Edge<T> edge;
-        private int status;
+        private final int status;
 
+        /**
+         * Конструктор класса EdgeStatus.
+         *
+         * @param edge   Ребро.
+         * @param status Статус.
+         */
         EdgeStatus(Edge<T> edge, int status) {
             this.edge = edge;
             this.status = status;

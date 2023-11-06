@@ -1,5 +1,7 @@
 package ru.nsu.kozoliy;
 
+import java.util.Objects;
+
 /**
  * Класс, представляющий ребро в графе.
  *
@@ -34,36 +36,66 @@ public class Edge<T> {
         this.weight = weight;
     }
 
-
-
+    /**
+     * Получить начальную вершину ребра.
+     *
+     * @return Начальная вершина ребра.
+     */
     Vertex<T> getSource() {
         return this.source;
     }
 
-
+    /**
+     * Установить начальную вершину ребра.
+     *
+     * @param source Новая начальная вершина ребра.
+     */
     void setSource(Vertex<T> source) {
         this.source = source;
     }
 
-
+    /**
+     * Получить конечную вершину ребра.
+     *
+     * @return Конечная вершина ребра.
+     */
     Vertex<T> getDestination() {
         return this.destination;
     }
 
+    /**
+     * Установить конечную вершину ребра.
+     *
+     * @param destination Новая конечная вершина ребра.
+     */
     void setDestination(Vertex<T> destination) {
         this.destination = destination;
     }
 
-
+    /**
+     * Получить вес ребра.
+     *
+     * @return Вес ребра.
+     */
     int getWeight() {
         return this.weight;
     }
 
-
+    /**
+     * Установить вес ребра.
+     *
+     * @param weight Новый вес ребра.
+     */
     void setWeight(int weight) {
         this.weight = weight;
     }
 
+    /**
+     * Переопределение метода equals для сравнения ребер.
+     *
+     * @param obj Объект для сравнения.
+     * @return true, если ребра равны, в противном случае - false.
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -78,16 +110,12 @@ public class Edge<T> {
     }
 
     /**
-     * Override hashCode method.
+     * Переопределение метода hashCode для вычисления хеш-кода ребра.
      *
-     * @return hash
+     * @return Значение хеш-кода ребра.
      */
     @Override
     public int hashCode() {
-        int result = 17;
-        result = 31 * result + this.source.hashCode();
-        result = 17 * result + this.destination.hashCode();
-        result = result + this.weight;
-        return result;
+        return Objects.hash(source, destination, weight);
     }
 }
