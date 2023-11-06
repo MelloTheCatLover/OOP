@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":10,"i5":9,"i6":6,"i7":6,"i8":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -87,15 +87,15 @@ loadScripts(document, 'script');</script>
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
@@ -115,29 +115,110 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <main role="main">
 <div class="header">
 <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">ru.nsu.kozoliy</a></div>
-<h2 title="Interface GraphLaws" class="title">Interface GraphLaws&lt;T&gt;</h2>
+<h2 title="Class GraphLaws" class="title">Class GraphLaws&lt;T&gt;</h2>
 </div>
 <div class="contentContainer">
+<ul class="inheritance">
+<li>java.lang.Object</li>
+<li>
+<ul class="inheritance">
+<li>ru.nsu.kozoliy.GraphLaws&lt;T&gt;</li>
+</ul>
+</li>
+</ul>
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
 <dl>
-<dt><span class="paramLabel">Type Parameters:</span></dt>
-<dd><code>T</code> - Тип вершин в графе.</dd>
-</dl>
-<dl>
-<dt>All Known Implementing Classes:</dt>
+<dt>Direct Known Subclasses:</dt>
 <dd><code><a href="AdjacencyListInterpretation.html" title="class in ru.nsu.kozoliy">AdjacencyListInterpretation</a></code>, <code><a href="AdjacencyMatrixInterpretation.html" title="class in ru.nsu.kozoliy">AdjacencyMatrixInterpretation</a></code>, <code><a href="IncidenceMatrixInterpretation.html" title="class in ru.nsu.kozoliy">IncidenceMatrixInterpretation</a></code></dd>
 </dl>
 <hr>
-<pre>public interface <span class="typeNameLabel">GraphLaws&lt;T&gt;</span></pre>
-<div class="block">Интерфейс для представления различных видов графов.</div>
+<pre>public abstract class <span class="typeNameLabel">GraphLaws&lt;T&gt;</span>
+extends java.lang.Object</pre>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<section>
+<ul class="blockList">
+<li class="blockList"><a id="nested.class.summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="memberSummary">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Class</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected class&nbsp;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="GraphLaws.VertexDistance.html" title="class in ru.nsu.kozoliy">GraphLaws.VertexDistance</a>&lt;<a href="GraphLaws.VertexDistance.html" title="type parameter in GraphLaws.VertexDistance">T</a>&gt;</span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+</section>
+<!-- =========== FIELD SUMMARY =========== -->
+<section>
+<ul class="blockList">
+<li class="blockList"><a id="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Field</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected java.util.ArrayList&lt;<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#edges">edges</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#serviceVar">serviceVar</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected java.util.ArrayList&lt;<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#vertexes">vertexes</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+</section>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<section>
+<ul class="blockList">
+<li class="blockList"><a id="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Constructor</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tr class="altColor">
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">GraphLaws</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+</section>
 <!-- ========== METHOD SUMMARY =========== -->
 <section>
 <ul class="blockList">
@@ -146,71 +227,67 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addEdge(ru.nsu.kozoliy.Edge)">addEdge</a></span>&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;edgeToAdd)</code></th>
-<td class="colLast">
-<div class="block">Добавляет ребро в граф.</div>
-</td>
+<td class="colFirst"><code>abstract void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addEdge(ru.nsu.kozoliy.Edge)">addEdge</a></span>&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;edge)</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addVertex(T)">addVertex</a></span>&#8203;(<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&nbsp;vertexToAdd)</code></th>
-<td class="colLast">
-<div class="block">Добавляет вершину в граф.</div>
-</td>
+<td class="colFirst"><code>abstract boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addVertex(ru.nsu.kozoliy.Vertex)">addVertex</a></span>&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;vertex)</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>void</code></td>
+<td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#changeEdge(ru.nsu.kozoliy.Edge,ru.nsu.kozoliy.Edge)">changeEdge</a></span>&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;oldEdge,
           <a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;newEdge)</code></th>
-<td class="colLast">
-<div class="block">Заменяет одно ребро другим.</div>
-</td>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#changeVertex(T,T)">changeVertex</a></span>&#8203;(<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&nbsp;oldVertex,
-            <a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&nbsp;newVertex)</code></th>
-<td class="colLast">
-<div class="block">Заменяет одну вершину на другую.</div>
-</td>
+<td class="colFirst"><code>abstract void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#changeVertex(ru.nsu.kozoliy.Vertex,ru.nsu.kozoliy.Vertex)">changeVertex</a></span>&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;oldVertex,
+            <a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;newVertex)</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>java.util.ArrayList&lt;<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNeighbors(T)">getNeighbors</a></span>&#8203;(<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&nbsp;vertex)</code></th>
-<td class="colLast">
-<div class="block">Возвращает список рёбер, инцидентных заданной вершине.</div>
-</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEdge(ru.nsu.kozoliy.Vertex)">getEdge</a></span>&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;vertex)</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code>java.util.ArrayList&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVertexes()">getVertexes</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Возвращает список вершин в графе.</div>
-</td>
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#main(java.lang.String%5B%5D)">main</a></span>&#8203;(java.lang.String[]&nbsp;args)</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeEdge(ru.nsu.kozoliy.Edge)">removeEdge</a></span>&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;edgeToRemove)</code></th>
-<td class="colLast">
-<div class="block">Удаляет ребро из графа.</div>
-</td>
+<td class="colFirst"><code>abstract void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeEdge(ru.nsu.kozoliy.Edge)">removeEdge</a></span>&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;edge)</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeVertex(T)">removeVertex</a></span>&#8203;(<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&nbsp;vertexToRemove)</code></th>
-<td class="colLast">
-<div class="block">Удаляет вершину из графа.</div>
-</td>
+<td class="colFirst"><code>abstract void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeVertex(ru.nsu.kozoliy.Vertex)">removeVertex</a></span>&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;vertex)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>java.util.ArrayList&lt;<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#shortestPath(ru.nsu.kozoliy.Vertex)">shortestPath</a></span>&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;vertex)</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 </table>
+<ul class="blockList">
+<li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.Object</h3>
+<code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
+</ul>
 </li>
 </ul>
 </section>
@@ -220,6 +297,66 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<section>
+<ul class="blockList">
+<li class="blockList"><a id="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a id="vertexes">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>vertexes</h4>
+<pre>protected&nbsp;java.util.ArrayList&lt;<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&gt; vertexes</pre>
+</li>
+</ul>
+<a id="edges">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>edges</h4>
+<pre>protected&nbsp;java.util.ArrayList&lt;<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&gt; edges</pre>
+</li>
+</ul>
+<a id="serviceVar">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>serviceVar</h4>
+<pre>protected static final&nbsp;int serviceVar</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#ru.nsu.kozoliy.GraphLaws.serviceVar">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<section>
+<ul class="blockList">
+<li class="blockList"><a id="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a id="&lt;init&gt;()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>GraphLaws</h4>
+<pre>public&nbsp;GraphLaws()</pre>
+</li>
+</ul>
+</li>
+</ul>
+</section>
 <!-- ============ METHOD DETAIL ========== -->
 <section>
 <ul class="blockList">
@@ -227,20 +364,32 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="addVertex(java.lang.Object)">
-<!--   -->
-</a><a id="addVertex(T)">
+<a id="addVertex(ru.nsu.kozoliy.Vertex)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>addVertex</h4>
-<pre class="methodSignature">void&nbsp;addVertex&#8203;(<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&nbsp;vertexToAdd)</pre>
-<div class="block">Добавляет вершину в граф.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>vertexToAdd</code> - Вершина для добавления.</dd>
-</dl>
+<pre class="methodSignature">public abstract&nbsp;boolean&nbsp;addVertex&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;vertex)</pre>
+</li>
+</ul>
+<a id="removeVertex(ru.nsu.kozoliy.Vertex)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeVertex</h4>
+<pre class="methodSignature">public abstract&nbsp;void&nbsp;removeVertex&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;vertex)</pre>
+</li>
+</ul>
+<a id="changeVertex(ru.nsu.kozoliy.Vertex,ru.nsu.kozoliy.Vertex)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>changeVertex</h4>
+<pre class="methodSignature">public abstract&nbsp;void&nbsp;changeVertex&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;oldVertex,
+                                  <a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;newVertex)</pre>
 </li>
 </ul>
 <a id="addEdge(ru.nsu.kozoliy.Edge)">
@@ -249,28 +398,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>addEdge</h4>
-<pre class="methodSignature">void&nbsp;addEdge&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;edgeToAdd)</pre>
-<div class="block">Добавляет ребро в граф.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>edgeToAdd</code> - Ребро для добавления.</dd>
-</dl>
-</li>
-</ul>
-<a id="removeVertex(java.lang.Object)">
-<!--   -->
-</a><a id="removeVertex(T)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>removeVertex</h4>
-<pre class="methodSignature">void&nbsp;removeVertex&#8203;(<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&nbsp;vertexToRemove)</pre>
-<div class="block">Удаляет вершину из графа.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>vertexToRemove</code> - Вершина для удаления.</dd>
-</dl>
+<pre class="methodSignature">public abstract&nbsp;void&nbsp;addEdge&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;edge)</pre>
 </li>
 </ul>
 <a id="removeEdge(ru.nsu.kozoliy.Edge)">
@@ -279,30 +407,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>removeEdge</h4>
-<pre class="methodSignature">void&nbsp;removeEdge&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;edgeToRemove)</pre>
-<div class="block">Удаляет ребро из графа.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>edgeToRemove</code> - Ребро для удаления.</dd>
-</dl>
-</li>
-</ul>
-<a id="changeVertex(java.lang.Object,java.lang.Object)">
-<!--   -->
-</a><a id="changeVertex(T,T)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>changeVertex</h4>
-<pre class="methodSignature">void&nbsp;changeVertex&#8203;(<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&nbsp;oldVertex,
-                  <a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&nbsp;newVertex)</pre>
-<div class="block">Заменяет одну вершину на другую.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>oldVertex</code> - Старая вершина.</dd>
-<dd><code>newVertex</code> - Новая вершина.</dd>
-</dl>
+<pre class="methodSignature">public abstract&nbsp;void&nbsp;removeEdge&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;edge)</pre>
 </li>
 </ul>
 <a id="changeEdge(ru.nsu.kozoliy.Edge,ru.nsu.kozoliy.Edge)">
@@ -311,46 +416,35 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>changeEdge</h4>
-<pre class="methodSignature">void&nbsp;changeEdge&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;oldEdge,
-                <a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;newEdge)</pre>
-<div class="block">Заменяет одно ребро другим.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>oldEdge</code> - Старое ребро.</dd>
-<dd><code>newEdge</code> - Новое ребро.</dd>
-</dl>
+<pre class="methodSignature">public abstract&nbsp;void&nbsp;changeEdge&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;oldEdge,
+                                <a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;newEdge)</pre>
 </li>
 </ul>
-<a id="getVertexes()">
+<a id="getEdge(ru.nsu.kozoliy.Vertex)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getVertexes</h4>
-<pre class="methodSignature">java.util.ArrayList&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;getVertexes()</pre>
-<div class="block">Возвращает список вершин в графе.</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>Список вершин.</dd>
-</dl>
+<h4>getEdge</h4>
+<pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&gt;&nbsp;getEdge&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;vertex)</pre>
 </li>
 </ul>
-<a id="getNeighbors(java.lang.Object)">
+<a id="shortestPath(ru.nsu.kozoliy.Vertex)">
 <!--   -->
-</a><a id="getNeighbors(T)">
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>shortestPath</h4>
+<pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&gt;&nbsp;shortestPath&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;vertex)</pre>
+</li>
+</ul>
+<a id="main(java.lang.String[])">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>getNeighbors</h4>
-<pre class="methodSignature">java.util.ArrayList&lt;<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&gt;&nbsp;getNeighbors&#8203;(<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&nbsp;vertex)</pre>
-<div class="block">Возвращает список рёбер, инцидентных заданной вершине.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>vertex</code> - Вершина, для которой необходимо получить список инцидентных рёбер.</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>Список инцидентных рёбер.</dd>
-</dl>
+<h4>main</h4>
+<pre class="methodSignature">public static&nbsp;void&nbsp;main&#8203;(java.lang.String[]&nbsp;args)</pre>
 </li>
 </ul>
 </li>
@@ -403,15 +497,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
