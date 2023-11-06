@@ -61,7 +61,8 @@ public class AdjacencyListInterpretation<T> extends GraphLaws<T> {
             for (int i = 0; i < adjacencyList.size(); i++) {
                 adjacencyList.get(i).remove(vertexToRemove);
             }
-            edges.removeIf(edge -> edge.getSource().equals(vertexToRemove) || edge.getDestination().equals(vertexToRemove));
+            edges.removeIf(edge -> edge.getSource().equals(vertexToRemove)
+                    || edge.getDestination().equals(vertexToRemove));
         }
     }
 
@@ -99,7 +100,8 @@ public class AdjacencyListInterpretation<T> extends GraphLaws<T> {
      */
     @Override
     public void addEdge(Edge<T> edgeToAdd) {
-        if (vertexes.contains(edgeToAdd.getSource()) && vertexes.contains(edgeToAdd.getDestination())) {
+        if (vertexes.contains(edgeToAdd.getSource())
+                && vertexes.contains(edgeToAdd.getDestination())) {
             int sourceIndex = vertexes.indexOf(edgeToAdd.getSource());
             adjacencyList.get(sourceIndex).add(edgeToAdd.getDestination());
             edges.add(edgeToAdd);

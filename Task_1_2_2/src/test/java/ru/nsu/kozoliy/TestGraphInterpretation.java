@@ -40,7 +40,8 @@ public class TestGraphInterpretation {
             System.out.println(e.getMessage());
         }
 
-        AdjacencyMatrixInterpretation<String> graph = new AdjacencyMatrixInterpretation<>(vertices, edges);
+        AdjacencyMatrixInterpretation<String> graph
+                = new AdjacencyMatrixInterpretation<>(vertices, edges);
         graph.addVertex(new Vertex<>("F"));
         graph.addEdge(new Edge<>(new Vertex<>("A"), new Vertex<>("F"), 10));
         graph.removeEdge(new Edge<>(new Vertex<>("A"), new Vertex<>("B"), 10));
@@ -82,7 +83,8 @@ public class TestGraphInterpretation {
             System.out.println(e.getMessage());
         }
 
-        IncidenceMatrixInterpretation<String> graph = new IncidenceMatrixInterpretation<>(vertices, edges);
+        IncidenceMatrixInterpretation<String> graph
+                = new IncidenceMatrixInterpretation<>(vertices, edges);
         graph.addVertex(new Vertex<>("F"));
         graph.addEdge(new Edge<>(new Vertex<>("A"), new Vertex<>("F"), 10));
         graph.removeEdge(new Edge<>(new Vertex<>("A"), new Vertex<>("B"), 10));
@@ -123,7 +125,8 @@ public class TestGraphInterpretation {
             System.out.println(e.getMessage());
         }
 
-        AdjacencyListInterpretation<String> graph = new AdjacencyListInterpretation<>(vertices, edges);
+        AdjacencyListInterpretation<String> graph
+                = new AdjacencyListInterpretation<>(vertices, edges);
         graph.addVertex(new Vertex<>("G"));
         graph.addEdge(new Edge<>(new Vertex<>("A"), new Vertex<>("G"), 10));
         graph.removeEdge(new Edge<>(new Vertex<>("A"), new Vertex<>("B"), 10));

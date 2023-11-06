@@ -66,7 +66,8 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
      */
     @Override
     public void addEdge(Edge<T> edgeToAdd) {
-        if (this.vertexes.contains(edgeToAdd.getSource()) && this.vertexes.contains(edgeToAdd.getDestination())) {
+        if (this.vertexes.contains(edgeToAdd.getSource())
+                && this.vertexes.contains(edgeToAdd.getDestination())) {
             Vertex<T> src = edgeToAdd.getSource();
             Vertex<T> dest = edgeToAdd.getDestination();
             for (int i = 0; i < this.vertexes.size(); i++) {

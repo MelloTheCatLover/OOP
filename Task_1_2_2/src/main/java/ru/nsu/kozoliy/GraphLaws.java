@@ -67,9 +67,9 @@ public abstract class GraphLaws<T> {
      */
     public ArrayList<Edge<T>> getEdge(Vertex<T> vertex) {
         ArrayList<Edge<T>> result = new ArrayList<>();
-        for (Edge<T> tEdge : this.edges) {
-            if (tEdge.getSource().equals(vertex)) {
-                result.add(tEdge);
+        for (Edge<T> edge : this.edges) {
+            if (edge.getSource().equals(vertex)) {
+                result.add(edge);
             }
         }
         return result;
@@ -118,13 +118,16 @@ public abstract class GraphLaws<T> {
         Collections.sort(sortArray);
         ArrayList<Vertex<T>> result = new ArrayList<>();
         int len = sortArray.size();
-        for (VertexDistance<T> tVertexDistance : sortArray) {
-            result.add(tVertexDistance.vertex);
+        for (VertexDistance<T> vertexDistance : sortArray) {
+            result.add(vertexDistance.vertex);
         }
         return result;
     }
 
-    protected class VertexDistance<T> implements Comparable<VertexDistance> {
+    /**
+     * Класс вершины и расстояния
+     */
+    protected static class VertexDistance<T> implements Comparable<VertexDistance> {
         protected Vertex<T> vertex;
         protected int distance;
 
