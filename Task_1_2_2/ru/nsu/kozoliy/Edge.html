@@ -185,13 +185,15 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#equals(java.lang.Object)">equals</a></span>&#8203;(java.lang.Object&nbsp;obj)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Переопределение метода equals для сравнения ребер.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hashCode()">hashCode</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Override hashCode method.</div>
+<div class="block">Переопределение метода hashCode для вычисления хеш-кода ребра.</div>
 </td>
 </tr>
 </table>
@@ -253,9 +255,14 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>equals</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;equals&#8203;(java.lang.Object&nbsp;obj)</pre>
+<div class="block">Переопределение метода equals для сравнения ребер.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code>equals</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>obj</code> - Объект для сравнения.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true, если ребра равны, в противном случае - false.</dd>
 </dl>
 </li>
 </ul>
@@ -266,12 +273,12 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>hashCode</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;hashCode()</pre>
-<div class="block">Override hashCode method.</div>
+<div class="block">Переопределение метода hashCode для вычисления хеш-кода ребра.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code>hashCode</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>hash</dd>
+<dd>Значение хеш-кода ребра.</dd>
 </dl>
 </li>
 </ul>

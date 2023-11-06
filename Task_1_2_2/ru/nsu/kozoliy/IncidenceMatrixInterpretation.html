@@ -134,9 +134,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - Тип вершин графа.</dd>
+</dl>
 <hr>
 <pre>public class <span class="typeNameLabel">IncidenceMatrixInterpretation&lt;T&gt;</span>
 extends <a href="GraphLaws.html" title="class in ru.nsu.kozoliy">GraphLaws</a>&lt;T&gt;</pre>
+<div class="block">Класс для представления графа в виде матрицы инцидентности.</div>
 </li>
 </ul>
 </div>
@@ -193,7 +198,9 @@ extends <a href="GraphLaws.html" title="class in ru.nsu.kozoliy">GraphLaws</a>&l
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.util.ArrayList,java.util.ArrayList)">IncidenceMatrixInterpretation</a></span>&#8203;(java.util.ArrayList&lt;<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&gt;&nbsp;vertexes,
                              java.util.ArrayList&lt;<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&gt;&nbsp;edges)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Конструктор для создания экземпляра IncidenceMatrixInterpretation.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -216,34 +223,46 @@ extends <a href="GraphLaws.html" title="class in ru.nsu.kozoliy">GraphLaws</a>&l
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addEdge(ru.nsu.kozoliy.Edge)">addEdge</a></span>&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&nbsp;edgeToAdd)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Добавляет новое ребро в граф.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addVertex(ru.nsu.kozoliy.Vertex)">addVertex</a></span>&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&nbsp;vertexToAdd)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Добавляет новую вершину в граф.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#changeEdge(ru.nsu.kozoliy.Edge,ru.nsu.kozoliy.Edge)">changeEdge</a></span>&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&nbsp;oldEdge,
           <a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&nbsp;newEdge)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Изменяет ребро в графе.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#changeVertex(ru.nsu.kozoliy.Vertex,ru.nsu.kozoliy.Vertex)">changeVertex</a></span>&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&nbsp;oldVertex,
             <a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&nbsp;newVertex)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Заменяет вершину в графе.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeEdge(ru.nsu.kozoliy.Edge)">removeEdge</a></span>&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&nbsp;edgeToRemove)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Удаляет ребро из графа.</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeVertex(ru.nsu.kozoliy.Vertex)">removeVertex</a></span>&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&nbsp;vertexToRemove)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Удаляет вершину из графа.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -284,6 +303,12 @@ extends <a href="GraphLaws.html" title="class in ru.nsu.kozoliy">GraphLaws</a>&l
 <h4>IncidenceMatrixInterpretation</h4>
 <pre>public&nbsp;IncidenceMatrixInterpretation&#8203;(java.util.ArrayList&lt;<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&gt;&nbsp;vertexes,
                                      java.util.ArrayList&lt;<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&gt;&nbsp;edges)</pre>
+<div class="block">Конструктор для создания экземпляра IncidenceMatrixInterpretation.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>vertexes</code> - Список вершин графа.</dd>
+<dd><code>edges</code> - Список рёбер графа.</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -303,9 +328,14 @@ extends <a href="GraphLaws.html" title="class in ru.nsu.kozoliy">GraphLaws</a>&l
 <li class="blockList">
 <h4>addVertex</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;addVertex&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&nbsp;vertexToAdd)</pre>
+<div class="block">Добавляет новую вершину в граф.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GraphLaws.html#addVertex(ru.nsu.kozoliy.Vertex)">addVertex</a></code>&nbsp;in class&nbsp;<code><a href="GraphLaws.html" title="class in ru.nsu.kozoliy">GraphLaws</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>vertexToAdd</code> - Вершина для добавления.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true, если вершина успешно добавлена, в противном случае - false.</dd>
 </dl>
 </li>
 </ul>
@@ -316,9 +346,12 @@ extends <a href="GraphLaws.html" title="class in ru.nsu.kozoliy">GraphLaws</a>&l
 <li class="blockList">
 <h4>addEdge</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;addEdge&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&nbsp;edgeToAdd)</pre>
+<div class="block">Добавляет новое ребро в граф.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GraphLaws.html#addEdge(ru.nsu.kozoliy.Edge)">addEdge</a></code>&nbsp;in class&nbsp;<code><a href="GraphLaws.html" title="class in ru.nsu.kozoliy">GraphLaws</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>edgeToAdd</code> - Ребро для добавления.</dd>
 </dl>
 </li>
 </ul>
@@ -329,9 +362,12 @@ extends <a href="GraphLaws.html" title="class in ru.nsu.kozoliy">GraphLaws</a>&l
 <li class="blockList">
 <h4>removeVertex</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;removeVertex&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&nbsp;vertexToRemove)</pre>
+<div class="block">Удаляет вершину из графа.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GraphLaws.html#removeVertex(ru.nsu.kozoliy.Vertex)">removeVertex</a></code>&nbsp;in class&nbsp;<code><a href="GraphLaws.html" title="class in ru.nsu.kozoliy">GraphLaws</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>vertexToRemove</code> - Вершина для удаления.</dd>
 </dl>
 </li>
 </ul>
@@ -342,9 +378,12 @@ extends <a href="GraphLaws.html" title="class in ru.nsu.kozoliy">GraphLaws</a>&l
 <li class="blockList">
 <h4>removeEdge</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;removeEdge&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&nbsp;edgeToRemove)</pre>
+<div class="block">Удаляет ребро из графа.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GraphLaws.html#removeEdge(ru.nsu.kozoliy.Edge)">removeEdge</a></code>&nbsp;in class&nbsp;<code><a href="GraphLaws.html" title="class in ru.nsu.kozoliy">GraphLaws</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>edgeToRemove</code> - Ребро для удаления.</dd>
 </dl>
 </li>
 </ul>
@@ -356,9 +395,13 @@ extends <a href="GraphLaws.html" title="class in ru.nsu.kozoliy">GraphLaws</a>&l
 <h4>changeVertex</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;changeVertex&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&nbsp;oldVertex,
                          <a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&nbsp;newVertex)</pre>
+<div class="block">Заменяет вершину в графе.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GraphLaws.html#changeVertex(ru.nsu.kozoliy.Vertex,ru.nsu.kozoliy.Vertex)">changeVertex</a></code>&nbsp;in class&nbsp;<code><a href="GraphLaws.html" title="class in ru.nsu.kozoliy">GraphLaws</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>oldVertex</code> - Старая вершина.</dd>
+<dd><code>newVertex</code> - Новая вершина.</dd>
 </dl>
 </li>
 </ul>
@@ -370,9 +413,13 @@ extends <a href="GraphLaws.html" title="class in ru.nsu.kozoliy">GraphLaws</a>&l
 <h4>changeEdge</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;changeEdge&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&nbsp;oldEdge,
                        <a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;&nbsp;newEdge)</pre>
+<div class="block">Изменяет ребро в графе.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GraphLaws.html#changeEdge(ru.nsu.kozoliy.Edge,ru.nsu.kozoliy.Edge)">changeEdge</a></code>&nbsp;in class&nbsp;<code><a href="GraphLaws.html" title="class in ru.nsu.kozoliy">GraphLaws</a>&lt;<a href="IncidenceMatrixInterpretation.html" title="type parameter in IncidenceMatrixInterpretation">T</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>oldEdge</code> - Старое ребро.</dd>
+<dd><code>newEdge</code> - Новое ребро.</dd>
 </dl>
 </li>
 </ul>
