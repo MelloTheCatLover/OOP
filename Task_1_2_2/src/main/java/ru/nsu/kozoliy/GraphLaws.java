@@ -125,7 +125,7 @@ public abstract class GraphLaws<T> {
     }
 
     /**
-     * Класс вершины и расстояния
+     * Класс вершины и расстояния.
      *
      */
     protected static class VertexDistance<T> implements Comparable<VertexDistance> {
