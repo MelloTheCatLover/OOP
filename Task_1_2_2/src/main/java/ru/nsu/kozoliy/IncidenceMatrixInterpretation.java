@@ -26,13 +26,13 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
             ArrayList<EdgeStatus<T>> row = new ArrayList<>();
             for (Edge<T> edge : edges) {
                 if (vertex.equals(edge.getSource()) && vertex.equals(edge.getDestination())) {
-                    row.add(new EdgeStatus<>(edge, 2));
+                    row.add(new EdgeStatus<>(edge, Status.LOOP));
                 } else if (vertex.equals(edge.getSource())) {
-                    row.add(new EdgeStatus<>(edge, 1));
+                    row.add(new EdgeStatus<>(edge, Status.SOURCE));
                 } else if (vertex.equals(edge.getDestination())) {
-                    row.add(new EdgeStatus<>(edge, -1));
+                    row.add(new EdgeStatus<>(edge, Status.DESTINATION));
                 } else {
-                    row.add(new EdgeStatus<>(null, 0));
+                    row.add(new EdgeStatus<>(null, Status.NOTHING));
                 }
             }
             this.incidenceMatrix.add(row);
@@ -51,7 +51,7 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
             this.vertexes.add(vertexToAdd);
             ArrayList<EdgeStatus<T>> row = new ArrayList<>();
             for (int i = 0; i < this.edges.size(); i++) {
-                row.add(new EdgeStatus<>(null, 0));
+                row.add(new EdgeStatus<>(null, Status.NOTHING));
             }
             this.incidenceMatrix.add(row);
             return true;
@@ -66,7 +66,7 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
      * @param edgeToAdd Ребро для добавления.
      */
     @Override
-    public void addEdge(Edge<T> edgeToAdd) {
+    public boolean addEdge(Edge<T> edgeToAdd) {
         if (this.vertexes.contains(edgeToAdd.getSource())
                 && this.vertexes.contains(edgeToAdd.getDestination())) {
             System.out.println("Edge added: "
@@ -75,16 +75,19 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
             Vertex<T> dest = edgeToAdd.getDestination();
             for (int i = 0; i < this.vertexes.size(); i++) {
                 if (this.vertexes.get(i).equals(src) && src.equals(dest)) {
-                    this.incidenceMatrix.get(i).add(new EdgeStatus<>(edgeToAdd, 2));
+                    this.incidenceMatrix.get(i).add(new EdgeStatus<>(edgeToAdd, Status.LOOP));
                 } else if (this.vertexes.get(i).equals(src)) {
-                    this.incidenceMatrix.get(i).add(new EdgeStatus<>(edgeToAdd, 1));
+                    this.incidenceMatrix.get(i).add(new EdgeStatus<>(edgeToAdd, Status.SOURCE));
                 } else if (this.vertexes.get(i).equals(dest)) {
-                    this.incidenceMatrix.get(i).add(new EdgeStatus<>(edgeToAdd, -1));
+                    this.incidenceMatrix.get(i).add(new EdgeStatus<>(edgeToAdd, Status.DESTINATION));
                 } else {
-                    this.incidenceMatrix.get(i).add(new EdgeStatus<>(null, 0));
+                    this.incidenceMatrix.get(i).add(new EdgeStatus<>(null, Status.NOTHING));
                 }
             }
             this.edges.add(edgeToAdd);
+            return true;
+        } else {
+            return false;
         }
     }
 
@@ -94,25 +97,25 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
      * @param vertexToRemove Вершина для удаления.
      */
     @Override
-    public void removeVertex(Vertex<T> vertexToRemove) {
+    public boolean removeVertex(Vertex<T> vertexToRemove) {
         if (this.vertexes.contains(vertexToRemove)) {
             int index = this.vertexes.indexOf(vertexToRemove);
             if (index < 0) {
                 throw new IllegalArgumentException("Vertex not found in the graph.");
             }
             for (int i = 0; i < this.edges.size(); i++) {
-                EdgeStatus<T> cur = new EdgeStatus<>(null, 0);
+                EdgeStatus<T> cur = new EdgeStatus<>(null, Status.NOTHING);
                 this.incidenceMatrix.get(index).set(i, cur);
             }
 
             for (int i = 0; i < this.edges.size(); i++) {
                 int count = 0;
                 for (int j = 0; j < this.vertexes.size(); j++) {
-                    if (this.incidenceMatrix.get(j).get(i).status == 1
-                            || this.incidenceMatrix.get(j).get(i).status == -1) {
+                    if (this.incidenceMatrix.get(j).get(i).status == Status.SOURCE
+                            || this.incidenceMatrix.get(j).get(i).status == Status.DESTINATION) {
                         count = count + 1;
                     }
-                    if (this.incidenceMatrix.get(j).get(i).status == 2) {
+                    if (this.incidenceMatrix.get(j).get(i).status == Status.LOOP) {
                         count = count + 2;
                     }
                 }
@@ -123,6 +126,7 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
             }
             this.incidenceMatrix.remove(index);
             this.vertexes.remove(vertexToRemove);
+            return true;
         } else {
             throw new IllegalArgumentException("Vertex not found in the graph.");
         }
@@ -134,7 +138,7 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
      * @param edgeToRemove Ребро для удаления.
      */
     @Override
-    public void removeEdge(Edge<T> edgeToRemove) {
+    public boolean removeEdge(Edge<T> edgeToRemove) {
         if (this.edges.contains(edgeToRemove)) {
             int index = this.edges.indexOf(edgeToRemove);
             if (index < 0) {
@@ -144,6 +148,7 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
                 this.incidenceMatrix.get(i).remove(index);
             }
             this.edges.remove(index);
+            return true;
         } else {
             throw new IllegalArgumentException("Edge not found in the graph.");
         }
@@ -157,7 +162,7 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
      * @param newVertex Новая вершина.
      */
     @Override
-    public void changeVertex(Vertex<T> oldVertex, Vertex<T> newVertex) {
+    public boolean changeVertex(Vertex<T> oldVertex, Vertex<T> newVertex) {
         if (this.vertexes.contains(oldVertex) && !this.vertexes.contains(newVertex)) {
             int index = this.vertexes.indexOf(oldVertex);
             this.vertexes.set(index, newVertex);
@@ -186,8 +191,9 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
                     }
                 }
             }
+            return true;
         } else {
-            System.out.println("Vertex cannot be replaced");
+            return false;
         }
     }
 
@@ -198,7 +204,7 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
      * @param newEdge Новое ребро.
      */
     @Override
-    public void changeEdge(Edge<T> oldEdge, Edge<T> newEdge) {
+    public boolean changeEdge(Edge<T> oldEdge, Edge<T> newEdge) {
         if (oldEdge.getSource().equals(newEdge.getSource())
                 && oldEdge.getDestination().equals(newEdge.getDestination())) {
             if (this.edges.contains(oldEdge)) {
@@ -206,14 +212,22 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
                 this.edges.set(index, newEdge);
                 int len = this.vertexes.size();
                 for (int i = 0; i < len; i++) {
-                    if (this.incidenceMatrix.get(i).get(index).status != 0) {
+                    if (this.incidenceMatrix.get(i).get(index).status != Status.NOTHING) {
                         this.incidenceMatrix.get(i).get(index).edge = newEdge;
                     }
                 }
             }
+            return true;
         } else {
-            System.out.println("Edge cannot be replaced");
+            return false;
         }
+    }
+
+    public enum Status {
+        DESTINATION,
+        SOURCE,
+        LOOP,
+        NOTHING
     }
 
     /**
@@ -223,7 +237,7 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
      */
     private static class EdgeStatus<T> {
         private Edge<T> edge;
-        private final int status;
+        private final Status status;
 
         /**
          * Конструктор класса EdgeStatus.
@@ -231,7 +245,7 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
          * @param edge   Ребро.
          * @param status Статус.
          */
-        EdgeStatus(Edge<T> edge, int status) {
+        EdgeStatus(Edge<T> edge, Status status) {
             this.edge = edge;
             this.status = status;
         }

@@ -27,7 +27,7 @@ public abstract class GraphLaws<T> {
      *
      * @param vertex Вершина для удаления.
      */
-    public abstract void removeVertex(Vertex<T> vertex);
+    public abstract boolean removeVertex(Vertex<T> vertex);
 
     /**
      * Абстрактный метод для изменения вершины в графе.
@@ -35,21 +35,21 @@ public abstract class GraphLaws<T> {
      * @param oldVertex Старая вершина.
      * @param newVertex Новая вершина.
      */
-    public abstract void changeVertex(Vertex<T> oldVertex, Vertex<T> newVertex);
+    public abstract boolean changeVertex(Vertex<T> oldVertex, Vertex<T> newVertex);
 
     /**
      * Абстрактный метод для добавления ребра в граф.
      *
      * @param edge Ребро для добавления.
      */
-    public abstract void addEdge(Edge<T> edge);
+    public abstract boolean addEdge(Edge<T> edge);
 
     /**
      * Абстрактный метод для удаления ребра из графа.
      *
      * @param edge Ребро для удаления.
      */
-    public abstract void removeEdge(Edge<T> edge);
+    public abstract boolean removeEdge(Edge<T> edge);
 
     /**
      * Абстрактный метод для изменения ребра в графе.
@@ -57,7 +57,7 @@ public abstract class GraphLaws<T> {
      * @param oldEdge Старое ребро.
      * @param newEdge Новое ребро.
      */
-    public abstract void changeEdge(Edge<T> oldEdge, Edge<T> newEdge);
+    public abstract boolean changeEdge(Edge<T> oldEdge, Edge<T> newEdge);
 
     /**
      * Возвращает список рёбер, связанных с заданной вершиной.

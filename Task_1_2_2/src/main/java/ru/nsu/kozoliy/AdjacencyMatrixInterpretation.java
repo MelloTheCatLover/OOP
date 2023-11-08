@@ -65,7 +65,7 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
      * @param edgeToAdd Ребро для добавления.
      */
     @Override
-    public void addEdge(Edge<T> edgeToAdd) {
+    public boolean addEdge(Edge<T> edgeToAdd) {
         if (this.vertexes.contains(edgeToAdd.getSource())
                 && this.vertexes.contains(edgeToAdd.getDestination())) {
             System.out.println("Edge added: " + edgeToAdd.getSource() + " -> " + edgeToAdd.getDestination());
@@ -73,6 +73,9 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
             int col = this.vertexes.indexOf(edgeToAdd.getDestination());
             this.adjacencyMatrix.get(row).set(col, edgeToAdd.getWeight());
             this.edges.add(edgeToAdd);
+            return true;
+        } else {
+            return false;
         }
     }
 
@@ -82,7 +85,7 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
      * @param vertexToRemove Вершина для удаления.
      */
     @Override
-    public void removeVertex(Vertex<T> vertexToRemove) {
+    public boolean removeVertex(Vertex<T> vertexToRemove) {
         if (this.vertexes.contains(vertexToRemove)) {
             int index = this.vertexes.indexOf(vertexToRemove);
             if (index < 0) {
@@ -101,6 +104,7 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
                     i = i - 1;
                 }
             }
+            return true;
         } else {
             throw new IllegalArgumentException("Vertex not found in the graph.");
         }
@@ -112,12 +116,13 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
      * @param edgeToRemove Ребро для удаления.
      */
     @Override
-    public void removeEdge(Edge<T> edgeToRemove) {
+    public boolean removeEdge(Edge<T> edgeToRemove) {
         if (this.edges.contains(edgeToRemove)) {
             int row = this.vertexes.indexOf(edgeToRemove.getSource());
             int col = this.vertexes.indexOf(edgeToRemove.getDestination());
             this.adjacencyMatrix.get(row).set(col, 0);
             this.edges.remove(edgeToRemove);
+            return true;
         } else {
             throw new IllegalArgumentException("Edge not found in the graph.");
         }
@@ -131,7 +136,7 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
      * @param newVertex Новая вершина.
      */
     @Override
-    public void changeVertex(Vertex<T> oldVertex, Vertex<T> newVertex) {
+    public boolean changeVertex(Vertex<T> oldVertex, Vertex<T> newVertex) {
         if (this.vertexes.contains(oldVertex) && !this.vertexes.contains(newVertex)) {
             int index = this.vertexes.indexOf(oldVertex);
             this.vertexes.set(index, newVertex);
@@ -146,8 +151,9 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
                     edge.setDestination(newVertex);
                 }
             }
+            return true;
         } else {
-            System.out.println("Vertex cannot be replaced");
+            return false;
         }
     }
 
@@ -158,7 +164,7 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
      * @param newEdge Новое ребро.
      */
     @Override
-    public void changeEdge(Edge<T> oldEdge, Edge<T> newEdge) {
+    public boolean changeEdge(Edge<T> oldEdge, Edge<T> newEdge) {
         if (oldEdge.getSource().equals(newEdge.getSource())
                 && oldEdge.getDestination().equals(newEdge.getDestination())) {
             if (this.edges.contains(oldEdge)) {
@@ -168,8 +174,9 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
                 int index = this.edges.indexOf(oldEdge);
                 this.edges.set(index, newEdge);
             }
+            return true;
         } else {
-            System.out.println("Edge cannot be replaced");
+            return false;
         }
     }
 }
