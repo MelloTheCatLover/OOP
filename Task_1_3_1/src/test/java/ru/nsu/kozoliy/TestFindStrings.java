@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -19,20 +18,22 @@ import org.junit.jupiter.api.Test;
 public class TestFindStrings {
 
     @Test
-    void TestCatRU() throws IOException {
-        FindString finder = new FindString("Вход.txt", "кош", FindString.fileType.RESOURCE);
-        Assertions.assertEquals(finder.find(), Arrays.asList(41, 242, 360, 469, 709, 800, 870, 1096, 1204, 1776, 2257, 2645, 3054));
+    void testCatRu() throws IOException {
+        FindString finder = new FindString("Вход.txt", "кош", FindString.FileType.RESOURCE);
+        Assertions.assertEquals(finder.find(), Arrays.asList(41, 242, 360, 469, 709,
+                800, 870, 1096, 1204, 1776, 2257, 2645, 3054));
     }
 
     @Test
-    void TestCat() throws IOException {
-        FindString finder = new FindString("Input.txt", "cat", FindString.fileType.RESOURCE);
-        Assertions.assertEquals(finder.find(), Arrays.asList(95, 187, 291, 447, 738, 948, 1064, 1096, 1306, 1546, 1686, 1789));
+    void testCat() throws IOException {
+        FindString finder = new FindString("Input.txt", "cat", FindString.FileType.RESOURCE);
+        Assertions.assertEquals(finder.find(), Arrays.asList(95, 187, 291, 447,
+                738, 948, 1064, 1096, 1306, 1546, 1686, 1789));
     }
 
     @Test
-    void TestCatEmpty() throws IOException {
-        FindString finder = new FindString("Nothing.txt", "cat", FindString.fileType.RESOURCE);
+    void testCatEmpty() throws IOException {
+        FindString finder = new FindString("Nothing.txt", "cat", FindString.FileType.RESOURCE);
         Assertions.assertEquals(finder.find(), List.of());
     }
 
@@ -40,13 +41,14 @@ public class TestFindStrings {
     void generatedFile() throws IOException {
 
         ArrayList<Integer> result = generateFile(1000000, "hello", "file.txt");
-        FindString finder = new FindString("file.txt", "hello", FindString.fileType.FILE);
+        FindString finder = new FindString("file.txt", "hello", FindString.FileType.FILE);
 
         Assertions.assertEquals(finder.find(), result);
         new File("file.txt").delete();
     }
 
-    public ArrayList<Integer>  generateFile(int fileSize, String target, String outputFileName) throws IOException {
+    public ArrayList<Integer>  generateFile(int fileSize,
+                                            String target, String outputFileName) throws IOException {
         ArrayList<Integer> result = new ArrayList<>();
         FileOutputStream fos = new FileOutputStream(outputFileName);
         Random rnd = new Random();
