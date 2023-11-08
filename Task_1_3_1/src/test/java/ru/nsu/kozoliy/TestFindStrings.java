@@ -12,24 +12,27 @@ import java.util.Random;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-
+/**
+ * Тесты для 1.3.1.
+ *
+ */
 public class TestFindStrings {
 
     @Test
     void TestCatRU() throws IOException {
-        FindString finder = new FindString("Вход.txt", "кош", FindString.FILE_TYPE.RESOURCE);
+        FindString finder = new FindString("Вход.txt", "кош", FindString.fileType.RESOURCE);
         Assertions.assertEquals(finder.find(), Arrays.asList(41, 242, 360, 469, 709, 800, 870, 1096, 1204, 1776, 2257, 2645, 3054));
     }
 
     @Test
     void TestCat() throws IOException {
-        FindString finder = new FindString("Input.txt", "cat", FindString.FILE_TYPE.RESOURCE);
+        FindString finder = new FindString("Input.txt", "cat", FindString.fileType.RESOURCE);
         Assertions.assertEquals(finder.find(), Arrays.asList(95, 187, 291, 447, 738, 948, 1064, 1096, 1306, 1546, 1686, 1789));
     }
 
     @Test
     void TestCatEmpty() throws IOException {
-        FindString finder = new FindString("Nothing.txt", "cat", FindString.FILE_TYPE.RESOURCE);
+        FindString finder = new FindString("Nothing.txt", "cat", FindString.fileType.RESOURCE);
         Assertions.assertEquals(finder.find(), List.of());
     }
 
@@ -37,7 +40,7 @@ public class TestFindStrings {
     void generatedFile() throws IOException {
 
         ArrayList<Integer> result = generateFile(1000000, "hello", "file.txt");
-        FindString finder = new FindString("file.txt", "hello", FindString.FILE_TYPE.FILE);
+        FindString finder = new FindString("file.txt", "hello", FindString.fileType.FILE);
 
         Assertions.assertEquals(finder.find(), result);
         new File("file.txt").delete();
