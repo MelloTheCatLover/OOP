@@ -79,7 +79,8 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
                 } else if (this.vertexes.get(i).equals(src)) {
                     this.incidenceMatrix.get(i).add(new EdgeStatus<>(edgeToAdd, Status.SOURCE));
                 } else if (this.vertexes.get(i).equals(dest)) {
-                    this.incidenceMatrix.get(i).add(new EdgeStatus<>(edgeToAdd, Status.DESTINATION));
+                    this.incidenceMatrix.get(i)
+                            .add(new EdgeStatus<>(edgeToAdd, Status.DESTINATION));
                 } else {
                     this.incidenceMatrix.get(i).add(new EdgeStatus<>(null, Status.NOTHING));
                 }
@@ -223,6 +224,10 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
         }
     }
 
+    /**
+     * Enum для представление статуса ребра в матрице инцидентности.
+     *
+     */
     public enum Status {
         DESTINATION,
         SOURCE,

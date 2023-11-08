@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @param <T> Тип вершин в графе.
  */
 public class AdjacencyListInterpretation<T> extends GraphLaws<T> {
-    private ArrayList<ArrayList<Vertex<T>>> adjacencyList;
+    private final ArrayList<ArrayList<Vertex<T>>> adjacencyList;
 
     /**
      * Конструктор для создания экземпляра AdjacencyListInterpretation.
@@ -117,8 +117,8 @@ public class AdjacencyListInterpretation<T> extends GraphLaws<T> {
     public boolean addEdge(Edge<T> edgeToAdd) {
         if (vertexes.contains(edgeToAdd.getSource())
                 && vertexes.contains(edgeToAdd.getDestination())) {
-            System.out.println("Edge added: " +
-                    edgeToAdd.getSource() + " -> " + edgeToAdd.getDestination());
+            System.out.println("Edge added: "
+                    + edgeToAdd.getSource() + " -> " + edgeToAdd.getDestination());
             int sourceIndex = vertexes.indexOf(edgeToAdd.getSource());
             adjacencyList.get(sourceIndex).add(edgeToAdd.getDestination());
             edges.add(edgeToAdd);

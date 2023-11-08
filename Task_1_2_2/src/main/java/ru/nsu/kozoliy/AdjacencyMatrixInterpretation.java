@@ -68,7 +68,8 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
     public boolean addEdge(Edge<T> edgeToAdd) {
         if (this.vertexes.contains(edgeToAdd.getSource())
                 && this.vertexes.contains(edgeToAdd.getDestination())) {
-            System.out.println("Edge added: " + edgeToAdd.getSource() + " -> " + edgeToAdd.getDestination());
+            System.out.println("Edge added: " + edgeToAdd.getSource()
+                    + " -> " + edgeToAdd.getDestination());
             int row = this.vertexes.indexOf(edgeToAdd.getSource());
             int col = this.vertexes.indexOf(edgeToAdd.getDestination());
             this.adjacencyMatrix.get(row).set(col, edgeToAdd.getWeight());
