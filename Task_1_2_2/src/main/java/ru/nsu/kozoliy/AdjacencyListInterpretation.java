@@ -54,8 +54,12 @@ public class AdjacencyListInterpretation<T> extends GraphLaws<T> {
      */
     @Override
     public void removeVertex(Vertex<T> vertexToRemove) {
+
         if (vertexes.contains(vertexToRemove)) {
             int index = vertexes.indexOf(vertexToRemove);
+            if (index < 0) {
+                throw new IllegalArgumentException("Vertex not found in the graph.");
+            }
             vertexes.remove(index);
             adjacencyList.remove(index);
             for (int i = 0; i < adjacencyList.size(); i++) {
@@ -63,11 +67,14 @@ public class AdjacencyListInterpretation<T> extends GraphLaws<T> {
             }
             edges.removeIf(edge -> edge.getSource().equals(vertexToRemove)
                     || edge.getDestination().equals(vertexToRemove));
+        } else {
+            throw new IllegalArgumentException("Vertex not found in the graph.");
         }
     }
 
     /**
      * Заменяет вершину в графе.
+     * Замена происходит только если граф содержит старую вершину и не содержит новой.
      *
      * @param oldVertex Старая вершина.
      * @param newVertex Новая вершина.
@@ -77,6 +84,9 @@ public class AdjacencyListInterpretation<T> extends GraphLaws<T> {
         if (vertexes.contains(oldVertex) && !vertexes.contains(newVertex)) {
             int index = vertexes.indexOf(oldVertex);
             vertexes.set(index, newVertex);
+
+            System.out.println("Vertex replaced: " + oldVertex + " with " + newVertex);
+
             for (ArrayList<Vertex<T>> vertices : adjacencyList) {
                 if (vertices.contains(oldVertex)) {
                     vertices.set(vertices.indexOf(oldVertex), newVertex);
@@ -90,11 +100,14 @@ public class AdjacencyListInterpretation<T> extends GraphLaws<T> {
                     edge.setDestination(newVertex);
                 }
             }
+        } else {
+            System.out.println("Vertex cannot be replaced");
         }
     }
 
     /**
      * Добавляет новое ребро в граф.
+     * Если ребро уже в графе, ничего не происходит.
      *
      * @param edgeToAdd Ребро для добавления.
      */
@@ -102,6 +115,8 @@ public class AdjacencyListInterpretation<T> extends GraphLaws<T> {
     public void addEdge(Edge<T> edgeToAdd) {
         if (vertexes.contains(edgeToAdd.getSource())
                 && vertexes.contains(edgeToAdd.getDestination())) {
+            System.out.println("Edge added: " +
+                    edgeToAdd.getSource() + " -> " + edgeToAdd.getDestination());
             int sourceIndex = vertexes.indexOf(edgeToAdd.getSource());
             adjacencyList.get(sourceIndex).add(edgeToAdd.getDestination());
             edges.add(edgeToAdd);
@@ -117,8 +132,13 @@ public class AdjacencyListInterpretation<T> extends GraphLaws<T> {
     public void removeEdge(Edge<T> edgeToRemove) {
         if (edges.contains(edgeToRemove)) {
             int sourceIndex = vertexes.indexOf(edgeToRemove.getSource());
+            if (sourceIndex < 0) {
+                throw new IllegalArgumentException("Edge not found in the graph.");
+            }
             adjacencyList.get(sourceIndex).remove(edgeToRemove.getDestination());
             edges.remove(edgeToRemove);
+        } else {
+            throw new IllegalArgumentException("Edge not found in the graph.");
         }
     }
 
@@ -133,6 +153,8 @@ public class AdjacencyListInterpretation<T> extends GraphLaws<T> {
         if (edges.contains(oldEdge)) {
             int index = edges.indexOf(oldEdge);
             edges.set(index, newEdge);
+        } else {
+            System.out.println("Edge cannot be replaced");
         }
     }
 }

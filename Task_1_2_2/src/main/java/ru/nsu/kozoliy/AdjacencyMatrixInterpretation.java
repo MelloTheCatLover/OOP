@@ -60,6 +60,7 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
 
     /**
      * Добавляет новое ребро в граф.
+     * Если ребро уже в графе, ничего не происходит.
      *
      * @param edgeToAdd Ребро для добавления.
      */
@@ -67,6 +68,7 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
     public void addEdge(Edge<T> edgeToAdd) {
         if (this.vertexes.contains(edgeToAdd.getSource())
                 && this.vertexes.contains(edgeToAdd.getDestination())) {
+            System.out.println("Edge added: " + edgeToAdd.getSource() + " -> " + edgeToAdd.getDestination());
             int row = this.vertexes.indexOf(edgeToAdd.getSource());
             int col = this.vertexes.indexOf(edgeToAdd.getDestination());
             this.adjacencyMatrix.get(row).set(col, edgeToAdd.getWeight());
@@ -83,8 +85,10 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
     public void removeVertex(Vertex<T> vertexToRemove) {
         if (this.vertexes.contains(vertexToRemove)) {
             int index = this.vertexes.indexOf(vertexToRemove);
-            int len = this.vertexes.size();
-            for (int i = 0; i < len; i++) {
+            if (index < 0) {
+                throw new IllegalArgumentException("Vertex not found in the graph.");
+            }
+            for (int i = 0; i < this.vertexes.size(); i++) {
                 this.adjacencyMatrix.get(i).remove(index);
             }
             this.adjacencyMatrix.remove(index);
@@ -97,6 +101,8 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
                     i = i - 1;
                 }
             }
+        } else {
+            throw new IllegalArgumentException("Vertex not found in the graph.");
         }
     }
 
@@ -112,11 +118,14 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
             int col = this.vertexes.indexOf(edgeToRemove.getDestination());
             this.adjacencyMatrix.get(row).set(col, 0);
             this.edges.remove(edgeToRemove);
+        } else {
+            throw new IllegalArgumentException("Edge not found in the graph.");
         }
     }
 
     /**
      * Заменяет вершину в графе.
+     * Замена происходит только если граф содержит старую вершину и не содержит новой.
      *
      * @param oldVertex Старая вершина.
      * @param newVertex Новая вершина.
@@ -126,6 +135,9 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
         if (this.vertexes.contains(oldVertex) && !this.vertexes.contains(newVertex)) {
             int index = this.vertexes.indexOf(oldVertex);
             this.vertexes.set(index, newVertex);
+
+            System.out.println("Vertex replaced: " + oldVertex + " with " + newVertex);
+
             for (Edge<T> edge : this.edges) {
                 if (edge.getSource().equals(oldVertex)) {
                     edge.setSource(newVertex);
@@ -134,6 +146,8 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
                     edge.setDestination(newVertex);
                 }
             }
+        } else {
+            System.out.println("Vertex cannot be replaced");
         }
     }
 
@@ -154,6 +168,8 @@ public class AdjacencyMatrixInterpretation<T> extends GraphLaws<T> {
                 int index = this.edges.indexOf(oldEdge);
                 this.edges.set(index, newEdge);
             }
+        } else {
+            System.out.println("Edge cannot be replaced");
         }
     }
 }

@@ -61,6 +61,7 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
 
     /**
      * Добавляет новое ребро в граф.
+     * Если ребро уже в графе, ничего не происходит.
      *
      * @param edgeToAdd Ребро для добавления.
      */
@@ -68,6 +69,8 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
     public void addEdge(Edge<T> edgeToAdd) {
         if (this.vertexes.contains(edgeToAdd.getSource())
                 && this.vertexes.contains(edgeToAdd.getDestination())) {
+            System.out.println("Edge added: "
+                    + edgeToAdd.getSource() + " -> " + edgeToAdd.getDestination());
             Vertex<T> src = edgeToAdd.getSource();
             Vertex<T> dest = edgeToAdd.getDestination();
             for (int i = 0; i < this.vertexes.size(); i++) {
@@ -94,6 +97,9 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
     public void removeVertex(Vertex<T> vertexToRemove) {
         if (this.vertexes.contains(vertexToRemove)) {
             int index = this.vertexes.indexOf(vertexToRemove);
+            if (index < 0) {
+                throw new IllegalArgumentException("Vertex not found in the graph.");
+            }
             for (int i = 0; i < this.edges.size(); i++) {
                 EdgeStatus<T> cur = new EdgeStatus<>(null, 0);
                 this.incidenceMatrix.get(index).set(i, cur);
@@ -117,6 +123,8 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
             }
             this.incidenceMatrix.remove(index);
             this.vertexes.remove(vertexToRemove);
+        } else {
+            throw new IllegalArgumentException("Vertex not found in the graph.");
         }
     }
 
@@ -129,15 +137,21 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
     public void removeEdge(Edge<T> edgeToRemove) {
         if (this.edges.contains(edgeToRemove)) {
             int index = this.edges.indexOf(edgeToRemove);
+            if (index < 0) {
+                throw new IllegalArgumentException("Edge not found in the graph.");
+            }
             for (int i = 0; i < this.vertexes.size(); i++) {
                 this.incidenceMatrix.get(i).remove(index);
             }
             this.edges.remove(index);
+        } else {
+            throw new IllegalArgumentException("Edge not found in the graph.");
         }
     }
 
     /**
      * Заменяет вершину в графе.
+     * Замена происходит только если граф содержит старую вершину и не содержит новой.
      *
      * @param oldVertex Старая вершина.
      * @param newVertex Новая вершина.
@@ -147,6 +161,9 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
         if (this.vertexes.contains(oldVertex) && !this.vertexes.contains(newVertex)) {
             int index = this.vertexes.indexOf(oldVertex);
             this.vertexes.set(index, newVertex);
+
+            System.out.println("Vertex replaced: " + oldVertex + " with " + newVertex);
+
             for (Edge<T> edge : this.edges) {
                 if (edge.getSource().equals(oldVertex)) {
                     edge.setSource(newVertex);
@@ -169,6 +186,8 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
                     }
                 }
             }
+        } else {
+            System.out.println("Vertex cannot be replaced");
         }
     }
 
@@ -192,6 +211,8 @@ public class IncidenceMatrixInterpretation<T> extends GraphLaws<T> {
                     }
                 }
             }
+        } else {
+            System.out.println("Edge cannot be replaced");
         }
     }
 
