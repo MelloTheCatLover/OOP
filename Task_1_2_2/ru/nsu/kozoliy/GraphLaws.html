@@ -241,7 +241,7 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>abstract void</code></td>
+<td class="colFirst"><code>abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addEdge(ru.nsu.kozoliy.Edge)">addEdge</a></span>&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;edge)</code></th>
 <td class="colLast">
 <div class="block">Абстрактный метод для добавления ребра в граф.</div>
@@ -255,7 +255,7 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>abstract void</code></td>
+<td class="colFirst"><code>abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#changeEdge(ru.nsu.kozoliy.Edge,ru.nsu.kozoliy.Edge)">changeEdge</a></span>&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;oldEdge,
           <a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;newEdge)</code></th>
 <td class="colLast">
@@ -263,7 +263,7 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code>abstract void</code></td>
+<td class="colFirst"><code>abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#changeVertex(ru.nsu.kozoliy.Vertex,ru.nsu.kozoliy.Vertex)">changeVertex</a></span>&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;oldVertex,
             <a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;newVertex)</code></th>
 <td class="colLast">
@@ -283,14 +283,14 @@ extends java.lang.Object</pre>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>abstract void</code></td>
+<td class="colFirst"><code>abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeEdge(ru.nsu.kozoliy.Edge)">removeEdge</a></span>&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;edge)</code></th>
 <td class="colLast">
 <div class="block">Абстрактный метод для удаления ребра из графа.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code>abstract void</code></td>
+<td class="colFirst"><code>abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeVertex(ru.nsu.kozoliy.Vertex)">removeVertex</a></span>&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;vertex)</code></th>
 <td class="colLast">
 <div class="block">Абстрактный метод для удаления вершины из графа.</div>
@@ -409,7 +409,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>removeVertex</h4>
-<pre class="methodSignature">public abstract&nbsp;void&nbsp;removeVertex&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;vertex)</pre>
+<pre class="methodSignature">public abstract&nbsp;boolean&nbsp;removeVertex&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;vertex)</pre>
 <div class="block">Абстрактный метод для удаления вершины из графа.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -423,8 +423,8 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>changeVertex</h4>
-<pre class="methodSignature">public abstract&nbsp;void&nbsp;changeVertex&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;oldVertex,
-                                  <a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;newVertex)</pre>
+<pre class="methodSignature">public abstract&nbsp;boolean&nbsp;changeVertex&#8203;(<a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;oldVertex,
+                                     <a href="Vertex.html" title="class in ru.nsu.kozoliy">Vertex</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;newVertex)</pre>
 <div class="block">Абстрактный метод для изменения вершины в графе.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -439,7 +439,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>addEdge</h4>
-<pre class="methodSignature">public abstract&nbsp;void&nbsp;addEdge&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;edge)</pre>
+<pre class="methodSignature">public abstract&nbsp;boolean&nbsp;addEdge&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;edge)</pre>
 <div class="block">Абстрактный метод для добавления ребра в граф.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -453,7 +453,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>removeEdge</h4>
-<pre class="methodSignature">public abstract&nbsp;void&nbsp;removeEdge&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;edge)</pre>
+<pre class="methodSignature">public abstract&nbsp;boolean&nbsp;removeEdge&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;edge)</pre>
 <div class="block">Абстрактный метод для удаления ребра из графа.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -467,8 +467,8 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>changeEdge</h4>
-<pre class="methodSignature">public abstract&nbsp;void&nbsp;changeEdge&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;oldEdge,
-                                <a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;newEdge)</pre>
+<pre class="methodSignature">public abstract&nbsp;boolean&nbsp;changeEdge&#8203;(<a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;oldEdge,
+                                   <a href="Edge.html" title="class in ru.nsu.kozoliy">Edge</a>&lt;<a href="GraphLaws.html" title="type parameter in GraphLaws">T</a>&gt;&nbsp;newEdge)</pre>
 <div class="block">Абстрактный метод для изменения ребра в графе.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
