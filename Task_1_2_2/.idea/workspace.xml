@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08dad730-3512-4dfd-8e07-3f6a14f5398b" name="Changes" comment="Добавил оповещения и исключения при добавлении, удалени, замены вершины/ребра.">
-      <change afterPath="$PROJECT_DIR$/../Task_1_3_1/src/main/java/ru/nsu/kozoliy/FindString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task_1_3_1/src/main/java/ru/nsu/kozoliy/input.txt" afterDir="false" />
-    </list>
+    <list default="true" id="5a698b08-9419-4af2-9353-0a9bd4d2659e" name="Changes" comment="review dog" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -171,10 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GraphLaws" />
         <item itemvalue="Gradle.TestGraphInterpretation.graphIncidenceMatrixTest" />
         <item itemvalue="Gradle.TestGraphInterpretation.graphAdjacencyMatrixTest" />
         <item itemvalue="Gradle.TestGraphInterpretation.graphAdjacencyListTest" />
+        <item itemvalue="Application.GraphLaws" />
+        <item itemvalue="Application.GraphLaws" />
       </list>
     </recent_temporary>
   </component>
