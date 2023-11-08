@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.kozoliy","l":"FindString.FILE_TYPE"},{"p":"ru.nsu.kozoliy","l":"FindString"}]
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.kozoliy","l":"FindString.fileType"},{"p":"ru.nsu.kozoliy","l":"FindString"}]

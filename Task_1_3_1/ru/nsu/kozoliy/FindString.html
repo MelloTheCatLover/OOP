@@ -132,6 +132,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">FindString</span>
 extends java.lang.Object</pre>
+<div class="block">Класс для поиска подстроки в текстовых данных.</div>
 </li>
 </ul>
 </div>
@@ -154,8 +155,10 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="FindString.FILE_TYPE.html" title="enum in ru.nsu.kozoliy">FindString.FILE_TYPE</a></span></code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="FindString.fileType.html" title="enum in ru.nsu.kozoliy">FindString.fileType</a></span></code></th>
+<td class="colLast">
+<div class="block">Перечисление для определения типа файла (ресурс или обычный файл).</div>
+</td>
 </tr>
 </table>
 </li>
@@ -175,10 +178,12 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,java.lang.String,ru.nsu.kozoliy.FindString.FILE_TYPE)">FindString</a></span>&#8203;(java.lang.String&nbsp;filename,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,java.lang.String,ru.nsu.kozoliy.FindString.fileType)">FindString</a></span>&#8203;(java.lang.String&nbsp;filename,
           java.lang.String&nbsp;target,
-          <a href="FindString.FILE_TYPE.html" title="enum in ru.nsu.kozoliy">FindString.FILE_TYPE</a>&nbsp;filetype)</code></th>
-<td class="colLast">&nbsp;</td>
+          <a href="FindString.fileType.html" title="enum in ru.nsu.kozoliy">FindString.fileType</a>&nbsp;fileType)</code></th>
+<td class="colLast">
+<div class="block">Конструктор класса FindString.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -201,12 +206,16 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>java.util.ArrayList&lt;java.lang.Integer&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#find()">find</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Метод для поиска всех вхождений целевой подстроки в файле.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#main(java.lang.String%5B%5D)">main</a></span>&#8203;(java.lang.String[]&nbsp;args)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Точка входа в программу</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -232,7 +241,7 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(java.lang.String,java.lang.String,ru.nsu.kozoliy.FindString.FILE_TYPE)">
+<a id="&lt;init&gt;(java.lang.String,java.lang.String,ru.nsu.kozoliy.FindString.fileType)">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -240,11 +249,16 @@ extends java.lang.Object</pre>
 <h4>FindString</h4>
 <pre>public&nbsp;FindString&#8203;(java.lang.String&nbsp;filename,
                   java.lang.String&nbsp;target,
-                  <a href="FindString.FILE_TYPE.html" title="enum in ru.nsu.kozoliy">FindString.FILE_TYPE</a>&nbsp;filetype)
+                  <a href="FindString.fileType.html" title="enum in ru.nsu.kozoliy">FindString.fileType</a>&nbsp;fileType)
            throws java.io.IOException</pre>
+<div class="block">Конструктор класса FindString.</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>filename</code> - Имя файла, в котором будет выполняться поиск.</dd>
+<dd><code>target</code> - Целевая подстрока, которую нужно найти в файле.</dd>
+<dd><code>fileType</code> - Тип файла: RESOURCE (ресурс) или FILE (обычный файл).</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.io.IOException</code></dd>
+<dd><code>java.io.IOException</code> - если произошла ошибка ввода-вывода при открытии файла.</dd>
 </dl>
 </li>
 </ul>
@@ -266,9 +280,12 @@ extends java.lang.Object</pre>
 <h4>find</h4>
 <pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;java.lang.Integer&gt;&nbsp;find()
                                             throws java.io.IOException</pre>
+<div class="block">Метод для поиска всех вхождений целевой подстроки в файле.</div>
 <dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Список индексов начала каждого вхождения целевой подстроки в файле.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.io.IOException</code></dd>
+<dd><code>java.io.IOException</code> - если произошла ошибка ввода-вывода при чтении файла.</dd>
 </dl>
 </li>
 </ul>
@@ -280,6 +297,7 @@ extends java.lang.Object</pre>
 <h4>main</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;main&#8203;(java.lang.String[]&nbsp;args)
                  throws java.io.IOException</pre>
+<div class="block">Точка входа в программу</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.io.IOException</code></dd>
