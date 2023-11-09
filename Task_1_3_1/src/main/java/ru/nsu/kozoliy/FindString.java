@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * Класс для поиска подстроки в текстовых данных.
  */
 public class FindString {
-    private final int bufferSize = 1000000;
+    private final int bufferSize = 100000000;
     private final String target;
     private Reader fileInfo;
     private final Charset encoding;
@@ -44,6 +44,7 @@ public class FindString {
         ArrayList<Integer> occurrences = new ArrayList<>();
         int[] prefixArray = buildPrefixArray(target);
 
+        int numOfBuffer = 1;
         int textIndex = 0;
         int targetIndex = 0;
         String text;
@@ -51,25 +52,29 @@ public class FindString {
         while (true) {
             try {
                 text = new String(readNextChunk());
+                //System.out.println("Text: " + text);
             } catch (EOFException e) {
                 return occurrences;
             }
-            while (textIndex < text.length()) {
-                if (text.charAt(textIndex) == target.charAt(targetIndex)) {
+            while (textIndex < text.length() * numOfBuffer) {
+                if (text.charAt(textIndex - bufferSize * (numOfBuffer - 1)) == target.charAt(targetIndex)) {
                     textIndex++;
                     targetIndex++;
                     if (targetIndex == target.length()) {
                         occurrences.add(textIndex - targetIndex + 1);
                         targetIndex = prefixArray[targetIndex - 1];
+
                     }
                 } else {
                     if (targetIndex != 0) {
                         targetIndex = prefixArray[targetIndex - 1];
+
                     } else {
                         textIndex++;
                     }
                 }
             }
+            numOfBuffer++;
         }
     }
 
@@ -126,6 +131,7 @@ public class FindString {
      */
     private char[] readNextChunk() throws IOException {
         char[] buffer = new char[bufferSize];
+
         int bytesRead = this.fileInfo.read(buffer);
 
         if (bytesRead == -1) {
@@ -152,6 +158,7 @@ public class FindString {
     public static void main(String[] args) throws IOException {
         FindString finder = new FindString("Input.txt", "cat", FileType.RESOURCE);
         ArrayList<Integer> res = finder.find();
+
         for (Integer re : res) {
             System.out.println(re);
         }
