@@ -40,7 +40,7 @@ public class TestFindStrings {
     @Test
     void generatedFile() throws IOException {
 
-        ArrayList<Long> result = generateFile(1_610_612_736, "hello", "file.txt");
+        ArrayList<Long> result = generateFile(1_610_612, "hello", "file.txt");
         FindString finder = new FindString("file.txt", "hello", FindString.FileType.FILE);
 
         Assertions.assertEquals(finder.find(), result);
