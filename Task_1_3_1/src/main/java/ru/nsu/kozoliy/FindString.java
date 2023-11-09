@@ -45,13 +45,13 @@ public class FindString {
      * @return Список индексов начала каждого вхождения целевой подстроки в файле.
      * @throws IOException если произошла ошибка ввода-вывода при чтении файла.
      */
-    public ArrayList<Integer> find() throws IOException {
-        ArrayList<Integer> occurrences = new ArrayList<>();
-        int[] prefixArray = buildPrefixArray(target);
+    public ArrayList<Long> find() throws IOException {
+        ArrayList<Long> occurrences = new ArrayList<>();
+        long[] prefixArray = buildPrefixArray(target);
 
-        int numOfBuffer = 1;
-        int textIndex = 0;
-        int targetIndex = 0;
+        long numOfBuffer = 1;
+        long textIndex = 0;
+        long targetIndex = 0;
         String text;
 
         while (true) {
@@ -63,17 +63,17 @@ public class FindString {
                 return occurrences;
             }
             while (textIndex < text.length() * numOfBuffer) {
-                if (text.charAt(textIndex - bufferSize * (numOfBuffer - 1)) == target.charAt(targetIndex)) {
+                if (text.charAt((int) (textIndex - bufferSize * (numOfBuffer - 1))) == target.charAt((int) targetIndex)) {
                     textIndex++;
                     targetIndex++;
                     if (targetIndex == target.length()) {
-                        occurrences.add(textIndex - targetIndex + 1);
-                        targetIndex = prefixArray[targetIndex - 1];
+                        occurrences.add((long) (textIndex - targetIndex + 1));
+                        targetIndex = prefixArray[(int) (targetIndex - 1)];
 
                     }
                 } else {
                     if (targetIndex != 0) {
-                        targetIndex = prefixArray[targetIndex - 1];
+                        targetIndex = prefixArray[(int) (targetIndex - 1)];
 
                     } else {
                         textIndex++;
@@ -103,21 +103,21 @@ public class FindString {
      * @param str Целевая подстрока.
      * @return Префиксный массив.
      */
-    private static int[] buildPrefixArray(String str) {
-        int[] prefixArray = new int[str.length()];
-        int length = 0;
-        int i = 1;
+    private static long[] buildPrefixArray(String str) {
+        long[] prefixArray = new long[str.length()];
+        long length = 0;
+        long i = 1;
 
         while (i < str.length()) {
-            if (str.charAt(i) == str.charAt(length)) {
+            if (str.charAt((int) i) == str.charAt((int) length)) {
                 length++;
-                prefixArray[i] = length;
+                prefixArray[(int) i] = length;
                 i++;
             } else {
                 if (length != 0) {
-                    length = prefixArray[length - 1];
+                    length = prefixArray[(int) (length - 1)];
                 } else {
-                    prefixArray[i] = 0;
+                    prefixArray[(int) i] = 0;
                     i++;
                 }
             }
@@ -176,9 +176,9 @@ public class FindString {
      */
     public static void main(String[] args) throws IOException {
         FindString finder = new FindString("Input.txt", "cat", FileType.RESOURCE);
-        ArrayList<Integer> res = finder.find();
+        ArrayList<Long> res = finder.find();
         finder.closeFile();
-        for (Integer re : res) {
+        for (Long re : res) {
             System.out.println(re);
         }
     }

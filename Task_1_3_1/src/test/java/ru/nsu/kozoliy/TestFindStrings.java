@@ -40,27 +40,27 @@ public class TestFindStrings {
     @Test
     void generatedFile() throws IOException {
 
-        ArrayList<Integer> result = generateFile(1_999_999_999, "hello", "file.txt");
+        ArrayList<Long> result = generateFile(1_610_612_736, "hello", "file.txt");
         FindString finder = new FindString("file.txt", "hello", FindString.FileType.FILE);
 
         Assertions.assertEquals(finder.find(), result);
         new File("file.txt").delete();
     }
 
-    public ArrayList<Integer>  generateFile(long fileSize,
+    public ArrayList<Long>  generateFile(long fileSize,
                                             String target, String outputFileName) throws IOException {
-        ArrayList<Integer> result = new ArrayList<>();
+        ArrayList<Long> result = new ArrayList<>();
         FileOutputStream fos = new FileOutputStream(outputFileName);
         Random rnd = new Random();
 
-        int current = 0;
+        long current = 0;
         byte[] targetBytes = target.getBytes();
         int targetLength = targetBytes.length;
         byte[] buffer = new byte[1048576];
         int counter = 0;
         while (counter < fileSize) {
             if (rnd.nextInt(100) > 90) {
-                result.add(current + 1);
+                result.add((current + 1));
                 current += target.length();
                 fos.write(target.getBytes());
             } else {
