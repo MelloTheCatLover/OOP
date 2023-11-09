@@ -14,6 +14,7 @@ import java.util.ArrayList;
  * Класс для поиска подстроки в текстовых данных.
  */
 public class FindString {
+    private InputStream inputStream;
     private final int bufferSize = 100000000;
     private final String target;
     private Reader fileInfo;
@@ -32,7 +33,11 @@ public class FindString {
         byte[] bytes = target.getBytes(StandardCharsets.UTF_8);
         this.target = new String(bytes, StandardCharsets.UTF_8);
         openFile(filename, FileType);
+        //inputStream.close();
     }
+
+
+
 
     /**
      * Метод для поиска всех вхождений целевой подстроки в файле.
@@ -54,6 +59,7 @@ public class FindString {
                 text = new String(readNextChunk());
                 //System.out.println("Text: " + text);
             } catch (EOFException e) {
+                closeFile();
                 return occurrences;
             }
             while (textIndex < text.length() * numOfBuffer) {
@@ -76,7 +82,20 @@ public class FindString {
             }
             numOfBuffer++;
         }
+
     }
+
+    /**
+     * File reader closer.
+     */
+    void closeFile() {
+        try {
+            inputStream.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     /**
      * Метод для построения префиксного массива для целевой подстроки.
@@ -115,7 +134,7 @@ public class FindString {
      * @throws IOException если произошла ошибка ввода-вывода при открытии файла.
      */
     private void openFile(String filename, FileType FileType) throws IOException {
-        InputStream inputStream = (FileType == FileType.RESOURCE)
+        inputStream = (FileType == FileType.RESOURCE)
                 ? getClass().getClassLoader().getResourceAsStream(filename)
                 : new FileInputStream(filename);
 
@@ -158,7 +177,7 @@ public class FindString {
     public static void main(String[] args) throws IOException {
         FindString finder = new FindString("Input.txt", "cat", FileType.RESOURCE);
         ArrayList<Integer> res = finder.find();
-
+        finder.closeFile();
         for (Integer re : res) {
             System.out.println(re);
         }

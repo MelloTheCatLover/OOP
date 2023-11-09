@@ -40,14 +40,14 @@ public class TestFindStrings {
     @Test
     void generatedFile() throws IOException {
 
-        ArrayList<Integer> result = generateFile(1500000000, "hello", "file.txt");
+        ArrayList<Integer> result = generateFile(1_999_999_999, "hello", "file.txt");
         FindString finder = new FindString("file.txt", "hello", FindString.FileType.FILE);
 
         Assertions.assertEquals(finder.find(), result);
         new File("file.txt").delete();
     }
 
-    public ArrayList<Integer>  generateFile(int fileSize,
+    public ArrayList<Integer>  generateFile(long fileSize,
                                             String target, String outputFileName) throws IOException {
         ArrayList<Integer> result = new ArrayList<>();
         FileOutputStream fos = new FileOutputStream(outputFileName);
@@ -56,25 +56,51 @@ public class TestFindStrings {
         int current = 0;
         byte[] targetBytes = target.getBytes();
         int targetLength = targetBytes.length;
-        byte[] buffer = new byte[4096];
-
-        while (current < fileSize) {
+        byte[] buffer = new byte[1048576];
+        int counter = 0;
+        while (counter < fileSize) {
             if (rnd.nextInt(100) > 90) {
-                int remainingSize = fileSize - current;
-                if (remainingSize >= targetLength) {
-                    result.add(current + 1);
-                    fos.write(targetBytes);
-                    current += targetLength;
-                } else {
-                    fos.write(targetBytes, 0, remainingSize);
-                    current += remainingSize;
-                }
+                result.add(current + 1);
+                current += target.length();
+                fos.write(target.getBytes());
             } else {
-                int randomSize = Math.min(buffer.length, fileSize - current);
                 String add = new String(buffer, StandardCharsets.US_ASCII);
                 rnd.nextBytes(buffer);
                 fos.write(add.getBytes());
-                current += randomSize;
+                current += add.length();
+                counter += add.length() / 10;
+            }
+            counter++;
+        }
+
+        fos.flush();
+        fos.close();
+
+        return result;
+    }
+
+    /*
+
+        public ArrayList<Integer>  generateFile(long fileSize,
+                                            String target, String outputFileName) throws IOException {
+        ArrayList<Integer> result = new ArrayList<>();
+        FileOutputStream fos = new FileOutputStream(outputFileName);
+        Random rnd = new Random();
+        int countBytes;
+        int current = 0;
+        countBytes = 50000000;
+        byte[] array = new byte[countBytes];
+        for (int i = 0; i < fileSize; i++) {
+            if (rnd.nextInt(100) > 90) {
+                result.add(current);
+                current += target.length();
+                fos.write(target.getBytes());
+            } else {
+                rnd.nextBytes(array);
+                String add = new String(array, StandardCharsets.US_ASCII);
+                fos.write(add.getBytes());
+                current += (add.length());
+                i += add.length() / 10;
             }
         }
 
@@ -84,5 +110,6 @@ public class TestFindStrings {
         return result;
     }
 
+     */
 
 }
