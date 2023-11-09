@@ -4,10 +4,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -20,15 +18,21 @@ public class TestFindStrings {
     @Test
     void testCatRu() throws IOException {
         FindString finder = new FindString("Вход.txt", "кош", FindString.FileType.RESOURCE);
-        Assertions.assertEquals(finder.find(), Arrays.asList(41, 242, 360, 469, 709,
+
+        ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(41, 242, 360, 469, 709,
                 800, 870, 1096, 1204, 1776, 2257, 2645, 3054));
+
+        Assertions.assertEquals(finder.find().toString(), expected.toString());
+
+
+
     }
 
     @Test
     void testCat() throws IOException {
         FindString finder = new FindString("Input.txt", "cat", FindString.FileType.RESOURCE);
-        Assertions.assertEquals(finder.find(), Arrays.asList(95, 187, 291, 447,
-                738, 948, 1064, 1096, 1306, 1546, 1686, 1789));
+        Assertions.assertEquals(finder.find().toString(), Arrays.asList(95, 187, 291, 447,
+                738, 948, 1064, 1096, 1306, 1546, 1686, 1789).toString());
     }
 
     @Test
