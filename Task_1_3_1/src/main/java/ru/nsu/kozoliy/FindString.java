@@ -25,14 +25,14 @@ public class FindString {
      *
      * @param filename  Имя файла, в котором будет выполняться поиск.
      * @param target    Целевая подстрока, которую нужно найти в файле.
-     * @param FileType  Тип файла: RESOURCE (ресурс) или FILE (обычный файл).
+     * @param fileType  Тип файла: RESOURCE (ресурс) или FILE (обычный файл).
      * @throws IOException если произошла ошибка ввода-вывода при открытии файла.
      */
-    public FindString(String filename, String target, FileType FileType) throws IOException {
+    public FindString(String filename, String target, fileType fileType) throws IOException {
         this.encoding = StandardCharsets.UTF_8;
         byte[] bytes = target.getBytes(StandardCharsets.UTF_8);
         this.target = new String(bytes, StandardCharsets.UTF_8);
-        openFile(filename, FileType);
+        openFile(filename, fileType);
         //inputStream.close();
     }
 
@@ -130,11 +130,11 @@ public class FindString {
      * Метод для открытия файла в указанном режиме (ресурс или обычный файл).
      *
      * @param filename Имя файла.
-     * @param FileType Тип файла: RESOURCE (ресурс) или FILE (обычный файл).
+     * @param fileType Тип файла: RESOURCE (ресурс) или FILE (обычный файл).
      * @throws IOException если произошла ошибка ввода-вывода при открытии файла.
      */
-    private void openFile(String filename, FileType FileType) throws IOException {
-        inputStream = (FileType == FileType.RESOURCE)
+    private void openFile(String filename, fileType fileType) throws IOException {
+        inputStream = (fileType == fileType.RESOURCE)
                 ? getClass().getClassLoader().getResourceAsStream(filename)
                 : new FileInputStream(filename);
 
@@ -165,7 +165,7 @@ public class FindString {
     /**
      * Перечисление для определения типа файла (ресурс или обычный файл).
      */
-    public enum FileType {
+    public enum fileType {
         RESOURCE,
         FILE
     }
@@ -175,7 +175,7 @@ public class FindString {
      *
      */
     public static void main(String[] args) throws IOException {
-        FindString finder = new FindString("Input.txt", "cat", FileType.RESOURCE);
+        FindString finder = new FindString("Input.txt", "cat", fileType.RESOURCE);
         ArrayList<Long> res = finder.find();
         finder.closeFile();
         for (Long re : res) {
