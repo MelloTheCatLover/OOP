@@ -68,7 +68,7 @@ public class FindString {
                     textIndex++;
                     targetIndex++;
                     if (targetIndex == target.length()) {
-                        occurrences.add( (textIndex - targetIndex + 1));
+                        occurrences.add(textIndex - targetIndex + 1);
                         targetIndex = prefixArray[(int) (targetIndex - 1)];
 
                     }
