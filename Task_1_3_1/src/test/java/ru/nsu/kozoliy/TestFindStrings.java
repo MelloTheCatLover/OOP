@@ -18,7 +18,7 @@ public class TestFindStrings {
 
     @Test
     void testCatRu() throws IOException {
-        FindString finder = new FindString("Вход.txt", "кош", FindString.filetype.RESOURCE);
+        FindString finder = new FindString("Вход.txt", "кош", FindString.Filetype.RESOURCE);
 
         ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(41, 242, 360, 469, 709,
                 800, 870, 1096, 1204, 1776, 2257, 2645, 3054));
@@ -30,14 +30,14 @@ public class TestFindStrings {
 
     @Test
     void testCat() throws IOException {
-        FindString finder = new FindString("Input.txt", "cat", FindString.filetype.RESOURCE);
+        FindString finder = new FindString("Input.txt", "cat", FindString.Filetype.RESOURCE);
         Assertions.assertEquals(finder.find().toString(), Arrays.asList(95, 187, 291, 447,
                 738, 948, 1064, 1096, 1306, 1546, 1686, 1789).toString());
     }
 
     @Test
     void testCatEmpty() throws IOException {
-        FindString finder = new FindString("Nothing.txt", "cat", FindString.filetype.RESOURCE);
+        FindString finder = new FindString("Nothing.txt", "cat", FindString.Filetype.RESOURCE);
         Assertions.assertEquals(finder.find(), List.of());
     }
 
@@ -45,7 +45,7 @@ public class TestFindStrings {
     void generatedFile() throws IOException {
 
         ArrayList<Long> result = generateFile(1_610_612_736, "hello", "file.txt");
-        FindString finder = new FindString("file.txt", "hello", FindString.filetype.FILE);
+        FindString finder = new FindString("file.txt", "hello", FindString.Filetype.FILE);
 
         Assertions.assertEquals(finder.find(), result);
         new File("file.txt").delete();
@@ -53,7 +53,8 @@ public class TestFindStrings {
 
 
     /**
-     *  Метод для генерации теста размером 15 гигабайт с помощью цикла и случайного включения ответа.
+     *  Метод для генерации теста размером 15 гигабайт
+     *  с помощью цикла и случайного включения ответа.
      *
      */
     public ArrayList<Long> generateFile(long fileSize, String target,
