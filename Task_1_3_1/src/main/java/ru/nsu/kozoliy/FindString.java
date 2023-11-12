@@ -25,14 +25,14 @@ public class FindString {
      *
      * @param filename  Имя файла, в котором будет выполняться поиск.
      * @param target    Целевая подстрока, которую нужно найти в файле.
-     * @param Filetype  Тип файла: RESOURCE (ресурс) или FILE (обычный файл).
+     * @param filetype  Тип файла: RESOURCE (ресурс) или FILE (обычный файл).
      * @throws IOException если произошла ошибка ввода-вывода при открытии файла.
      */
-    public FindString(String filename, String target, Filetype Filetype) throws IOException {
+    public FindString(String filename, String target, Filetype filetype) throws IOException {
         this.encoding = StandardCharsets.UTF_8;
         byte[] bytes = target.getBytes(StandardCharsets.UTF_8);
         this.target = new String(bytes, StandardCharsets.UTF_8);
-        openFile(filename, Filetype);
+        openFile(filename, filetype);
         //inputStream.close();
     }
 
@@ -131,11 +131,11 @@ public class FindString {
      * Метод для открытия файла в указанном режиме (ресурс или обычный файл).
      *
      * @param filename Имя файла.
-     * @param Filetype Тип файла: RESOURCE (ресурс) или FILE (обычный файл).
+     * @param filetype Тип файла: RESOURCE (ресурс) или FILE (обычный файл).
      * @throws IOException если произошла ошибка ввода-вывода при открытии файла.
      */
-    private void openFile(String filename, Filetype Filetype) throws IOException {
-        inputStream = (Filetype == Filetype.RESOURCE)
+    private void openFile(String filename, Filetype filetype) throws IOException {
+        inputStream = (filetype == Filetype.RESOURCE)
                 ? getClass().getClassLoader().getResourceAsStream(filename)
                 : new FileInputStream(filename);
 
