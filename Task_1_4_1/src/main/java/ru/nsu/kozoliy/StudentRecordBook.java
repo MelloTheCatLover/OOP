@@ -1,109 +1,128 @@
 package ru.nsu.kozoliy;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class StudentRecordBook {
-    private final Map<String, List<Integer>> grades;
-    private final Map<String, Double> semesterAverages;
+    private final Map<String, Map<Semester, List<Integer>>> grades;
+    private final Map<String, Map<Semester, Double>> averageGradesBySubject;
+    private final Map<Semester, Map<String, Double>> averageGradesBySemester;
 
     public StudentRecordBook() {
         this.grades = new HashMap<>();
-        this.semesterAverages = new HashMap<>();
+        this.averageGradesBySubject = new HashMap<>();
+        this.averageGradesBySemester = new HashMap<>();
     }
 
-    public void addGrade(String subject, int grade, String semester) {
-        if (!grades.containsKey(semester)) {
-            grades.put(semester, new ArrayList<>());
-        }
-        grades.get(semester).add(grade);
+    public void addGrade(String subject, int grade, Semester semester) {
+        grades.computeIfAbsent(subject, k -> new HashMap<>())
+                .computeIfAbsent(semester, k -> new ArrayList<>())
+                .add(grade);
 
-        // Recalculate semester average
-        double semesterAverage = calculateAverage(grades.get(semester));
-        semesterAverages.put(semester, semesterAverage);
+        calculateAverageGrades();
     }
 
-    public double getAverageGrade() {
-        if (grades.isEmpty()) {
-            return 0.0;
-        }
+    private void calculateAverageGrades() {
+        averageGradesBySubject.clear();
+        averageGradesBySemester.clear();
 
-        int totalGrades = 0;
-        int totalSubjects = 0;
+        for (Map.Entry<String, Map<Semester, List<Integer>>> entry : grades.entrySet()) {
+            String subject = entry.getKey();
+            Map<Semester, List<Integer>> gradesBySemester = entry.getValue();
 
-        for (List<Integer> semesterGrades : grades.values()) {
-            for (int grade : semesterGrades) {
-                totalGrades += grade;
-                totalSubjects++;
+            for (Map.Entry<Semester, List<Integer>> semesterEntry : gradesBySemester.entrySet()) {
+                Semester semester = semesterEntry.getKey();
+                List<Integer> subjectGrades = semesterEntry.getValue();
+
+                double averageGrade = subjectGrades.stream()
+                        .mapToInt(Integer::intValue)
+                        .average()
+                        .orElse(0.0);
+
+                averageGradesBySubject
+                        .computeIfAbsent(subject, k -> new HashMap<>())
+                        .put(semester, averageGrade);
+
+                averageGradesBySemester
+                        .computeIfAbsent(semester, k -> new HashMap<>())
+                        .put(subject, averageGrade);
             }
         }
-
-        return (double) totalGrades / totalSubjects;
     }
 
-    public boolean hasExcellentDiploma() {
-        if (grades.isEmpty()) {
-            return false;
+    public void printAverageGradesBySubject(String subject) {
+        if (averageGradesBySubject.containsKey(subject)) {
+            System.out.println("Average grades for subject '" + subject + "':");
+            averageGradesBySubject.get(subject).forEach((semester, averageGrade) ->
+                    System.out.println("Semester " + semester + ": " + averageGrade));
+        } else {
+            System.out.println("No grades found for subject '" + subject + "'.");
         }
+    }
 
-        for (List<Integer> semesterGrades : grades.values()) {
-            int lastGrade = semesterGrades.get(semesterGrades.size() - 1);
-            if (lastGrade != 5) {
-                return false;
-            }
+    public void printAverageGradesBySemester(Semester semester) {
+        if (averageGradesBySemester.containsKey(semester)) {
+            System.out.println("Average grades for semester " + semester + ":");
+            averageGradesBySemester.get(semester).forEach((subject, averageGrade) ->
+                    System.out.println(subject + ": " + averageGrade));
+        } else {
+            System.out.println("No grades found for semester " + semester + ".");
         }
-
-        return true;
     }
 
-    public boolean qualifiesForIncreasedScholarship() {
-        // Assuming increased scholarship criteria are met
-        // You can add more sophisticated logic based on your requirements
-        return true;
+    public enum Semester {
+        B1S1,
+        B1S2,
+        B2S1,
+        B2S2,
+        B3S1,
+        B3S2,
+        B4S1,
+        B4S2,
+        M1S1,
+        M2S2;
     }
 
-    public double getSemesterAverage(String semester) {
-        return semesterAverages.getOrDefault(semester, 0.0);
-    }
-
-    private double calculateAverage(List<Integer> grades) {
-        if (grades.isEmpty()) {
+    public double calculateAverageGradeForSemester(Semester semester) {
+        if (averageGradesBySemester.containsKey(semester)) {
+            Map<String, Double> subjectAverageGrades = averageGradesBySemester.get(semester);
+            double totalGrade = subjectAverageGrades.values().stream().mapToDouble(Double::doubleValue).sum();
+            return totalGrade / subjectAverageGrades.size();
+        } else {
             return 0.0;
         }
+    }
 
-        int totalGrades = 0;
-        for (int grade : grades) {
-            totalGrades += grade;
-        }
+    public double calculateOverallAverageGrade() {
+        double totalGrade = averageGradesBySubject.values().stream()
+                .flatMap(subjectGrades -> subjectGrades.values().stream())
+                .mapToDouble(Double::doubleValue)
+                .sum();
+        long totalSubjects = averageGradesBySubject.values().stream()
+                .mapToLong(Map::size)
+                .sum();
 
-        return (double) totalGrades / grades.size();
+        return totalGrade / totalSubjects;
     }
 
     public static void main(String[] args) {
         StudentRecordBook studentRecordBook = new StudentRecordBook();
 
-        // Add grades for various subjects in different semesters
-        studentRecordBook.addGrade("Math", 4, "B1S1");
-        studentRecordBook.addGrade("Physics", 5, "B1S1");
-        studentRecordBook.addGrade("History", 5, "B1S2");
+        // Adding grades
+        studentRecordBook.addGrade("Operating Systems", 5, Semester.B1S1);
+        studentRecordBook.addGrade("Operating Systems", 4, Semester.B1S1);
+        studentRecordBook.addGrade("Operating Systems", 3, Semester.B1S2);
+        studentRecordBook.addGrade("Probability Theory", 4, Semester.B1S1);
+        studentRecordBook.addGrade("Probability Theory", 5, Semester.B1S2);
+        studentRecordBook.addGrade("Probability Theory", 3, Semester.B2S1);
 
-        studentRecordBook.addGrade("Math", 4, "B2S1");
-        studentRecordBook.addGrade("Physics", 5, "B2S1");
-        studentRecordBook.addGrade("History", 5, "B2S2");
+        // Printing average grades by subject and semester
+        studentRecordBook.printAverageGradesBySubject("Operating Systems");
+        studentRecordBook.printAverageGradesBySemester(Semester.B1S1);
 
-        // Calculate and print average grade
-        System.out.println("Average Grade: " + studentRecordBook.getAverageGrade());
+        double semesterAverageGrade = studentRecordBook.calculateAverageGradeForSemester(Semester.B2S1);
+        System.out.println("Average grade for Semester B1S1: " + semesterAverageGrade);
 
-        // Check for an excellent diploma
-        System.out.println("Excellent Diploma: " + studentRecordBook.hasExcellentDiploma());
-
-        // Check for increased scholarship
-        System.out.println("Increased Scholarship: " + studentRecordBook.qualifiesForIncreasedScholarship());
-
-        // Print semester averages
-        System.out.println("Semester Average (B1S1): " + studentRecordBook.getSemesterAverage("B1S1"));
-        System.out.println("Semester Average (B2S2): " + studentRecordBook.getSemesterAverage("B2S2"));
+        double overallAverageGrade = studentRecordBook.calculateOverallAverageGrade();
+        System.out.println("=======Overall average grade=======\n" + overallAverageGrade);
     }
 }
