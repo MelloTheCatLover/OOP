@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.jupiter.api.BeforeEach;
 import java.util.Map;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
@@ -117,11 +117,14 @@ class TestGrades {
                 studentRecordBook
                         .getFinalGradesBySemester(StudentRecordBook.Semester.B1S1).toString());
         assertEquals("[Declarative programming : 4, Imperative programming : 3]",
-                studentRecordBook.getFinalGradesBySemester(StudentRecordBook.Semester.B1S2).toString());
+                studentRecordBook
+                        .getFinalGradesBySemester(StudentRecordBook.Semester.B1S2).toString());
         assertEquals("[Java: 4, Operating Systems: 2]",
-                studentRecordBook.getFinalGradesBySemester(StudentRecordBook.Semester.B2S1).toString());
+                studentRecordBook
+                        .getFinalGradesBySemester(StudentRecordBook.Semester.B2S1).toString());
         assertEquals("[Java: 5, Models of Computing: 4]",
-                studentRecordBook.getFinalGradesBySemester(StudentRecordBook.Semester.B2S2).toString());
+                studentRecordBook
+                        .getFinalGradesBySemester(StudentRecordBook.Semester.B2S2).toString());
         assertEquals("[Cat science: 5, "
                 + "Cat practice: 4, Dog practice: 4, Machine learning methods: 5, "
                 + "Dog science: 4]", studentRecordBook
@@ -231,8 +234,8 @@ class TestGrades {
                         .getFinalGradesBySemester(StudentRecordBook.Semester.B2S2)
                         .toString());
         assertEquals("[Cat science: 5, Cat practice: 4,"
-                        + " Dog practice: 4," +
-                        " Machine learning methods: 5, Dog science: 4]",
+                        + " Dog practice: 4,"
+                        + " Machine learning methods: 5, Dog science: 4]",
                 studentRecordBook
                         .getFinalGradesBySemester(StudentRecordBook.Semester.B3S1)
                         .toString());
@@ -267,8 +270,8 @@ class TestGrades {
         StudentRecordBook.RedCertificateStatus redDiplomaStatus
                 = studentRecordBook.checkRedCertificateStatus();
 
-        assertEquals(StudentRecordBook.
-                RedCertificateStatus.notEligible, studentRecordBook
+        assertEquals(StudentRecordBook
+                .RedCertificateStatus.notEligible, studentRecordBook
                 .checkRedCertificateStatus());
 
         assertEquals("[excellentGradesPercentBelow75,"
