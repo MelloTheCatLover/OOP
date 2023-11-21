@@ -1,13 +1,14 @@
 package ru.nsu.kozoliy;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import java.util.Map;
+import org.junit.jupiter.api.Test;
+
 
 class TestGrades {
     private final StudentRecordBook studentRecordBook = new StudentRecordBook();
@@ -34,8 +35,8 @@ class TestGrades {
         studentRecordBook.addGrade("Imperative programming ",
                 3, StudentRecordBook.Semester.B1S1);
 
-        studentRecordBook.addGrade("Imperative programming "
-                , 3, StudentRecordBook.Semester.B1S2);
+        studentRecordBook.addGrade("Imperative programming ",
+                3, StudentRecordBook.Semester.B1S2);
         studentRecordBook.addGrade("Imperative programming ",
                 3, StudentRecordBook.Semester.B1S2);
 
@@ -111,8 +112,8 @@ class TestGrades {
                 .getFinalGradesBySemester(StudentRecordBook.Semester.B1S1).size());
         assertEquals("TEST SUBJECT: 5", studentRecordBook
                 .getFinalGradesBySemester(StudentRecordBook.Semester.B1S1).get(0).toString());
-        assertEquals("[TEST SUBJECT: 5, History of Russia: 4" +
-                ", Declarative programming : 4, Imperative programming : 3]",
+        assertEquals("[TEST SUBJECT: 5, History of Russia: 4"
+                        + ", Declarative programming : 4, Imperative programming : 3]",
                 studentRecordBook
                         .getFinalGradesBySemester(StudentRecordBook.Semester.B1S1).toString());
         assertEquals("[Declarative programming : 4, Imperative programming : 3]",
@@ -121,9 +122,9 @@ class TestGrades {
                 studentRecordBook.getFinalGradesBySemester(StudentRecordBook.Semester.B2S1).toString());
         assertEquals("[Java: 5, Models of Computing: 4]",
                 studentRecordBook.getFinalGradesBySemester(StudentRecordBook.Semester.B2S2).toString());
-        assertEquals("[Cat science: 5, " +
-                "Cat practice: 4, Dog practice: 4, Machine learning methods: 5, " +
-                "Dog science: 4]", studentRecordBook
+        assertEquals("[Cat science: 5, "
+                + "Cat practice: 4, Dog practice: 4, Machine learning methods: 5, "
+                + "Dog science: 4]", studentRecordBook
                 .getFinalGradesBySemester(StudentRecordBook.Semester.B3S1)
                 .toString());
         assertEquals("[Machine learning methods: 3]",
@@ -210,29 +211,38 @@ class TestGrades {
         assertEquals(3, studentRecordBook
                 .getFinalGradesBySemester(StudentRecordBook.Semester.B1S1).size());
         assertEquals("History of Russia: 4", studentRecordBook
-                .getFinalGradesBySemester(StudentRecordBook.Semester.B1S1).get(0).toString());
-        assertEquals("[History of Russia: 4," +
-                " Declarative programming : 4, " +
-                "Imperative programming : 3]", studentRecordBook
-                .getFinalGradesBySemester(StudentRecordBook.Semester.B1S1).toString());
-        assertEquals("[Declarative programming : 4, " +
-                "Imperative programming : 3]", studentRecordBook
-                .getFinalGradesBySemester(StudentRecordBook.Semester.B1S2).toString());
+                .getFinalGradesBySemester(StudentRecordBook.Semester.B1S1)
+                .get(0).toString());
+        assertEquals("[History of Russia: 4,"
+                + " Declarative programming : 4, "
+                + "Imperative programming : 3]", studentRecordBook
+                .getFinalGradesBySemester(StudentRecordBook.Semester.B1S1)
+                .toString());
+        assertEquals("[Declarative programming : 4, "
+                + "Imperative programming : 3]", studentRecordBook
+                .getFinalGradesBySemester(StudentRecordBook.Semester.B1S2)
+                .toString());
         assertEquals("[Java: 4, Operating Systems: 2]",
-                studentRecordBook.getFinalGradesBySemester(StudentRecordBook.Semester.B2S1)
+                studentRecordBook
+                        .getFinalGradesBySemester(StudentRecordBook.Semester.B2S1)
                         .toString());
         assertEquals("[Java: 5, Models of Computing: 4]",
-                studentRecordBook.getFinalGradesBySemester(StudentRecordBook.Semester.B2S2)
+                studentRecordBook
+                        .getFinalGradesBySemester(StudentRecordBook.Semester.B2S2)
                         .toString());
-        assertEquals("[Cat science: 5, Cat practice: 4," +
-                " Dog practice: 4, Machine learning methods: 5, Dog science: 4]",
-                studentRecordBook.getFinalGradesBySemester(StudentRecordBook.Semester.B3S1)
+        assertEquals("[Cat science: 5, Cat practice: 4,"
+                        + " Dog practice: 4," +
+                        " Machine learning methods: 5, Dog science: 4]",
+                studentRecordBook
+                        .getFinalGradesBySemester(StudentRecordBook.Semester.B3S1)
                         .toString());
         assertEquals("[Machine learning methods: 3]",
-                studentRecordBook.getFinalGradesBySemester(StudentRecordBook.Semester.B3S2)
+                studentRecordBook
+                        .getFinalGradesBySemester(StudentRecordBook.Semester.B3S2)
                         .toString());
         assertEquals("[Data protection: 5]",
-                studentRecordBook.getFinalGradesBySemester(StudentRecordBook.Semester.B4S1)
+                studentRecordBook
+                        .getFinalGradesBySemester(StudentRecordBook.Semester.B4S1)
                         .toString());
 
     }
@@ -261,15 +271,16 @@ class TestGrades {
                 RedCertificateStatus.notEligible, studentRecordBook
                 .checkRedCertificateStatus());
 
-        assertEquals("[excellentGradesPercentBelow75," +
-                " notAllFinalGradesGoodOrExcellent, qualifyingExamNotExcellent]",
+        assertEquals("[excellentGradesPercentBelow75,"
+                        + " notAllFinalGradesGoodOrExcellent,"
+                        + " qualifyingExamNotExcellent]",
                 redDiplomaStatus.getReasons().toString());
 
         studentRecordBook.setQualifyingExam(5);
         redDiplomaStatus = studentRecordBook.checkRedCertificateStatus();
 
-        assertEquals("[excellentGradesPercentBelow75," +
-                " notAllFinalGradesGoodOrExcellent]",
+        assertEquals("[excellentGradesPercentBelow75,"
+                        + " notAllFinalGradesGoodOrExcellent]",
                 redDiplomaStatus.getReasons().toString());
 
         StudentRecordBook bestOfTheBest = new StudentRecordBook();

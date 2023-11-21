@@ -145,7 +145,7 @@ public class StudentRecordBook {
 
 
     /**
-     * Enum for Semester representation with format: "B<CourseNum>S<SemesterNum>".
+     * Enum for Semester representation with format: /B(CourseNum)S(SemesterNum)\.
      *
      */
     public enum Semester {
@@ -278,6 +278,10 @@ public class StudentRecordBook {
         qualifyingExamNotExcellent
     }
 
+    /**
+     * Starting point.
+     *
+     */
     @ExcludeFromJacocoGeneratedTestReport
     public static void main(String[] args) {
         StudentRecordBook studentRecordBook = new StudentRecordBook();
