@@ -17,11 +17,16 @@ public class StudentRecordBook {
     private final Map<String, Map<Semester, Double>> averageGradeBySubject;
     private final Map<Semester, Map<String, Double>> finalGradesBySemester;
 
+    /**
+     * Class constructor.
+     *
+     */
     public StudentRecordBook() {
         this.grades = new HashMap<>();
         this.averageGradeBySubject = new HashMap<>();
         this.finalGradesBySemester = new HashMap<>();
     }
+
     private int qualifyingExam = 0;
 
     /**
@@ -139,8 +144,10 @@ public class StudentRecordBook {
     }
 
 
-
-
+    /**
+     * Enum for Semester representation with format: "B<CourseNum>S<SemesterNum>".
+     *
+     */
     public enum Semester {
         B1S1,
         B1S2,
@@ -211,9 +218,9 @@ public class StudentRecordBook {
         // Check if the qualifying exam is 5
         boolean qualifyingExamIsExcellent = qualifyingExam == 5;
 
-        if (totalExcellentGrades / (double) totalGrades >= 0.75 &&
-                excellentOrGoodGradesForAllSemesters &&
-                qualifyingExamIsExcellent) {
+        if (totalExcellentGrades / (double) totalGrades >= 0.75
+                && excellentOrGoodGradesForAllSemesters
+                && qualifyingExamIsExcellent) {
             return RedCertificateStatus.resCertificate;
         } else {
             List<RedDiplomaReason> reasons = new ArrayList<>();
@@ -235,6 +242,12 @@ public class StudentRecordBook {
     }
 
 
+    /**
+     * Enum for representation student's red certificate status.
+     * 2 statuses: resCertificate, notEligible.
+     * Has 3 displayable reasons.
+     *
+     */
     public enum RedCertificateStatus {
         resCertificate,
         notEligible;
@@ -255,6 +268,10 @@ public class StudentRecordBook {
         }
     }
 
+    /**
+     * Enum for requirements for red certificate.
+     *
+     */
     public enum RedDiplomaReason {
         excellentGradesPercentBelow75,
         notAllFinalGradesGoodOrExcellent,
@@ -307,7 +324,7 @@ public class StudentRecordBook {
             System.out.println("Studet good!");
         } else {
             System.out.println("Student not Good, here is why: \n Reasons:");
-            for (int i = 0; i < redDiplomaStatus.reasons.size(); i++){
+            for (int i = 0; i < redDiplomaStatus.reasons.size(); i++) {
                 System.out.println(redDiplomaStatus.reasons.get(i));
             }
         }
