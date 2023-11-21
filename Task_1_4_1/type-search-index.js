@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.kozoliy","l":"StudentRecordBook"}]
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.kozoliy","l":"ExcludeFromJacocoGeneratedTestReport"},{"p":"ru.nsu.kozoliy","l":"Pair"},{"p":"ru.nsu.kozoliy","l":"StudentRecordBook.RedCertificateStatus"},{"p":"ru.nsu.kozoliy","l":"StudentRecordBook.RedDiplomaReason"},{"p":"ru.nsu.kozoliy","l":"StudentRecordBook.Semester"},{"p":"ru.nsu.kozoliy","l":"StudentRecordBook"}]
