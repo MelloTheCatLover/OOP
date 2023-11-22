@@ -37,12 +37,17 @@ public class StudentRecordBook {
         this.finalGradesBySemester = new HashMap<>();
     }
 
+    /**
+     * Class constructor with name.
+     *
+     */
     public StudentRecordBook(String studentName) {
         this.studentName = studentName;
         this.grades = new HashMap<>();
         this.averageGradeBySubject = new HashMap<>();
         this.finalGradesBySemester = new HashMap<>();
     }
+
     private int qualifyingExam = 0;
 
     /**
@@ -302,7 +307,7 @@ public class StudentRecordBook {
     public static void main(String[] args) {
         StudentRecordBook studentRecordBook = new StudentRecordBook();
 
-        StudentRecordBook studentWithName = new StudentRecordBook("Michail");
+
         // Adding grades
         studentRecordBook.addGrade("Operating Systems", 5, Semester.B1S1);
         studentRecordBook.addGrade("Operating Systems", 5, Semester.B1S1);
@@ -313,6 +318,8 @@ public class StudentRecordBook {
         studentRecordBook.addGrade("Databases", 3, Semester.B1S1);
         studentRecordBook.addGrade("Databases", 3, Semester.B1S1);
         studentRecordBook.addGrade("Databases", 4, Semester.B1S1);
+
+        StudentRecordBook studentWithName = new StudentRecordBook("Michail");
 
         studentWithName.addGrade("Operating Systems", 5, Semester.B1S1);
         studentWithName.addGrade("Operating Systems", 5, Semester.B1S1);

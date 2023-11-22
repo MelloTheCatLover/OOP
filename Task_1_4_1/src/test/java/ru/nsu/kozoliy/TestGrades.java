@@ -110,6 +110,7 @@ class TestGrades {
 
         assertEquals("Test Name", studentWithName.getStudentName());
     }
+
     @Test
     void addGrade() {
         studentRecordBook.addGrade("TEST SUBJECT", 5, StudentRecordBook.Semester.B1S1);
