@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 
 class TestGrades {
-    private final StudentRecordBook studentRecordBook = new StudentRecordBook();
+    private final StudentRecordBook studentRecordBook = new StudentRecordBook("Michail Kozoliy");
 
     @BeforeEach
     public void setup() {
@@ -103,6 +103,13 @@ class TestGrades {
         assertEquals(5, studentRecordBook.getQualifyingExam());
     }
 
+    @Test
+    void setAndGetStudentName() {
+        StudentRecordBook studentWithName = new StudentRecordBook();
+        studentWithName.setStudentName("Test Name");
+
+        assertEquals("Test Name", studentWithName.getStudentName());
+    }
     @Test
     void addGrade() {
         studentRecordBook.addGrade("TEST SUBJECT", 5, StudentRecordBook.Semester.B1S1);
@@ -286,7 +293,7 @@ class TestGrades {
                         + " notAllFinalGradesGoodOrExcellent]",
                 redDiplomaStatus.getReasons().toString());
 
-        StudentRecordBook bestOfTheBest = new StudentRecordBook();
+        StudentRecordBook bestOfTheBest = new StudentRecordBook("Best Of the Best");
         bestOfTheBest.addGrade("History of Russia",
                 5, StudentRecordBook.Semester.B1S1);
         bestOfTheBest.addGrade("History of Russia",

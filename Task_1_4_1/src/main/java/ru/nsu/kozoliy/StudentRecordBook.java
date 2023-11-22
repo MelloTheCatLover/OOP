@@ -13,9 +13,19 @@ import java.util.Map;
  * and checking eligibility for a red certificate with distinction.
  */
 public class StudentRecordBook {
+
+    private String studentName;
     private final Map<Semester, Map<String, List<Integer>>> grades;
     private final Map<String, Map<Semester, Double>> averageGradeBySubject;
     private final Map<Semester, Map<String, Double>> finalGradesBySemester;
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
 
     /**
      * Class constructor.
@@ -27,6 +37,12 @@ public class StudentRecordBook {
         this.finalGradesBySemester = new HashMap<>();
     }
 
+    public StudentRecordBook(String studentName) {
+        this.studentName = studentName;
+        this.grades = new HashMap<>();
+        this.averageGradeBySubject = new HashMap<>();
+        this.finalGradesBySemester = new HashMap<>();
+    }
     private int qualifyingExam = 0;
 
     /**
@@ -286,6 +302,7 @@ public class StudentRecordBook {
     public static void main(String[] args) {
         StudentRecordBook studentRecordBook = new StudentRecordBook();
 
+        StudentRecordBook studentWithName = new StudentRecordBook("Michail");
         // Adding grades
         studentRecordBook.addGrade("Operating Systems", 5, Semester.B1S1);
         studentRecordBook.addGrade("Operating Systems", 5, Semester.B1S1);
@@ -297,6 +314,10 @@ public class StudentRecordBook {
         studentRecordBook.addGrade("Databases", 3, Semester.B1S1);
         studentRecordBook.addGrade("Databases", 4, Semester.B1S1);
 
+        studentWithName.addGrade("Operating Systems", 5, Semester.B1S1);
+        studentWithName.addGrade("Operating Systems", 5, Semester.B1S1);
+        studentWithName.addGrade("Operating Systems", 5, Semester.B1S1);
+        studentWithName.addGrade("Probability Theory", 5, Semester.B1S1);
 
 
 
