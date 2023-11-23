@@ -28,29 +28,29 @@ class TestGrades {
         studentRecordBook.addGrade("History of Russia",
                 5, StudentRecordBook.Semester.B1S1);
 
-        studentRecordBook.addGrade("Imperative programming ",
+        studentRecordBook.addGrade("Imperative programming",
                 4, StudentRecordBook.Semester.B1S1);
-        studentRecordBook.addGrade("Imperative programming ",
+        studentRecordBook.addGrade("Imperative programming",
                 2, StudentRecordBook.Semester.B1S1);
-        studentRecordBook.addGrade("Imperative programming ",
+        studentRecordBook.addGrade("Imperative programming",
                 3, StudentRecordBook.Semester.B1S1);
 
-        studentRecordBook.addGrade("Imperative programming ",
+        studentRecordBook.addGrade("Imperative programming",
                 3, StudentRecordBook.Semester.B1S2);
-        studentRecordBook.addGrade("Imperative programming ",
+        studentRecordBook.addGrade("Imperative programming",
                 3, StudentRecordBook.Semester.B1S2);
 
 
-        studentRecordBook.addGrade("Declarative programming ",
+        studentRecordBook.addGrade("Declarative programming",
                 4, StudentRecordBook.Semester.B1S1);
-        studentRecordBook.addGrade("Declarative programming ",
+        studentRecordBook.addGrade("Declarative programming",
                 4, StudentRecordBook.Semester.B1S1);
-        studentRecordBook.addGrade("Declarative programming ",
+        studentRecordBook.addGrade("Declarative programming",
                 4, StudentRecordBook.Semester.B1S1);
 
-        studentRecordBook.addGrade("Declarative programming ",
+        studentRecordBook.addGrade("Declarative programming",
                 4, StudentRecordBook.Semester.B1S2);
-        studentRecordBook.addGrade("Declarative programming ",
+        studentRecordBook.addGrade("Declarative programming",
                 4, StudentRecordBook.Semester.B1S2);
 
         studentRecordBook.addGrade("Operating Systems", 2, StudentRecordBook.Semester.B2S1);
@@ -118,30 +118,30 @@ class TestGrades {
 
         assertEquals(4, studentRecordBook
                 .getFinalGradesBySemester(StudentRecordBook.Semester.B1S1).size());
-        assertEquals("TEST SUBJECT: 5", studentRecordBook
-                .getFinalGradesBySemester(StudentRecordBook.Semester.B1S1).get(0).toString());
-        assertEquals("[TEST SUBJECT: 5, History of Russia: 4"
-                        + ", Declarative programming : 4, Imperative programming : 3]",
+        assertEquals(5.0 , studentRecordBook
+                .getFinalGradesBySemester(StudentRecordBook.Semester.B1S1).get("TEST SUBJECT"));
+        assertEquals("{TEST SUBJECT=5.0, History of Russia=4.333333333333333,"
+                        + " Imperative programming=3.0, Declarative programming=4.0}",
                 studentRecordBook
                         .getFinalGradesBySemester(StudentRecordBook.Semester.B1S1).toString());
-        assertEquals("[Declarative programming : 4, Imperative programming : 3]",
+        assertEquals("{Imperative programming=3.0, Declarative programming=4.0}",
                 studentRecordBook
                         .getFinalGradesBySemester(StudentRecordBook.Semester.B1S2).toString());
-        assertEquals("[Java: 4, Operating Systems: 2]",
+        assertEquals("{Java=4.0, Operating Systems=2.0}",
                 studentRecordBook
                         .getFinalGradesBySemester(StudentRecordBook.Semester.B2S1).toString());
-        assertEquals("[Java: 5, Models of Computing: 4]",
+        assertEquals("{Java=4.8, Models of Computing=4.0}",
                 studentRecordBook
                         .getFinalGradesBySemester(StudentRecordBook.Semester.B2S2).toString());
-        assertEquals("[Cat science: 5, "
-                + "Cat practice: 4, Dog practice: 4, Machine learning methods: 5, "
-                + "Dog science: 4]", studentRecordBook
+        assertEquals("{Cat science=5.0, "
+                + "Cat practice=4.0, Dog practice=4.0, Machine learning methods=4.5, "
+                + "Dog science=4.0}", studentRecordBook
                 .getFinalGradesBySemester(StudentRecordBook.Semester.B3S1)
                 .toString());
-        assertEquals("[Machine learning methods: 3]",
+        assertEquals("{Machine learning methods=3.0}",
                 studentRecordBook.getFinalGradesBySemester(StudentRecordBook.Semester.B3S2)
                         .toString());
-        assertEquals("[Data protection: 5]", studentRecordBook
+        assertEquals("{Data protection=5.0}", studentRecordBook
                 .getFinalGradesBySemester(StudentRecordBook.Semester.B4S1).toString());
 
     }
@@ -164,27 +164,27 @@ class TestGrades {
         goodStudent.addGrade("History of Russia",
                 5, StudentRecordBook.Semester.B1S1);
 
-        goodStudent.addGrade("Imperative programming ",
+        goodStudent.addGrade("Imperative programming",
                 5, StudentRecordBook.Semester.B1S1);
-        goodStudent.addGrade("Imperative programming ",
+        goodStudent.addGrade("Imperative programming",
                 5, StudentRecordBook.Semester.B1S1);
-        goodStudent.addGrade("Imperative programming ",
+        goodStudent.addGrade("Imperative programming",
                 5, StudentRecordBook.Semester.B1S1);
-        goodStudent.addGrade("Imperative programming ",
+        goodStudent.addGrade("Imperative programming",
                 5, StudentRecordBook.Semester.B1S1);
-        goodStudent.addGrade("Imperative programming ",
+        goodStudent.addGrade("Imperative programming",
                 5, StudentRecordBook.Semester.B1S1);
 
 
-        goodStudent.addGrade("Declarative programming ",
+        goodStudent.addGrade("Declarative programming",
                 5, StudentRecordBook.Semester.B1S1);
-        goodStudent.addGrade("Declarative programming ",
+        goodStudent.addGrade("Declarative programming",
                 5, StudentRecordBook.Semester.B1S1);
-        goodStudent.addGrade("Declarative programming ",
+        goodStudent.addGrade("Declarative programming",
                 5, StudentRecordBook.Semester.B1S1);
-        goodStudent.addGrade("Declarative programming ",
+        goodStudent.addGrade("Declarative programming",
                 5, StudentRecordBook.Semester.B1S1);
-        goodStudent.addGrade("Declarative programming ",
+        goodStudent.addGrade("Declarative programming",
                 5, StudentRecordBook.Semester.B1S1);
 
         goodStudent.addGrade("Operating Systems",
@@ -221,37 +221,38 @@ class TestGrades {
     void getFinalGradesBySemester() {
         assertEquals(3, studentRecordBook
                 .getFinalGradesBySemester(StudentRecordBook.Semester.B1S1).size());
-        assertEquals("History of Russia: 4", studentRecordBook
+        assertEquals(4.33, studentRecordBook
                 .getFinalGradesBySemester(StudentRecordBook.Semester.B1S1)
-                .get(0).toString());
-        assertEquals("[History of Russia: 4,"
-                + " Declarative programming : 4, "
-                + "Imperative programming : 3]", studentRecordBook
+                .get("History of Russia"), 0.01);
+        assertEquals("{History of Russia=4.333333333333333, "
+                + "Imperative programming=3.0, Declarative programming=4.0}",
+                studentRecordBook
                 .getFinalGradesBySemester(StudentRecordBook.Semester.B1S1)
                 .toString());
-        assertEquals("[Declarative programming : 4, "
-                + "Imperative programming : 3]", studentRecordBook
+        assertEquals("{Imperative programming=3.0,"
+                        + " Declarative programming=4.0}",
+                studentRecordBook
                 .getFinalGradesBySemester(StudentRecordBook.Semester.B1S2)
                 .toString());
-        assertEquals("[Java: 4, Operating Systems: 2]",
+        assertEquals("{Java=4.0, Operating Systems=2.0}",
                 studentRecordBook
                         .getFinalGradesBySemester(StudentRecordBook.Semester.B2S1)
                         .toString());
-        assertEquals("[Java: 5, Models of Computing: 4]",
+        assertEquals("{Java=4.8, Models of Computing=4.0}",
                 studentRecordBook
                         .getFinalGradesBySemester(StudentRecordBook.Semester.B2S2)
                         .toString());
-        assertEquals("[Cat science: 5, Cat practice: 4,"
-                        + " Dog practice: 4,"
-                        + " Machine learning methods: 5, Dog science: 4]",
+        assertEquals("{Cat science=5.0, Cat practice=4.0,"
+                        + " Dog practice=4.0,"
+                        + " Machine learning methods=4.5, Dog science=4.0}",
                 studentRecordBook
                         .getFinalGradesBySemester(StudentRecordBook.Semester.B3S1)
                         .toString());
-        assertEquals("[Machine learning methods: 3]",
+        assertEquals("{Machine learning methods=3.0}",
                 studentRecordBook
                         .getFinalGradesBySemester(StudentRecordBook.Semester.B3S2)
                         .toString());
-        assertEquals("[Data protection: 5]",
+        assertEquals("{Data protection=5.0}",
                 studentRecordBook
                         .getFinalGradesBySemester(StudentRecordBook.Semester.B4S1)
                         .toString());
@@ -308,27 +309,27 @@ class TestGrades {
         bestOfTheBest.addGrade("History of Russia",
                 5, StudentRecordBook.Semester.B1S1);
 
-        bestOfTheBest.addGrade("Imperative programming ",
+        bestOfTheBest.addGrade("Imperative programming",
                 5, StudentRecordBook.Semester.B1S1);
-        bestOfTheBest.addGrade("Imperative programming ",
+        bestOfTheBest.addGrade("Imperative programming",
                 5, StudentRecordBook.Semester.B1S1);
-        bestOfTheBest.addGrade("Imperative programming ",
+        bestOfTheBest.addGrade("Imperative programming",
                 5, StudentRecordBook.Semester.B1S1);
-        bestOfTheBest.addGrade("Imperative programming ",
+        bestOfTheBest.addGrade("Imperative programming",
                 5, StudentRecordBook.Semester.B1S1);
-        bestOfTheBest.addGrade("Imperative programming ",
+        bestOfTheBest.addGrade("Imperative programming",
                 5, StudentRecordBook.Semester.B1S1);
 
 
-        bestOfTheBest.addGrade("Declarative programming ",
+        bestOfTheBest.addGrade("Declarative programming",
                 5, StudentRecordBook.Semester.B1S1);
-        bestOfTheBest.addGrade("Declarative programming ",
+        bestOfTheBest.addGrade("Declarative programming",
                 5, StudentRecordBook.Semester.B1S1);
-        bestOfTheBest.addGrade("Declarative programming ",
+        bestOfTheBest.addGrade("Declarative programming",
                 5, StudentRecordBook.Semester.B1S1);
-        bestOfTheBest.addGrade("Declarative programming ",
+        bestOfTheBest.addGrade("Declarative programming",
                 5, StudentRecordBook.Semester.B1S1);
-        bestOfTheBest.addGrade("Declarative programming ",
+        bestOfTheBest.addGrade("Declarative programming",
                 5, StudentRecordBook.Semester.B1S1);
 
         bestOfTheBest.addGrade("Operating Systems",

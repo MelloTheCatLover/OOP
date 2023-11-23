@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * The StudentRecordBook class represents an electronic record book for a student,
@@ -153,15 +154,11 @@ public class StudentRecordBook {
      *
      * @param semester The semester for which the final grade is calculated.
      */
-    public List<Pair<String, Long>> getFinalGradesBySemester(Semester semester) {
-        List<Pair<String, Long>> result = new ArrayList<>();
-
-        if (finalGradesBySemester.containsKey(semester)) {
-            finalGradesBySemester.get(semester).forEach((subject, averageGrade)
-                    -> result.add(new Pair<>(subject, Math.round(averageGrade))));
-        }
-
-        return result;
+    public Map<String, Double> getFinalGradesBySemester(Semester semester) {
+        return finalGradesBySemester.entrySet().stream()
+                .filter(entry -> entry.getKey() == semester)
+                .flatMap(entry -> entry.getValue().entrySet().stream())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
 
@@ -331,9 +328,9 @@ public class StudentRecordBook {
         double semesterAverageGrade = studentRecordBook.semesterFinalGrade(Semester.B1S1);
         System.out.println("Average grade for Semester B1S1: " + semesterAverageGrade);
 
-        List<Pair<String, Long>> ss = studentRecordBook.getFinalGradesBySemester(Semester.B1S1);
+        Map<String, Double> ss = studentRecordBook.getFinalGradesBySemester(Semester.B1S1);
 
-        System.out.println("GRADES(B1S1):\n" + ss);
+        System.out.println("GRADES(B1S1):\n" + ss.get("Databases"));
 
         // Printing all grades for a specific semester
         if (studentRecordBook.increasedScholarship(Semester.B1S1)) {
