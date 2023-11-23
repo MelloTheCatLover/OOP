@@ -118,7 +118,7 @@ class TestGrades {
 
         assertEquals(4, studentRecordBook
                 .getFinalGradesBySemester(StudentRecordBook.Semester.B1S1).size());
-        assertEquals(5.0 , studentRecordBook
+        assertEquals(5.0, studentRecordBook
                 .getFinalGradesBySemester(StudentRecordBook.Semester.B1S1).get("TEST SUBJECT"));
         assertEquals("{TEST SUBJECT=5.0, History of Russia=4.333333333333333,"
                         + " Imperative programming=3.0, Declarative programming=4.0}",
