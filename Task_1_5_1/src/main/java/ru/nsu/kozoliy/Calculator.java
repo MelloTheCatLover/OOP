@@ -1,62 +1,62 @@
 package ru.nsu.kozoliy;
 
-import java.util.EmptyStackException;
 import java.util.Stack;
+import java.util.EmptyStackException;
 
+
+/**
+ * A simple calculator that performs operations based on reverse Polish notation.
+ */
 public class Calculator {
 
     private final Factory factory;
     private final Stack<Double> stack;
 
+    /**
+     * Constructs a Calculator with the specified Factory.
+     *
+     * @param factory The factory used to create operators.
+     */
     public Calculator(Factory factory) {
         this.factory = factory;
         this.stack = new Stack<>();
     }
 
+    /**
+     * Factory class responsible for creating different operators.
+     */
     public static class Factory {
+        /**
+         * Creates an operator based on the provided type.
+         *
+         * @param type The type of the operator.
+         * @return The created operator.
+         * @throws InvalidInputException If the input type is not recognized.
+         */
         public Operator createOperator(String type) {
-            Operator operator = null;
-            switch (type) {
-                case "+":
-                    operator = new Add();
-                    break;
-                case "-":
-                    operator = new Subtract();
-                    break;
-                case "/":
-                    operator = new Divide();
-                    break;
-                case "*":
-                    operator = new Multiply();
-                    break;
-                case "log":
-                    operator = new Log();
-                    break;
-                case "pow":
-                    operator = new Power();
-                    break;
-                case "sqrt":
-                    operator = new Sqrt();
-                    break;
-                case "sin":
-                    operator = new Sin();
-                    break;
-                case "cos":
-                    operator = new Cos();
-                    break;
-                case "tan":
-                    operator = new Tan();
-                    break;
-                case "cot":
-                    operator = new Cot();
-                    break;
-                default:
-                    throw new InvalidInputException("Wrong operator");
-            }
-            return operator;
+            return switch (type) {
+                case "+" -> new Add();
+                case "-" -> new Subtract();
+                case "/" -> new Divide();
+                case "*" -> new Multiply();
+                case "log" -> new Log();
+                case "pow" -> new Power();
+                case "sqrt" -> new Sqrt();
+                case "sin" -> new Sin();
+                case "cos" -> new Cos();
+                case "tan" -> new Tan();
+                case "cot" -> new Cot();
+                default -> throw new InvalidInputException(type);
+            };
         }
     }
 
+    /**
+     * Checks if a given string is a number.
+     *
+     * @param element The string to check.
+     * @return True if the string is a number, false otherwise.
+     */
     private static boolean isNumber(String element) {
         try {
             Double.parseDouble(element);
@@ -66,6 +66,12 @@ public class Calculator {
         }
     }
 
+    /**
+     * Calculates the result of the expression provided in reverse Polish notation.
+     *
+     * @param input The input expression in reverse Polish notation.
+     * @return The result of the calculation.
+     */
     public double calculate(String input) {
         String[] expression = input.split(" ");
         for (int i = expression.length - 1; i >= 0; i--) {
@@ -78,6 +84,7 @@ public class Calculator {
         }
         return this.stack.pop();
     }
+
 
     public static class Add implements Operator {
         @Override
@@ -242,7 +249,15 @@ public class Calculator {
         }
     }
 
+    /**
+     * Main class for testing the Calculator.
+     */
     public static class Main {
+        /**
+         * The main method for testing the Calculator.
+         *
+         * @param args Command-line arguments (not used).
+         */
         @ExcludeFromJacocoGeneratedTestReport
         public static void main(String[] args) {
             Calculator calc = new Calculator(new Calculator.Factory());
