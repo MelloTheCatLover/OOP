@@ -132,6 +132,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Calculator</span>
 extends java.lang.Object</pre>
+<div class="block">A simple calculator that performs operations based on reverse Polish notation.</div>
 </li>
 </ul>
 </div>
@@ -175,7 +176,9 @@ extends java.lang.Object</pre>
 <tr class="altColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Calculator.Factory.html" title="class in ru.nsu.kozoliy">Calculator.Factory</a></span></code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Factory class responsible for creating different operators.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
@@ -185,7 +188,9 @@ extends java.lang.Object</pre>
 <tr class="altColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Calculator.Main.html" title="class in ru.nsu.kozoliy">Calculator.Main</a></span></code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Main class for testing the Calculator.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
@@ -236,7 +241,9 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(ru.nsu.kozoliy.Calculator.Factory)">Calculator</a></span>&#8203;(<a href="Calculator.Factory.html" title="class in ru.nsu.kozoliy">Calculator.Factory</a>&nbsp;factory)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs a Calculator with the specified Factory.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -259,7 +266,9 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#calculate(java.lang.String)">calculate</a></span>&#8203;(java.lang.String&nbsp;input)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Calculates the result of the expression provided in reverse Polish notation.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -292,6 +301,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>Calculator</h4>
 <pre>public&nbsp;Calculator&#8203;(<a href="Calculator.Factory.html" title="class in ru.nsu.kozoliy">Calculator.Factory</a>&nbsp;factory)</pre>
+<div class="block">Constructs a Calculator with the specified Factory.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>factory</code> - The factory used to create operators.</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -311,6 +325,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>calculate</h4>
 <pre class="methodSignature">public&nbsp;double&nbsp;calculate&#8203;(java.lang.String&nbsp;input)</pre>
+<div class="block">Calculates the result of the expression provided in reverse Polish notation.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>input</code> - The input expression in reverse Polish notation.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The result of the calculation.</dd>
+</dl>
 </li>
 </ul>
 </li>

@@ -136,6 +136,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public static class <span class="typeNameLabel">Calculator.Factory</span>
 extends java.lang.Object</pre>
+<div class="block">Factory class responsible for creating different operators.</div>
 </li>
 </ul>
 </div>
@@ -180,7 +181,9 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="Operator.html" title="interface in ru.nsu.kozoliy">Operator</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createOperator(java.lang.String)">createOperator</a></span>&#8203;(java.lang.String&nbsp;type)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Creates an operator based on the provided type.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -232,6 +235,15 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>createOperator</h4>
 <pre class="methodSignature">public&nbsp;<a href="Operator.html" title="interface in ru.nsu.kozoliy">Operator</a>&nbsp;createOperator&#8203;(java.lang.String&nbsp;type)</pre>
+<div class="block">Creates an operator based on the provided type.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>type</code> - The type of the operator.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The created operator.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="InvalidInputException.html" title="class in ru.nsu.kozoliy">InvalidInputException</a></code> - If the input type is not recognized.</dd>
+</dl>
 </li>
 </ul>
 </li>
