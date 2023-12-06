@@ -1,12 +1,14 @@
 package ru.nsu.kozoliy;
 
-import org.junit.jupiter.api.Test;
-
-import java.util.EmptyStackException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.util.EmptyStackException;
+import org.junit.jupiter.api.Test;
+
+/**
+ * Tests for calculator.
+ */
 public class CalculatorTest {
 
     @Test
@@ -18,7 +20,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public  void AddTest() {
+    public  void addTest() {
         Calculator calculator = new Calculator(new Calculator.Factory());
         String input = "+ 10000000 12";
         double res = calculator.calculate(input);
@@ -26,7 +28,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public  void SubTest() {
+    public  void subTest() {
         Calculator calculator = new Calculator(new Calculator.Factory());
         String input = "- 100000 12";
         double res = calculator.calculate(input);
@@ -40,7 +42,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public  void MultiplyTest() {
+    public  void multiplyTest() {
         Calculator calculator = new Calculator(new Calculator.Factory());
         String input = "* 2 2";
         double res = calculator.calculate(input);
@@ -57,7 +59,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public  void PowerTest() {
+    public  void powerTest() {
         Calculator calculator = new Calculator(new Calculator.Factory());
         String input = "pow 2 2";
         double res = calculator.calculate(input);
@@ -74,7 +76,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public  void SqrtTest() {
+    public  void sqrtTest() {
         Calculator calculator = new Calculator(new Calculator.Factory());
         String input = "sqrt 4";
         double res = calculator.calculate(input);
@@ -86,7 +88,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public  void TrigonometryTest() {
+    public  void trigonometryTest() {
         Calculator calculator = new Calculator(new Calculator.Factory());
         String input = "cos 2";
         double res = calculator.calculate(input);
@@ -103,7 +105,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void LogTest() {
+    public void logTest() {
         Calculator calculator = new Calculator(new Calculator.Factory());
         String input = "log 2 10";
         double res = calculator.calculate(input);
@@ -159,7 +161,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void WrongOperatorException() {
+    public void wrongOperatorException() {
         Calculator calculator = new Calculator(new Calculator.Factory());
         String input = "llog 8";
         assertThrows(InvalidInputException.class, () -> {
@@ -174,7 +176,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void SqrtInputException() {
+    public void sqrtInputException() {
         Calculator calculator = new Calculator(new Calculator.Factory());
         String input = "sqrt - 1 8";
         assertThrows(InvalidSqrtException.class, () -> {
@@ -183,7 +185,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void LogInputException() {
+    public void logInputException() {
         Calculator calculator = new Calculator(new Calculator.Factory());
         String input = "log - 1 2 10";
         assertThrows(InvalidLogException.class, () -> {
