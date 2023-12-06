@@ -34,20 +34,45 @@ public class Calculator {
          * @throws InvalidInputException If the input type is not recognized.
          */
         public Operator createOperator(String type) {
-            return switch (type) {
-                case "+" -> new Add();
-                case "-" -> new Subtract();
-                case "/" -> new Divide();
-                case "*" -> new Multiply();
-                case "log" -> new Log();
-                case "pow" -> new Power();
-                case "sqrt" -> new Sqrt();
-                case "sin" -> new Sin();
-                case "cos" -> new Cos();
-                case "tan" -> new Tan();
-                case "cot" -> new Cot();
-                default -> throw new InvalidInputException(type);
-            };
+            Operator operator = null;
+            switch (type) {
+                case "+":
+                    operator = new Add();
+                    break;
+                case "-":
+                    operator = new Subtract();
+                    break;
+                case "/":
+                    operator = new Divide();
+                    break;
+                case "*":
+                    operator = new Multiply();
+                    break;
+                case "log":
+                    operator = new Log();
+                    break;
+                case "pow":
+                    operator = new Power();
+                    break;
+                case "sqrt":
+                    operator = new Sqrt();
+                    break;
+                case "sin":
+                    operator = new Sin();
+                    break;
+                case "cos":
+                    operator = new Cos();
+                    break;
+                case "tan":
+                    operator = new Tan();
+                    break;
+                case "cot":
+                    operator = new Cot();
+                    break;
+                default:
+                    throw new InvalidInputException("Wrong operator");
+            }
+            return operator;
         }
     }
 
