@@ -112,7 +112,17 @@ public class Calculator {
     }
 
 
+
+    /**
+     * Represents the addition operation.
+     */
     public static class Add implements Operator {
+        /**
+         * Performs the addition operation on the stack.
+         *
+         * @param stack The stack used in the calculation.
+         * @throws EmptyStackException If the stack is empty and an operand is required.
+         */
         @Override
         public void findAnswer(Stack<Double> stack) {
             try {
@@ -125,6 +135,9 @@ public class Calculator {
         }
     }
 
+    /**
+     * Represents the subtraction operation.
+     */
     public static class Subtract implements Operator {
         @Override
         public void findAnswer(Stack<Double> stack) {
@@ -138,6 +151,9 @@ public class Calculator {
         }
     }
 
+    /**
+     * Represents the multiplication operation.
+     */
     public static class Multiply implements Operator {
         @Override
         public void findAnswer(Stack<Double> stack) {
@@ -151,6 +167,9 @@ public class Calculator {
         }
     }
 
+    /**
+     * Represents the division operation.
+     */
     public static class Divide implements Operator {
         @Override
         public void findAnswer(Stack<Double> stack) {
@@ -169,6 +188,9 @@ public class Calculator {
         }
     }
 
+    /**
+     * Represents the power operation.
+     */
     public static class Power implements Operator {
         @Override
         public void findAnswer(Stack<Double> stack) {
@@ -187,6 +209,9 @@ public class Calculator {
         }
     }
 
+    /**
+     * Represents the square root operation.
+     */
     public static class Sqrt implements Operator {
         @Override
         public void findAnswer(Stack<Double> stack) {
@@ -203,6 +228,9 @@ public class Calculator {
         }
     }
 
+    /**
+     * Represents the logarithm operation.
+     */
     public static class Log implements Operator {
         @Override
         public void findAnswer(Stack<Double> stack) {
@@ -224,6 +252,9 @@ public class Calculator {
         }
     }
 
+    /**
+     * Represents the cos operation.
+     */
     public static class Cos implements Operator {
         @Override
         public void findAnswer(Stack<Double> stack) {
@@ -236,6 +267,9 @@ public class Calculator {
         }
     }
 
+    /**
+     * Represents the sin operation.
+     */
     public static class Sin implements Operator {
 
         @Override
@@ -249,6 +283,9 @@ public class Calculator {
         }
     }
 
+    /**
+     * Represents the tan operation.
+     */
     public static class Tan implements Operator {
 
         @Override
@@ -262,6 +299,9 @@ public class Calculator {
         }
     }
 
+    /**
+     * Represents the cot operation.
+     */
     public static class Cot implements Operator {
 
         @Override
