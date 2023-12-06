@@ -8,7 +8,6 @@ public class Calculator {
     private final Factory factory;
     private final Stack<Double> stack;
 
-
     public Calculator(Factory factory) {
         this.factory = factory;
         this.stack = new Stack<>();
@@ -16,21 +15,45 @@ public class Calculator {
 
     public static class Factory {
         public Operator createOperator(String type) {
-            return switch (type) {
-                case "+" -> new Add();
-                case "-" -> new Subtract();
-                case "/" -> new Divide();
-                case "*" -> new Multiply();
-                case "log" -> new Log();
-                case "pow" -> new Power();
-                case "sqrt" -> new Sqrt();
-                case "sin" -> new Sin();
-                case "cos" -> new Cos();
-                case "tan" -> new Tan();
-                case "cot" -> new Cot();
-                default -> throw new InvalidInputException(type) {
-                };
-            };
+            Operator operator = null;
+            switch (type) {
+                case "+":
+                    operator = new Add();
+                    break;
+                case "-":
+                    operator = new Subtract();
+                    break;
+                case "/":
+                    operator = new Divide();
+                    break;
+                case "*":
+                    operator = new Multiply();
+                    break;
+                case "log":
+                    operator = new Log();
+                    break;
+                case "pow":
+                    operator = new Power();
+                    break;
+                case "sqrt":
+                    operator = new Sqrt();
+                    break;
+                case "sin":
+                    operator = new Sin();
+                    break;
+                case "cos":
+                    operator = new Cos();
+                    break;
+                case "tan":
+                    operator = new Tan();
+                    break;
+                case "cot":
+                    operator = new Cot();
+                    break;
+                default:
+                    throw new InvalidInputException("Wrong operator");
+            }
+            return operator;
         }
     }
 
@@ -55,9 +78,6 @@ public class Calculator {
         }
         return this.stack.pop();
     }
-
-
-
 
     public static class Add implements Operator {
         @Override
@@ -152,7 +172,7 @@ public class Calculator {
 
     public static class Log implements Operator {
         @Override
-        public void findAnswer(Stack<Double> stack)  {
+        public void findAnswer(Stack<Double> stack) {
             double operand1;
             double operand2;
             try {
@@ -165,7 +185,7 @@ public class Calculator {
                 throw new InvalidLogException(operand1);
             }
             if (operand2 < 0) {
-                throw new InvalidLogException((operand2));
+                throw new InvalidLogException(operand2);
             }
             stack.push(Math.log(operand2) / Math.log(operand1));
         }
@@ -231,5 +251,4 @@ public class Calculator {
             System.out.println(calc.calculate(input));
         }
     }
-
 }
