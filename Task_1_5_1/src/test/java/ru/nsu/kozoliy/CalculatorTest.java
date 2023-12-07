@@ -13,7 +13,7 @@ public class CalculatorTest {
 
     @Test
     public  void startingTest() {
-        Calculator calculator = new Calculator(new Calculator.Factory());
+        Calculator calculator = new Calculator(new Factory());
         String input = "sin + - 1 2 1";
         double res = calculator.calculate(input);
         assertEquals(res, 0);
@@ -21,7 +21,7 @@ public class CalculatorTest {
 
     @Test
     public  void addTest() {
-        Calculator calculator = new Calculator(new Calculator.Factory());
+        Calculator calculator = new Calculator(new Factory());
         String input = "+ 10000000 12";
         double res = calculator.calculate(input);
         assertEquals(res, 10000012);
@@ -29,7 +29,7 @@ public class CalculatorTest {
 
     @Test
     public  void subTest() {
-        Calculator calculator = new Calculator(new Calculator.Factory());
+        Calculator calculator = new Calculator(new Factory());
         String input = "- 100000 12";
         double res = calculator.calculate(input);
         assertEquals(res, 99988.0);
@@ -43,7 +43,7 @@ public class CalculatorTest {
 
     @Test
     public  void multiplyTest() {
-        Calculator calculator = new Calculator(new Calculator.Factory());
+        Calculator calculator = new Calculator(new Factory());
         String input = "* 2 2";
         double res = calculator.calculate(input);
         assertEquals(res, 4);
@@ -60,7 +60,7 @@ public class CalculatorTest {
 
     @Test
     public  void powerTest() {
-        Calculator calculator = new Calculator(new Calculator.Factory());
+        Calculator calculator = new Calculator(new Factory());
         String input = "pow 2 2";
         double res = calculator.calculate(input);
         assertEquals(res, 4);
@@ -77,7 +77,7 @@ public class CalculatorTest {
 
     @Test
     public  void sqrtTest() {
-        Calculator calculator = new Calculator(new Calculator.Factory());
+        Calculator calculator = new Calculator(new Factory());
         String input = "sqrt 4";
         double res = calculator.calculate(input);
         assertEquals(res, 2);
@@ -89,7 +89,7 @@ public class CalculatorTest {
 
     @Test
     public  void trigonometryTest() {
-        Calculator calculator = new Calculator(new Calculator.Factory());
+        Calculator calculator = new Calculator(new Factory());
         String input = "cos 2";
         double res = calculator.calculate(input);
         assertEquals(res, -0.416, 0.001);
@@ -106,7 +106,7 @@ public class CalculatorTest {
 
     @Test
     public void logTest() {
-        Calculator calculator = new Calculator(new Calculator.Factory());
+        Calculator calculator = new Calculator(new Factory());
         String input = "log 2 10";
         double res = calculator.calculate(input);
         assertEquals(res, 3.321, 0.001);
@@ -118,7 +118,7 @@ public class CalculatorTest {
 
     @Test
     public void divisionByZeroTest() {
-        Calculator calculator = new Calculator(new Calculator.Factory());
+        Calculator calculator = new Calculator(new Factory());
         String input = "/ 2 0";
         assertThrows(DivisionByZeroException.class, () -> {
             calculator.calculate(input);
@@ -127,32 +127,32 @@ public class CalculatorTest {
 
     @Test
     public void emptyStackTest() {
-        Calculator calculator = new Calculator(new Calculator.Factory());
+        Calculator calculator = new Calculator(new Factory());
         String input = "cos";
         assertThrows(EmptyStackException.class, () -> {
             calculator.calculate(input);
         });
-        Calculator calculator2 = new Calculator(new Calculator.Factory());
+        Calculator calculator2 = new Calculator(new Factory());
         String input2 = "+ 1";
         assertThrows(EmptyStackException.class, () -> {
             calculator2.calculate(input2);
         });
-        Calculator calculator3 = new Calculator(new Calculator.Factory());
+        Calculator calculator3 = new Calculator(new Factory());
         String input3 = "- 1";
         assertThrows(EmptyStackException.class, () -> {
             calculator3.calculate(input3);
         });
-        Calculator calculator4 = new Calculator(new Calculator.Factory());
+        Calculator calculator4 = new Calculator(new Factory());
         String input4 = "* 1";
         assertThrows(EmptyStackException.class, () -> {
             calculator4.calculate(input4);
         });
-        Calculator calculator5 = new Calculator(new Calculator.Factory());
+        Calculator calculator5 = new Calculator(new Factory());
         String input5 = "sqrt ";
         assertThrows(EmptyStackException.class, () -> {
             calculator5.calculate(input5);
         });
-        Calculator calculator6 = new Calculator(new Calculator.Factory());
+        Calculator calculator6 = new Calculator(new Factory());
         String input6 = "pow 1";
         assertThrows(EmptyStackException.class, () -> {
             calculator6.calculate(input6);
@@ -162,13 +162,13 @@ public class CalculatorTest {
 
     @Test
     public void wrongOperatorException() {
-        Calculator calculator = new Calculator(new Calculator.Factory());
+        Calculator calculator = new Calculator(new Factory());
         String input = "llog 8";
         assertThrows(InvalidInputException.class, () -> {
             calculator.calculate(input);
         });
 
-        Calculator calculator2 = new Calculator(new Calculator.Factory());
+        Calculator calculator2 = new Calculator(new Factory());
         String input2 = "log a";
         assertThrows(InvalidInputException.class, () -> {
             calculator2.calculate(input2);
@@ -177,7 +177,7 @@ public class CalculatorTest {
 
     @Test
     public void sqrtInputException() {
-        Calculator calculator = new Calculator(new Calculator.Factory());
+        Calculator calculator = new Calculator(new Factory());
         String input = "sqrt - 1 8";
         assertThrows(InvalidSqrtException.class, () -> {
             calculator.calculate(input);
@@ -186,17 +186,17 @@ public class CalculatorTest {
 
     @Test
     public void logInputException() {
-        Calculator calculator = new Calculator(new Calculator.Factory());
+        Calculator calculator = new Calculator(new Factory());
         String input = "log - 1 2 10";
         assertThrows(InvalidLogException.class, () -> {
             calculator.calculate(input);
         });
-        Calculator calculator2 = new Calculator(new Calculator.Factory());
+        Calculator calculator2 = new Calculator(new Factory());
         String input2 = "log 10 - 1 2";
         assertThrows(InvalidLogException.class, () -> {
             calculator2.calculate(input2);
         });
-        Calculator calculator3 = new Calculator(new Calculator.Factory());
+        Calculator calculator3 = new Calculator(new Factory());
         String input3 = "log 1 2";
         assertThrows(InvalidLogException.class, () -> {
             calculator3.calculate(input3);
