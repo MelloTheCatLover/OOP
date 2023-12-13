@@ -12,7 +12,7 @@ public class Sqrt implements Operator {
         double operand1;
         try {
             operand1 = stack.pop();
-        } catch (EmptyStackException e) {
+        } catch (RuntimeException e) {
             throw new EmptyStackException();
         }
         if (operand1 < 0) {

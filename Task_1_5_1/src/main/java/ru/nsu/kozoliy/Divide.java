@@ -14,7 +14,7 @@ public class Divide implements Operator {
         try {
             operand1 = stack.pop();
             operand2 = stack.pop();
-        } catch (EmptyStackException e) {
+        } catch (RuntimeException e) {
             throw new EmptyStackException();
         }
         if (operand2 == 0) {

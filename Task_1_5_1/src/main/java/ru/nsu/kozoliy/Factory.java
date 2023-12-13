@@ -12,30 +12,44 @@ public class Factory {
      * @throws InvalidInputException If the input type is not recognized.
      */
     public Operator createOperator(String type) {
-        if (type.equals("+")) {
-            return new Add();
-        } else if (type.equals("-")) {
-            return new Subtract();
-        } else if (type.equals("/")) {
-            return new Divide();
-        } else if (type.equals("*")) {
-            return new Multiply();
-        } else if (type.equals("log")) {
-            return new Log();
-        } else if (type.equals("pow")) {
-            return new Power();
-        } else if (type.equals("sqrt")) {
-            return new Sqrt();
-        } else if (type.equals("sin")) {
-            return new Sin();
-        } else if (type.equals("cos")) {
-            return new Cos();
-        } else if (type.equals("tan")) {
-            return new Tan();
-        } else if (type.equals("cot")) {
-            return new Cot();
-        } else {
-            throw new InvalidInputException("Wrong operator");
+        Operator operator = null;
+        switch (type) {
+            case "+":
+                operator = new Add();
+                break;
+            case "-":
+                operator = new Subtract();
+                break;
+            case "/":
+                operator = new Divide();
+                break;
+            case "*":
+                operator = new Multiply();
+                break;
+            case "log":
+                operator = new Log();
+                break;
+            case "pow":
+                operator = new Power();
+                break;
+            case "sqrt":
+                operator = new Sqrt();
+                break;
+            case "sin":
+                operator = new Sin();
+                break;
+            case "cos":
+                operator = new Cos();
+                break;
+            case "tan":
+                operator = new Tan();
+                break;
+            case "cot":
+                operator = new Cot();
+                break;
+            default:
+                throw new InvalidInputException("Wrong operator");
         }
+        return operator;
     }
 }

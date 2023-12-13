@@ -13,7 +13,7 @@ public class Sin implements Operator {
         try {
             double operand1 = stack.pop();
             stack.push(Math.sin(operand1));
-        } catch (EmptyStackException e) {
+        } catch (RuntimeException e) {
             throw new EmptyStackException();
         }
     }

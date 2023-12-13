@@ -13,7 +13,7 @@ public class Cot implements Operator {
         try {
             double operand1 = stack.pop();
             stack.push(Math.cos(operand1) / Math.sin(operand1));
-        } catch (EmptyStackException e) {
+        } catch (RuntimeException e) {
             throw new EmptyStackException();
         }
     }

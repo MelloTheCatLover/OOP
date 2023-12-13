@@ -13,7 +13,7 @@ public class Multiply implements Operator {
             double operand1 = stack.pop();
             double operand2 = stack.pop();
             stack.push(operand1 * operand2);
-        } catch (EmptyStackException e) {
+        } catch (RuntimeException e) {
             throw new EmptyStackException();
         }
     }

@@ -12,7 +12,7 @@ public class Cos implements Operator {
         try {
             double operand1 = stack.pop();
             stack.push(Math.cos(operand1));
-        } catch (EmptyStackException e) {
+        } catch (RuntimeException e) {
             throw new EmptyStackException();
         }
     }
