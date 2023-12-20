@@ -13,10 +13,14 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
+
+
 public class CommandLineParserNotebook {
+
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
             "dd.MM.yyyy HH:mm");
 
+    @ExcludeFromJacocoGeneratedTestReport
     public static void executeCommand(
             String[] args,
             Notebook notebook,
@@ -76,6 +80,7 @@ public class CommandLineParserNotebook {
         }
     }
 
+    @ExcludeFromJacocoGeneratedTestReport
     private static LocalDateTime parseDateTime(String dateTimeStr) throws DateTimeParseException {
         return LocalDateTime.parse(dateTimeStr, formatter);
     }

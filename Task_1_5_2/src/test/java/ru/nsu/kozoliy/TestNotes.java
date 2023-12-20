@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TestNotes {
@@ -35,35 +37,54 @@ public class TestNotes {
         assertTrue(notes.isEmpty());
     }
 
+    @Test
+    void testShowByName() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
+        Note catNote = new Note("I love Cats", "I love cat very much 4real");
+        notebook.addEntry(catNote);
+        assertEquals("Name: I love Cats\n" +
+                "Content: I love cat very much 4real\n" + "Time note have been created: " +
+                notebook.getNotesSorted().get(0).getTimeCreated().format(formatter)
+                , notebook.showByName("I love Cats"));
+    }
+
 
     @Test
     void testGetNotesInRangeWithKeywords() {
-        notebook.addEntry(new Note("My first Note", "This is my very first note."));
-        notebook.addEntry(new Note("My second Note", "This is my second note"));
+        Note firstNote = new Note("My first Note", "This is my very first note.");
+        notebook.addEntry(firstNote);
+        Note secondNote = new Note("My second Note", "This is my second note");
+        notebook.addEntry(secondNote);
+
         LocalDateTime start = LocalDateTime.now().minusDays(10);
         LocalDateTime end = LocalDateTime.now().plusDays(10);
-        List<String> keywords = List.of("Note");
+        List<String> keywords = List.of("first");
         List<Note> notes = notebook.getNotesInRangeWithKeywords(start, end, keywords);
-        assertEquals("[Name: My first Note\n" +
-                "Content: This is my very first note.\n" +
-                "Time note have been created: 20.12.2023 08:29, Name: My second Note\n" +
-                "Content: This is my second note\n" +
-                "Time note have been created: 20.12.2023 08:29]", notes.toString() );
+        ArrayList<Note> expected = new ArrayList<>();
+
+        expected.add(firstNote);
+
+        assertEquals(expected, notes);
     }
 
     @Test
     void testGetNotesSorted() {
-        notebook.addEntry(new Note("My first Note", "This is my very first note."));
-        notebook.addEntry(new Note("My second Note", "This is my second note"));
-        notebook.addEntry(new Note("I love Cats", "I love cat very much 4real"));
+        Note firstNote = new Note("My first Note", "This is my very first note.");
+        notebook.addEntry(firstNote);
+        Note secondNote = new Note("My second Note", "This is my second note");
+        notebook.addEntry(secondNote);
+        Note thirdNote = new Note("I love Cats", "I love cat very much 4real");
+        notebook.addEntry(thirdNote);
 
-        assertEquals("[Name: My first Note\n" +
-                "Content: This is my very first note.\n" +
-                "Time note have been created: 20.12.2023 08:16, Name: My second Note\n" +
-                "Content: This is my second note\n" +
-                "Time note have been created: 20.12.2023 08:16, Name: I love Cats\n" +
-                "Content: I love cat very much 4real\n" +
-                "Time note have been created: 20.12.2023 08:16]", notebook.getNotesSorted().toString());
+        ArrayList<Note> expected = new ArrayList<>();
+
+        expected.add(firstNote);
+        expected.add(secondNote);
+        expected.add(thirdNote);
+
+        assertEquals(expected, notebook.getNotesSorted());
     }
+
+
 
 }

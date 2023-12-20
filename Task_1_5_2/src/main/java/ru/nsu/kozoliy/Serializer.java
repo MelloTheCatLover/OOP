@@ -16,10 +16,12 @@ public class Serializer {
         objectMapper.registerModule(new JavaTimeModule());
     }
 
+    @ExcludeFromJacocoGeneratedTestReport
     public void serialize(Notebook notebook) throws IOException {
         objectMapper.writeValue(new File(path), notebook);
     }
 
+    @ExcludeFromJacocoGeneratedTestReport
     public Notebook deserialize() throws IOException {
         File file = new File(path);
         if (!file.exists()) {

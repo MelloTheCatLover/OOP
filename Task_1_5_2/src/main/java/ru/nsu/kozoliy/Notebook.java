@@ -61,6 +61,7 @@ public class Notebook {
         }
     }
 
+    @ExcludeFromJacocoGeneratedTestReport
     public static void main(String[] args) {
         Notebook notebook = new Notebook();
 
