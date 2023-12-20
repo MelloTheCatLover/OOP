@@ -3,12 +3,14 @@ package ru.nsu.kozoliy;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import org.junit.jupiter.api.Test;
+
 
 public class TestNotes {
     private Notebook notebook;
@@ -42,9 +44,10 @@ public class TestNotes {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
         Note catNote = new Note("I love Cats", "I love cat very much 4real");
         notebook.addEntry(catNote);
-        assertEquals("Name: I love Cats\n" +
-                "Content: I love cat very much 4real\n" + "Time note have been created: " +
-                notebook.getNotesSorted().get(0).getTimeCreated().format(formatter)
+        assertEquals("Name: I love Cats\n"
+                        + "Content: I love cat very much 4real\n"
+                        + "Time note have been created: "
+                        + notebook.getNotesSorted().get(0).getTimeCreated().format(formatter)
                 , notebook.showByName("I love Cats"));
     }
 
