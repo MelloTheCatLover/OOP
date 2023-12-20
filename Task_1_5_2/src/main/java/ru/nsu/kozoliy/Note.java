@@ -34,10 +34,5 @@ public class Note implements Comparable<Note> {
     }
 
 
-    @Override
-    public int compareTo(Note other) {
-        return timeCreated.compareTo(other.timeCreated);
-    }
-
 }
 
