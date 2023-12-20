@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.kozoliy","l":"CommandLineParserNotebook"},{"p":"ru.nsu.kozoliy","l":"ExcludeFromJacocoGeneratedTestReport"},{"p":"ru.nsu.kozoliy","l":"Note"},{"p":"ru.nsu.kozoliy","l":"Notebook"},{"p":"ru.nsu.kozoliy","l":"Serializer"}]
