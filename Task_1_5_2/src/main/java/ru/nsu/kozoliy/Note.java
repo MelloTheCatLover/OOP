@@ -3,7 +3,7 @@ package ru.nsu.kozoliy;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Note implements Comparable<Note> {
+public class Note {
     private String name;
     private String content;
     private LocalDateTime timeCreated;
