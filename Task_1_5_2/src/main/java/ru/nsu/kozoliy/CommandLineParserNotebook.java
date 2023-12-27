@@ -128,9 +128,15 @@ public class CommandLineParserNotebook implements Runnable {
         return LocalDateTime.parse(dateTimeStr, formatter);
     }
 
+
+    /**
+     * Starting point of program.
+     *
+     */
     @ExcludeFromJacocoGeneratedTestReport
     public static void main(String[] args) {
-        new CommandLine(new CommandLineParserNotebook(new Notebook(), new Serializer())).execute(new String[]{"-a", "Title", "Content", "-s", "-r"});
+        new CommandLine(new CommandLineParserNotebook(new Notebook(),
+                new Serializer())).execute(new String[]{"-a", "Title", "Content", "-s", "-r"});
 
         /*
         OUTPUT
