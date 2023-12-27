@@ -4,18 +4,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.jupiter.api.BeforeEach;
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.PrintStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
+/**
+ * Test for Task_1_5_1
+ */
 public class TestNotes {
     private Notebook notebook;
     private CommandLineParserNotebook parser;
@@ -81,8 +82,8 @@ public class TestNotes {
         assertEquals("Name: I love Cats\n"
                         + "Content: I love cat very much 4real\n"
                         + "Time note have been created: "
-                        + notebook.getNotesSorted().get(0).getTimeCreated().format(formatter)
-                , notebook.showByName("I love Cats"));
+                        + notebook.getNotesSorted().get(0).getTimeCreated().format(formatter),
+                notebook.showByName("I love Cats"));
     }
 
 
