@@ -5,19 +5,48 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
 
 public class TestNotes {
     private Notebook notebook;
+    private CommandLineParserNotebook parser;
+    private ByteArrayOutputStream outputStream;
+
 
     @BeforeEach
     void setUp() {
         notebook = new Notebook();
+        Serializer serializer = new Serializer();
+        parser = new CommandLineParserNotebook(notebook, serializer);
+        outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+    }
+
+    @Test
+    void run_AddNotePrintSuccessMessage() throws IOException {
+        parser.add = Arrays.asList("Title", "Content");
+        parser.run();
+
+        assertEquals("Note added successfully.\r\n", outputStream.toString());
+    }
+
+    @Test
+    void run_RemoveNotePrintSuccessMessage() throws IOException {
+        parser.add = Arrays.asList("Title", "Content");
+        parser.remove = "Title";
+        parser.run();
+
+        assertEquals("Note added successfully.\r\n" +
+                "Note removed successfully.\r\n", outputStream.toString());
     }
 
     @Test
@@ -87,7 +116,6 @@ public class TestNotes {
 
         assertEquals(expected, notebook.getNotesSorted());
     }
-
 
 
 }

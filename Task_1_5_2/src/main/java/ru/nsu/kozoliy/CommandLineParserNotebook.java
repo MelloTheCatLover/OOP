@@ -1,87 +1,89 @@
 package ru.nsu.kozoliy;
 
+import picocli.CommandLine;
+
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import org.apache.commons.cli.CommandLine;
-import org.apache.commons.cli.CommandLineParser;
-import org.apache.commons.cli.DefaultParser;
-import org.apache.commons.cli.Option;
-import org.apache.commons.cli.Options;
-import org.apache.commons.cli.ParseException;
 
 
 
-public class CommandLineParserNotebook {
+@CommandLine.Command(
+        name = "notebook",
+        mixinStandardHelpOptions = true,
+        version = "1.0",
+        description = "Command-line interface for interacting with a Notebook."
+)
+public class CommandLineParserNotebook implements Runnable {
 
-    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
-            "dd.MM.yyyy HH:mm");
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
+
+    @CommandLine.Option(names = {"-a", "--add"}, arity = "2", description = "Add a note")
+    List<String> add;
+
+    @CommandLine.Option(names = {"-r", "--rm"}, description = "Remove a note")
+    String remove;
+
+    @CommandLine.Option(names = {"-s", "--show"}, arity = "0..*", description = "Show notes")
+    List<String> show;
+
+    private final Notebook notebook;
+    private final Serializer serializer;
+
+    public CommandLineParserNotebook(Notebook notebook, Serializer serializer) {
+        this.notebook = notebook;
+        this.serializer = serializer;
+    }
 
     @ExcludeFromJacocoGeneratedTestReport
-    public static void executeCommand(
-            String[] args,
-            Notebook notebook,
-            Serializer serializer
-    ) {
-        Options options = new Options();
-
-        Option add = new Option("add", true, "Add a note");
-        add.setArgs(2);
-        options.addOption(add);
-
-        Option remove = new Option("rm", true, "Remove a note");
-        options.addOption(remove);
-
-        Option show = new Option("show", true, "Show notes");
-        show.setArgs(Option.UNLIMITED_VALUES);
-        options.addOption(show);
-
-        CommandLineParser parser = new DefaultParser();
+    public void run() {
         try {
-            CommandLine cmd = parser.parse(options, args);
-
-            if (cmd.hasOption("add")) {
-                String[] values = cmd.getOptionValues("add");
-                notebook.addEntry(new Note(values[0], values[1]));
-                serializer.serialize(notebook);
-                System.out.println("Note added successfully.");
-            } else if (cmd.hasOption("rm")) {
-                String title = cmd.getOptionValue("rm");
-                notebook.deleteEntry(title);
-                serializer.serialize(notebook);
-                System.out.println("Note removed successfully.");
-            } else if (cmd.hasOption("show")) {
-                String[] values = cmd.getOptionValues("show");
-                if (values == null || values.length == 0) {
-                    notebook.getNotesSorted().forEach(System.out::println);
-                } else {
-                    // Parse date range and keywords from the command line arguments
-                    LocalDateTime start = parseDateTime(values[0]);
-                    LocalDateTime end = parseDateTime(values[1]);
-                    List<String> keywords = new ArrayList<>(Arrays.asList(values).subList(2, values.length));
-
-                    List<Note> filteredNotes = notebook.getNotesInRangeWithKeywords(
-                            start,
-                            end,
-                            keywords
-                    );
-                    filteredNotes.forEach(System.out::println);
-                }
-            }
-        } catch (ParseException e) {
-            System.out.println(e.getMessage());
-        } catch (DateTimeParseException e) {
-            System.out.println("Invalid date format");
-        } catch (Exception e) {
-            System.out.println("ERROR: " + e.getMessage());
+            processCommands();
+        } catch (IOException e) {
+            System.out.println("An error occurred: " + e.getMessage());
         }
     }
 
-    @ExcludeFromJacocoGeneratedTestReport
-    private static LocalDateTime parseDateTime(String dateTimeStr) throws DateTimeParseException {
+    private void processCommands() throws IOException {
+        if (add != null) {
+            addNoteCommand();
+        }
+        if (remove != null) {
+            removeNoteCommand();
+        }
+        if (show != null) {
+            showNotesCommand();
+        }
+    }
+
+    private void addNoteCommand() throws IOException {
+        notebook.addEntry(new Note(add.get(0), add.get(1)));
+        serializer.serialize(notebook);
+        System.out.println("Note added successfully.");
+    }
+
+    private void removeNoteCommand() throws IOException {
+        notebook.deleteEntry(remove);
+        serializer.serialize(notebook);
+        System.out.println("Note removed successfully.");
+    }
+
+    private void showNotesCommand() {
+        if (show.isEmpty()) {
+            notebook.getNotesSorted().forEach(System.out::println);
+        } else {
+            LocalDateTime start = parseDateTime(show.get(0));
+            LocalDateTime end = parseDateTime(show.get(1));
+            List<String> keywords = new ArrayList<>(show.subList(2, show.size()));
+            List<Note> filteredNotes = notebook.getNotesInRangeWithKeywords(start, end, keywords);
+            filteredNotes.forEach(System.out::println);
+        }
+    }
+
+    private LocalDateTime parseDateTime(String dateTimeStr) {
         return LocalDateTime.parse(dateTimeStr, formatter);
     }
+
 }

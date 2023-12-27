@@ -26,7 +26,13 @@ dependencies {
     // Jackson Datatype for Java Time
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.0'
 
-    implementation 'commons-cli:commons-cli:1.6.0'
+    implementation 'info.picocli:picocli:4.7.5'
+    annotationProcessor 'info.picocli:picocli-codegen:4.7.5'
+
+}
+
+compileJava {
+    options.compilerArgs += ["-Aproject=${project.group}/${project.name}"]
 }
 
 test {

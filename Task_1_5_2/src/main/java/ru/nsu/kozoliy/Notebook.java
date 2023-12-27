@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Notebook {
-    private ArrayList<Note> entries;
+    private final ArrayList<Note> entries;
 
     public Notebook() {
         entries = new ArrayList<>();
