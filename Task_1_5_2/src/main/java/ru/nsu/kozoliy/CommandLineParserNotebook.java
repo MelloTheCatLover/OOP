@@ -21,7 +21,8 @@ import picocli.CommandLine;
 )
 public class CommandLineParserNotebook implements Runnable {
 
-    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
+    private static final DateTimeFormatter formatter = DateTimeFormatter
+            .ofPattern("dd.MM.yyyy HH:mm");
 
     @CommandLine.Option(names = {"-a", "--add"}, arity = "2", description = "Add a note")
     List<String> add;
