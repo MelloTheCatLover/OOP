@@ -6,7 +6,9 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * A class responsible for serializing and deserializing a Notebook to and from JSON format.
+ * A class responsible for serializing and deserializing
+ * a Notebook to and from JSON format.
+ *
  */
 public class Serializer {
 

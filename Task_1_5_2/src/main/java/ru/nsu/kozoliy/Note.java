@@ -4,7 +4,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Represents a note in a notebook with a name, content, and creation time.
+ * Represents a note in a notebook with a name,
+ * content, and creation time.
+ *
  */
 public class Note {
     private String name;
@@ -39,7 +41,8 @@ public class Note {
     }
 
     /**
-     * Constructs a new Note with the specified name and content, setting the creation timestamp to the current time.
+     * Constructs a new Note with the specified name and content,
+     * setting the creation timestamp to the current time.
      *
      * @param name    The name of the note.
      * @param content The content of the note.
@@ -51,7 +54,8 @@ public class Note {
     }
 
     /**
-     * Returns a string representation of the note, including its name, content, and creation timestamp.
+     * Returns a string representation of the note, including
+     * its name, content, and creation timestamp.
      *
      * @return A string representation of the note.
      */

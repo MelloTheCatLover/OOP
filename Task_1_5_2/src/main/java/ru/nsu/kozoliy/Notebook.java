@@ -49,14 +49,18 @@ public class Notebook {
     }
 
     /**
-     * Gets notes from the notebook within a specified time range and containing specific keywords in the name.
+     * Gets notes from the notebook within a specified time range
+     * and containing specific keywords in the name.
      *
      * @param from   The start of the time range.
      * @param to     The end of the time range.
      * @param words  A list of keywords to filter notes by name.
      * @return A list of notes matching the criteria, sorted by creation time.
      */
-    public List<Note> getNotesInRangeWithKeywords(LocalDateTime from, LocalDateTime to, List<String> words) {
+    public List<Note> getNotesInRangeWithKeywords(
+            LocalDateTime from,
+            LocalDateTime to,
+            List<String> words) {
         return entries.stream()
                 .filter(note ->
                         note.getTimeCreated().isAfter(from) && note.getTimeCreated().isBefore(to))
