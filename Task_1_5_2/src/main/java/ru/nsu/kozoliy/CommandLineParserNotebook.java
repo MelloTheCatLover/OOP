@@ -1,15 +1,18 @@
 package ru.nsu.kozoliy;
 
-import picocli.CommandLine;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import picocli.CommandLine;
 
 
 
+/**
+ * Command-line interface for interacting with a Notebook.
+ */
 @CommandLine.Command(
         name = "notebook",
         mixinStandardHelpOptions = true,
@@ -32,11 +35,20 @@ public class CommandLineParserNotebook implements Runnable {
     private final Notebook notebook;
     private final Serializer serializer;
 
+    /**
+     * Creates a new instance of CommandLineParserNotebook.
+     *
+     * @param notebook   The notebook to interact with.
+     * @param serializer The serializer for notebook data.
+     */
     public CommandLineParserNotebook(Notebook notebook, Serializer serializer) {
         this.notebook = notebook;
         this.serializer = serializer;
     }
 
+    /**
+     * Executes the specified commands based on the provided options.
+     */
     @ExcludeFromJacocoGeneratedTestReport
     public void run() {
         try {
@@ -46,6 +58,11 @@ public class CommandLineParserNotebook implements Runnable {
         }
     }
 
+    /**
+     * Processes the specified commands based on the provided options.
+     *
+     * @throws IOException if an I/O error occurs.
+     */
     private void processCommands() throws IOException {
         if (add != null) {
             addNoteCommand();
@@ -58,18 +75,31 @@ public class CommandLineParserNotebook implements Runnable {
         }
     }
 
+    /**
+     * Adds a new note to the notebook.
+     *
+     * @throws IOException if an I/O error occurs.
+     */
     private void addNoteCommand() throws IOException {
         notebook.addEntry(new Note(add.get(0), add.get(1)));
         serializer.serialize(notebook);
         System.out.println("Note added successfully.");
     }
 
+    /**
+     * Removes a note from the notebook.
+     *
+     * @throws IOException if an I/O error occurs.
+     */
     private void removeNoteCommand() throws IOException {
         notebook.deleteEntry(remove);
         serializer.serialize(notebook);
         System.out.println("Note removed successfully.");
     }
 
+    /**
+     * Shows notes based on the specified options.
+     */
     private void showNotesCommand() {
         if (show.isEmpty()) {
             notebook.getNotesSorted().forEach(System.out::println);
@@ -82,8 +112,13 @@ public class CommandLineParserNotebook implements Runnable {
         }
     }
 
+    /**
+     * Parses a string to a LocalDateTime object using the predefined formatter.
+     *
+     * @param dateTimeStr The string to parse.
+     * @return The LocalDateTime object.
+     */
     private LocalDateTime parseDateTime(String dateTimeStr) {
         return LocalDateTime.parse(dateTimeStr, formatter);
     }
-
 }

@@ -15,7 +15,8 @@ import org.junit.jupiter.api.Test;
 
 
 /**
- * Test for Task_1_5_1
+ * Test for Task_1_5_1.
+ *
  */
 public class TestNotes {
     private Notebook notebook;
