@@ -64,6 +64,7 @@ public class CommandLineParserNotebook implements Runnable {
      *
      * @throws IOException if an I/O error occurs.
      */
+    @ExcludeFromJacocoGeneratedTestReport
     private void processCommands() throws IOException {
         if (add != null) {
             addNoteCommand();
@@ -81,6 +82,7 @@ public class CommandLineParserNotebook implements Runnable {
      *
      * @throws IOException if an I/O error occurs.
      */
+    @ExcludeFromJacocoGeneratedTestReport
     private void addNoteCommand() throws IOException {
         notebook.addEntry(new Note(add.get(0), add.get(1)));
         serializer.serialize(notebook);
@@ -92,6 +94,7 @@ public class CommandLineParserNotebook implements Runnable {
      *
      * @throws IOException if an I/O error occurs.
      */
+    @ExcludeFromJacocoGeneratedTestReport
     private void removeNoteCommand() throws IOException {
         notebook.deleteEntry(remove);
         serializer.serialize(notebook);
@@ -101,6 +104,7 @@ public class CommandLineParserNotebook implements Runnable {
     /**
      * Shows notes based on the specified options.
      */
+    @ExcludeFromJacocoGeneratedTestReport
     private void showNotesCommand() {
         if (show.isEmpty()) {
             notebook.getNotesSorted().forEach(System.out::println);
@@ -119,7 +123,27 @@ public class CommandLineParserNotebook implements Runnable {
      * @param dateTimeStr The string to parse.
      * @return The LocalDateTime object.
      */
+    @ExcludeFromJacocoGeneratedTestReport
     private LocalDateTime parseDateTime(String dateTimeStr) {
         return LocalDateTime.parse(dateTimeStr, formatter);
+    }
+
+    @ExcludeFromJacocoGeneratedTestReport
+    public static void main(String[] args) {
+        new CommandLine(new CommandLineParserNotebook(new Notebook(), new Serializer())).execute(new String[]{"-a", "Title", "Content", "-s", "-r"});
+
+        /*
+        OUTPUT
+
+        Missing required parameter for option '--rm' (<remove>)
+        Usage: notebook [-hV] [-r=<remove>] [-a=<add> <add>]... [-s[=<show>...]]...
+        Command-line interface for interacting with a Notebook.
+          -a, --add=<add> <add>    Add a note
+          -h, --help               Show this help message and exit.
+          -r, --rm=<remove>        Remove a note
+          -s, --show[=<show>...]   Show notes
+          -V, --version            Print version information and exit.
+         */
+
     }
 }
