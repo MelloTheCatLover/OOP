@@ -132,6 +132,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Note</span>
 extends java.lang.Object</pre>
+<div class="block">Represents a note in a notebook with a name, content, and creation time.</div>
 </li>
 </ul>
 </div>
@@ -152,9 +153,11 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,java.lang.String)">Note</a></span>&#8203;(java.lang.String&nbsp;namw,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,java.lang.String)">Note</a></span>&#8203;(java.lang.String&nbsp;name,
     java.lang.String&nbsp;content)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs a new Note with the specified name and content, setting the creation timestamp to the current time.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -177,22 +180,30 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getContent()">getContent</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the content of the note.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getName()">getName</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the name of the note.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>java.time.LocalDateTime</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTimeCreated()">getTimeCreated</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the time when the note was created.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Returns a string representation of the note, including its name, content, and creation timestamp.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -224,8 +235,14 @@ extends java.lang.Object</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Note</h4>
-<pre>public&nbsp;Note&#8203;(java.lang.String&nbsp;namw,
+<pre>public&nbsp;Note&#8203;(java.lang.String&nbsp;name,
             java.lang.String&nbsp;content)</pre>
+<div class="block">Constructs a new Note with the specified name and content, setting the creation timestamp to the current time.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name</code> - The name of the note.</dd>
+<dd><code>content</code> - The content of the note.</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -245,6 +262,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getName</h4>
 <pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getName()</pre>
+<div class="block">Gets the name of the note.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The name of the note.</dd>
+</dl>
 </li>
 </ul>
 <a id="getContent()">
@@ -254,6 +276,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getContent</h4>
 <pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getContent()</pre>
+<div class="block">Gets the content of the note.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The content of the note.</dd>
+</dl>
 </li>
 </ul>
 <a id="getTimeCreated()">
@@ -263,6 +290,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getTimeCreated</h4>
 <pre class="methodSignature">public&nbsp;java.time.LocalDateTime&nbsp;getTimeCreated()</pre>
+<div class="block">Gets the time when the note was created.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The creation time of the note.</dd>
+</dl>
 </li>
 </ul>
 <a id="toString()">
@@ -272,9 +304,12 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>toString</h4>
 <pre class="methodSignature">public&nbsp;java.lang.String&nbsp;toString()</pre>
+<div class="block">Returns a string representation of the note, including its name, content, and creation timestamp.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code>toString</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A string representation of the note.</dd>
 </dl>
 </li>
 </ul>
