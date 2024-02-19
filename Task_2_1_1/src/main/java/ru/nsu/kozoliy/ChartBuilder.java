@@ -17,6 +17,7 @@ public class ChartBuilder {
     /**
      * Main method to run the program and display the chart.
      */
+    @ExcludeFromJacocoGeneratedReport
     public static void main() {
         // Create arrays with sample data
         long[] smallArray = {20319251, 6997901, 6997927, 6997937, 17858849, 6997967,
