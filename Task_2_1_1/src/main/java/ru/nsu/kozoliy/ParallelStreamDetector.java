@@ -8,12 +8,13 @@ import java.util.Arrays;
 public class ParallelStreamDetector {
 
     /**
-     * Determines if there is at least one non-prime number in the given array using parallel streams.
+     * Determines if there is at least one non-prime number
+     * in the given array using parallel streams.
      *
      * @param numbers the array of numbers to check
      * @return true if there is at least one non-prime number, otherwise false
      */
-    public static boolean ParallelStreamNoPrimesDetector(long[] numbers) {
+    public static boolean parallelStreamNoPrimesDetector(long[] numbers) {
         return Arrays.stream(numbers).parallel().anyMatch(num -> !isPrime(num));
     }
 
@@ -24,14 +25,22 @@ public class ParallelStreamDetector {
      * @return true if the number is prime, otherwise false
      */
     static boolean isPrime(long number) {
-        if(number < 2) return false;
-        if(number == 2 || number == 3) return true;
-        if(number%2 == 0 || number%3 == 0) return false;
+        if (number < 2) {
+            return false;
+        }
+        if (number == 2 || number == 3) {
+            return true;
+        }
+        if (number % 2 == 0 || number % 3 == 0) {
+            return false;
+        }
 
-        long sqrtN = (long)Math.sqrt(number);
+        long sqrtN = (long) Math.sqrt(number);
 
-        for(long i = 6L; i<= sqrtN; i+=6) {
-            if(number%(i-1) == 0 || number%(i+1) == 0) return false;
+        for (long i = 6L; i <= sqrtN; i += 6) {
+            if (number % (i - 1) == 0 || number % (i + 1) == 0) {
+                return false;
+            }
         }
         return true;
     }
@@ -44,6 +53,6 @@ public class ParallelStreamDetector {
     @ExcludeFromJacocoGeneratedReport
     public static void main(String[] args) {
         long[] nums = {6, 8, 7, 13, 5, 9, 4};
-        System.out.println(ParallelStreamNoPrimesDetector(nums)); // true
+        System.out.println(parallelStreamNoPrimesDetector(nums)); // true
     }
 }

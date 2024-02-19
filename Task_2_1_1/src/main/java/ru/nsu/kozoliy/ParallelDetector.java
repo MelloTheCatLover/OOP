@@ -8,19 +8,21 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class ParallelDetector {
 
     /**
-     * Determines if there is at least one non-prime number in the given array using parallel threads.
+     * Determines if there is at least one non-prime
+     * number in the given array using parallel threads.
      *
      * @param numbers    the array of numbers to check
      * @param numThreads the number of threads to use for parallel processing
      * @return true if there is at least one non-prime number, otherwise false
      */
-    public static boolean ParallelNoPrimesDetector(long[] numbers, int numThreads) {
+    public static boolean parallelNoPrimesDetector(long[] numbers, int numThreads) {
         AtomicBoolean hasNonPrime = new AtomicBoolean(false);
         Thread[] threads = new Thread[numThreads];
 
         for (int i = 0; i < numThreads; i++) {
             final int start = i * (numbers.length / numThreads);
-            final int end = (i == numThreads - 1) ? numbers.length : (i + 1) * (numbers.length / numThreads);
+            final int end = (i == numThreads - 1) ? numbers.length : (i + 1)
+                    * (numbers.length / numThreads);
 
             threads[i] = new Thread(() -> {
                 for (int j = start; j < end; j++) {
@@ -39,7 +41,9 @@ public class ParallelDetector {
                 thread.join();
             }
         } catch (InterruptedException e) {
-            System.out.println("Interrupted while waiting for threads to finish: " + e.getMessage());
+            System.out.println("Interrupted while "
+                    + "waiting for threads to finish: "
+                    + e.getMessage());
             Thread.currentThread().interrupt(); // Re-interrupts the thread
         }
 
@@ -53,14 +57,22 @@ public class ParallelDetector {
      * @return true if the number is prime, otherwise false
      */
     static boolean isPrime(long number) {
-        if (number < 2) return false;
-        if (number == 2 || number == 3) return true;
-        if (number % 2 == 0 || number % 3 == 0) return false;
+        if (number < 2) {
+            return false;
+        }
+        if (number == 2 || number == 3) {
+            return true;
+        }
+        if (number % 2 == 0 || number % 3 == 0) {
+            return false;
+        }
 
         long sqrtN = (long) Math.sqrt(number);
 
         for (long i = 6L; i <= sqrtN; i += 6) {
-            if (number % (i - 1) == 0 || number % (i + 1) == 0) return false;
+            if (number % (i - 1) == 0 || number % (i + 1) == 0) {
+                return false;
+            }
         }
         return true;
     }
@@ -73,6 +85,6 @@ public class ParallelDetector {
     @ExcludeFromJacocoGeneratedReport
     public static void main(String[] args) {
         long[] nums = {6, 8, 7, 13, 5, 9, 4};
-        System.out.println(ParallelNoPrimesDetector(nums, 2)); // true
+        System.out.println(parallelNoPrimesDetector(nums, 2)); // true
     }
 }

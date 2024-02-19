@@ -56,13 +56,13 @@ public class ChartBuilder {
 
         // Perform parallel stream detection for small array
         long startTimeParallelStream = System.nanoTime();
-        ParallelStreamDetector.ParallelStreamNoPrimesDetector(smallArray);
+        ParallelStreamDetector.parallelStreamNoPrimesDetector(smallArray);
         long endTimeParallelStream = System.nanoTime();
         long timeElapsedParallelStreamSmallArray = endTimeParallelStream - startTimeParallelStream;
 
         // Perform parallel stream detection for large array
         startTimeParallelStream = System.nanoTime();
-        ParallelStreamDetector.ParallelStreamNoPrimesDetector(largeArray);
+        ParallelStreamDetector.parallelStreamNoPrimesDetector(largeArray);
         endTimeParallelStream = System.nanoTime();
         long timeElapsedParallelStreamLargeArray = endTimeParallelStream - startTimeParallelStream;
 
@@ -73,7 +73,7 @@ public class ChartBuilder {
         long[] arrayOfResultSmallArray = new long[9];
         for(int numOfThreads = 2; numOfThreads <= 10; numOfThreads++) {
             startTimeParallel = System.nanoTime();
-            ParallelDetector.ParallelNoPrimesDetector(smallArray,numOfThreads);
+            ParallelDetector.parallelNoPrimesDetector(smallArray,numOfThreads);
             endTimeParallel = System.nanoTime();
             timeElapsedParallel = endTimeParallel - startTimeParallel;
             arrayOfResultSmallArray[numOfThreads - 2] = timeElapsedParallel;
@@ -83,7 +83,7 @@ public class ChartBuilder {
         long[] arrayOfResultLargeArray = new long[9];
         for(int numOfThreads = 2; numOfThreads <= 10; numOfThreads++) {
             startTimeParallel = System.nanoTime();
-            ParallelDetector.ParallelNoPrimesDetector(largeArray,numOfThreads);
+            ParallelDetector.parallelNoPrimesDetector(largeArray,numOfThreads);
             endTimeParallel = System.nanoTime();
             timeElapsedParallel = endTimeParallel - startTimeParallel;
             arrayOfResultLargeArray[numOfThreads - 2] = timeElapsedParallel;

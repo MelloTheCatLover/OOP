@@ -31,7 +31,7 @@ public class TestDetector {
         for (int i = 0; i < 10000; i++) {
             numbers[i] = prime;
         }
-        assertFalse(ParallelDetector.ParallelNoPrimesDetector(numbers,4));
+        assertFalse(ParallelDetector.parallelNoPrimesDetector(numbers,4));
     }
 
     @Test
@@ -41,7 +41,7 @@ public class TestDetector {
         for (int i = 0; i < 10000; i++) {
             numbers[i] = prime;
         }
-        assertFalse(ParallelDetector.ParallelNoPrimesDetector(numbers,1));
+        assertFalse(ParallelDetector.parallelNoPrimesDetector(numbers,1));
     }
     @Test
     public void testParallelNonPrime() {
@@ -51,7 +51,7 @@ public class TestDetector {
             numbers[i] = prime;
         }
         numbers[9999] = 10;
-        assertTrue(ParallelDetector.ParallelNoPrimesDetector(numbers,5));
+        assertTrue(ParallelDetector.parallelNoPrimesDetector(numbers,5));
     }
 
     @Test
@@ -73,14 +73,14 @@ public class TestDetector {
             numbers[i] = prime;
         }
         numbers[9999] = 10;
-        assertTrue(ParallelStreamDetector.ParallelStreamNoPrimesDetector(numbers));
+        assertTrue(ParallelStreamDetector.parallelStreamNoPrimesDetector(numbers));
     }
 
 
     @Test
     public void testParallelStream() {
         long[] nums = new long[1];
-        assertTrue(ParallelStreamDetector.ParallelStreamNoPrimesDetector(nums));
+        assertTrue(ParallelStreamDetector.parallelStreamNoPrimesDetector(nums));
     }
 
 
