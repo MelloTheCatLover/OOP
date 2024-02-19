@@ -38,7 +38,7 @@ public class ChartBuilder {
 
         // Perform sequential detection for small array
         long startTimeSequential = System.nanoTime();
-        boolean resultSequential = SequentialDetector.SequentialNoPrimesDetector(smallArray);
+        boolean resultSequential = SequentialDetector.sequentialNoPrimesDetector(smallArray);
         long endTimeSequential = System.nanoTime();
         long timeElapsedSequentialSmallArray = endTimeSequential - startTimeSequential;
 
@@ -48,7 +48,7 @@ public class ChartBuilder {
 
         // Perform sequential detection for large array
         startTimeSequential = System.nanoTime();
-        resultSequential = SequentialDetector.SequentialNoPrimesDetector(largeArray);
+        resultSequential = SequentialDetector.sequentialNoPrimesDetector(largeArray);
         endTimeSequential = System.nanoTime();
         long timeElapsedSequentialLargeArray = endTimeSequential - startTimeSequential;
 
@@ -58,12 +58,14 @@ public class ChartBuilder {
 
         // Perform parallel stream detection for small array
         long startTimeParallelStream = System.nanoTime();
-        boolean resultParallelStream = ParallelStreamDetector.parallelStreamNoPrimesDetector(smallArray);
+        boolean resultParallelStream = ParallelStreamDetector
+                .parallelStreamNoPrimesDetector(smallArray);
         long endTimeParallelStream = System.nanoTime();
         long timeElapsedParallelStreamSmallArray = endTimeParallelStream - startTimeParallelStream;
 
         System.out.println("Parallel Stream Solution Result: " + resultParallelStream);
-        System.out.println("Time Elapsed for Parallel Stream Solution: " + timeElapsedParallelStreamSmallArray + " nanoseconds");
+        System.out.println("Time Elapsed for Parallel Stream Solution: "
+                + timeElapsedParallelStreamSmallArray + " nanoseconds");
 
         // Perform parallel stream detection for large array
         startTimeParallelStream = System.nanoTime();
@@ -72,7 +74,8 @@ public class ChartBuilder {
         long timeElapsedParallelStreamLargeArray = endTimeParallelStream - startTimeParallelStream;
 
         System.out.println("Parallel Stream Solution Result: " + resultParallelStream);
-        System.out.println("Time Elapsed for Parallel Stream Solution: " + timeElapsedParallelStreamLargeArray + " nanoseconds");
+        System.out.println("Time Elapsed for Parallel Stream Solution: "
+                + timeElapsedParallelStreamLargeArray + " nanoseconds");
 
         // Perform parallel detection with different number of threads for small array
         long startTimeParallel;
@@ -91,7 +94,7 @@ public class ChartBuilder {
         long[] arrayOfResultLargeArray = new long[9];
         for (int numOfThreads = 2; numOfThreads <= 10; numOfThreads++) {
             startTimeParallel = System.nanoTime();
-            ParallelDetector.parallelNoPrimesDetector(largeArray,numOfThreads);
+            ParallelDetector.parallelNoPrimesDetector(largeArray, numOfThreads);
             endTimeParallel = System.nanoTime();
             timeElapsedParallel = endTimeParallel - startTimeParallel;
             arrayOfResultLargeArray[numOfThreads - 2] = timeElapsedParallel;
@@ -104,28 +107,50 @@ public class ChartBuilder {
             frame.setLayout(new BorderLayout());
 
             DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-            dataset.addValue(timeElapsedSequentialSmallArray, "Sequential Detector", "Sequential");
-            dataset.addValue(timeElapsedSequentialLargeArray, "Sequential Detector Large", "Sequential");
-            dataset.addValue(arrayOfResultSmallArray[0], "Parallel Detector", "Threads: 2");
-            dataset.addValue(arrayOfResultLargeArray[0], "Parallel Detector Large", "Threads: 2");
-            dataset.addValue(arrayOfResultSmallArray[1], "Parallel Detector", "Threads 3");
-            dataset.addValue(arrayOfResultLargeArray[1], "Parallel Detector Large", "Threads 3");
-            dataset.addValue(arrayOfResultSmallArray[2], "Parallel Detector", "Threads: 4");
-            dataset.addValue(arrayOfResultLargeArray[2], "Parallel Detector Large", "Threads: 4");
-            dataset.addValue(arrayOfResultSmallArray[3], "Parallel Detector", "Threads: 5");
-            dataset.addValue(arrayOfResultLargeArray[3], "Parallel Detector Large", "Threads: 5");
-            dataset.addValue(arrayOfResultSmallArray[4], "Parallel Detector", "Threads 6");
-            dataset.addValue(arrayOfResultLargeArray[4], "Parallel Detector Large", "Threads 6");
-            dataset.addValue(arrayOfResultSmallArray[5], "Parallel Detector", "Threads 7");
-            dataset.addValue(arrayOfResultLargeArray[5], "Parallel Detector Large", "Threads 7");
-            dataset.addValue(arrayOfResultSmallArray[6], "Parallel Detector", "Threads: 8");
-            dataset.addValue(arrayOfResultLargeArray[6], "Parallel Detector Large", "Threads: 8");
-            dataset.addValue(arrayOfResultSmallArray[7], "Parallel Detector", "Threads: 9");
-            dataset.addValue(arrayOfResultLargeArray[7], "Parallel Detector Large", "Threads: 9");
-            dataset.addValue(arrayOfResultSmallArray[8], "Parallel Detector", "Threads: 10");
-            dataset.addValue(arrayOfResultLargeArray[8], "Parallel Detector Large", "Threads: 10");
-            dataset.addValue(timeElapsedParallelStreamSmallArray, "ParallelStream Detector", "Type 10");
-            dataset.addValue(timeElapsedParallelStreamLargeArray, "ParallelStream Detector Large", "Type 10");
+            dataset.addValue(timeElapsedSequentialSmallArray, "Sequential Detector",
+                    "Sequential");
+            dataset.addValue(timeElapsedSequentialLargeArray, "Sequential Detector Large",
+                    "Sequential");
+            dataset.addValue(arrayOfResultSmallArray[0], "Parallel Detector",
+                    "Threads: 2");
+            dataset.addValue(arrayOfResultLargeArray[0], "Parallel Detector Large",
+                    "Threads: 2");
+            dataset.addValue(arrayOfResultSmallArray[1], "Parallel Detector",
+                    "Threads 3");
+            dataset.addValue(arrayOfResultLargeArray[1], "Parallel Detector Large",
+                    "Threads 3");
+            dataset.addValue(arrayOfResultSmallArray[2], "Parallel Detector",
+                    "Threads: 4");
+            dataset.addValue(arrayOfResultLargeArray[2], "Parallel Detector Large",
+                    "Threads: 4");
+            dataset.addValue(arrayOfResultSmallArray[3], "Parallel Detector",
+                    "Threads: 5");
+            dataset.addValue(arrayOfResultLargeArray[3], "Parallel Detector Large",
+                    "Threads: 5");
+            dataset.addValue(arrayOfResultSmallArray[4], "Parallel Detector",
+                    "Threads 6");
+            dataset.addValue(arrayOfResultLargeArray[4], "Parallel Detector Large",
+                    "Threads 6");
+            dataset.addValue(arrayOfResultSmallArray[5], "Parallel Detector",
+                    "Threads 7");
+            dataset.addValue(arrayOfResultLargeArray[5], "Parallel Detector Large",
+                    "Threads 7");
+            dataset.addValue(arrayOfResultSmallArray[6], "Parallel Detector",
+                    "Threads: 8");
+            dataset.addValue(arrayOfResultLargeArray[6], "Parallel Detector Large",
+                    "Threads: 8");
+            dataset.addValue(arrayOfResultSmallArray[7], "Parallel Detector",
+                    "Threads: 9");
+            dataset.addValue(arrayOfResultLargeArray[7], "Parallel Detector Large",
+                    "Threads: 9");
+            dataset.addValue(arrayOfResultSmallArray[8], "Parallel Detector",
+                    "Threads: 10");
+            dataset.addValue(arrayOfResultLargeArray[8], "Parallel Detector Large",
+                    "Threads: 10");
+            dataset.addValue(timeElapsedParallelStreamSmallArray, "ParallelStream Detector",
+                    "Type 10");
+            dataset.addValue(timeElapsedParallelStreamLargeArray,
+                    "ParallelStream Detector Large", "Type 10");
 
             JFreeChart chart = ChartFactory.createBarChart(
                     "Execution Time Comparison",
