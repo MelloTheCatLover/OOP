@@ -1,17 +1,13 @@
 
 
-import org.junit.jupiter.api.BeforeAll;
+
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtensionContext;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.ArgumentsProvider;
+import ru.nsu.kozoliy.ChartBuilder;
 import ru.nsu.kozoliy.ParallelDetector;
 import ru.nsu.kozoliy.ParallelStreamDetector;
 import ru.nsu.kozoliy.SequentialDetector;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Stream;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -92,4 +88,9 @@ public class TestDetector {
         assertTrue(ParallelStreamDetector.ParallelStreamNoPrimesDetector(nums));
     }
 
+
+    @Test
+    public void testGraphic() {
+        ChartBuilder.main();
+    }
 }
