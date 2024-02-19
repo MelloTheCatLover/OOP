@@ -11,9 +11,15 @@ import ru.nsu.kozoliy.SequentialDetector;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
+/**
+ * Test for Task_2_1_1.
+ *
+ */
 public class TestDetector {
 
     long[] numbers;
+
     @Test
     public void testSequential() {
         long prime = 1000000007;
@@ -28,7 +34,7 @@ public class TestDetector {
     public void testSequential2() {
         long[] nums = {2, 123};
         assertTrue(SequentialDetector.sequentialNoPrimesDetector(nums));
-        long[] nums2 = {961,1234};
+        long[] nums2 = {961, 1234};
         assertTrue(SequentialDetector.sequentialNoPrimesDetector(nums2));
         long[] nums3 = {0, 1234};
         assertTrue(SequentialDetector.sequentialNoPrimesDetector(nums3));
@@ -38,7 +44,7 @@ public class TestDetector {
     public void testParallel2() {
         long[] nums = {2, 123};
         assertTrue(ParallelDetector.parallelNoPrimesDetector(nums, 2));
-        long[] nums2 = {961,1234};
+        long[] nums2 = {961, 1234};
         assertTrue(ParallelDetector.parallelNoPrimesDetector(nums2, 2));
         long[] nums3 = {0, 1234};
         assertTrue(ParallelDetector.parallelNoPrimesDetector(nums3, 2));
@@ -48,7 +54,7 @@ public class TestDetector {
     public void testParallelStream2() {
         long[] nums = {2, 123};
         assertTrue(ParallelStreamDetector.parallelStreamNoPrimesDetector(nums));
-        long[] nums2 = {961,1234};
+        long[] nums2 = {961, 1234};
         assertTrue(ParallelStreamDetector.parallelStreamNoPrimesDetector(nums2));
         long[] nums3 = {0, 1234};
         assertTrue(ParallelStreamDetector.parallelStreamNoPrimesDetector(nums3));
@@ -62,7 +68,7 @@ public class TestDetector {
         for (int i = 0; i < 10000; i++) {
             numbers[i] = prime;
         }
-        assertFalse(ParallelDetector.parallelNoPrimesDetector(numbers,4));
+        assertFalse(ParallelDetector.parallelNoPrimesDetector(numbers, 4));
     }
 
     @Test
@@ -72,7 +78,7 @@ public class TestDetector {
         for (int i = 0; i < 10000; i++) {
             numbers[i] = prime;
         }
-        assertFalse(ParallelDetector.parallelNoPrimesDetector(numbers,1));
+        assertFalse(ParallelDetector.parallelNoPrimesDetector(numbers, 1));
     }
     @Test
     public void testParallelNonPrime() {
@@ -82,7 +88,7 @@ public class TestDetector {
             numbers[i] = prime;
         }
         numbers[9999] = 10;
-        assertTrue(ParallelDetector.parallelNoPrimesDetector(numbers,5));
+        assertTrue(ParallelDetector.parallelNoPrimesDetector(numbers, 5));
     }
 
     @Test
