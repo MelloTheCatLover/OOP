@@ -43,7 +43,8 @@ public class ChartBuilder {
         long timeElapsedSequentialSmallArray = endTimeSequential - startTimeSequential;
 
         System.out.println("Sequential Solution Result: " + resultSequential);
-        System.out.println("Time Elapsed for Sequential Solution Small Array: " + timeElapsedSequentialSmallArray + " nanoseconds");
+        System.out.println("Time Elapsed for Sequential Solution Small Array: "
+                + timeElapsedSequentialSmallArray + " nanoseconds");
 
         // Perform sequential detection for large array
         startTimeSequential = System.nanoTime();
@@ -52,13 +53,17 @@ public class ChartBuilder {
         long timeElapsedSequentialLargeArray = endTimeSequential - startTimeSequential;
 
         System.out.println("Sequential Solution Result: " + resultSequential);
-        System.out.println("Time Elapsed for Sequential Solution Large Array: " + timeElapsedSequentialLargeArray + " nanoseconds");
+        System.out.println("Time Elapsed for Sequential Solution Large Array: "
+                + timeElapsedSequentialLargeArray + " nanoseconds");
 
         // Perform parallel stream detection for small array
         long startTimeParallelStream = System.nanoTime();
-        ParallelStreamDetector.parallelStreamNoPrimesDetector(smallArray);
+        boolean resultParallelStream = ParallelStreamDetector.parallelStreamNoPrimesDetector(smallArray);
         long endTimeParallelStream = System.nanoTime();
         long timeElapsedParallelStreamSmallArray = endTimeParallelStream - startTimeParallelStream;
+
+        System.out.println("Parallel Stream Solution Result: " + resultParallelStream);
+        System.out.println("Time Elapsed for Parallel Stream Solution: " + timeElapsedParallelStreamSmallArray + " nanoseconds");
 
         // Perform parallel stream detection for large array
         startTimeParallelStream = System.nanoTime();
@@ -66,14 +71,17 @@ public class ChartBuilder {
         endTimeParallelStream = System.nanoTime();
         long timeElapsedParallelStreamLargeArray = endTimeParallelStream - startTimeParallelStream;
 
+        System.out.println("Parallel Stream Solution Result: " + resultParallelStream);
+        System.out.println("Time Elapsed for Parallel Stream Solution: " + timeElapsedParallelStreamLargeArray + " nanoseconds");
+
         // Perform parallel detection with different number of threads for small array
         long startTimeParallel;
         long endTimeParallel;
         long timeElapsedParallel;
         long[] arrayOfResultSmallArray = new long[9];
-        for(int numOfThreads = 2; numOfThreads <= 10; numOfThreads++) {
+        for (int numOfThreads = 2; numOfThreads <= 10; numOfThreads++) {
             startTimeParallel = System.nanoTime();
-            ParallelDetector.parallelNoPrimesDetector(smallArray,numOfThreads);
+            ParallelDetector.parallelNoPrimesDetector(smallArray, numOfThreads);
             endTimeParallel = System.nanoTime();
             timeElapsedParallel = endTimeParallel - startTimeParallel;
             arrayOfResultSmallArray[numOfThreads - 2] = timeElapsedParallel;
@@ -81,7 +89,7 @@ public class ChartBuilder {
 
         // Perform parallel detection with different number of threads for large array
         long[] arrayOfResultLargeArray = new long[9];
-        for(int numOfThreads = 2; numOfThreads <= 10; numOfThreads++) {
+        for (int numOfThreads = 2; numOfThreads <= 10; numOfThreads++) {
             startTimeParallel = System.nanoTime();
             ParallelDetector.parallelNoPrimesDetector(largeArray,numOfThreads);
             endTimeParallel = System.nanoTime();

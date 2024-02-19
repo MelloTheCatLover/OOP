@@ -11,7 +11,7 @@ public class SequentialDetector {
      * @param array the array of numbers to check
      * @return true if there is at least one non-prime number, otherwise false
      */
-    public static boolean SequentialNoPrimesDetector(long[] array) {
+    public static boolean sequentialNoPrimesDetector(long[] array) {
         for (long j : array) {
             if (!isPrime(j)) {
                 return true;

@@ -21,7 +21,7 @@ public class TestDetector {
         for (int i = 0; i < 10000; i++) {
             numbers[i] = prime;
         }
-        assertFalse(SequentialDetector.SequentialNoPrimesDetector(numbers));
+        assertFalse(SequentialDetector.sequentialNoPrimesDetector(numbers));
     }
 
     @Test
@@ -62,7 +62,7 @@ public class TestDetector {
             numbers[i] = prime;
         }
         numbers[9999] = 10;
-        assertTrue(SequentialDetector.SequentialNoPrimesDetector(numbers));
+        assertTrue(SequentialDetector.sequentialNoPrimesDetector(numbers));
     }
 
     @Test
