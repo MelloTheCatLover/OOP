@@ -132,6 +132,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">ParallelDetector</span>
 extends java.lang.Object</pre>
+<div class="block">This class provides methods for detecting non-prime numbers in an array using parallel threads.</div>
 </li>
 </ul>
 </div>
@@ -176,13 +177,17 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#main(java.lang.String%5B%5D)">main</a></span>&#8203;(java.lang.String[]&nbsp;args)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Main method for testing the ParallelNoPrimesDetector method.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#ParallelNoPrimesDetector(long%5B%5D,int)">ParallelNoPrimesDetector</a></span>&#8203;(long[]&nbsp;numbers,
                         int&nbsp;numThreads)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Determines if there is at least one non-prime number in the given array using parallel threads.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -235,6 +240,14 @@ extends java.lang.Object</pre>
 <h4>ParallelNoPrimesDetector</h4>
 <pre class="methodSignature">public static&nbsp;boolean&nbsp;ParallelNoPrimesDetector&#8203;(long[]&nbsp;numbers,
                                                int&nbsp;numThreads)</pre>
+<div class="block">Determines if there is at least one non-prime number in the given array using parallel threads.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>numbers</code> - the array of numbers to check</dd>
+<dd><code>numThreads</code> - the number of threads to use for parallel processing</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if there is at least one non-prime number, otherwise false</dd>
+</dl>
 </li>
 </ul>
 <a id="main(java.lang.String[])">
@@ -244,6 +257,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>main</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;main&#8203;(java.lang.String[]&nbsp;args)</pre>
+<div class="block">Main method for testing the ParallelNoPrimesDetector method.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>args</code> - command-line arguments</dd>
+</dl>
 </li>
 </ul>
 </li>
