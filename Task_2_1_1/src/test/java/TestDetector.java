@@ -14,11 +14,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TestDetector {
 
     long[] numbers;
-
-
-
-
-
     @Test
     public void testSequential() {
         long prime = 1000000007;

@@ -1,19 +1,25 @@
 package ru.nsu.kozoliy;
 
+import java.awt.BorderLayout;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-import javax.swing.*;
-import java.awt.*;
 
-
+/**
+ * This class builds a chart comparing the execution times of different solutions.
+ */
 public class ChartBuilder {
+
+    /**
+     * Main method to run the program and display the chart.
+     */
     public static void main() {
+        // Create arrays with sample data
         long[] smallArray = {20319251, 6997901, 6997927, 6997937, 17858849, 6997967,
-                6998009, 6998029, 6998039, 20165149, 6998051, 6998053,
-                20319251, 6997901, 6997927, 6997937, 17858849, 6997967,
                 6998009, 6998029, 6998039, 20165149, 6998051, 6998053,
                 20319251, 6997901, 6997927, 6997937, 17858849, 6997967,
                 6998009, 6998029, 6998039, 20165149, 6998051, 6998053,
@@ -30,7 +36,7 @@ public class ChartBuilder {
             largeArray[i] = prime;
         }
 
-
+        // Perform sequential detection for small array
         long startTimeSequential = System.nanoTime();
         boolean resultSequential = SequentialDetector.SequentialNoPrimesDetector(smallArray);
         long endTimeSequential = System.nanoTime();
@@ -39,62 +45,52 @@ public class ChartBuilder {
         System.out.println("Sequential Solution Result: " + resultSequential);
         System.out.println("Time Elapsed for Sequential Solution Small Array: " + timeElapsedSequentialSmallArray + " nanoseconds");
 
+        // Perform sequential detection for large array
         startTimeSequential = System.nanoTime();
         resultSequential = SequentialDetector.SequentialNoPrimesDetector(largeArray);
         endTimeSequential = System.nanoTime();
         long timeElapsedSequentialLargeArray = endTimeSequential - startTimeSequential;
 
-
         System.out.println("Sequential Solution Result: " + resultSequential);
         System.out.println("Time Elapsed for Sequential Solution Large Array: " + timeElapsedSequentialLargeArray + " nanoseconds");
 
+        // Perform parallel stream detection for small array
         long startTimeParallelStream = System.nanoTime();
-        boolean resultParallelStream = ParallelStreamDetector.ParallelStreamNoPrimesDetector(smallArray);
+        ParallelStreamDetector.ParallelStreamNoPrimesDetector(smallArray);
         long endTimeParallelStream = System.nanoTime();
         long timeElapsedParallelStreamSmallArray = endTimeParallelStream - startTimeParallelStream;
 
-        System.out.println("Parallel Stream Solution Result: " + resultParallelStream);
-        System.out.println("Time Elapsed for Parallel Stream Solution: " + timeElapsedParallelStreamSmallArray + " nanoseconds");
-
+        // Perform parallel stream detection for large array
         startTimeParallelStream = System.nanoTime();
-        resultParallelStream = ParallelStreamDetector.ParallelStreamNoPrimesDetector(largeArray);
+        ParallelStreamDetector.ParallelStreamNoPrimesDetector(largeArray);
         endTimeParallelStream = System.nanoTime();
         long timeElapsedParallelStreamLargeArray = endTimeParallelStream - startTimeParallelStream;
 
-        System.out.println("Parallel Stream Solution Result: " + resultParallelStream);
-        System.out.println("Time Elapsed for Parallel Stream Solution: " + timeElapsedParallelStreamLargeArray + " nanoseconds");
-
-
+        // Perform parallel detection with different number of threads for small array
         long startTimeParallel;
-        boolean resultParallel;
         long endTimeParallel;
         long timeElapsedParallel;
         long[] arrayOfResultSmallArray = new long[9];
         for(int numOfThreads = 2; numOfThreads <= 10; numOfThreads++) {
             startTimeParallel = System.nanoTime();
-            resultParallel = ParallelDetector.ParallelNoPrimesDetector(smallArray,numOfThreads);
+            ParallelDetector.ParallelNoPrimesDetector(smallArray,numOfThreads);
             endTimeParallel = System.nanoTime();
             timeElapsedParallel = endTimeParallel - startTimeParallel;
-            System.out.println("Parallel Solution Result: " + resultParallel);
-            System.out.println("Num of threads: " + numOfThreads
-                    + "Time Elapsed for Sequential Solution: " + timeElapsedParallel + " nanoseconds");
             arrayOfResultSmallArray[numOfThreads - 2] = timeElapsedParallel;
         }
 
+        // Perform parallel detection with different number of threads for large array
         long[] arrayOfResultLargeArray = new long[9];
         for(int numOfThreads = 2; numOfThreads <= 10; numOfThreads++) {
             startTimeParallel = System.nanoTime();
-            resultParallel = ParallelDetector.ParallelNoPrimesDetector(largeArray,numOfThreads);
+            ParallelDetector.ParallelNoPrimesDetector(largeArray,numOfThreads);
             endTimeParallel = System.nanoTime();
             timeElapsedParallel = endTimeParallel - startTimeParallel;
-            System.out.println("Parallel Solution Result: " + resultParallel);
-            System.out.println("Num of threads: " + numOfThreads
-                    + "Time Elapsed for Sequential Solution: " + timeElapsedParallel + " nanoseconds");
             arrayOfResultLargeArray[numOfThreads - 2] = timeElapsedParallel;
         }
 
-
-        SwingUtilities.invokeLater(() -> {
+        // Create and display the chart
+        javax.swing.SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Execution Time Comparison");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setLayout(new BorderLayout());
@@ -139,6 +135,4 @@ public class ChartBuilder {
         });
 
     }
-
-
 }

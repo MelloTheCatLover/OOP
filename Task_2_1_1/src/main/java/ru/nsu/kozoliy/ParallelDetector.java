@@ -2,8 +2,18 @@ package ru.nsu.kozoliy;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
+/**
+ * This class provides methods for detecting non-prime numbers in an array using parallel threads.
+ */
 public class ParallelDetector {
 
+    /**
+     * Determines if there is at least one non-prime number in the given array using parallel threads.
+     *
+     * @param numbers    the array of numbers to check
+     * @param numThreads the number of threads to use for parallel processing
+     * @return true if there is at least one non-prime number, otherwise false
+     */
     public static boolean ParallelNoPrimesDetector(long[] numbers, int numThreads) {
         AtomicBoolean hasNonPrime = new AtomicBoolean(false);
         Thread[] threads = new Thread[numThreads];
@@ -16,40 +26,50 @@ public class ParallelDetector {
                 for (int j = start; j < end; j++) {
                     if (!isPrime(numbers[j])) {
                         hasNonPrime.set(true);
-                        break; // Остановить поток, если найдено непростое число
+                        break; // Stop the thread if a non-prime number is found
                     }
                 }
             });
             threads[i].start();
         }
 
-        // Обработка исключения InterruptedException
+        // Handle InterruptedException
         try {
             for (Thread thread : threads) {
                 thread.join();
             }
         } catch (InterruptedException e) {
             System.out.println("Interrupted while waiting for threads to finish: " + e.getMessage());
-            Thread.currentThread().interrupt(); // Повторно прерывает поток
+            Thread.currentThread().interrupt(); // Re-interrupts the thread
         }
 
         return hasNonPrime.get();
     }
 
+    /**
+     * Checks if the given number is prime.
+     *
+     * @param number the number to check
+     * @return true if the number is prime, otherwise false
+     */
     static boolean isPrime(long number) {
-        if(number < 2) return false;
-        if(number == 2 || number == 3) return true;
-        if(number%2 == 0 || number%3 == 0) return false;
+        if (number < 2) return false;
+        if (number == 2 || number == 3) return true;
+        if (number % 2 == 0 || number % 3 == 0) return false;
 
-        long sqrtN = (long)Math.sqrt(number);
+        long sqrtN = (long) Math.sqrt(number);
 
-        for(long i = 6L; i<= sqrtN; i+=6) {
-            if(number%(i-1) == 0 || number%(i+1) == 0) return false;
+        for (long i = 6L; i <= sqrtN; i += 6) {
+            if (number % (i - 1) == 0 || number % (i + 1) == 0) return false;
         }
         return true;
     }
 
-
+    /**
+     * Main method for testing the ParallelNoPrimesDetector method.
+     *
+     * @param args command-line arguments
+     */
     @ExcludeFromJacocoGeneratedReport
     public static void main(String[] args) {
         long[] nums = {6, 8, 7, 13, 5, 9, 4};
