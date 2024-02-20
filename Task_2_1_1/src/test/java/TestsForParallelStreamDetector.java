@@ -1,8 +1,15 @@
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Test;
 import ru.nsu.kozoliy.ParallelStreamDetector;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
+
+
+/**
+ * Test for Task_2_1_1.
+ * Test for parallelStream detector.
+ */
 public class TestsForParallelStreamDetector {
     
     @Test

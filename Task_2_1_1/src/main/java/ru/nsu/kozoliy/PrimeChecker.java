@@ -1,5 +1,8 @@
 package ru.nsu.kozoliy;
 
+/**
+ * This class check number prime it is or not.
+ */
 public class PrimeChecker {
 
     /**

@@ -1,9 +1,15 @@
-import org.junit.jupiter.api.Test;
-import ru.nsu.kozoliy.ParallelDetector;
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.Test;
+import ru.nsu.kozoliy.ParallelDetector;
+
+
+
+/**
+ * Test for Task_2_1_1.
+ * Test for parallel detector.
+ */
 public class TestsForParallelDetector {
 
     @Test

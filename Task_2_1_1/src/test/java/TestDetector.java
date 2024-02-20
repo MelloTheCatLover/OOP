@@ -1,6 +1,4 @@
 
-
-
 import org.junit.jupiter.api.Test;
 import ru.nsu.kozoliy.ChartBuilder;
 

@@ -1,9 +1,16 @@
-import org.junit.jupiter.api.Test;
-import ru.nsu.kozoliy.SequentialDetector;
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.Test;
+import ru.nsu.kozoliy.SequentialDetector;
+
+
+
+
+/**
+ * Test for Task_2_1_1.
+ * Test for sequential detector.
+ */
 public class TestsForSequentialDetector {
 
 

@@ -1,5 +1,6 @@
 package ru.nsu.kozoliy;
 
+
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
