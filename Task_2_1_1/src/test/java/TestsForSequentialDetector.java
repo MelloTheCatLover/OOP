@@ -17,6 +17,7 @@ public class TestsForSequentialDetector {
         assertFalse(SequentialDetector.sequentialNoPrimesDetector(numbers));
     }
 
+
     @Test
     public void testSequentialAllPrimeException() {
         long[] nums = {2, 123};
