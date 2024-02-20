@@ -26,7 +26,7 @@ public class ParallelDetector {
 
             threads[i] = new Thread(() -> {
                 for (int j = start; j < end; j++) {
-                    if (!isPrime(numbers[j])) {
+                    if (!PrimeChecker.isPrime(numbers[j])) {
                         hasNonPrime.set(true);
                         break; // Stop the thread if a non-prime number is found
                     }
@@ -50,32 +50,6 @@ public class ParallelDetector {
         return hasNonPrime.get();
     }
 
-    /**
-     * Checks if the given number is prime.
-     *
-     * @param number the number to check
-     * @return true if the number is prime, otherwise false
-     */
-    static boolean isPrime(long number) {
-        if (number < 2) {
-            return false;
-        }
-        if (number == 2 || number == 3) {
-            return true;
-        }
-        if (number % 2 == 0 || number % 3 == 0) {
-            return false;
-        }
-
-        long sqrtN = (long) Math.sqrt(number);
-
-        for (long i = 6L; i <= sqrtN; i += 6) {
-            if (number % (i - 1) == 0 || number % (i + 1) == 0) {
-                return false;
-            }
-        }
-        return true;
-    }
 
     /**
      * Main method for testing the ParallelNoPrimesDetector method.

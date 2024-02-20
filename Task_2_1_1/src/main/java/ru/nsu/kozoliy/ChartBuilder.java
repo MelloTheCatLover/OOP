@@ -17,7 +17,7 @@ public class ChartBuilder {
     /**
      * Main method to run the program and display the chart.
      */
-    public static void main() {
+    public static void main(String[] args) {
         // Create arrays with sample data
         long[] smallArray = {20319251, 6997901, 6997927, 6997937, 17858849, 6997967,
             6998009, 6998029, 6998039, 20165149, 6998051, 6998053,
@@ -100,7 +100,7 @@ public class ChartBuilder {
             arrayOfResultLargeArray[numOfThreads - 2] = timeElapsedParallel;
         }
 
-        /*
+
         // Create and display the chart
         javax.swing.SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Execution Time Comparison");
@@ -167,6 +167,6 @@ public class ChartBuilder {
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
         });
-        */
+
     }
 }

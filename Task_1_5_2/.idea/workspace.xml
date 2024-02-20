@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fae4349a-76d4-4136-b373-5396a44f96f5" name="Changes" comment="fix review Dog 5. Added answer to tour question." />
+    <list default="true" id="fae4349a-76d4-4136-b373-5396a44f96f5" name="Changes" comment="fix review Dog 5. Added answer to tour question.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task_2_1_1/src/main/java/ru/nsu/kozoliy/ChartBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_2_1_1/src/main/java/ru/nsu/kozoliy/ChartBuilder.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,6 +62,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "android.gradle.sync.needed": "true",
     "git-widget-placeholder": "Task__2__1__1",
     "last_opened_file_path": "C:/Program Files/Java/jdk-17/lib/picocli-4.7.5.jar",
     "onboarding.tips.debug.path": "D:/NSU/Second Course/First_Sem/Object_Programming/OOP/Task_1_5_2/src/main/java/ru/nsu/kozoliy/Main.java",
