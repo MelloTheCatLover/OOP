@@ -100,7 +100,7 @@ public class ChartBuilder {
             arrayOfResultLargeArray[numOfThreads - 2] = timeElapsedParallel;
         }
 
-
+        /*
         // Create and display the chart
         javax.swing.SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Execution Time Comparison");
@@ -167,6 +167,8 @@ public class ChartBuilder {
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
         });
+
+         */
 
     }
 }
