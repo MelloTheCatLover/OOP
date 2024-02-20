@@ -18,6 +18,7 @@ public class TestsForSequentialDetector {
     }
 
 
+
     @Test
     public void testSequentialAllPrimeException() {
         long[] nums = {2, 123};
