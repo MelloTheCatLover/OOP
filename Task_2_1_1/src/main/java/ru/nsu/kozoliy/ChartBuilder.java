@@ -31,8 +31,8 @@ public class ChartBuilder {
             6998009, 6998029, 6998039, 20165149, 6998051, 6998053};
 
         long prime = 1000000007;
-        long[] largeArray = new long[1000];
-        for (int i = 0; i < 1000; i++) {
+        long[] largeArray = new long[100000];
+        for (int i = 0; i < 100000; i++) {
             largeArray[i] = prime;
         }
 
@@ -100,7 +100,7 @@ public class ChartBuilder {
             arrayOfResultLargeArray[numOfThreads - 2] = timeElapsedParallel;
         }
 
-        /*
+
         // Create and display the chart
         javax.swing.SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Execution Time Comparison");
@@ -169,6 +169,6 @@ public class ChartBuilder {
         });
 
 
-        */
+
     }
 }
