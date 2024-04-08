@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestPizzeria" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-04-08T11:19:25" hostname="MELLO" time="44.976">
+<testsuite name="TestPizzeria" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-04-08T11:32:31" hostname="MELLO" time="44.995">
   <properties/>
-  <testcase name="testWorkerService()" classname="TestPizzeria" time="19.38"/>
-  <testcase name="TestParser()" classname="TestPizzeria" time="21.547"/>
-  <testcase name="TestWarehouse()" classname="TestPizzeria" time="0.007"/>
-  <testcase name="testCustomerServices()" classname="TestPizzeria" time="4.025"/>
-  <testcase name="testCustomerRepository()" classname="TestPizzeria" time="0.006"/>
-  <system-out><![CDATA[Hello from customer ru.nsu.kozoliy.User.User@180a5995
+  <testcase name="testWorkerService()" classname="TestPizzeria" time="19.414"/>
+  <testcase name="TestParser()" classname="TestPizzeria" time="21.546"/>
+  <testcase name="TestWarehouse()" classname="TestPizzeria" time="0.005"/>
+  <testcase name="testCustomerServices()" classname="TestPizzeria" time="4.017"/>
+  <testcase name="testCustomerRepository()" classname="TestPizzeria" time="0.005"/>
+  <system-out><![CDATA[Hello from customer ru.nsu.kozoliy.User.User@243024e9
 Pizzeria received order with number 0
-Hello from backer ru.nsu.kozoliy.Backer.BackerRepository@75d9d36a
-Hello from backer ru.nsu.kozoliy.Backer.BackerRepository@1567180d
-User ru.nsu.kozoliy.User.User@180a5995 was interrupted
-Pizza man ru.nsu.kozoliy.Backer.BackerRepository@75d9d36a creates pizza for order 0
-Hello from backer ru.nsu.kozoliy.Backer.BackerRepository@75d9d36a
+Hello from backer ru.nsu.kozoliy.Backer.BackerRepository@55026ee1
+Hello from backer ru.nsu.kozoliy.Backer.BackerRepository@30f034b5
+User ru.nsu.kozoliy.User.User@243024e9 was interrupted
+Pizza man ru.nsu.kozoliy.Backer.BackerRepository@30f034b5 creates pizza for order 0
+Hello from backer ru.nsu.kozoliy.Backer.BackerRepository@30f034b5
 Backer thread was interrupted
 Backer thread was interrupted
-Courier ru.nsu.kozoliy.Courier.CourierRepository@3eee3a24 received pizza ru.nsu.kozoliy.Order.Order@38a69f9e
+Courier ru.nsu.kozoliy.Courier.CourierRepository@22a0c6d9 received pizza ru.nsu.kozoliy.Order.Order@6881c51a
 Courier thread was interrupted
 Courier thread was interrupted
 Pizzeria received order with number 0
-Hello from backer ru.nsu.kozoliy.Backer.BackerRepository@1b5c21ef
-Pizza man ru.nsu.kozoliy.Backer.BackerRepository@1b5c21ef creates pizza for order 0
-Hello from backer ru.nsu.kozoliy.Backer.BackerRepository@1b5c21ef
-Courier ru.nsu.kozoliy.Courier.CourierRepository@760587c received pizza ru.nsu.kozoliy.Order.Order@9a7b738
+Hello from backer ru.nsu.kozoliy.Backer.BackerRepository@71e3076d
+Pizza man ru.nsu.kozoliy.Backer.BackerRepository@71e3076d creates pizza for order 0
+Hello from backer ru.nsu.kozoliy.Backer.BackerRepository@71e3076d
+Courier ru.nsu.kozoliy.Courier.CourierRepository@358553c7 received pizza ru.nsu.kozoliy.Order.Order@3b42badf
 Backer thread was interrupted
 Order 0 was successfully delivered
 Courier thread was interrupted
-Hello from customer ru.nsu.kozoliy.User.User@426aaa0d
-Hello from customer ru.nsu.kozoliy.User.User@492464e
-Hello from customer ru.nsu.kozoliy.User.User@7a14f483
+Hello from customer ru.nsu.kozoliy.User.User@2fe08aa
 Pizzeria received order with number 0
+Hello from customer ru.nsu.kozoliy.User.User@3fa01bfc
+Hello from customer ru.nsu.kozoliy.User.User@37bade4e
 Pizzeria received order with number 1
 Pizzeria received order with number 2
-User ru.nsu.kozoliy.User.User@7a14f483 was interrupted
-User ru.nsu.kozoliy.User.User@426aaa0d was interrupted
-User ru.nsu.kozoliy.User.User@492464e was interrupted
+User ru.nsu.kozoliy.User.User@37bade4e was interrupted
+User ru.nsu.kozoliy.User.User@3fa01bfc was interrupted
+User ru.nsu.kozoliy.User.User@2fe08aa was interrupted
 false
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
