@@ -1,0 +1,30 @@
+7Hello from customer ru.nsu.kozoliy.User.User@180a5995
+'Pizzeria received order with number 0
+CHello from backer ru.nsu.kozoliy.Backer.BackerRepository@75d9d36a
+CHello from backer ru.nsu.kozoliy.Backer.BackerRepository@1567180d
+8User ru.nsu.kozoliy.User.User@180a5995 was interrupted
+UPizza man ru.nsu.kozoliy.Backer.BackerRepository@75d9d36a creates pizza for order 0
+CHello from backer ru.nsu.kozoliy.Backer.BackerRepository@75d9d36a
+Backer thread was interrupted
+Backer thread was interrupted
+nCourier ru.nsu.kozoliy.Courier.CourierRepository@3eee3a24 received pizza ru.nsu.kozoliy.Order.Order@38a69f9e
+ Courier thread was interrupted
+ Courier thread was interrupted
+'Pizzeria received order with number 0
+CHello from backer ru.nsu.kozoliy.Backer.BackerRepository@1b5c21ef
+UPizza man ru.nsu.kozoliy.Backer.BackerRepository@1b5c21ef creates pizza for order 0
+CHello from backer ru.nsu.kozoliy.Backer.BackerRepository@1b5c21ef
+lCourier ru.nsu.kozoliy.Courier.CourierRepository@760587c received pizza ru.nsu.kozoliy.Order.Order@9a7b738
+Backer thread was interrupted
+$Order 0 was successfully delivered
+ Courier thread was interrupted
+7Hello from customer ru.nsu.kozoliy.User.User@426aaa0d
+6Hello from customer ru.nsu.kozoliy.User.User@492464e
+7Hello from customer ru.nsu.kozoliy.User.User@7a14f483
+'Pizzeria received order with number 0
+'Pizzeria received order with number 1
+'Pizzeria received order with number 2
+8User ru.nsu.kozoliy.User.User@7a14f483 was interrupted
+8User ru.nsu.kozoliy.User.User@426aaa0d was interrupted
+7User ru.nsu.kozoliy.User.User@492464e was interrupted
+false
