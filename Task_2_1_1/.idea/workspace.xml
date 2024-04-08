@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0590ff2a-3e95-4a6c-82e6-f10d04d9f976" name="Changes" comment="reviewdog 12" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="Task_2_1_1" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MelloTheCatLover&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="f79a3c09-fd7e-454d-bef3-280030c61e57" />
+        <option name="url" value="https://github.com/MelloTheCatLover/OOP.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2cIYBsf9FnS3gU8rDXuhWWPoyWf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "onboarding.tips.debug.path": "D:/NSU/Second Course/First_Sem/Object_Programming/OOP/Task_2_1_1/src/main/java/ru/nsu/kozoliy/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.ChartBuilder">
+    <configuration name="ChartBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.nsu.kozoliy.ChartBuilder" />
+      <module name="Task_2_1_1.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.nsu.kozoliy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDetector" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;TestDetector&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestsForParallelStreamDetector" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;TestsForParallelStreamDetector&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestsForParallelStreamDetector.testParallelStream2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;TestsForParallelStreamDetector.testParallelStream2&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestsForSequentialDetector.testSequentialEmpty" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;TestsForSequentialDetector.testSequentialEmpty&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestsForSequentialDetector.testSequentialNonPrimeInMiddle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;TestsForSequentialDetector.testSequentialNonPrimeInMiddle&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ChartBuilder" />
+        <item itemvalue="Gradle.TestsForParallelStreamDetector" />
+        <item itemvalue="Gradle.TestsForParallelStreamDetector.testParallelStream2" />
+        <item itemvalue="Gradle.TestsForSequentialDetector.testSequentialEmpty" />
+        <item itemvalue="Gradle.TestsForSequentialDetector.testSequentialNonPrimeInMiddle" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0590ff2a-3e95-4a6c-82e6-f10d04d9f976" name="Changes" comment="" />
+      <created>1707800431925</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707800431925</updated>
+    </task>
+    <task id="LOCAL-00001" summary="first Commit">
+      <option name="closed" value="true" />
+      <created>1708336527171</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708336527171</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add graphic Test">
+      <option name="closed" value="true" />
+      <created>1708337118503</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1708337118503</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add javadoc">
+      <option name="closed" value="true" />
+      <created>1708338214020</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708338214020</updated>
+    </task>
+    <task id="LOCAL-00004" summary="review dog 1">
+      <option name="closed" value="true" />
+      <created>1708338850916</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708338850916</updated>
+    </task>
+    <task id="LOCAL-00005" summary="review dog 2">
+      <option name="closed" value="true" />
+      <created>1708339142376</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708339142376</updated>
+    </task>
+    <task id="LOCAL-00006" summary="review dog 2">
+      <option name="closed" value="true" />
+      <created>1708339299582</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708339299582</updated>
+    </task>
+    <task id="LOCAL-00007" summary="review dog 3">
+      <option name="closed" value="true" />
+      <created>1708339999095</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708339999095</updated>
+    </task>
+    <task id="LOCAL-00008" summary="review dog 4">
+      <option name="closed" value="true" />
+      <created>1708340442991</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708340442991</updated>
+    </task>
+    <task id="LOCAL-00009" summary="review dog 5">
+      <option name="closed" value="true" />
+      <created>1708341194884</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708341194884</updated>
+    </task>
+    <task id="LOCAL-00010" summary="review dog 6">
+      <option name="closed" value="true" />
+      <created>1708341330564</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708341330564</updated>
+    </task>
+    <task id="LOCAL-00011" summary="review dog 6">
+      <option name="closed" value="true" />
+      <created>1708341431473</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708341431473</updated>
+    </task>
+    <task id="LOCAL-00012" summary="review dog 7">
+      <option name="closed" value="true" />
+      <created>1708341487096</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1708341487096</updated>
+    </task>
+    <task id="LOCAL-00013" summary="review dog 8">
+      <option name="closed" value="true" />
+      <created>1708341689268</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1708341689268</updated>
+    </task>
+    <task id="LOCAL-00014" summary="review dog 9 + IsPrime separates + new tests">
+      <option name="closed" value="true" />
+      <created>1708402313128</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1708402313128</updated>
+    </task>
+    <task id="LOCAL-00015" summary="review dog 9 + IsPrime separates + new tests">
+      <option name="closed" value="true" />
+      <created>1708402469204</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1708402469204</updated>
+    </task>
+    <task id="LOCAL-00016" summary="review dog 9 + IsPrime separates + new tests">
+      <option name="closed" value="true" />
+      <created>1708402506214</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1708402506214</updated>
+    </task>
+    <task id="LOCAL-00017" summary="hide chart builder">
+      <option name="closed" value="true" />
+      <created>1708402612975</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1708402612975</updated>
+    </task>
+    <task id="LOCAL-00018" summary="reviewdog 10">
+      <option name="closed" value="true" />
+      <created>1708403217520</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1708403217520</updated>
+    </task>
+    <task id="LOCAL-00019" summary="reviewdog 11">
+      <option name="closed" value="true" />
+      <created>1708403423511</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1708403423511</updated>
+    </task>
+    <task id="LOCAL-00020" summary="final changes">
+      <option name="closed" value="true" />
+      <created>1708404334082</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1708404334082</updated>
+    </task>
+    <task id="LOCAL-00021" summary="final changes">
+      <option name="closed" value="true" />
+      <created>1708404373120</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1708404373120</updated>
+    </task>
+    <task id="LOCAL-00022" summary="reviewdog 12">
+      <option name="closed" value="true" />
+      <created>1708404560685</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1708404560685</updated>
+    </task>
+    <task id="LOCAL-00023" summary="reviewdog 12">
+      <option name="closed" value="true" />
+      <created>1710257954509</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1710257954509</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first Commit" />
+    <MESSAGE value="add graphic Test" />
+    <MESSAGE value="add javadoc" />
+    <MESSAGE value="review dog 1" />
+    <MESSAGE value="review dog 2" />
+    <MESSAGE value="review dog 3" />
+    <MESSAGE value="review dog 4" />
+    <MESSAGE value="review dog 5" />
+    <MESSAGE value="review dog 6" />
+    <MESSAGE value="review dog 7" />
+    <MESSAGE value="review dog 8" />
+    <MESSAGE value="review dog 9 + IsPrime separates + new tests" />
+    <MESSAGE value="hide chart builder" />
+    <MESSAGE value="reviewdog 10" />
+    <MESSAGE value="reviewdog 11" />
+    <MESSAGE value="final changes" />
+    <MESSAGE value="reviewdog 12" />
+    <option name="LAST_COMMIT_MESSAGE" value="reviewdog 12" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Task_2_1_1$TestDetector_testParallelStreamNonPrime.ic" NAME="TestDetector.testParallelStreamNonPrime Coverage Results" MODIFIED="1708336301961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Task_2_1_1$TestDetector.ic" NAME="TestDetector Coverage Results" MODIFIED="1708341139530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
