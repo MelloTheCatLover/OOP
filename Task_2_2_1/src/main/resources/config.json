@@ -1,0 +1,52 @@
+{
+  "backers": [
+    {
+      "workingTimeMs": 1
+    },
+    {
+      "workingTimeMs": 1
+    },
+    {
+      "workingTimeMs": 1
+    },
+    {
+      "workingTimeMs": 1
+    },
+    {
+      "workingTimeMs": 1
+    },
+    {
+      "workingTimeMs": 1
+    }
+
+  ],
+  "couriers": [
+    {
+      "baggageCount": 1,
+      "deliveryTimeMs": 1000
+    },
+    {
+      "baggageCount": 1,
+      "deliveryTimeMs": 1000
+    },
+    {
+      "baggageCount": 1,
+      "deliveryTimeMs": 1000
+    },
+    {
+      "baggageCount": 1,
+      "deliveryTimeMs": 1000
+    },
+    {
+      "baggageCount": 1,
+      "deliveryTimeMs": 1000
+    },
+    {
+      "baggageCount": 1,
+      "deliveryTimeMs": 1000
+    }
+  ],
+  "storage": {
+    "capacity": 5
+  }
+}
