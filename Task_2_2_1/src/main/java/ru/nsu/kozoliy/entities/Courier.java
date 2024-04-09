@@ -1,7 +1,7 @@
 package ru.nsu.kozoliy.entities;
 
 import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
-import ru.nsu.kozoliy.modelInterfaces.ICourier;
+import ru.nsu.kozoliy.interfaces.Icourier;
 import ru.nsu.kozoliy.storage.Storage;
 
 import java.util.ArrayDeque;
@@ -11,7 +11,7 @@ import java.util.Queue;
  * Класс, представляющий курьера в системе доставки пиццы.
  * Курьер забирает заказы с пиццей со склада и доставляет их клиентам.
  */
-public class Courier implements ICourier {
+public class Courier implements Icourier {
     private final String name; // Имя курьера
     private final String surname; // Фамилия курьера
     private final int id; // Уникальный идентификатор курьера

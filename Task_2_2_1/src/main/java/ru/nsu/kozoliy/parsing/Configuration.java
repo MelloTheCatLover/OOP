@@ -8,5 +8,7 @@ import ru.nsu.kozoliy.dto.StorageDto;
 /**
  * Конфигурация пиццерии, содержащая информацию о курьерах, пекарях и складе.
  */
-public record Configuration(List<CourierDto> couriers, List<BackerDto> backers, StorageDto storage) {
+public record Configuration(List<CourierDto> couriers,
+                            List<BackerDto> backers,
+                            StorageDto storage) {
 }

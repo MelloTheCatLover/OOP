@@ -1,6 +1,6 @@
 package ru.nsu.kozoliy.services;
 
-import ru.nsu.kozoliy.modelInterfaces.IBacker;
+import ru.nsu.kozoliy.interfaces.Ibacker;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
  * Сервис для управления работой пекарей.
  */
 public class BackerService implements Runnable {
-    private final List<IBacker> backers;
+    private final List<Ibacker> backers;
     private final ExecutorService executorService;
 
     /**
@@ -18,7 +18,7 @@ public class BackerService implements Runnable {
      *
      * @param backers список пекарей
      */
-    public BackerService(List<IBacker> backers) {
+    public BackerService(List<Ibacker> backers) {
         this.backers = backers;
         executorService = Executors.newFixedThreadPool(backers.size());
     }

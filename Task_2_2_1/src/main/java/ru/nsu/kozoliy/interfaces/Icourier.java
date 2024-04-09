@@ -1,10 +1,10 @@
-package ru.nsu.kozoliy.modelInterfaces;
+package ru.nsu.kozoliy.interfaces;
 
 /**
  * Интерфейс, представляющий курьера.
  * Курьер умеет доставлять пиццу.
  */
-public interface ICourier extends Runnable {
+public interface Icourier extends Runnable {
 
     /**
      * Доставляет пиццу.

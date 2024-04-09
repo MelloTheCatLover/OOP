@@ -1,4 +1,4 @@
-package ru.nsu.kozoliy.modelInterfaces;
+package ru.nsu.kozoliy.interfaces;
 
 import ru.nsu.kozoliy.entities.Pizza;
 
@@ -6,7 +6,7 @@ import ru.nsu.kozoliy.entities.Pizza;
  * Интерфейс, представляющий пекаря.
  * Пекарь умеет готовить пиццу.
  */
-public interface IBacker extends Runnable {
+public interface Ibacker extends Runnable {
 
     /**
      * Готовит пиццу.

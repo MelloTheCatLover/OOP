@@ -25,8 +25,8 @@ import ru.nsu.kozoliy.entities.Pizza;
 import ru.nsu.kozoliy.entities.User;
 import ru.nsu.kozoliy.exceptions.ParsingException;
 import ru.nsu.kozoliy.model.Pizzeria;
-import ru.nsu.kozoliy.modelInterfaces.IBacker;
-import ru.nsu.kozoliy.modelInterfaces.ICourier;
+import ru.nsu.kozoliy.interfaces.Ibacker;
+import ru.nsu.kozoliy.interfaces.Icourier;
 import ru.nsu.kozoliy.parsing.Configuration;
 import ru.nsu.kozoliy.parsing.PizzeriaParser;
 import ru.nsu.kozoliy.services.BackerService;
@@ -126,7 +126,7 @@ public class TestPizzeria {
         pizzeria.makeOrder(pizzas);
         BackerDto firstBackerDto = configuration.backers().get(0);
 
-        IBacker backer = new Backer(firstBackerDto.name(),
+        Ibacker backer = new Backer(firstBackerDto.name(),
                 firstBackerDto.surname(), firstBackerDto.id(),
                 pizzeria, firstBackerDto.workingTimeMs());
         Thread backerThread = new Thread(backer);
@@ -142,7 +142,7 @@ public class TestPizzeria {
         //Assertions.assertTrue(storage.isFull());
 
         CourierDto firstCourierDto = configuration.couriers().get(0);
-        ICourier courier = new Courier(firstCourierDto.name(),
+        Icourier courier = new Courier(firstCourierDto.name(),
                 firstCourierDto.surname(),
                 firstCourierDto.id(),
                 firstCourierDto.baggageSize(),

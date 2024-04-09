@@ -6,9 +6,9 @@ import ru.nsu.kozoliy.entities.Backer;
 import ru.nsu.kozoliy.entities.Courier;
 import ru.nsu.kozoliy.entities.Order;
 import ru.nsu.kozoliy.entities.Pizza;
-import ru.nsu.kozoliy.modelInterfaces.IBacker;
-import ru.nsu.kozoliy.modelInterfaces.ICourier;
-import ru.nsu.kozoliy.modelInterfaces.IPizzeria;
+import ru.nsu.kozoliy.interfaces.Ibacker;
+import ru.nsu.kozoliy.interfaces.Icourier;
+import ru.nsu.kozoliy.interfaces.Ipizzeria;
 import ru.nsu.kozoliy.parsing.Configuration;
 import ru.nsu.kozoliy.services.BackerService;
 import ru.nsu.kozoliy.services.CourierService;
@@ -25,7 +25,7 @@ import java.util.Queue;
  * Этот класс управляет процессом приготовления
  * и доставки пиццы, используя пекарей, курьеров и пользователей.
  */
-public class Pizzeria implements IPizzeria {
+public class Pizzeria implements Ipizzeria {
     private final Queue<Order> orders;
     private final Storage storage = Storage.getInstance();
     private final UserService userService;
@@ -40,17 +40,17 @@ public class Pizzeria implements IPizzeria {
      */
     public Pizzeria(Configuration configuration) {
         Storage.getInstance(configuration.storage().capacity());
-        List<ICourier> couriers = new ArrayList<>();
+        List<Icourier> couriers = new ArrayList<>();
         for (CourierDto courierDto : configuration.couriers()) {
-            ICourier courier = new Courier(courierDto.name(),
+            Icourier courier = new Courier(courierDto.name(),
                     courierDto.surname(), courierDto.id() ,
                     courierDto.baggageSize(),
                     courierDto.deliveryTime());
             couriers.add(courier);
         }
-        List<IBacker> backers = new ArrayList<>();
+        List<Ibacker> backers = new ArrayList<>();
         for (BackerDto backerDto : configuration.backers()) {
-            IBacker backer = new Backer(backerDto.name(),
+            Ibacker backer = new Backer(backerDto.name(),
                     backerDto.surname(),
                     backerDto.id(),
                     this,

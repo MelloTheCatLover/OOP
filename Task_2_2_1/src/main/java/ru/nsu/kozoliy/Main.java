@@ -2,7 +2,7 @@ package ru.nsu.kozoliy;
 
 
 import ru.nsu.kozoliy.model.Pizzeria;
-import ru.nsu.kozoliy.modelInterfaces.IPizzeria;
+import ru.nsu.kozoliy.interfaces.Ipizzeria;
 import ru.nsu.kozoliy.parsing.Configuration;
 import ru.nsu.kozoliy.parsing.PizzeriaParser;
 
@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         PizzeriaParser parser = new PizzeriaParser();
         Configuration configuration = parser.getConfigurationFromFile("/config.json");
-        IPizzeria pizzeria = new Pizzeria(configuration);
+        Ipizzeria pizzeria = new Pizzeria(configuration);
         boolean isWorking = true;
         while (isWorking) {
             String command = new Scanner(System.in).nextLine();

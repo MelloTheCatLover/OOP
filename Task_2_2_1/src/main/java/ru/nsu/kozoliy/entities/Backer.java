@@ -1,7 +1,7 @@
 package ru.nsu.kozoliy.entities;
 
 import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
-import ru.nsu.kozoliy.modelInterfaces.IBacker;
+import ru.nsu.kozoliy.interfaces.Ibacker;
 import ru.nsu.kozoliy.storage.Storage;
 import ru.nsu.kozoliy.model.OrderGetter;
 
@@ -9,7 +9,7 @@ import ru.nsu.kozoliy.model.OrderGetter;
  * Класс, представляющий пекаря в пиццерии.
  * Пекарь выпекает пиццу согласно заказам и добавляет их на склад.
  */
-public class Backer implements IBacker {
+public class Backer implements Ibacker {
     private String name; // Имя пекаря
     private final String surname; // Фамилия пекаря
     private final int id; // Уникальный идентификатор пекаря

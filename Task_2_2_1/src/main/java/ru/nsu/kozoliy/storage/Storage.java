@@ -110,9 +110,9 @@ public class Storage {
     @ExcludeFromJacocoGeneratedReport
     @Override
     public String toString() {
-        return "Storage{" +
-                "orders=" + orders +
-                ", capacity=" + capacity +
-                '}';
+        return "Storage{"
+                + "orders=" + orders
+                + ", capacity=" + capacity
+                + '}';
     }
 }

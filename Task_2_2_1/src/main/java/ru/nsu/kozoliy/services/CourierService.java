@@ -1,6 +1,6 @@
 package ru.nsu.kozoliy.services;
 
-import ru.nsu.kozoliy.modelInterfaces.ICourier;
+import ru.nsu.kozoliy.interfaces.Icourier;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
  * Сервис для управления работой курьеров.
  */
 public class CourierService implements Runnable {
-    private final List<ICourier> couriers;
+    private final List<Icourier> couriers;
     private final ExecutorService executorService;
 
     /**
@@ -18,7 +18,7 @@ public class CourierService implements Runnable {
      *
      * @param couriers список курьеров
      */
-    public CourierService(List<ICourier> couriers) {
+    public CourierService(List<Icourier> couriers) {
         this.couriers = couriers;
         executorService = Executors.newFixedThreadPool(couriers.size());
     }
