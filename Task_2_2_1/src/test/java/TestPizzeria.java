@@ -31,7 +31,7 @@ import java.util.List;
  */
 public class TestPizzeria {
 
-        private Pizzeria pizzeria;
+    private Pizzeria pizzeria;
     private Storage storage;
 
     @BeforeEach
