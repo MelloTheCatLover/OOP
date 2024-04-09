@@ -1,5 +1,9 @@
 package ru.nsu.kozoliy.model;
 
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
 import ru.nsu.kozoliy.dto.BackerDto;
 import ru.nsu.kozoliy.dto.CourierDto;
 import ru.nsu.kozoliy.entities.Backer;
@@ -15,10 +19,7 @@ import ru.nsu.kozoliy.services.CourierService;
 import ru.nsu.kozoliy.services.UserService;
 import ru.nsu.kozoliy.storage.Storage;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Queue;
+
 
 /**
  * Класс, представляющий пиццерию.

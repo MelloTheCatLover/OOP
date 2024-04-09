@@ -1,8 +1,9 @@
 package ru.nsu.kozoliy.model;
 
-import ru.nsu.kozoliy.entities.Pizza;
 
 import java.util.List;
+import ru.nsu.kozoliy.entities.Pizza;
+
 
 /**
  * Интерфейс для создания заказов.

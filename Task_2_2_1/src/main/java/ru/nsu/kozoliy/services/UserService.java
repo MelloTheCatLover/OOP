@@ -1,13 +1,15 @@
 package ru.nsu.kozoliy.services;
 
-import ru.nsu.kozoliy.entities.Pizza;
-import ru.nsu.kozoliy.entities.User;
-import ru.nsu.kozoliy.model.Pizzeria;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import ru.nsu.kozoliy.entities.Pizza;
+import ru.nsu.kozoliy.entities.User;
+import ru.nsu.kozoliy.model.Pizzeria;
+
 
 /**
  * Сервис для генерации пользовательских задач.
@@ -15,7 +17,7 @@ import java.util.concurrent.Executors;
 public class UserService implements UserGeneratorService, Runnable {
 
     private final Pizzeria pizzeria;
-    private final int MIN_CUSTOMER_COUNT = 3;
+    private final int minCostomerCount = 3;
     private final List<Runnable> customers;
     private final ExecutorService executorService;
 
@@ -27,7 +29,7 @@ public class UserService implements UserGeneratorService, Runnable {
     public UserService(Pizzeria pizzeria) {
         this.pizzeria = pizzeria;
         customers = new ArrayList<>();
-        executorService = Executors.newFixedThreadPool(MIN_CUSTOMER_COUNT);
+        executorService = Executors.newFixedThreadPool(minCostomerCount);
     }
 
     /**
@@ -46,7 +48,7 @@ public class UserService implements UserGeneratorService, Runnable {
      */
     @Override
     public List<Runnable> generate() {
-        int customerCount = new Random().nextInt(7) + MIN_CUSTOMER_COUNT;
+        int customerCount = new Random().nextInt(7) + minCostomerCount;
         for (int i = 0; i < customerCount; i++) {
             int pizzaCountInOrder = new Random().nextInt(3) + 1;
             ArrayList<Pizza> pizzas = new ArrayList<Pizza>();

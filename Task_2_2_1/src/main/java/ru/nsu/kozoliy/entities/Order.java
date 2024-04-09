@@ -1,9 +1,9 @@
 package ru.nsu.kozoliy.entities;
 
-import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
-
 import java.util.ArrayList;
 import java.util.List;
+import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
+
 
 /**
  * Класс, представляющий заказ в пиццерии.

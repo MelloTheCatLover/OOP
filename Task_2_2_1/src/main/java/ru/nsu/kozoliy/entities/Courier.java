@@ -1,11 +1,11 @@
 package ru.nsu.kozoliy.entities;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
 import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
 import ru.nsu.kozoliy.interfaces.Icourier;
 import ru.nsu.kozoliy.storage.Storage;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
 
 /**
  * Класс, представляющий курьера в системе доставки пиццы.

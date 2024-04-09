@@ -1,9 +1,11 @@
 package ru.nsu.kozoliy.entities;
 
-import ru.nsu.kozoliy.model.OrderProvider;
 
 import java.util.List;
 import java.util.Random;
+import ru.nsu.kozoliy.model.OrderProvider;
+
+
 
 /**
  * Класс, представляющий пользователя системы - заказчика пиццы.
