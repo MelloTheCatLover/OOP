@@ -19,16 +19,16 @@ public class User implements Runnable{
     @Override
     public void run() {
         while (true) {
-<span class="nc" id="L22">            System.out.println(&quot;Hello from customer &quot; + this);</span>
+<span class="fc" id="L22">            System.out.println(&quot;Hello from customer &quot; + this);</span>
             try {
-<span class="nc" id="L24">                provider.makeOrder(pizzas);</span>
-<span class="nc" id="L25">                int MIN_SLEEP_TIME = 1000;</span>
-<span class="nc" id="L26">                int sleepTime = new Random().nextInt(10000) + MIN_SLEEP_TIME;</span>
+<span class="fc" id="L24">                provider.makeOrder(pizzas);</span>
+<span class="fc" id="L25">                int MIN_SLEEP_TIME = 1000;</span>
+<span class="fc" id="L26">                int sleepTime = new Random().nextInt(10000) + MIN_SLEEP_TIME;</span>
 <span class="nc" id="L27">                Thread.sleep(sleepTime);</span>
 
-<span class="nc" id="L29">            } catch (InterruptedException e) {</span>
-<span class="nc" id="L30">                System.out.println(&quot;User &quot; + this + &quot; was interrupted&quot;);</span>
-<span class="nc" id="L31">                return;</span>
+<span class="fc" id="L29">            } catch (InterruptedException e) {</span>
+<span class="fc" id="L30">                System.out.println(&quot;User &quot; + this + &quot; was interrupted&quot;);</span>
+<span class="fc" id="L31">                return;</span>
 <span class="nc" id="L32">            }</span>
         }
     }

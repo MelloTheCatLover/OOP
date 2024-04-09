@@ -42,7 +42,7 @@ public class Courier implements ICourier {
 
 
     private boolean isBagFull() {
-<span class="nc bnc" id="L45" title="All 2 branches missed.">        return bag.size() == baggageSize;</span>
+<span class="pc bpc" id="L45" title="1 of 2 branches missed.">        return bag.size() == baggageSize;</span>
     }
 
     @ExcludeFromJacocoGeneratedReport
@@ -59,8 +59,8 @@ public class Courier implements ICourier {
 
     @Override
     public void deliverPizza() throws InterruptedException {
-<span class="nc" id="L62">        Storage storage = Storage.getInstance();</span>
-<span class="nc bnc" id="L63" title="All 2 branches missed.">        while (!isBagFull()) {</span>
+<span class="fc" id="L62">        Storage storage = Storage.getInstance();</span>
+<span class="pc bpc" id="L63" title="1 of 2 branches missed.">        while (!isBagFull()) {</span>
 <span class="nc" id="L64">            Order pizzaOrder = storage.getOrder();</span>
 <span class="nc" id="L65">            bag.add(pizzaOrder);</span>
 <span class="nc" id="L66">            System.out.println(&quot;РљСѓСЂСЊРµСЂ &quot; + name + &quot; &quot; + surname + &quot; РїРѕР»СѓС‡РёР» РїРёС†С†Сѓ &quot; + pizzaOrder.toString());</span>
@@ -79,9 +79,9 @@ public class Courier implements ICourier {
         while (true) {
             try {
 <span class="nc" id="L81">                deliverPizza();</span>
-<span class="nc" id="L82">            } catch (InterruptedException e) {</span>
-<span class="nc" id="L83">                System.out.println(&quot;РљСѓСЂСЊРµСЂР° РїСЂРµСЂРІР°Р»Рё&quot;);</span>
-<span class="nc" id="L84">                return;</span>
+<span class="fc" id="L82">            } catch (InterruptedException e) {</span>
+<span class="fc" id="L83">                System.out.println(&quot;РљСѓСЂСЊРµСЂР° РїСЂРµСЂРІР°Р»Рё&quot;);</span>
+<span class="fc" id="L84">                return;</span>
 <span class="nc" id="L85">            }</span>
         }
     }

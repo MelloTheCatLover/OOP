@@ -68,35 +68,35 @@ public class Pizzeria implements IPizzeria {
 
     @Override
     synchronized public Order getOrder() throws InterruptedException {
-<span class="nc bnc" id="L71" title="All 2 branches missed.">        while (orders.isEmpty()) {</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        while (orders.isEmpty()) {</span>
 <span class="nc" id="L72">            wait();</span>
         }
-<span class="nc" id="L74">        return orders.poll();</span>
+<span class="fc" id="L74">        return orders.poll();</span>
     }
 
     @Override
     public boolean isNoOrders() {
-<span class="nc" id="L79">        return orders.isEmpty();</span>
+<span class="fc" id="L79">        return orders.isEmpty();</span>
     }
 
 
 
     @Override
     synchronized public void makeOrder(List&lt;Pizza&gt; pizzas) {
-<span class="nc" id="L86">        Order order = new Order(orderNumber++, pizzas);</span>
-<span class="nc" id="L87">        order.setUser(() -&gt;</span>
+<span class="fc" id="L86">        Order order = new Order(orderNumber++, pizzas);</span>
+<span class="fc" id="L87">        order.setUser(() -&gt;</span>
 <span class="nc" id="L88">                System.out.println(&quot;Р—Р°РєР°Р· РЅРѕРјРµСЂ: &quot; + order.getId() + &quot; Р±С‹Р» РїРѕР»СѓС‡РµРЅ&quot;));</span>
-<span class="nc" id="L89">        orders.add(order);</span>
-<span class="nc" id="L90">        System.out.println(&quot;РїРѕСЃС‚СѓРїРёР» Р·Р°РєР°Р· РїРѕРґ РЅРѕРјРµСЂРѕРј:  &quot; + order.getId());</span>
-<span class="nc" id="L91">        notifyAll();</span>
-<span class="nc" id="L92">    }</span>
+<span class="fc" id="L89">        orders.add(order);</span>
+<span class="fc" id="L90">        System.out.println(&quot;РїРѕСЃС‚СѓРїРёР» Р·Р°РєР°Р· РїРѕРґ РЅРѕРјРµСЂРѕРј:  &quot; + order.getId());</span>
+<span class="fc" id="L91">        notifyAll();</span>
+<span class="fc" id="L92">    }</span>
 
     public BackerService getBackerService() {
-<span class="nc" id="L95">        return backerService;</span>
+<span class="fc" id="L95">        return backerService;</span>
     }
 
     public CourierService getCourierService() {
-<span class="nc" id="L99">        return courierService;</span>
+<span class="fc" id="L99">        return courierService;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

@@ -17,12 +17,12 @@ public class BackerService implements Runnable {
 <span class="fc" id="L17">    }</span>
 
     public void stopService() {
-<span class="nc" id="L20">        executorService.shutdownNow();</span>
-<span class="nc" id="L21">    }</span>
+<span class="fc" id="L20">        executorService.shutdownNow();</span>
+<span class="fc" id="L21">    }</span>
 
     @Override
     public void run() {
-<span class="nc" id="L25">        backers.forEach(executorService::execute);</span>
-<span class="nc" id="L26">    }</span>
+<span class="fc" id="L25">        backers.forEach(executorService::execute);</span>
+<span class="fc" id="L26">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

@@ -1,6 +1,8 @@
 package ru.nsu.kozoliy.Entities;
 
 
+import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,10 +46,8 @@ public class Order {
         this.pizzas = pizzas;
     }
 
-    public void addPizza(Pizza pizza) {
-        pizzas.add(pizza);
-    }
 
+    @ExcludeFromJacocoGeneratedReport
     @Override
     public String toString() {
         return "Order{" +

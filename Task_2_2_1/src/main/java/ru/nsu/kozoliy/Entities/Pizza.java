@@ -1,5 +1,7 @@
 package ru.nsu.kozoliy.Entities;
 
+import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
+
 public class Pizza {
 
     private int size;
@@ -16,6 +18,7 @@ public class Pizza {
         Vegan
     }
 
+    @ExcludeFromJacocoGeneratedReport
     @Override
     public String toString() {
         return "Pizza{" +
@@ -42,6 +45,8 @@ public class Pizza {
         this.type = type;
     }
 
+/*
+
     public void setType(PizzaType type) {
         this.type = type;
     }
@@ -49,6 +54,7 @@ public class Pizza {
     public boolean isCooked() {
         return isCooked;
     }
+ */
 
 
 

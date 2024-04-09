@@ -19,7 +19,7 @@ public class Storage {
 
 
     public static synchronized Storage getInstance(int capacity) {
-<span class="pc bpc" id="L22" title="1 of 2 branches missed.">        if (instance == null) {</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">        if (instance == null) {</span>
 <span class="fc" id="L23">            instance = new Storage(capacity);</span>
         }
 <span class="fc" id="L25">        return instance;</span>
@@ -40,7 +40,7 @@ public class Storage {
 
 
     synchronized public Order getOrder() throws InterruptedException {
-<span class="nc bnc" id="L43" title="All 2 branches missed.">        while (isEmpty()) {</span>
+<span class="pc bpc" id="L43" title="1 of 2 branches missed.">        while (isEmpty()) {</span>
 <span class="nc" id="L44">            this.wait();</span>
         }
 <span class="nc" id="L46">        notifyAll();</span>
@@ -55,7 +55,7 @@ public class Storage {
 
 
     public boolean isEmpty() {
-<span class="nc" id="L58">        return orders.isEmpty();</span>
+<span class="fc" id="L58">        return orders.isEmpty();</span>
     }
 
 
