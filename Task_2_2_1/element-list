@@ -1,10 +1,9 @@
 ru.nsu.kozoliy
-ru.nsu.kozoliy.Backer
-ru.nsu.kozoliy.Courier
+ru.nsu.kozoliy.Dto
+ru.nsu.kozoliy.Entities
 ru.nsu.kozoliy.Exceptions
 ru.nsu.kozoliy.Model
-ru.nsu.kozoliy.Order
+ru.nsu.kozoliy.ModelInterfaces
 ru.nsu.kozoliy.Parsing
-ru.nsu.kozoliy.PizzeriaLogic
+ru.nsu.kozoliy.Services
 ru.nsu.kozoliy.Storage
-ru.nsu.kozoliy.User
