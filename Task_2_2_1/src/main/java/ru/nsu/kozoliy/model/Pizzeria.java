@@ -44,7 +44,7 @@ public class Pizzeria implements Ipizzeria {
         List<Icourier> couriers = new ArrayList<>();
         for (CourierDto courierDto : configuration.couriers()) {
             Icourier courier = new Courier(courierDto.name(),
-                    courierDto.surname(), courierDto.id() ,
+                    courierDto.surname(), courierDto.id(),
                     courierDto.baggageSize(),
                     courierDto.deliveryTime());
             couriers.add(courier);
@@ -77,14 +77,14 @@ public class Pizzeria implements Ipizzeria {
     /**
      * Останавливает работу пиццерии.
      */
-    synchronized public void stopWorking() {
+    public synchronized void stopWorking() {
         userService.stopService();
     }
 
     /**
      * Завершает работу пиццерии.
      */
-    synchronized public void endWorking() {
+    public synchronized void endWorking() {
         userService.stopService();
         backerService.stopService();
         courierService.stopService();
@@ -98,7 +98,7 @@ public class Pizzeria implements Ipizzeria {
      * @throws InterruptedException если поток был прерван во время ожидания заказа
      */
     @Override
-    synchronized public Order getOrder() throws InterruptedException {
+    public synchronized Order getOrder() throws InterruptedException {
         while (orders.isEmpty()) {
             wait();
         }
@@ -121,7 +121,7 @@ public class Pizzeria implements Ipizzeria {
      * @param pizzas список пицц для заказа
      */
     @Override
-    synchronized public void makeOrder(List<Pizza> pizzas) {
+    public synchronized void makeOrder(List<Pizza> pizzas) {
         Order order = new Order(orderNumber++, pizzas);
         order.setUser(() ->
                 System.out.println("Заказ номер: " + order.getId() + " был получен"));

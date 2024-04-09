@@ -39,7 +39,8 @@ public class Backer implements Ibacker {
      */
     @ExcludeFromJacocoGeneratedReport
     public void displayInfo() {
-        System.out.println("Пекарь:" + name + " " + surname + ". Работает со скоростью: " + workingTimeMs);
+        System.out.println("Пекарь:" + name + " " + surname
+                + ". Работает со скоростью: " + workingTimeMs);
     }
 
     /**
@@ -67,7 +68,9 @@ public class Backer implements Ibacker {
      */
     @Override
     public void makePizza(Pizza pizza) throws InterruptedException {
-        System.out.println(name + surname + " выпекает " + pizza.getSize() + " сантиметровую пиццу " + pizza.getType() + ".");
+        System.out.println(name + surname + " выпекает "
+                + pizza.getSize() + " сантиметровую пиццу "
+                + pizza.getType() + ".");
         Thread.sleep(workingTimeMs);
         pizza.setCooked(true);
         System.out.println(name + " завершил приготовление пиццы " + pizza.getType() + ".");
