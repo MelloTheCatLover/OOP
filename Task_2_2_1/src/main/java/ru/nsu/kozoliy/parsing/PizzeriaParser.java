@@ -3,10 +3,10 @@ package ru.nsu.kozoliy.parsing;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
-import ru.nsu.kozoliy.exceptions.ParsingException;
-
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import ru.nsu.kozoliy.exceptions.ParsingException;
+
 
 /**
  * Парсер для чтения конфигурационного файла пиццерии в формате JSON.

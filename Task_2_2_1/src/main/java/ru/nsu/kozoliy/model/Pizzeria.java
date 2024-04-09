@@ -22,7 +22,8 @@ import java.util.Queue;
 
 /**
  * Класс, представляющий пиццерию.
- * Этот класс управляет процессом приготовления и доставки пиццы, используя пекарей, курьеров и пользователей.
+ * Этот класс управляет процессом приготовления
+ * и доставки пиццы, используя пекарей, курьеров и пользователей.
  */
 public class Pizzeria implements IPizzeria {
     private final Queue<Order> orders;
@@ -41,12 +42,19 @@ public class Pizzeria implements IPizzeria {
         Storage.getInstance(configuration.storage().capacity());
         List<ICourier> couriers = new ArrayList<>();
         for (CourierDto courierDto : configuration.couriers()) {
-            ICourier courier = new Courier(courierDto.name(), courierDto.surname(), courierDto.id() ,courierDto.baggageSize(), courierDto.deliveryTime());
+            ICourier courier = new Courier(courierDto.name(),
+                    courierDto.surname(), courierDto.id() ,
+                    courierDto.baggageSize(),
+                    courierDto.deliveryTime());
             couriers.add(courier);
         }
         List<IBacker> backers = new ArrayList<>();
         for (BackerDto backerDto : configuration.backers()) {
-            IBacker backer = new Backer(backerDto.name(), backerDto.surname(), backerDto.id(), this, backerDto.workingTimeMs());
+            IBacker backer = new Backer(backerDto.name(),
+                    backerDto.surname(),
+                    backerDto.id(),
+                    this,
+                    backerDto.workingTimeMs());
             backers.add(backer);
         }
         orders = new ArrayDeque<>();

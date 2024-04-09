@@ -2,8 +2,9 @@ package ru.nsu.kozoliy.storage;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
-import ru.nsu.kozoliy.entities.Order;
 import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
+import ru.nsu.kozoliy.entities.Order;
+
 
 
 /**
@@ -52,7 +53,7 @@ public class Storage {
      * @param order заказ
      * @throws InterruptedException если произошла ошибка во время ожидания
      */
-    synchronized public void addOrder(Order order) throws InterruptedException {
+    public synchronized void addOrder(Order order) throws InterruptedException {
         while (this.isFull()) {
             this.wait();
         }
@@ -66,7 +67,7 @@ public class Storage {
      * @return заказ
      * @throws InterruptedException если произошла ошибка во время ожидания
      */
-    synchronized public Order getOrder() throws InterruptedException {
+    public synchronized Order getOrder() throws InterruptedException {
         while (isEmpty()) {
             this.wait();
         }

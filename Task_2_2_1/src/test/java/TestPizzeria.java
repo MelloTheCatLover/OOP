@@ -11,7 +11,6 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.internal.verification.VerificationModeFactory.times;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
