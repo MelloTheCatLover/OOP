@@ -81,6 +81,8 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">OrderProvider</span></div>
+<div class="block">Интерфейс для создания заказов.
+ Этот интерфейс определяет метод для создания заказа на основе списка пицц.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -97,7 +99,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#makeOrder(java.util.List)" class="member-name-link">makeOrder</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../Entities/Pizza.html" title="class in ru.nsu.kozoliy.Entities">Pizza</a>&gt;&nbsp;pizzas)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Создает заказ на основе списка пицц.</div>
+</div>
 </div>
 </div>
 </div>
@@ -117,9 +121,12 @@ loadScripts(document, 'script');</script>
 <h3>makeOrder</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">makeOrder</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../Entities/Pizza.html" title="class in ru.nsu.kozoliy.Entities">Pizza</a>&gt;&nbsp;pizzas)</span>
         throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></span></div>
+<div class="block">Создает заказ на основе списка пицц.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>pizzas</code> - список пицц для заказа</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code> - если поток был прерван во время создания заказа</dd>
 </dl>
 </section>
 </li>

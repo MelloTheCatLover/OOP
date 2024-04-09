@@ -77,6 +77,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">PizzeriaParser</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Парсер для чтения конфигурационного файла пиццерии в формате JSON.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -89,7 +90,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">PizzeriaParser</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Создает новый экземпляр парсера.</div>
+</div>
 </div>
 </section>
 </li>
@@ -106,7 +109,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Configuration.html" title="class in ru.nsu.kozoliy.Parsing">Configuration</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getConfigurationFromFile(java.lang.String)" class="member-name-link">getConfigurationFromFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filepath)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Получает конфигурацию пиццерии из файла.</div>
+</div>
 </div>
 </div>
 </div>
@@ -128,6 +133,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;()">
 <h3>PizzeriaParser</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">PizzeriaParser</span>()</div>
+<div class="block">Создает новый экземпляр парсера.</div>
 </section>
 </li>
 </ul>
@@ -142,6 +148,15 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getConfigurationFromFile(java.lang.String)">
 <h3>getConfigurationFromFile</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Configuration.html" title="class in ru.nsu.kozoliy.Parsing">Configuration</a></span>&nbsp;<span class="element-name">getConfigurationFromFile</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filepath)</span></div>
+<div class="block">Получает конфигурацию пиццерии из файла.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>filepath</code> - путь к файлу с конфигурацией</dd>
+<dt>Returns:</dt>
+<dd>объект конфигурации пиццерии</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../Exceptions/ParsingException.html" title="class in ru.nsu.kozoliy.Exceptions">ParsingException</a></code> - если не удалось прочитать файл с конфигурацией</dd>
+</dl>
 </section>
 </li>
 </ul>

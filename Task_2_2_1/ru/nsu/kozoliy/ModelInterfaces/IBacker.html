@@ -82,6 +82,8 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">IBacker</span><span class="extends-implements">
 extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a></span></div>
+<div class="block">Интерфейс, представляющий пекаря.
+ Пекарь умеет готовить пиццу.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -98,7 +100,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/ja
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#makePizza(ru.nsu.kozoliy.Entities.Pizza)" class="member-name-link">makePizza</a><wbr>(<a href="../Entities/Pizza.html" title="class in ru.nsu.kozoliy.Entities">Pizza</a>&nbsp;pizza)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Готовит пиццу.</div>
+</div>
 </div>
 </div>
 </div>
@@ -121,9 +125,12 @@ extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/ja
 <h3>makePizza</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">makePizza</span><wbr><span class="parameters">(<a href="../Entities/Pizza.html" title="class in ru.nsu.kozoliy.Entities">Pizza</a>&nbsp;pizza)</span>
         throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></span></div>
+<div class="block">Готовит пиццу.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>pizza</code> - пицца, которую нужно приготовить</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code> - если поток был прерван во время приготовления пиццы</dd>
 </dl>
 </section>
 </li>

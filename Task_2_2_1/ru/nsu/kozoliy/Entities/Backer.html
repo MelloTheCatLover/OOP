@@ -82,6 +82,8 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Backer</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../ModelInterfaces/IBacker.html" title="interface in ru.nsu.kozoliy.ModelInterfaces">IBacker</a></span></div>
+<div class="block">Класс, представляющий пекаря в пиццерии.
+ Пекарь выпекает пиццу согласно заказам и добавляет их на склад.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -98,7 +100,9 @@ implements <a href="../ModelInterfaces/IBacker.html" title="interface in ru.nsu.
  int&nbsp;id,
  <a href="../Model/OrderGetter.html" title="interface in ru.nsu.kozoliy.Model">OrderGetter</a>&nbsp;orderGetter,
  int&nbsp;workingTimeMs)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Конструктор для создания экземпляра пекаря.</div>
+</div>
 </div>
 </section>
 </li>
@@ -115,16 +119,24 @@ implements <a href="../ModelInterfaces/IBacker.html" title="interface in ru.nsu.
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#displayInfo()" class="member-name-link">displayInfo</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Метод вывода информации о пекаре.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#makePizza(ru.nsu.kozoliy.Entities.Pizza)" class="member-name-link">makePizza</a><wbr>(<a href="Pizza.html" title="class in ru.nsu.kozoliy.Entities">Pizza</a>&nbsp;pizza)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Метод приготовления пиццы.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run()" class="member-name-link">run</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Метод запуска потока приготовления пиццы.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Переопределенный метод toString для получения строкового представления пекаря.</div>
+</div>
 </div>
 </div>
 </div>
@@ -150,6 +162,15 @@ implements <a href="../ModelInterfaces/IBacker.html" title="interface in ru.nsu.
  int&nbsp;id,
  <a href="../Model/OrderGetter.html" title="interface in ru.nsu.kozoliy.Model">OrderGetter</a>&nbsp;orderGetter,
  int&nbsp;workingTimeMs)</span></div>
+<div class="block">Конструктор для создания экземпляра пекаря.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>name</code> - имя пекаря</dd>
+<dd><code>surname</code> - фамилия пекаря</dd>
+<dd><code>id</code> - уникальный идентификатор пекаря</dd>
+<dd><code>orderGetter</code> - получатель заказов для пекаря</dd>
+<dd><code>workingTimeMs</code> - время приготовления одной пиццы в миллисекундах</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -164,15 +185,20 @@ implements <a href="../ModelInterfaces/IBacker.html" title="interface in ru.nsu.
 <section class="detail" id="displayInfo()">
 <h3>displayInfo</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">displayInfo</span>()</div>
+<div class="block">Метод вывода информации о пекаре.
+ Выводит в консоль информацию о имени, фамилии и скорости работы пекаря.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="block">Переопределенный метод toString для получения строкового представления пекаря.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Returns:</dt>
+<dd>строковое представление пекаря</dd>
 </dl>
 </section>
 </li>
@@ -181,11 +207,15 @@ implements <a href="../ModelInterfaces/IBacker.html" title="interface in ru.nsu.
 <h3>makePizza</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">makePizza</span><wbr><span class="parameters">(<a href="Pizza.html" title="class in ru.nsu.kozoliy.Entities">Pizza</a>&nbsp;pizza)</span>
                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></span></div>
+<div class="block">Метод приготовления пиццы.
+ Пекарь выпекает пиццу заданного размера и типа.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../ModelInterfaces/IBacker.html#makePizza(ru.nsu.kozoliy.Entities.Pizza)">makePizza</a></code>&nbsp;in interface&nbsp;<code><a href="../ModelInterfaces/IBacker.html" title="interface in ru.nsu.kozoliy.ModelInterfaces">IBacker</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>pizza</code> - пицца, которую нужно приготовить</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code> - если поток пекаря был прерван во время приготовления</dd>
 </dl>
 </section>
 </li>
@@ -193,6 +223,9 @@ implements <a href="../ModelInterfaces/IBacker.html" title="interface in ru.nsu.
 <section class="detail" id="run()">
 <h3>run</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">run</span>()</div>
+<div class="block">Метод запуска потока приготовления пиццы.
+ Пекарь бесконечно выпекает пиццу согласно заказам и добавляет их на склад.
+ Если поток пекаря был прерван во время приготовления, метод завершается.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html#run()" title="class or interface in java.lang" class="external-link">run</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a></code></dd>

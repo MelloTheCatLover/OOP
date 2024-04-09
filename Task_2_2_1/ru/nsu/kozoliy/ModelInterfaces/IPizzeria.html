@@ -82,6 +82,8 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">IPizzeria</span><span class="extends-implements">
 extends <a href="../Model/OrderGetter.html" title="interface in ru.nsu.kozoliy.Model">OrderGetter</a>, <a href="../Model/OrderProvider.html" title="interface in ru.nsu.kozoliy.Model">OrderProvider</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a></span></div>
+<div class="block">Интерфейс, представляющий пиццерию.
+ Пиццерия умеет принимать и обрабатывать заказы, а также работать в качестве отдельного потока.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -98,10 +100,14 @@ extends <a href="../Model/OrderGetter.html" title="interface in ru.nsu.kozoliy.M
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#endWorking()" class="member-name-link">endWorking</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Завершает работу пиццерии.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#stopWorking()" class="member-name-link">stopWorking</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Останавливает прием заказов.</div>
+</div>
 </div>
 </div>
 </div>
@@ -129,12 +135,14 @@ extends <a href="../Model/OrderGetter.html" title="interface in ru.nsu.kozoliy.M
 <section class="detail" id="stopWorking()">
 <h3>stopWorking</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">stopWorking</span>()</div>
+<div class="block">Останавливает прием заказов.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="endWorking()">
 <h3>endWorking</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">endWorking</span>()</div>
+<div class="block">Завершает работу пиццерии.</div>
 </section>
 </li>
 </ul>

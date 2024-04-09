@@ -81,6 +81,8 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">OrderGetter</span></div>
+<div class="block">Интерфейс для получения заказов.
+ Этот интерфейс определяет методы для получения заказов и проверки наличия заказов.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -97,10 +99,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Entities/Order.html" title="class in ru.nsu.kozoliy.Entities">Order</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getOrder()" class="member-name-link">getOrder</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Получает заказ из источника.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isNoOrders()" class="member-name-link">isNoOrders</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Проверяет, есть ли доступные заказы.</div>
+</div>
 </div>
 </div>
 </div>
@@ -120,9 +126,12 @@ loadScripts(document, 'script');</script>
 <h3>getOrder</h3>
 <div class="member-signature"><span class="return-type"><a href="../Entities/Order.html" title="class in ru.nsu.kozoliy.Entities">Order</a></span>&nbsp;<span class="element-name">getOrder</span>()
         throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></span></div>
+<div class="block">Получает заказ из источника.</div>
 <dl class="notes">
+<dt>Returns:</dt>
+<dd>заказ, полученный из источника</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code> - если поток был прерван во время ожидания заказа</dd>
 </dl>
 </section>
 </li>
@@ -130,6 +139,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="isNoOrders()">
 <h3>isNoOrders</h3>
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">isNoOrders</span>()</div>
+<div class="block">Проверяет, есть ли доступные заказы.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true, если нет доступных заказов, иначе false</dd>
+</dl>
 </section>
 </li>
 </ul>

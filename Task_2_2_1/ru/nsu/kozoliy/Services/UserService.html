@@ -82,6 +82,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">UserService</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="UserGeneratorService.html" title="interface in ru.nsu.kozoliy.Services">UserGeneratorService</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a></span></div>
+<div class="block">Сервис для генерации пользовательских задач.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -94,7 +95,9 @@ implements <a href="UserGeneratorService.html" title="interface in ru.nsu.kozoli
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(ru.nsu.kozoliy.Model.Pizzeria)" class="member-name-link">UserService</a><wbr>(<a href="../Model/Pizzeria.html" title="class in ru.nsu.kozoliy.Model">Pizzeria</a>&nbsp;pizzeria)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Конструктор класса UserService.</div>
+</div>
 </div>
 </section>
 </li>
@@ -111,13 +114,19 @@ implements <a href="UserGeneratorService.html" title="interface in ru.nsu.kozoli
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generate()" class="member-name-link">generate</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Генерирует список пользовательских задач.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run()" class="member-name-link">run</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Запускает сервис.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopService()" class="member-name-link">stopService</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Останавливает выполнение сервиса.</div>
+</div>
 </div>
 </div>
 </div>
@@ -139,6 +148,11 @@ implements <a href="UserGeneratorService.html" title="interface in ru.nsu.kozoli
 <section class="detail" id="&lt;init&gt;(ru.nsu.kozoliy.Model.Pizzeria)">
 <h3>UserService</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">UserService</span><wbr><span class="parameters">(<a href="../Model/Pizzeria.html" title="class in ru.nsu.kozoliy.Model">Pizzeria</a>&nbsp;pizzeria)</span></div>
+<div class="block">Конструктор класса UserService.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>pizzeria</code> - объект класса Pizzeria</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -153,6 +167,7 @@ implements <a href="UserGeneratorService.html" title="interface in ru.nsu.kozoli
 <section class="detail" id="run()">
 <h3>run</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">run</span>()</div>
+<div class="block">Запускает сервис.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html#run()" title="class or interface in java.lang" class="external-link">run</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a></code></dd>
@@ -163,9 +178,12 @@ implements <a href="UserGeneratorService.html" title="interface in ru.nsu.kozoli
 <section class="detail" id="generate()">
 <h3>generate</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&gt;</span>&nbsp;<span class="element-name">generate</span>()</div>
+<div class="block">Генерирует список пользовательских задач.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="UserGeneratorService.html#generate()">generate</a></code>&nbsp;in interface&nbsp;<code><a href="UserGeneratorService.html" title="interface in ru.nsu.kozoliy.Services">UserGeneratorService</a></code></dd>
+<dt>Returns:</dt>
+<dd>список пользовательских задач</dd>
 </dl>
 </section>
 </li>
@@ -173,6 +191,7 @@ implements <a href="UserGeneratorService.html" title="interface in ru.nsu.kozoli
 <section class="detail" id="stopService()">
 <h3>stopService</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">stopService</span>()</div>
+<div class="block">Останавливает выполнение сервиса.</div>
 </section>
 </li>
 </ul>
