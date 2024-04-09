@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Backer.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Task_2_2_1</a> &gt; <a href="index.source.html" class="el_package">ru.nsu.kozoliy.Entities</a> &gt; <span class="el_source">Backer.java</span></div><h1>Backer.java</h1><pre class="source lang-java linenums">package ru.nsu.kozoliy.Entities;
+
+import ru.nsu.kozoliy.ModelInterfaces.IBacker;
+import ru.nsu.kozoliy.Storage.Storage;
+import ru.nsu.kozoliy.Model.OrderGetter;
+
+import javax.sound.midi.Soundbank;
+import java.sql.SQLOutput;
+
+public class Backer implements IBacker {
+    private  String name;
+    private final String surname;
+    private final int id;
+    private final OrderGetter orderGetter;
+    private final int workingTimeMs;
+
+<span class="fc" id="L17">    public Backer(String name, String surname, int id, OrderGetter orderGetter, int workingTimeMs) {</span>
+<span class="fc" id="L18">        this.id = id;</span>
+<span class="fc" id="L19">        this.name = name;</span>
+<span class="fc" id="L20">        this.surname = surname;</span>
+<span class="fc" id="L21">        this.orderGetter = orderGetter;</span>
+<span class="fc" id="L22">        this.workingTimeMs = workingTimeMs;</span>
+<span class="fc" id="L23">    }</span>
+
+    public String getName() {
+<span class="nc" id="L26">        return name;</span>
+    }
+
+    public String getSurname() {
+<span class="nc" id="L30">        return surname;</span>
+    }
+
+    public int getId() {
+<span class="nc" id="L34">        return id;</span>
+    }
+
+    public int getWorkingTimeMs() {
+<span class="nc" id="L38">        return workingTimeMs;</span>
+    }
+
+
+    public void displayInfo() {
+<span class="nc" id="L43">        System.out.println(&quot;РџРµРєР°СЂСЊ:&quot; + name + &quot; &quot; + surname + &quot;. Р Р°Р±РѕС‚Р°РµС‚ СЃРѕ СЃРєРѕСЂРѕСЃС‚СЊСЋ: &quot; + workingTimeMs);</span>
+<span class="nc" id="L44">    }</span>
+
+    @Override
+    public String toString() {
+<span class="nc" id="L48">        return &quot;Backer{&quot; +</span>
+                &quot;name='&quot; + name + '\'' +
+                &quot;, surname='&quot; + surname + '\'' +
+                &quot;, id=&quot; + id +
+                &quot;, workingTimeMs=&quot; + workingTimeMs +
+                '}';
+    }
+
+    @Override
+    public void makePizza(Pizza pizza) throws InterruptedException{
+
+<span class="fc" id="L59">        System.out.println(name + surname + &quot; РІС‹РїРµРєР°РµС‚ &quot; + pizza.getSize() + &quot; СЃР°РЅС‚РёРјРµС‚СЂРѕРІСѓСЋ РїРёС†С†Сѓ &quot; + pizza.getType() + &quot;.&quot;);</span>
+
+
+<span class="fc" id="L62">        Thread.sleep(workingTimeMs);</span>
+<span class="fc" id="L63">        pizza.setCooked(true);</span>
+<span class="fc" id="L64">        System.out.println(name + &quot; Р·Р°РІРµСЂС€РёР» РїСЂРёРіРѕС‚РѕРІР»РµРЅРёРµ РїРёС†С†С‹ &quot; + pizza.getType() + &quot;.&quot;);</span>
+
+<span class="fc" id="L66">    }</span>
+
+
+    @Override
+    public void run() {
+        while (true) {
+            try {
+<span class="fc" id="L73">                System.out.println(&quot;РџРµРєР°СЂСЊ: &quot; + name + &quot; &quot; + surname + &quot;Р’С‹С€РµР» РЅР° СЃРјРµРЅСѓ&quot;);</span>
+<span class="fc" id="L74">                Order order = orderGetter.getOrder();</span>
+<span class="pc bpc" id="L75" title="1 of 2 branches missed.">                for (Pizza pizza : order.getPizzas()) {</span>
+<span class="fc" id="L76">                    makePizza(pizza);</span>
+<span class="fc" id="L77">                }</span>
+<span class="nc" id="L78">                Storage storage = Storage.getInstance();</span>
+<span class="nc" id="L79">                storage.addOrder(order);</span>
+<span class="fc" id="L80">            } catch (InterruptedException e) {</span>
+<span class="fc" id="L81">                System.out.println(&quot;РџРµРєР°СЂСЏ РїСЂРµСЂРІР°Р»Рё&quot;);</span>
+<span class="fc" id="L82">                return;</span>
+<span class="nc" id="L83">            }</span>
+        }
+    }
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

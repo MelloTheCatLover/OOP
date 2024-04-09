@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Order.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Task_2_2_1</a> &gt; <a href="index.source.html" class="el_package">ru.nsu.kozoliy.Entities</a> &gt; <span class="el_source">Order.java</span></div><h1>Order.java</h1><pre class="source lang-java linenums">package ru.nsu.kozoliy.Entities;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Order {
+
+    private int id;
+    private List&lt;Pizza&gt; pizzas;
+
+    private Runnable user;
+
+<span class="fc" id="L14">    public Order() {</span>
+<span class="fc" id="L15">        this.pizzas = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L16">    }</span>
+
+<span class="fc" id="L18">    public Order(int id, List&lt;Pizza&gt; pizzas) {</span>
+<span class="fc" id="L19">        this.id = id;</span>
+<span class="fc" id="L20">        this.pizzas = pizzas;</span>
+<span class="fc" id="L21">    }</span>
+
+    public Runnable getUser() {
+<span class="nc" id="L24">        return user;</span>
+    }
+
+    public void setUser(Runnable user) {
+<span class="fc" id="L28">        this.user = user;</span>
+<span class="fc" id="L29">    }</span>
+
+    public int getId() {
+<span class="fc" id="L32">        return id;</span>
+    }
+
+    public void setId(int id) {
+<span class="fc" id="L36">        this.id = id;</span>
+<span class="fc" id="L37">    }</span>
+
+    public List&lt;Pizza&gt; getPizzas() {
+<span class="fc" id="L40">        return pizzas;</span>
+    }
+
+    public void setPizzas(List&lt;Pizza&gt; pizzas) {
+<span class="fc" id="L44">        this.pizzas = pizzas;</span>
+<span class="fc" id="L45">    }</span>
+
+    public void addPizza(Pizza pizza) {
+<span class="nc" id="L48">        pizzas.add(pizza);</span>
+<span class="nc" id="L49">    }</span>
+
+    @Override
+    public String toString() {
+<span class="fc" id="L53">        return &quot;Order{&quot; +</span>
+                &quot;id=&quot; + id +
+                &quot;, pizzas=&quot; + pizzas +
+                '}';
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
