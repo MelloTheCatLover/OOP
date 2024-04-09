@@ -26,7 +26,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestPizzeria {
-    private Pizzeria pizzeria;
+
+    /*
+        private Pizzeria pizzeria;
     private Storage storage;
 
     @BeforeEach
@@ -158,7 +160,6 @@ public class TestPizzeria {
         Assertions.assertTrue(pizzeria.isNoOrders());
         System.out.println(customerServiceThread.isAlive());
     }
-    /*
 
 
     @Test
