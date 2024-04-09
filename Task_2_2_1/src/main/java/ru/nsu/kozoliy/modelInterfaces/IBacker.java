@@ -1,6 +1,6 @@
-package ru.nsu.kozoliy.ModelInterfaces;
+package ru.nsu.kozoliy.modelInterfaces;
 
-import ru.nsu.kozoliy.Entities.Pizza;
+import ru.nsu.kozoliy.entities.Pizza;
 
 /**
  * Интерфейс, представляющий пекаря.

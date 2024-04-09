@@ -1,19 +1,19 @@
-package ru.nsu.kozoliy.Model;
+package ru.nsu.kozoliy.model;
 
-import ru.nsu.kozoliy.Dto.BackerDto;
-import ru.nsu.kozoliy.Dto.CourierDto;
-import ru.nsu.kozoliy.Entities.Backer;
-import ru.nsu.kozoliy.Entities.Courier;
-import ru.nsu.kozoliy.Entities.Order;
-import ru.nsu.kozoliy.Entities.Pizza;
-import ru.nsu.kozoliy.ModelInterfaces.IBacker;
-import ru.nsu.kozoliy.ModelInterfaces.ICourier;
-import ru.nsu.kozoliy.ModelInterfaces.IPizzeria;
-import ru.nsu.kozoliy.Parsing.Configuration;
-import ru.nsu.kozoliy.Services.BackerService;
-import ru.nsu.kozoliy.Services.CourierService;
-import ru.nsu.kozoliy.Services.UserService;
-import ru.nsu.kozoliy.Storage.Storage;
+import ru.nsu.kozoliy.dto.BackerDto;
+import ru.nsu.kozoliy.dto.CourierDto;
+import ru.nsu.kozoliy.entities.Backer;
+import ru.nsu.kozoliy.entities.Courier;
+import ru.nsu.kozoliy.entities.Order;
+import ru.nsu.kozoliy.entities.Pizza;
+import ru.nsu.kozoliy.modelInterfaces.IBacker;
+import ru.nsu.kozoliy.modelInterfaces.ICourier;
+import ru.nsu.kozoliy.modelInterfaces.IPizzeria;
+import ru.nsu.kozoliy.parsing.Configuration;
+import ru.nsu.kozoliy.services.BackerService;
+import ru.nsu.kozoliy.services.CourierService;
+import ru.nsu.kozoliy.services.UserService;
+import ru.nsu.kozoliy.storage.Storage;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

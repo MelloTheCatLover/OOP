@@ -1,8 +1,8 @@
-package ru.nsu.kozoliy.ModelInterfaces;
+package ru.nsu.kozoliy.modelInterfaces;
 
 
-import ru.nsu.kozoliy.Model.OrderGetter;
-import ru.nsu.kozoliy.Model.OrderProvider;
+import ru.nsu.kozoliy.model.OrderGetter;
+import ru.nsu.kozoliy.model.OrderProvider;
 
 /**
  * Интерфейс, представляющий пиццерию.

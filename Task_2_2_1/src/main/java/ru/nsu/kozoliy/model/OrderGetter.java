@@ -1,6 +1,6 @@
-package ru.nsu.kozoliy.Model;
+package ru.nsu.kozoliy.model;
 
-import ru.nsu.kozoliy.Entities.Order;
+import ru.nsu.kozoliy.entities.Order;
 
 /**
  * Интерфейс для получения заказов.

@@ -1,8 +1,8 @@
-package ru.nsu.kozoliy.Entities;
+package ru.nsu.kozoliy.entities;
 
 import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
-import ru.nsu.kozoliy.ModelInterfaces.ICourier;
-import ru.nsu.kozoliy.Storage.Storage;
+import ru.nsu.kozoliy.modelInterfaces.ICourier;
+import ru.nsu.kozoliy.storage.Storage;
 
 import java.util.ArrayDeque;
 import java.util.Queue;

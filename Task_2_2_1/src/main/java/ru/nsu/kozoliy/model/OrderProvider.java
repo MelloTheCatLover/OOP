@@ -1,6 +1,6 @@
-package ru.nsu.kozoliy.Model;
+package ru.nsu.kozoliy.model;
 
-import ru.nsu.kozoliy.Entities.Pizza;
+import ru.nsu.kozoliy.entities.Pizza;
 
 import java.util.List;
 

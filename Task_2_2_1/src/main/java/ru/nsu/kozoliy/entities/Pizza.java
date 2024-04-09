@@ -1,4 +1,4 @@
-package ru.nsu.kozoliy.Entities;
+package ru.nsu.kozoliy.entities;
 
 import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
 

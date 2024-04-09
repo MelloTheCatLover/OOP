@@ -1,6 +1,6 @@
-package ru.nsu.kozoliy.Entities;
+package ru.nsu.kozoliy.entities;
 
-import ru.nsu.kozoliy.Model.OrderProvider;
+import ru.nsu.kozoliy.model.OrderProvider;
 
 import java.util.List;
 import java.util.Random;

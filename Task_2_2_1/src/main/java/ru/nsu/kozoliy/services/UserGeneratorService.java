@@ -1,4 +1,4 @@
-package ru.nsu.kozoliy.Services;
+package ru.nsu.kozoliy.services;
 
 import java.util.List;
 

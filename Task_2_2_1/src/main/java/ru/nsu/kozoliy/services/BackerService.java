@@ -1,6 +1,6 @@
-package ru.nsu.kozoliy.Services;
+package ru.nsu.kozoliy.services;
 
-import ru.nsu.kozoliy.ModelInterfaces.IBacker;
+import ru.nsu.kozoliy.modelInterfaces.IBacker;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;

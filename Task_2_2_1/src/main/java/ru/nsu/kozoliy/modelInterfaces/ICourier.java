@@ -1,4 +1,4 @@
-package ru.nsu.kozoliy.ModelInterfaces;
+package ru.nsu.kozoliy.modelInterfaces;
 
 /**
  * Интерфейс, представляющий курьера.

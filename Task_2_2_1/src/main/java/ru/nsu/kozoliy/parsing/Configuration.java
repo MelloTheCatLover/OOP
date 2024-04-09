@@ -1,8 +1,8 @@
-package ru.nsu.kozoliy.Parsing;
+package ru.nsu.kozoliy.parsing;
 
-import ru.nsu.kozoliy.Dto.BackerDto;
-import ru.nsu.kozoliy.Dto.CourierDto;
-import ru.nsu.kozoliy.Dto.StorageDto;
+import ru.nsu.kozoliy.dto.BackerDto;
+import ru.nsu.kozoliy.dto.CourierDto;
+import ru.nsu.kozoliy.dto.StorageDto;
 
 import java.util.List;
 

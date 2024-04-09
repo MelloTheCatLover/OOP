@@ -6,34 +6,35 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.internal.verification.VerificationModeFactory.times;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.internal.verification.VerificationModeFactory.times;
+
 
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.nsu.kozoliy.Dto.BackerDto;
-import ru.nsu.kozoliy.Dto.CourierDto;
-import ru.nsu.kozoliy.Entities.Backer;
-import ru.nsu.kozoliy.Entities.Courier;
-import ru.nsu.kozoliy.Entities.Order;
-import ru.nsu.kozoliy.Entities.Pizza;
-import ru.nsu.kozoliy.Entities.User;
-import ru.nsu.kozoliy.Exceptions.ParsingException;
-import ru.nsu.kozoliy.Model.Pizzeria;
-import ru.nsu.kozoliy.ModelInterfaces.IBacker;
-import ru.nsu.kozoliy.ModelInterfaces.ICourier;
-import ru.nsu.kozoliy.Parsing.Configuration;
-import ru.nsu.kozoliy.Parsing.PizzeriaParser;
-import ru.nsu.kozoliy.Services.BackerService;
-import ru.nsu.kozoliy.Services.CourierService;
-import ru.nsu.kozoliy.Services.UserGeneratorService;
-import ru.nsu.kozoliy.Services.UserService;
-import ru.nsu.kozoliy.Storage.Storage;
+import ru.nsu.kozoliy.dto.BackerDto;
+import ru.nsu.kozoliy.dto.CourierDto;
+import ru.nsu.kozoliy.entities.Backer;
+import ru.nsu.kozoliy.entities.Courier;
+import ru.nsu.kozoliy.entities.Order;
+import ru.nsu.kozoliy.entities.Pizza;
+import ru.nsu.kozoliy.entities.User;
+import ru.nsu.kozoliy.exceptions.ParsingException;
+import ru.nsu.kozoliy.model.Pizzeria;
+import ru.nsu.kozoliy.modelInterfaces.IBacker;
+import ru.nsu.kozoliy.modelInterfaces.ICourier;
+import ru.nsu.kozoliy.parsing.Configuration;
+import ru.nsu.kozoliy.parsing.PizzeriaParser;
+import ru.nsu.kozoliy.services.BackerService;
+import ru.nsu.kozoliy.services.CourierService;
+import ru.nsu.kozoliy.services.UserGeneratorService;
+import ru.nsu.kozoliy.services.UserService;
+import ru.nsu.kozoliy.storage.Storage;
 
 
 /**
@@ -45,10 +46,13 @@ public class TestPizzeria {
     private Pizzeria pizzeria;
     private Storage storage;
 
+    /**
+     * Initialization for future tests.
+     *
+     */
     @BeforeEach
     public void init() {
         storage = mock(Storage.class);
-        // Создаем мок-объект класса Order
         order = mock(Order.class);
         PizzeriaParser parser = new PizzeriaParser();
         Configuration configurationDto = parser.getConfigurationFromFile("/testconfig.json");
@@ -94,7 +98,7 @@ public class TestPizzeria {
 
 
     @Test
-    public void TestParser() throws InterruptedException {
+    public void testParser() throws InterruptedException {
         PizzeriaParser parser = new PizzeriaParser();
         Configuration configuration = parser.getConfigurationFromFile("/testconfig.json");
         Assertions.assertThrows(ParsingException.class,
@@ -112,8 +116,7 @@ public class TestPizzeria {
         }
         assertEquals(configuration.storage().capacity(), 1);
 
-        BackerDto firstBackerDto = configuration.backers().get(0);
-        CourierDto firstCourierDto = configuration.couriers().get(0);
+
 
         Order order1 = new Order();
         ArrayList<Pizza> pizzas = new ArrayList<Pizza>();
@@ -122,6 +125,8 @@ public class TestPizzeria {
         order1.setPizzas(pizzas);
         order1.setId(1);
         pizzeria.makeOrder(pizzas);
+        BackerDto firstBackerDto = configuration.backers().get(0);
+
         IBacker backer = new Backer(firstBackerDto.name(),
                 firstBackerDto.surname(), firstBackerDto.id(),
                 pizzeria, firstBackerDto.workingTimeMs());
@@ -137,6 +142,7 @@ public class TestPizzeria {
 
         //Assertions.assertTrue(storage.isFull());
 
+        CourierDto firstCourierDto = configuration.couriers().get(0);
         ICourier courier = new Courier(firstCourierDto.name(),
                 firstCourierDto.surname(),
                 firstCourierDto.id(),

@@ -1,9 +1,9 @@
-package ru.nsu.kozoliy.Entities;
+package ru.nsu.kozoliy.entities;
 
 import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
-import ru.nsu.kozoliy.ModelInterfaces.IBacker;
-import ru.nsu.kozoliy.Storage.Storage;
-import ru.nsu.kozoliy.Model.OrderGetter;
+import ru.nsu.kozoliy.modelInterfaces.IBacker;
+import ru.nsu.kozoliy.storage.Storage;
+import ru.nsu.kozoliy.model.OrderGetter;
 
 /**
  * Класс, представляющий пекаря в пиццерии.

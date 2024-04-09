@@ -1,10 +1,10 @@
 package ru.nsu.kozoliy;
 
 
-import ru.nsu.kozoliy.Model.Pizzeria;
-import ru.nsu.kozoliy.ModelInterfaces.IPizzeria;
-import ru.nsu.kozoliy.Parsing.Configuration;
-import ru.nsu.kozoliy.Parsing.PizzeriaParser;
+import ru.nsu.kozoliy.model.Pizzeria;
+import ru.nsu.kozoliy.modelInterfaces.IPizzeria;
+import ru.nsu.kozoliy.parsing.Configuration;
+import ru.nsu.kozoliy.parsing.PizzeriaParser;
 
 import java.util.Scanner;
 

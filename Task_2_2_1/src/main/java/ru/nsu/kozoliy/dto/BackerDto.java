@@ -1,4 +1,4 @@
-package ru.nsu.kozoliy.Dto;
+package ru.nsu.kozoliy.dto;
 
 
 /**

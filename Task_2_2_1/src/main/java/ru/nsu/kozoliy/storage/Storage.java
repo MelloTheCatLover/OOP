@@ -1,10 +1,10 @@
-package ru.nsu.kozoliy.Storage;
-
-import ru.nsu.kozoliy.Entities.Order;
-import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
+package ru.nsu.kozoliy.storage;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
+import ru.nsu.kozoliy.entities.Order;
+import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
+
 
 /**
  * Класс, представляющий хранилище заказов.

@@ -1,4 +1,4 @@
-package ru.nsu.kozoliy.Exceptions;
+package ru.nsu.kozoliy.exceptions;
 
 /**
  * Исключение, которое возникает при ошибке парсинга файла конфигурации пиццерии.
