@@ -11,38 +11,38 @@ public class Order {
 
     private Runnable user;
 
-<span class="fc" id="L14">    public Order() {</span>
-<span class="fc" id="L15">        this.pizzas = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L16">    }</span>
+<span class="nc" id="L14">    public Order() {</span>
+<span class="nc" id="L15">        this.pizzas = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L16">    }</span>
 
-<span class="fc" id="L18">    public Order(int id, List&lt;Pizza&gt; pizzas) {</span>
-<span class="fc" id="L19">        this.id = id;</span>
-<span class="fc" id="L20">        this.pizzas = pizzas;</span>
-<span class="fc" id="L21">    }</span>
+<span class="nc" id="L18">    public Order(int id, List&lt;Pizza&gt; pizzas) {</span>
+<span class="nc" id="L19">        this.id = id;</span>
+<span class="nc" id="L20">        this.pizzas = pizzas;</span>
+<span class="nc" id="L21">    }</span>
 
     public Runnable getUser() {
 <span class="nc" id="L24">        return user;</span>
     }
 
     public void setUser(Runnable user) {
-<span class="fc" id="L28">        this.user = user;</span>
-<span class="fc" id="L29">    }</span>
+<span class="nc" id="L28">        this.user = user;</span>
+<span class="nc" id="L29">    }</span>
 
     public int getId() {
-<span class="fc" id="L32">        return id;</span>
+<span class="nc" id="L32">        return id;</span>
     }
 
     public void setId(int id) {
-<span class="fc" id="L36">        this.id = id;</span>
-<span class="fc" id="L37">    }</span>
+<span class="nc" id="L36">        this.id = id;</span>
+<span class="nc" id="L37">    }</span>
 
     public List&lt;Pizza&gt; getPizzas() {
-<span class="fc" id="L40">        return pizzas;</span>
+<span class="nc" id="L40">        return pizzas;</span>
     }
 
     public void setPizzas(List&lt;Pizza&gt; pizzas) {
-<span class="fc" id="L44">        this.pizzas = pizzas;</span>
-<span class="fc" id="L45">    }</span>
+<span class="nc" id="L44">        this.pizzas = pizzas;</span>
+<span class="nc" id="L45">    }</span>
 
     public void addPizza(Pizza pizza) {
 <span class="nc" id="L48">        pizzas.add(pizza);</span>
@@ -50,7 +50,7 @@ public class Order {
 
     @Override
     public String toString() {
-<span class="fc" id="L53">        return &quot;Order{&quot; +</span>
+<span class="nc" id="L53">        return &quot;Order{&quot; +</span>
                 &quot;id=&quot; + id +
                 &quot;, pizzas=&quot; + pizzas +
                 '}';

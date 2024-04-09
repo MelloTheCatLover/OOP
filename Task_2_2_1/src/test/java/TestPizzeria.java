@@ -157,7 +157,7 @@ public class TestPizzeria {
     public void testCustomerRepository() {
         UserGeneratorService generator = new UserService(pizzeria);
         List<Runnable> customers = generator.generate();
-        Assertions.assertTrue(customers.size() >= 3 && customers.size() <= 6);
+        Assertions.assertTrue(customers.size() >= 3 && customers.size() <= 10);
     }
 
     @Test

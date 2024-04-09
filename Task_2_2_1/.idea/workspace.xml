@@ -79,7 +79,7 @@
     "onboarding.tips.debug.path": "D:/NSU/Second Course/First_Sem/Object_Programming/OOP/Task_2_2_1/src/main/java/ru/nsu/kozoliy/Main.java"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.TestPizzeria.TestParser">
+  <component name="RunManager" selected="Gradle.TestPizzeria.testCustomerRepository">
     <configuration name="TestPizzeria" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -128,30 +128,6 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="TestPizzeria.TestSingletonStorage" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;TestPizzeria.TestSingletonStorage&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="TestPizzeria.testAddPizza" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -166,6 +142,30 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;TestPizzeria.testAddPizza&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestPizzeria.testCustomerRepository" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;TestPizzeria.testCustomerRepository&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -202,11 +202,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TestPizzeria.testCustomerRepository" />
         <item itemvalue="Gradle.TestPizzeria.TestParser" />
         <item itemvalue="Gradle.TestPizzeria" />
         <item itemvalue="Gradle.TestPizzeria.testIsFull" />
         <item itemvalue="Gradle.TestPizzeria.testAddPizza" />
-        <item itemvalue="Gradle.TestPizzeria.TestSingletonStorage" />
       </list>
     </recent_temporary>
   </component>
