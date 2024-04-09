@@ -3,7 +3,6 @@ package ru.nsu.kozoliy.services;
 import ru.nsu.kozoliy.entities.Pizza;
 import ru.nsu.kozoliy.entities.User;
 import ru.nsu.kozoliy.model.Pizzeria;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

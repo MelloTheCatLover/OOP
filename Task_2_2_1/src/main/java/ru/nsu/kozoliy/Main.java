@@ -1,14 +1,21 @@
 package ru.nsu.kozoliy;
 
 
-import ru.nsu.kozoliy.model.Pizzeria;
+import java.util.Scanner;
 import ru.nsu.kozoliy.interfaces.Ipizzeria;
+import ru.nsu.kozoliy.model.Pizzeria;
 import ru.nsu.kozoliy.parsing.Configuration;
 import ru.nsu.kozoliy.parsing.PizzeriaParser;
 
-import java.util.Scanner;
-
+/**
+ * Начальная точка программы.
+ *
+ */
 public class Main {
+    /**
+     * Стартовая точка программы.
+     *
+     */
     @ExcludeFromJacocoGeneratedReport
     public static void main(String[] args) {
         PizzeriaParser parser = new PizzeriaParser();
@@ -39,11 +46,12 @@ public class Main {
                         new Thread(pizzeria).start();
                         System.out.println("==================DAY" + i + "==================");
                         try {
-                            Thread.sleep(10000); // Задержка в 1 секунду для моделирования работы компании в течение дня
+                            Thread.sleep(10000);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-                        System.out.println("\n\n==================DAY" + i + " ENDED==================\n");
+                        System.out.println("\n\n==================DAY" + i
+                                + " ENDED==================\n");
                         pizzeria.stopWorking();
                     }
                     pizzeria.endWorking();
