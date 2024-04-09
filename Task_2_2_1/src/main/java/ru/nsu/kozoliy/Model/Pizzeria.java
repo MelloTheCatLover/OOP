@@ -20,6 +20,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * Класс, представляющий пиццерию.
+ * Этот класс управляет процессом приготовления и доставки пиццы, используя пекарей, курьеров и пользователей.
+ */
 public class Pizzeria implements IPizzeria {
     private final Queue<Order> orders;
     private final Storage storage = Storage.getInstance();
@@ -28,11 +32,15 @@ public class Pizzeria implements IPizzeria {
     private final CourierService courierService;
     private int orderNumber = 0;
 
+    /**
+     * Создает новый экземпляр пиццерии на основе конфигурации.
+     *
+     * @param configuration конфигурация пиццерии
+     */
     public Pizzeria(Configuration configuration) {
         Storage.getInstance(configuration.storage().capacity());
         List<ICourier> couriers = new ArrayList<>();
         for (CourierDto courierDto : configuration.couriers()) {
-
             ICourier courier = new Courier(courierDto.name(), courierDto.surname(), courierDto.id() ,courierDto.baggageSize(), courierDto.deliveryTime());
             couriers.add(courier);
         }
@@ -47,6 +55,9 @@ public class Pizzeria implements IPizzeria {
         userService = new UserService(this);
     }
 
+    /**
+     * Запускает процессы пиццерии.
+     */
     @Override
     public void run() {
         backerService.run();
@@ -54,11 +65,16 @@ public class Pizzeria implements IPizzeria {
         userService.run();
     }
 
-
+    /**
+     * Останавливает работу пиццерии.
+     */
     synchronized public void stopWorking() {
         userService.stopService();
     }
 
+    /**
+     * Завершает работу пиццерии.
+     */
     synchronized public void endWorking() {
         userService.stopService();
         backerService.stopService();
@@ -66,6 +82,12 @@ public class Pizzeria implements IPizzeria {
         notifyAll();
     }
 
+    /**
+     * Получает заказ из очереди.
+     *
+     * @return заказ из очереди
+     * @throws InterruptedException если поток был прерван во время ожидания заказа
+     */
     @Override
     synchronized public Order getOrder() throws InterruptedException {
         while (orders.isEmpty()) {
@@ -74,20 +96,28 @@ public class Pizzeria implements IPizzeria {
         return orders.poll();
     }
 
+    /**
+     * Проверяет, есть ли заказы в очереди.
+     *
+     * @return true, если в очереди нет заказов, иначе false
+     */
     @Override
     public boolean isNoOrders() {
         return orders.isEmpty();
     }
 
-
-
+    /**
+     * Создает заказ на основе списка пицц.
+     *
+     * @param pizzas список пицц для заказа
+     */
     @Override
     synchronized public void makeOrder(List<Pizza> pizzas) {
         Order order = new Order(orderNumber++, pizzas);
         order.setUser(() ->
                 System.out.println("Заказ номер: " + order.getId() + " был получен"));
         orders.add(order);
-        System.out.println("поступил заказ под номером:  " + order.getId());
+        System.out.println("Поступил заказ под номером:  " + order.getId());
         notifyAll();
     }
 

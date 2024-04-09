@@ -4,73 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c79fc839-bdc5-4395-adce-e3aa267f3ca1" name="Changes" comment="Added Couriertest 2">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/nsu/kozoliy/Entities/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/nsu/kozoliy/Entities/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/nsu/kozoliy/Entities/Pizza$PizzaType.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/nsu/kozoliy/Entities/Pizza$PizzaType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/nsu/kozoliy/Entities/Pizza.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/nsu/kozoliy/Entities/Pizza.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/TestPizzeria.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/TestPizzeria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacoco/test.exec" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacoco/test.exec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/jacoco-sessions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/Backer.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/Backer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/Backer.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/Backer.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/Courier.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/Courier.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/Courier.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/Courier.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/Order.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/Order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/Order.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/Order.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/Pizza$PizzaType.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/Pizza$PizzaType.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/Pizza.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/Pizza.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/Pizza.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/Pizza.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/User.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/User.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/User.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/User.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Entities/index.source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Exceptions/ParsingException.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Exceptions/ParsingException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Exceptions/ParsingException.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Exceptions/ParsingException.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Exceptions/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Exceptions/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Exceptions/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Exceptions/index.source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Model/Pizzeria.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Model/Pizzeria.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Model/Pizzeria.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Model/Pizzeria.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Model/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Model/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Model/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Model/index.source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Parsing/PizzeriaParser.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Parsing/PizzeriaParser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Parsing/PizzeriaParser.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Parsing/PizzeriaParser.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Parsing/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Parsing/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Parsing/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Parsing/index.source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Services/BackerService.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Services/BackerService.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Services/BackerService.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Services/BackerService.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Services/CourierService.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Services/CourierService.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Services/CourierService.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Services/CourierService.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Services/UserService.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Services/UserService.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Services/UserService.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Services/UserService.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Services/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Services/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Services/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Services/index.source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Storage/Storage.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Storage/Storage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Storage/Storage.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Storage/Storage.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Storage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Storage/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Storage/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacocoHtml/ru.nsu.kozoliy.Storage/index.source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/jacocoTestReport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/jacocoTestReport.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestPizzeria.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestPizzeria.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestPizzeria.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestPizzeria.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Backer.class.uniqueId2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Courier.class.uniqueId1" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Courier.class.uniqueId1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/compileTransaction/stash-dir/TestPizzeria.class.uniqueId0" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/compileTransaction/stash-dir/TestPizzeria.class.uniqueId0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Entities/Courier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Entities/Courier.java" afterDir="false" />
+    <list default="true" id="c79fc839-bdc5-4395-adce-e3aa267f3ca1" name="Changes" comment="Added Couriertest 3">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Dto/BackerDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Dto/BackerDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Dto/CourierDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Dto/CourierDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Dto/StorageDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Dto/StorageDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Entities/Backer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Entities/Backer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Entities/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Entities/Pizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Entities/Pizza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Exceptions/ParsingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Exceptions/ParsingException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Model/OrderGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Model/OrderGetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Model/OrderProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Model/OrderProvider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -394,7 +339,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712688430350</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added Couriertest 3">
+      <option name="closed" value="true" />
+      <created>1712688786716</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1712688786716</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -412,7 +365,8 @@
     <MESSAGE value="rewrite test" />
     <MESSAGE value="Added Couriertest" />
     <MESSAGE value="Added Couriertest 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Couriertest 2" />
+    <MESSAGE value="Added Couriertest 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Couriertest 3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Task_2_2_1$TestPizzeria_TestParser.ic" NAME="TestPizzeria.TestParser Coverage Results" MODIFIED="1712684192639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

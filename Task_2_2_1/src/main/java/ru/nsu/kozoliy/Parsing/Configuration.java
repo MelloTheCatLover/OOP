@@ -6,5 +6,8 @@ import ru.nsu.kozoliy.Dto.StorageDto;
 
 import java.util.List;
 
+/**
+ * Конфигурация пиццерии, содержащая информацию о курьерах, пекарях и складе.
+ */
 public record Configuration(List<CourierDto> couriers, List<BackerDto> backers, StorageDto storage) {
 }

@@ -25,8 +25,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Тесты для пиццерии.
+ *
+ */
 public class TestPizzeria {
 
         private Pizzeria pizzeria;
