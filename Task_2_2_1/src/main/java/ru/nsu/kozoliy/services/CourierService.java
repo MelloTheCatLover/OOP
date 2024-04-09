@@ -1,10 +1,11 @@
 package ru.nsu.kozoliy.services;
 
-import ru.nsu.kozoliy.interfaces.Icourier;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import ru.nsu.kozoliy.interfaces.Icourier;
+
 
 /**
  * Сервис для управления работой курьеров.

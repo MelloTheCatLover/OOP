@@ -30,11 +30,11 @@ public class Pizza {
     @ExcludeFromJacocoGeneratedReport
     @Override
     public String toString() {
-        return "Pizza{" +
-                "size='" + size + '\'' +
-                ", type=" + type +
-                ", isCooked=" + isCooked +
-                '}';
+        return "Pizza{"
+                + "size='" + size + '\''
+                + ", type=" + type
+                + ", isCooked="
+                + isCooked + '}';
     }
 
     /**

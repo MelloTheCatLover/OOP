@@ -2,8 +2,8 @@ package ru.nsu.kozoliy.entities;
 
 import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
 import ru.nsu.kozoliy.interfaces.Ibacker;
-import ru.nsu.kozoliy.storage.Storage;
 import ru.nsu.kozoliy.model.OrderGetter;
+import ru.nsu.kozoliy.storage.Storage;
 
 /**
  * Класс, представляющий пекаря в пиццерии.
@@ -50,12 +50,12 @@ public class Backer implements Ibacker {
     @ExcludeFromJacocoGeneratedReport
     @Override
     public String toString() {
-        return "Backer{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", id=" + id +
-                ", workingTimeMs=" + workingTimeMs +
-                '}';
+        return "Backer{"
+                + "name='" + name + '\''
+                + ", surname='" + surname + '\''
+                + ", id=" + id
+                + ", workingTimeMs=" + workingTimeMs
+                + '}';
     }
 
     /**

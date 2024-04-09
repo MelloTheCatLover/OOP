@@ -97,10 +97,10 @@ public class Order {
     @ExcludeFromJacocoGeneratedReport
     @Override
     public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", pizzas=" + pizzas +
-                '}';
+        return "Order{"
+                + "id=" + id
+                + ", pizzas="
+                + pizzas + '}';
     }
 
 }

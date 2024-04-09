@@ -93,12 +93,12 @@ public class Courier implements Icourier {
     @ExcludeFromJacocoGeneratedReport
     @Override
     public String toString() {
-        return "Courier{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", id=" + id +
-                ", baggageSize=" + baggageSize +
-                ", deliveryTime=" + deliveryTime +
-                '}';
+        return "Courier{"
+                + "name='" + name + '\''
+                + ", surname='" + surname + '\''
+                + ", id=" + id
+                + ", baggageSize="
+                + baggageSize + ", deliveryTime="
+                + deliveryTime + '}';
     }
 }

@@ -27,7 +27,8 @@ public class User implements Runnable {
 
     /**
      * Метод, который запускается при запуске потока пользователя.
-     * Пользователь периодически делает заказы через провайдера и засыпает на случайный промежуток времени.
+     * Пользователь периодически делает заказы через провайдера
+     * и засыпает на случайный промежуток времени.
      */
     @Override
     public void run() {
@@ -38,8 +39,8 @@ public class User implements Runnable {
                 provider.makeOrder(pizzas);
 
                 // Генерируем случайное время ожидания перед следующим заказом
-                int MIN_SLEEP_TIME = 1000;
-                int sleepTime = new Random().nextInt(10000) + MIN_SLEEP_TIME;
+                int minSleepTime = 1000;
+                int sleepTime = new Random().nextInt(10000) + minSleepTime;
                 Thread.sleep(sleepTime);
 
             } catch (InterruptedException e) {
