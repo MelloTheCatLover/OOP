@@ -163,7 +163,7 @@ implements <a href="../interfaces/Icourier.html" title="interface in ru.nsu.kozo
 <dd><code>name</code> - имя курьера</dd>
 <dd><code>surname</code> - фамилия курьера</dd>
 <dd><code>id</code> - уникальный идентификатор курьера</dd>
-<dd><code>baggageSize</code> - размер багажника курьера (максимальное количество пицц, которые он может перевезти)</dd>
+<dd><code>baggageSize</code> - размер багажника курьера</dd>
 <dd><code>deliveryTime</code> - время доставки одной пиццы</dd>
 </dl>
 </section>
@@ -183,7 +183,6 @@ implements <a href="../interfaces/Icourier.html" title="interface in ru.nsu.kozo
                   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></span></div>
 <div class="block">Метод доставки пиццы клиентам.
  Курьер берет заказы с пиццей со склада и доставляет их клиентам.
- Если в багажнике курьера есть заказы, он доставляет их по одному, ожидая время deliveryTime между доставками.
  После успешной доставки курьер удаляет заказ из своего багажника.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -198,7 +197,8 @@ implements <a href="../interfaces/Icourier.html" title="interface in ru.nsu.kozo
 <h3>run</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">run</span>()</div>
 <div class="block">Метод запуска потока доставки пиццы клиентам.
- При вызове метода запускается бесконечный цикл, в котором курьер доставляет пиццу.
+ При вызове метода запускается бесконечный цикл,
+ в котором курьер доставляет пиццу.
  Если поток курьера был прерван во время доставки, метод завершается.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
