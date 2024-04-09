@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Courier.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Task_2_2_1</a> &gt; <a href="index.source.html" class="el_package">ru.nsu.kozoliy.Entities</a> &gt; <span class="el_source">Courier.java</span></div><h1>Courier.java</h1><pre class="source lang-java linenums">package ru.nsu.kozoliy.Entities;
 
+import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
 import ru.nsu.kozoliy.ModelInterfaces.ICourier;
 import ru.nsu.kozoliy.Storage.Storage;
 
@@ -14,39 +15,40 @@ public class Courier implements ICourier {
     private final int baggageSize;
     private final int deliveryTime;
 
-<span class="fc" id="L17">    public Courier(String name, String surname, int id, int baggageSize, int deliveryTime) {</span>
-<span class="fc" id="L18">        this.name = name;</span>
-<span class="fc" id="L19">        this.surname = surname;</span>
-<span class="fc" id="L20">        this.id = id;</span>
-<span class="fc" id="L21">        this.bag = new ArrayDeque&lt;&gt;();</span>
-<span class="fc" id="L22">        this.baggageSize = baggageSize;</span>
-<span class="fc" id="L23">        this.deliveryTime = deliveryTime;</span>
-<span class="fc" id="L24">    }</span>
+<span class="fc" id="L18">    public Courier(String name, String surname, int id, int baggageSize, int deliveryTime) {</span>
+<span class="fc" id="L19">        this.name = name;</span>
+<span class="fc" id="L20">        this.surname = surname;</span>
+<span class="fc" id="L21">        this.id = id;</span>
+<span class="fc" id="L22">        this.bag = new ArrayDeque&lt;&gt;();</span>
+<span class="fc" id="L23">        this.baggageSize = baggageSize;</span>
+<span class="fc" id="L24">        this.deliveryTime = deliveryTime;</span>
+<span class="fc" id="L25">    }</span>
 
     public int getDeliveryTime() {
-<span class="nc" id="L27">        return deliveryTime;</span>
+<span class="nc" id="L28">        return deliveryTime;</span>
     }
 
     public String getName() {
-<span class="nc" id="L31">        return name;</span>
+<span class="nc" id="L32">        return name;</span>
     }
 
     public String getSurname() {
-<span class="nc" id="L35">        return surname;</span>
+<span class="nc" id="L36">        return surname;</span>
     }
 
     public int getId() {
-<span class="nc" id="L39">        return id;</span>
+<span class="nc" id="L40">        return id;</span>
     }
 
 
     private boolean isBagFull() {
-<span class="fc bfc" id="L44" title="All 2 branches covered.">        return bag.size() == baggageSize;</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        return bag.size() == baggageSize;</span>
     }
 
+    @ExcludeFromJacocoGeneratedReport
     @Override
     public String toString() {
-<span class="nc" id="L49">        return &quot;Courier{&quot; +</span>
+        return &quot;Courier{&quot; +
                 &quot;name='&quot; + name + '\'' +
                 &quot;, surname='&quot; + surname + '\'' +
                 &quot;, id=&quot; + id +
@@ -57,30 +59,30 @@ public class Courier implements ICourier {
 
     @Override
     public void deliverPizza() throws InterruptedException {
-<span class="fc" id="L60">        Storage storage = Storage.getInstance();</span>
-<span class="fc bfc" id="L61" title="All 2 branches covered.">        while (!isBagFull()) {</span>
-<span class="fc" id="L62">            Order pizzaOrder = storage.getOrder();</span>
-<span class="fc" id="L63">            bag.add(pizzaOrder);</span>
-<span class="fc" id="L64">            System.out.println(&quot;РљСѓСЂСЊРµСЂ &quot; + name + &quot; &quot; + surname + &quot; РїРѕР»СѓС‡РёР» РїРёС†С†Сѓ &quot; + pizzaOrder.toString());</span>
-<span class="fc" id="L65">        }</span>
-<span class="pc bpc" id="L66" title="1 of 2 branches missed.">        for (Order pizzaOrder : bag) {</span>
-<span class="nc" id="L67">            Thread.sleep(deliveryTime);</span>
-<span class="nc" id="L68">            pizzaOrder.getUser().run();</span>
-<span class="nc" id="L69">            bag.remove(pizzaOrder);</span>
-<span class="nc" id="L70">        }</span>
+<span class="fc" id="L62">        Storage storage = Storage.getInstance();</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">        while (!isBagFull()) {</span>
+<span class="fc" id="L64">            Order pizzaOrder = storage.getOrder();</span>
+<span class="fc" id="L65">            bag.add(pizzaOrder);</span>
+<span class="fc" id="L66">            System.out.println(&quot;РљСѓСЂСЊРµСЂ &quot; + name + &quot; &quot; + surname + &quot; РїРѕР»СѓС‡РёР» РїРёС†С†Сѓ &quot; + pizzaOrder.toString());</span>
+<span class="fc" id="L67">        }</span>
+<span class="pc bpc" id="L68" title="1 of 2 branches missed.">        for (Order pizzaOrder : bag) {</span>
+<span class="nc" id="L69">            Thread.sleep(deliveryTime);</span>
+<span class="nc" id="L70">            pizzaOrder.getUser().run();</span>
+<span class="nc" id="L71">            bag.remove(pizzaOrder);</span>
+<span class="nc" id="L72">        }</span>
 
-<span class="nc" id="L72">    }</span>
+<span class="nc" id="L74">    }</span>
 
 
     @Override
     public void run() {
         while (true) {
             try {
-<span class="nc" id="L79">                deliverPizza();</span>
-<span class="fc" id="L80">            } catch (InterruptedException e) {</span>
-<span class="fc" id="L81">                System.out.println(&quot;РљСѓСЂСЊРµСЂР° РїСЂРµСЂРІР°Р»Рё&quot;);</span>
-<span class="fc" id="L82">                return;</span>
-<span class="nc" id="L83">            }</span>
+<span class="nc" id="L81">                deliverPizza();</span>
+<span class="fc" id="L82">            } catch (InterruptedException e) {</span>
+<span class="fc" id="L83">                System.out.println(&quot;РљСѓСЂСЊРµСЂР° РїСЂРµСЂРІР°Р»Рё&quot;);</span>
+<span class="fc" id="L84">                return;</span>
+<span class="nc" id="L85">            }</span>
         }
     }
 

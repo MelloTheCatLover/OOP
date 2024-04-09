@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestPizzeria" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-09T17:36:34" hostname="MELLO" time="11.842">
+<testsuite name="TestPizzeria" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-09T18:11:01" hostname="MELLO" time="11.64">
   <properties/>
-  <testcase name="TestParser()" classname="TestPizzeria" time="11.842"/>
+  <testcase name="TestParser()" classname="TestPizzeria" time="11.64"/>
   <system-out><![CDATA[РїРѕСЃС‚СѓРїРёР» Р·Р°РєР°Р· РїРѕРґ РЅРѕРјРµСЂРѕРј:  0
 1
 РџРµРєР°СЂСЊ: Alex JacksonР’С‹С€РµР» РЅР° СЃРјРµРЅСѓ

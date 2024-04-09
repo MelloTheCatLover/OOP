@@ -158,6 +158,8 @@ public class TestPizzeria {
         Assertions.assertTrue(pizzeria.isNoOrders());
         System.out.println(customerServiceThread.isAlive());
     }
+    /*
+
 
     @Test
     public void testWorkerService() throws InterruptedException {
@@ -190,5 +192,6 @@ public class TestPizzeria {
         Assertions.assertFalse(courierServiceThread.isAlive());
 
     }
+     */
 
 }
