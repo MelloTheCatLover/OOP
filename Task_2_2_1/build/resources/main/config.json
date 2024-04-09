@@ -1,52 +1,23 @@
 {
   "backers": [
     {
-      "workingTimeMs": 1
-    },
-    {
-      "workingTimeMs": 1
-    },
-    {
-      "workingTimeMs": 1
-    },
-    {
-      "workingTimeMs": 1
-    },
-    {
-      "workingTimeMs": 1
-    },
-    {
-      "workingTimeMs": 1
+      "id": 1,
+      "name": "Misha",
+      "surname": "Pustov",
+      "workingTimeMs": 1234
     }
-
   ],
   "couriers": [
     {
-      "baggageCount": 1,
-      "deliveryTimeMs": 1000
-    },
-    {
-      "baggageCount": 1,
-      "deliveryTimeMs": 1000
-    },
-    {
-      "baggageCount": 1,
-      "deliveryTimeMs": 1000
-    },
-    {
-      "baggageCount": 1,
-      "deliveryTimeMs": 1000
-    },
-    {
-      "baggageCount": 1,
-      "deliveryTimeMs": 1000
-    },
-    {
-      "baggageCount": 1,
-      "deliveryTimeMs": 1000
+      "id": 1,
+      "name": "Misha",
+      "surname": "Pustov",
+      "baggageSize": 2,
+      "deliveryTime": 4000
     }
   ],
   "storage": {
     "capacity": 5
   }
 }
+

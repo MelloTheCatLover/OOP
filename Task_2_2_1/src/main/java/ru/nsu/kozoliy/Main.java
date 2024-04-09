@@ -1,15 +1,12 @@
 package ru.nsu.kozoliy;
 
+
+import ru.nsu.kozoliy.Model.Pizzeria;
+import ru.nsu.kozoliy.ModelInterfaces.IPizzeria;
 import ru.nsu.kozoliy.Parsing.Configuration;
 import ru.nsu.kozoliy.Parsing.PizzeriaParser;
-import ru.nsu.kozoliy.PizzeriaLogic.IPizzeria;
-import ru.nsu.kozoliy.PizzeriaLogic.Pizzeria;
 
-import java.sql.SQLOutput;
-import java.time.LocalTime;
 import java.util.Scanner;
-import java.util.Stack;
-
 
 public class Main {
     @ExcludeFromJacocoGeneratedReport

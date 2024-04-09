@@ -1,30 +1,9 @@
-7Hello from customer ru.nsu.kozoliy.User.User@243024e9
-'Pizzeria received order with number 0
-CHello from backer ru.nsu.kozoliy.Backer.BackerRepository@55026ee1
-CHello from backer ru.nsu.kozoliy.Backer.BackerRepository@30f034b5
-8User ru.nsu.kozoliy.User.User@243024e9 was interrupted
-UPizza man ru.nsu.kozoliy.Backer.BackerRepository@30f034b5 creates pizza for order 0
-CHello from backer ru.nsu.kozoliy.Backer.BackerRepository@30f034b5
-Backer thread was interrupted
-Backer thread was interrupted
-nCourier ru.nsu.kozoliy.Courier.CourierRepository@22a0c6d9 received pizza ru.nsu.kozoliy.Order.Order@6881c51a
- Courier thread was interrupted
- Courier thread was interrupted
-'Pizzeria received order with number 0
-CHello from backer ru.nsu.kozoliy.Backer.BackerRepository@71e3076d
-UPizza man ru.nsu.kozoliy.Backer.BackerRepository@71e3076d creates pizza for order 0
-CHello from backer ru.nsu.kozoliy.Backer.BackerRepository@71e3076d
-nCourier ru.nsu.kozoliy.Courier.CourierRepository@358553c7 received pizza ru.nsu.kozoliy.Order.Order@3b42badf
-Backer thread was interrupted
-$Order 0 was successfully delivered
- Courier thread was interrupted
-6Hello from customer ru.nsu.kozoliy.User.User@2fe08aa
-'Pizzeria received order with number 0
-7Hello from customer ru.nsu.kozoliy.User.User@3fa01bfc
-7Hello from customer ru.nsu.kozoliy.User.User@37bade4e
-'Pizzeria received order with number 1
-'Pizzeria received order with number 2
-8User ru.nsu.kozoliy.User.User@37bade4e was interrupted
-8User ru.nsu.kozoliy.User.User@3fa01bfc was interrupted
-7User ru.nsu.kozoliy.User.User@2fe08aa was interrupted
-false
+fРїРѕСЃС‚СѓРїРёР» Р·Р°РєР°Р· РїРѕРґ РЅРѕРјРµСЂРѕРј:  0
+1
+]РџРµРєР°СЂСЊ: Alex JacksonР’С‹С€РµР» РЅР° СЃРјРµРЅСѓ
+�AlexJackson РІС‹РїРµРєР°РµС‚ 30 СЃР°РЅС‚РёРјРµС‚СЂРѕРІСѓСЋ РїРёС†С†Сѓ Vegan.
+}Alex Р·Р°РІРµСЂС€РёР» РїСЂРёРіРѕС‚РѕРІР»РµРЅРёРµ РїРёС†С†С‹ Vegan.
+�AlexJackson РІС‹РїРµРєР°РµС‚ 25 СЃР°РЅС‚РёРјРµС‚СЂРѕРІСѓСЋ РїРёС†С†Сѓ BBQ.
+;РџРµРєР°СЂСЏ РїСЂРµСЂРІР°Р»Рё
+�РљСѓСЂСЊРµСЂ Ivan Vlasenko РїРѕР»СѓС‡РёР» РїРёС†С†Сѓ Order{id=1, pizzas=[Pizza{size='30', type=Vegan, isCooked=true}, Pizza{size='25', type=BBQ, isCooked=false}]}
+?РљСѓСЂСЊРµСЂР° РїСЂРµСЂРІР°Р»Рё
