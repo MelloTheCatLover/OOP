@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c79fc839-bdc5-4395-adce-e3aa267f3ca1" name="Changes" comment=" adding tests">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestPizzeria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestPizzeria.java" afterDir="false" />
-    </list>
+    <list default="true" id="c79fc839-bdc5-4395-adce-e3aa267f3ca1" name="Changes" comment="rewrite test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -299,7 +295,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712686905883</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Rewrite tests using mockito to test singleton objets">
+      <option name="closed" value="true" />
+      <created>1712687633796</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1712687633796</updated>
+    </task>
+    <task id="LOCAL-00012" summary="rewrite test">
+      <option name="closed" value="true" />
+      <created>1712687826147</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1712687826147</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -313,7 +325,9 @@
     <MESSAGE value="GIIIIt" />
     <MESSAGE value=" giiit 2" />
     <MESSAGE value=" adding tests" />
-    <option name="LAST_COMMIT_MESSAGE" value=" adding tests" />
+    <MESSAGE value="Rewrite tests using mockito to test singleton objets" />
+    <MESSAGE value="rewrite test" />
+    <option name="LAST_COMMIT_MESSAGE" value="rewrite test" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Task_2_2_1$TestPizzeria_TestParser.ic" NAME="TestPizzeria.TestParser Coverage Results" MODIFIED="1712684192639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

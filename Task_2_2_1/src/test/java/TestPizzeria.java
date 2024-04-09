@@ -203,6 +203,8 @@ public class TestPizzeria {
         CourierService courierService = ((Pizzeria) pizzeria).getCourierService();
         Thread courierServiceThread = new Thread(courierService);
         courierServiceThread.start();
+        Assertions.assertFalse(storage.isEmpty());
+        Thread.sleep(5000);
 
         courierService.stopService();
         Thread.sleep(1000);
