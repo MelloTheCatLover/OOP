@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c79fc839-bdc5-4395-adce-e3aa267f3ca1" name="Changes" comment="Fixin git issues" />
+    <list default="true" id="c79fc839-bdc5-4395-adce-e3aa267f3ca1" name="Changes" comment=" giiit 2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,13 +66,15 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;D:/NSU/Second Course/First_Sem/Object_Programming/OOP/Task_2_2_1/src/main/java/ru/nsu/kozoliy/Main.java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Task__2__2__1",
+    "onboarding.tips.debug.path": "D:/NSU/Second Course/First_Sem/Object_Programming/OOP/Task_2_2_1/src/main/java/ru/nsu/kozoliy/Main.java"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Gradle.TestPizzeria.TestParser">
     <configuration name="TestPizzeria" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -269,7 +271,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712685935497</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="GIIIIt">
+      <option name="closed" value="true" />
+      <created>1712686427742</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712686427742</updated>
+    </task>
+    <task id="LOCAL-00009" summary=" giiit 2">
+      <option name="closed" value="true" />
+      <created>1712686708454</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1712686708454</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -280,7 +298,9 @@
     <MESSAGE value="Fixing gitignore issues 3" />
     <MESSAGE value="Refactor all code" />
     <MESSAGE value="Fixin git issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixin git issues" />
+    <MESSAGE value="GIIIIt" />
+    <MESSAGE value=" giiit 2" />
+    <option name="LAST_COMMIT_MESSAGE" value=" giiit 2" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Task_2_2_1$TestPizzeria_TestParser.ic" NAME="TestPizzeria.TestParser Coverage Results" MODIFIED="1712684192639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

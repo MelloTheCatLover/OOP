@@ -27,7 +27,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TestPizzeria {
 
-    /*
+
         private Pizzeria pizzeria;
     private Storage storage;
 
@@ -79,7 +79,7 @@ public class TestPizzeria {
     }
 
 
-
+/*
 
     @Test
     public void TestParser() throws InterruptedException {
