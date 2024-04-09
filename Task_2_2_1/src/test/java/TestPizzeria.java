@@ -1,3 +1,18 @@
+
+
+
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.internal.verification.VerificationModeFactory.times;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,11 +34,7 @@ import ru.nsu.kozoliy.Services.CourierService;
 import ru.nsu.kozoliy.Services.UserGeneratorService;
 import ru.nsu.kozoliy.Services.UserService;
 import ru.nsu.kozoliy.Storage.Storage;
-import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Тесты для пиццерии.
@@ -46,46 +57,31 @@ public class TestPizzeria {
 
     private Order order;
 
-
-    @BeforeEach
-    public void setUp() {
-        // Создаем мок-объект класса Storage
-
-    }
-
     @Test
     public void testAddOrder() throws InterruptedException {
-        // Вызываем метод addOrder() на мок-объекте storage
         storage.addOrder(order);
 
-        // Проверяем, что метод addOrder() был вызван ровно один раз с переданным заказом
         verify(storage, times(1)).addOrder(order);
     }
 
     @Test
     public void testGetOrder() throws InterruptedException {
-        // Модифицируем поведение мок-объекта storage: когда вызывается метод getOrder(), возвращаем мок-объект Order
         when(storage.getOrder()).thenReturn(order);
 
-        // Вызываем метод getOrder() на мок-объекте storage
         Order retrievedOrder = storage.getOrder();
 
-        // Проверяем, что полученный заказ соответствует ожидаемому заказу
         assertEquals(order, retrievedOrder);
     }
 
     @Test
     public void testIsFull() throws InterruptedException {
-        // Вызываем метод isFull() на мок-объекте storage
         when(storage.isFull()).thenReturn(true);
 
-        // Проверяем, что метод isFull() возвращает true
         assertTrue(storage.isFull());
     }
 
     @Test
     public void testSingletonInstance() {
-        // Проверяем, что один и тот же экземпляр Storage возвращается из метода getInstance()
         Storage instance1 = Storage.getInstance();
         Storage instance2 = Storage.getInstance();
         assertSame(instance1, instance2);
@@ -104,17 +100,17 @@ public class TestPizzeria {
         Assertions.assertThrows(ParsingException.class,
                 () ->
                         parser.getConfigurationFromFile("/unexistedfile.json.txt.csv"));
-        Assertions.assertEquals(configuration.backers().size(), 2);
+        assertEquals(configuration.backers().size(), 2);
         int i = 10000;
         for (BackerDto backerDto : configuration.backers()) {
-            Assertions.assertEquals(backerDto.workingTimeMs(), i++);
+            assertEquals(backerDto.workingTimeMs(), i++);
         }
-        Assertions.assertEquals(configuration.couriers().size(), 2);
+        assertEquals(configuration.couriers().size(), 2);
         i = 1;
         for (CourierDto courierDto : configuration.couriers()) {
-            Assertions.assertEquals(courierDto.baggageSize(), i++);
+            assertEquals(courierDto.baggageSize(), i++);
         }
-        Assertions.assertEquals(configuration.storage().capacity(), 1);
+        assertEquals(configuration.storage().capacity(), 1);
 
         BackerDto firstBackerDto = configuration.backers().get(0);
         CourierDto firstCourierDto = configuration.couriers().get(0);
@@ -126,26 +122,32 @@ public class TestPizzeria {
         order1.setPizzas(pizzas);
         order1.setId(1);
         pizzeria.makeOrder(pizzas);
-        IBacker backer = new Backer(firstBackerDto.name(), firstBackerDto.surname(), firstBackerDto.id(), pizzeria, firstBackerDto.workingTimeMs());
+        IBacker backer = new Backer(firstBackerDto.name(),
+                firstBackerDto.surname(), firstBackerDto.id(),
+                pizzeria, firstBackerDto.workingTimeMs());
         Thread backerThread = new Thread(backer);
         backerThread.start();
         Assertions.assertFalse(storage.isFull());
 
         System.out.println(storage.getCapacity());
         Thread.sleep(firstBackerDto.workingTimeMs() + 1000);
-        Assertions.assertTrue(pizzeria.isNoOrders());
+        assertTrue(pizzeria.isNoOrders());
 
         storage.addOrder(order1);
 
         //Assertions.assertTrue(storage.isFull());
 
-        ICourier courier = new Courier(firstCourierDto.name(), firstCourierDto.surname(), firstCourierDto.id(), firstCourierDto.baggageSize(), firstCourierDto.deliveryTime());
+        ICourier courier = new Courier(firstCourierDto.name(),
+                firstCourierDto.surname(),
+                firstCourierDto.id(),
+                firstCourierDto.baggageSize(),
+                firstCourierDto.deliveryTime());
         Thread courierThread = new Thread(courier);
         courierThread.start();
         Thread.sleep(firstCourierDto.deliveryTime());
 
-        Assertions.assertTrue(backerThread.isAlive());
-        Assertions.assertTrue(courierThread.isAlive());
+        assertTrue(backerThread.isAlive());
+        assertTrue(courierThread.isAlive());
 
         backerThread.interrupt();
         courierThread.interrupt();
@@ -159,12 +161,12 @@ public class TestPizzeria {
     public void testCustomerRepository() {
         UserGeneratorService generator = new UserService(pizzeria);
         List<Runnable> customers = generator.generate();
-        Assertions.assertTrue(customers.size() >= 3 && customers.size() <= 10);
+        assertTrue(customers.size() >= 3 && customers.size() <= 10);
     }
 
     @Test
     public void testCustomerServices() throws InterruptedException {
-        Assertions.assertTrue(pizzeria.isNoOrders());
+        assertTrue(pizzeria.isNoOrders());
         UserService service = new UserService(pizzeria);
         Thread customerServiceThread = new Thread(service);
         customerServiceThread.start();
@@ -175,7 +177,7 @@ public class TestPizzeria {
             pizzeria.getOrder();
         }
         Thread.sleep(3000);
-        Assertions.assertTrue(pizzeria.isNoOrders());
+        assertTrue(pizzeria.isNoOrders());
         System.out.println(customerServiceThread.isAlive());
     }
 
@@ -195,7 +197,7 @@ public class TestPizzeria {
         Thread backerServiceThread = new Thread(backerService);
         backerServiceThread.start();
         Thread.sleep(11001);
-        Assertions.assertTrue(pizzeria.isNoOrders());
+        assertTrue(pizzeria.isNoOrders());
 
         backerService.stopService();
         Thread.sleep(1000);
