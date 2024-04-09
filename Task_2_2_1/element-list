@@ -1,9 +1,9 @@
 ru.nsu.kozoliy
-ru.nsu.kozoliy.Dto
-ru.nsu.kozoliy.Entities
-ru.nsu.kozoliy.Exceptions
-ru.nsu.kozoliy.Model
-ru.nsu.kozoliy.ModelInterfaces
-ru.nsu.kozoliy.Parsing
-ru.nsu.kozoliy.Services
-ru.nsu.kozoliy.Storage
+ru.nsu.kozoliy.dto
+ru.nsu.kozoliy.entities
+ru.nsu.kozoliy.exceptions
+ru.nsu.kozoliy.model
+ru.nsu.kozoliy.modelInterfaces
+ru.nsu.kozoliy.parsing
+ru.nsu.kozoliy.services
+ru.nsu.kozoliy.storage
