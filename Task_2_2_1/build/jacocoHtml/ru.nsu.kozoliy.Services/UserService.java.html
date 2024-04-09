@@ -32,20 +32,20 @@ public class UserService implements UserGeneratorService, Runnable{
 
     @Override
     public List&lt;Runnable&gt; generate() {
-<span class="nc" id="L35">        int customerCount = new Random().nextInt(7) + MIN_CUSTOMER_COUNT;</span>
-<span class="nc bnc" id="L36" title="All 2 branches missed.">        for (int i = 0; i &lt; customerCount; i++) {</span>
-<span class="nc" id="L37">            int pizzaCountInOrder = new Random().nextInt(3) + 1;</span>
-<span class="nc" id="L38">            ArrayList&lt;Pizza&gt; pizzas = new ArrayList&lt;Pizza&gt;();</span>
-<span class="nc" id="L39">            Pizza.PizzaType[] pizzaTypes = Pizza.PizzaType.values();</span>
-<span class="nc bnc" id="L40" title="All 2 branches missed.">            for(int j = 0; j &lt; pizzaCountInOrder; j++){</span>
-<span class="nc" id="L41">                int size = new Random().nextInt(4) * 5 + 20;</span>
-<span class="nc" id="L42">                Pizza.PizzaType type = pizzaTypes[new Random().nextInt(pizzaTypes.length)];</span>
-<span class="nc" id="L43">                pizzas.add(new Pizza(size, type));</span>
+<span class="fc" id="L35">        int customerCount = new Random().nextInt(7) + MIN_CUSTOMER_COUNT;</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        for (int i = 0; i &lt; customerCount; i++) {</span>
+<span class="fc" id="L37">            int pizzaCountInOrder = new Random().nextInt(3) + 1;</span>
+<span class="fc" id="L38">            ArrayList&lt;Pizza&gt; pizzas = new ArrayList&lt;Pizza&gt;();</span>
+<span class="fc" id="L39">            Pizza.PizzaType[] pizzaTypes = Pizza.PizzaType.values();</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">            for(int j = 0; j &lt; pizzaCountInOrder; j++){</span>
+<span class="fc" id="L41">                int size = new Random().nextInt(4) * 5 + 20;</span>
+<span class="fc" id="L42">                Pizza.PizzaType type = pizzaTypes[new Random().nextInt(pizzaTypes.length)];</span>
+<span class="fc" id="L43">                pizzas.add(new Pizza(size, type));</span>
             }
-<span class="nc" id="L45">            Runnable customer = new User(pizzeria, pizzas);</span>
-<span class="nc" id="L46">            customers.add(customer);</span>
+<span class="fc" id="L45">            Runnable customer = new User(pizzeria, pizzas);</span>
+<span class="fc" id="L46">            customers.add(customer);</span>
         }
-<span class="nc" id="L48">        return customers;</span>
+<span class="fc" id="L48">        return customers;</span>
     }
 
 
