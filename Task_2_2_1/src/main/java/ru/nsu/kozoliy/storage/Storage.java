@@ -54,7 +54,7 @@ public class Storage {
      * @throws InterruptedException если произошла ошибка во время ожидания
      */
     public synchronized void addOrder(Order order) throws InterruptedException {
-        while (this.isFull()) {
+        while (this.canBeFull()) {
             this.wait();
         }
         orders.add(order);
@@ -76,11 +76,15 @@ public class Storage {
     }
 
     /**
-     * Проверить, полное ли хранилище.
+     * Проверяет, может ли хранилище заказов быть полным.
+     * <p>
+     * Этот метод следует использовать с осторожностью, так как он может вернуть устаревшее значение.
+     * Следует учитывать, что после вызова этого метода другой поток может добавить заказ в хранилище.
+     * </p>
      *
-     * @return true, если хранилище полное, иначе false
+     * @return true, если хранилище заказов может быть полным, иначе false
      */
-    public boolean isFull() {
+    public synchronized boolean canBeFull() {
         return orders.size() == capacity;
     }
 

@@ -78,9 +78,9 @@ public class TestPizzeria {
 
     @Test
     public void testIsFull() throws InterruptedException {
-        when(storage.isFull()).thenReturn(true);
+        when(storage.canBeFull()).thenReturn(true);
 
-        assertTrue(storage.isFull());
+        assertTrue(storage.canBeFull());
     }
 
     @Test
@@ -131,7 +131,7 @@ public class TestPizzeria {
                 pizzeria, firstBackerDto.workingTimeMs());
         Thread backerThread = new Thread(backer);
         backerThread.start();
-        Assertions.assertFalse(storage.isFull());
+        Assertions.assertFalse(storage.canBeFull());
 
         System.out.println(storage.getCapacity());
         Thread.sleep(firstBackerDto.workingTimeMs() + 1000);
