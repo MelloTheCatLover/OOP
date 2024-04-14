@@ -10,11 +10,11 @@ import ru.nsu.kozoliy.storage.Storage;
  * Пекарь выпекает пиццу согласно заказам и добавляет их на склад.
  */
 public class Backer implements Ibacker {
-    private String name; // Имя пекаря
-    private final String surname; // Фамилия пекаря
-    private final int id; // Уникальный идентификатор пекаря
-    private final OrderGetter orderGetter; // Получатель заказов для пекаря
-    private final int workingTimeMs; // Время приготовления одной пиццы в миллисекундах
+    private String name;
+    private final String surname;
+    private final int id;
+    private final OrderGetter orderGetter;
+    private final int workingTimeMs;
 
     /**
      * Конструктор для создания экземпляра пекаря.

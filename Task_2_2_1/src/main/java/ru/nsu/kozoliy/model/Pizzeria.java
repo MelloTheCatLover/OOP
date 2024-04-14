@@ -27,6 +27,7 @@ import ru.nsu.kozoliy.storage.Storage;
  * и доставки пиццы, используя пекарей, курьеров и пользователей.
  */
 public class Pizzeria implements Ipizzeria {
+    private final OrderQueueManager orderQueueManager;
     private final Queue<Order> orders;
     private final Storage storage = Storage.getInstance();
     private final UserService userService;
@@ -41,6 +42,7 @@ public class Pizzeria implements Ipizzeria {
      */
     public Pizzeria(Configuration configuration) {
         Storage.getInstance(configuration.storage().capacity());
+        orderQueueManager = new OrderQueueManager();
         List<Icourier> couriers = new ArrayList<>();
         for (CourierDto courierDto : configuration.couriers()) {
             Icourier courier = new Courier(courierDto.name(),
@@ -62,6 +64,8 @@ public class Pizzeria implements Ipizzeria {
         backerService = new BackerService(backers);
         courierService = new CourierService(couriers);
         userService = new UserService(this);
+
+
     }
 
     /**
@@ -99,10 +103,7 @@ public class Pizzeria implements Ipizzeria {
      */
     @Override
     public synchronized Order getOrder() throws InterruptedException {
-        while (orders.isEmpty()) {
-            wait();
-        }
-        return orders.poll();
+        return orderQueueManager.getOrder();
     }
 
     /**
@@ -112,7 +113,7 @@ public class Pizzeria implements Ipizzeria {
      */
     @Override
     public boolean isNoOrders() {
-        return orders.isEmpty();
+        return orderQueueManager.isNoOrders();
     }
 
     /**
@@ -125,9 +126,8 @@ public class Pizzeria implements Ipizzeria {
         Order order = new Order(orderNumber++, pizzas);
         order.setUser(() ->
                 System.out.println("Заказ номер: " + order.getId() + " был получен"));
-        orders.add(order);
+        orderQueueManager.addOrder(order);
         System.out.println("Поступил заказ под номером:  " + order.getId());
-        notifyAll();
     }
 
     public BackerService getBackerService() {
@@ -138,3 +138,5 @@ public class Pizzeria implements Ipizzeria {
         return courierService;
     }
 }
+
+

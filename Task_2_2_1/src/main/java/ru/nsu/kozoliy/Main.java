@@ -6,61 +6,65 @@ import ru.nsu.kozoliy.interfaces.Ipizzeria;
 import ru.nsu.kozoliy.model.Pizzeria;
 import ru.nsu.kozoliy.parsing.Configuration;
 import ru.nsu.kozoliy.parsing.PizzeriaParser;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Начальная точка программы.
  *
  */
 public class Main {
-    /**
-     * Стартовая точка программы.
-     *
-     */
+    private static final Logger logger = LogManager.getLogger(Main.class);
+
     @ExcludeFromJacocoGeneratedReport
     public static void main(String[] args) {
         PizzeriaParser parser = new PizzeriaParser();
         Configuration configuration = parser.getConfigurationFromFile("/config.json");
         Ipizzeria pizzeria = new Pizzeria(configuration);
         boolean isWorking = true;
+
+        Scanner scanner = new Scanner(System.in);
+
         while (isWorking) {
-            String command = new Scanner(System.in).nextLine();
+            String command = scanner.nextLine();
             switch (command) {
-                case "start" -> {
-                    System.out.println("Starting work");
+                case "start":
+                    logger.info("Starting work");
                     new Thread(pizzeria).start();
-                }
-                case "stop" -> {
-                    System.out.println("Stopping work");
+                    break;
+                case "stop":
+                    logger.info("Stopping work");
                     pizzeria.stopWorking();
-                }
-                case "end" -> {
+                    break;
+                case "end":
                     pizzeria.endWorking();
-                    System.out.println("Ending work");
+                    logger.info("Ending work");
                     isWorking = false;
-                }
-                case "workingWeek" -> {
-                    System.out.println("Starting work");
-
-
+                    break;
+                case "workingWeek":
+                    logger.info("Starting work for the week");
                     for (int i = 1; i < 8; i++) {
                         new Thread(pizzeria).start();
-                        System.out.println("==================DAY" + i + "==================");
+                        logger.info("==================DAY" + i + "==================");
                         try {
                             Thread.sleep(10000);
                         } catch (InterruptedException e) {
-                            e.printStackTrace();
+                            logger.error("Thread interrupted while sleeping", e);
                         }
-                        System.out.println("\n\n==================DAY" + i
-                                + " ENDED==================\n");
+                        logger.info("\n\n==================DAY" + i + " ENDED==================\n");
                         pizzeria.stopWorking();
                     }
                     pizzeria.endWorking();
-                    System.out.println("Ending work");
+                    logger.info("Ending work for the week");
                     isWorking = false;
-                }
-                default -> System.out.println("Unknown command");
+                    break;
+                default:
+                    logger.warn("Unknown command: {}", command);
+                    System.out.println("Unknown command");
+                    break;
             }
         }
 
+        scanner.close();
     }
 }
