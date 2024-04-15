@@ -82,8 +82,6 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Courier</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../interfaces/Icourier.html" title="interface in ru.nsu.kozoliy.interfaces">Icourier</a></span></div>
-<div class="block">Класс, представляющий курьера в системе доставки пиццы.
- Курьер забирает заказы с пиццей со склада и доставляет их клиентам.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -100,9 +98,7 @@ implements <a href="../interfaces/Icourier.html" title="interface in ru.nsu.kozo
  int&nbsp;id,
  int&nbsp;baggageSize,
  int&nbsp;deliveryTime)</code></div>
-<div class="col-last even-row-color">
-<div class="block">Конструктор для создания экземпляра курьера.</div>
-</div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -120,18 +116,14 @@ implements <a href="../interfaces/Icourier.html" title="interface in ru.nsu.kozo
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deliverPizza()" class="member-name-link">deliverPizza</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Метод доставки пиццы клиентам.</div>
+<div class="block">Доставляет пиццу.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run()" class="member-name-link">run</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Метод запуска потока доставки пиццы клиентам.</div>
-</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Переопределенный метод toString для получения строкового представления курьера.</div>
-</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -157,15 +149,6 @@ implements <a href="../interfaces/Icourier.html" title="interface in ru.nsu.kozo
  int&nbsp;id,
  int&nbsp;baggageSize,
  int&nbsp;deliveryTime)</span></div>
-<div class="block">Конструктор для создания экземпляра курьера.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>name</code> - имя курьера</dd>
-<dd><code>surname</code> - фамилия курьера</dd>
-<dd><code>id</code> - уникальный идентификатор курьера</dd>
-<dd><code>baggageSize</code> - размер багажника курьера</dd>
-<dd><code>deliveryTime</code> - время доставки одной пиццы</dd>
-</dl>
 </section>
 </li>
 </ul>
@@ -181,14 +164,13 @@ implements <a href="../interfaces/Icourier.html" title="interface in ru.nsu.kozo
 <h3>deliverPizza</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deliverPizza</span>()
                   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></span></div>
-<div class="block">Метод доставки пиццы клиентам.
- Курьер берет заказы с пиццей со склада и доставляет их клиентам.
- После успешной доставки курьер удаляет заказ из своего багажника.</div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../interfaces/Icourier.html#deliverPizza()">Icourier</a></code></span></div>
+<div class="block">Доставляет пиццу.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../interfaces/Icourier.html#deliverPizza()">deliverPizza</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/Icourier.html" title="interface in ru.nsu.kozoliy.interfaces">Icourier</a></code></dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code> - если поток курьера был прерван во время доставки</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code> - если поток был прерван во время доставки пиццы</dd>
 </dl>
 </section>
 </li>
@@ -196,10 +178,6 @@ implements <a href="../interfaces/Icourier.html" title="interface in ru.nsu.kozo
 <section class="detail" id="run()">
 <h3>run</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">run</span>()</div>
-<div class="block">Метод запуска потока доставки пиццы клиентам.
- При вызове метода запускается бесконечный цикл,
- в котором курьер доставляет пиццу.
- Если поток курьера был прерван во время доставки, метод завершается.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html#run()" title="class or interface in java.lang" class="external-link">run</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a></code></dd>
@@ -210,12 +188,9 @@ implements <a href="../interfaces/Icourier.html" title="interface in ru.nsu.kozo
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
-<div class="block">Переопределенный метод toString для получения строкового представления курьера.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
-<dt>Returns:</dt>
-<dd>строковое представление курьера</dd>
 </dl>
 </section>
 </li>
