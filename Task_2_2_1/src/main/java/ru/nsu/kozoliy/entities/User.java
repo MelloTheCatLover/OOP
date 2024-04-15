@@ -2,15 +2,17 @@ package ru.nsu.kozoliy.entities;
 
 
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.Random;
 import ru.nsu.kozoliy.model.OrderProvider;
-
 
 
 /**
  * Класс, представляющий пользователя системы - заказчика пиццы.
  */
 public class User implements Runnable {
+    private static final Logger logger = Logger.getLogger(User.class.getName());
+
     private final OrderProvider provider; // Провайдер заказов
     private final List<Pizza> pizzas; // Список пицц, которые пользователь может заказать
 
@@ -33,7 +35,7 @@ public class User implements Runnable {
     @Override
     public void run() {
         while (true) {
-            System.out.println("Hello from customer " + this);
+            logger.info("Hello from customer " + this);
             try {
                 // Делаем заказ через провайдера
                 provider.makeOrder(pizzas);
@@ -45,7 +47,7 @@ public class User implements Runnable {
 
             } catch (InterruptedException e) {
                 // Если поток был прерван, выводим сообщение и завершаем его работу
-                System.out.println("User " + this + " was interrupted");
+                logger.warning("User " + this + " was interrupted: " + e.getMessage());
                 return;
             }
         }

@@ -4,13 +4,17 @@ import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
 import ru.nsu.kozoliy.interfaces.Ibacker;
 import ru.nsu.kozoliy.model.OrderGetter;
 import ru.nsu.kozoliy.storage.Storage;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Класс, представляющий пекаря в пиццерии.
  * Пекарь выпекает пиццу согласно заказам и добавляет их на склад.
  */
 public class Backer implements Ibacker {
-    private String name;
+    private static final Logger logger = Logger.getLogger(Backer.class.getName());
+
+    private final String name;
     private final String surname;
     private final int id;
     private final OrderGetter orderGetter;
@@ -34,16 +38,6 @@ public class Backer implements Ibacker {
     }
 
     /**
-     * Метод вывода информации о пекаре.
-     * Выводит в консоль информацию о имени, фамилии и скорости работы пекаря.
-     */
-    @ExcludeFromJacocoGeneratedReport
-    public void displayInfo() {
-        System.out.println("Пекарь:" + name + " " + surname
-                + ". Работает со скоростью: " + workingTimeMs);
-    }
-
-    /**
      * Переопределенный метод toString для получения строкового представления пекаря.
      *
      * @return строковое представление пекаря
@@ -51,12 +45,12 @@ public class Backer implements Ibacker {
     @ExcludeFromJacocoGeneratedReport
     @Override
     public String toString() {
-        return "Backer{"
-                + "name='" + name + '\''
-                + ", surname='" + surname + '\''
-                + ", id=" + id
-                + ", workingTimeMs=" + workingTimeMs
-                + '}';
+        return "Backer{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", id=" + id +
+                ", workingTimeMs=" + workingTimeMs +
+                '}';
     }
 
     /**
@@ -68,12 +62,10 @@ public class Backer implements Ibacker {
      */
     @Override
     public void makePizza(Pizza pizza) throws InterruptedException {
-        System.out.println(name + surname + " выпекает "
-                + pizza.getSize() + " сантиметровую пиццу "
-                + pizza.getType() + ".");
+        logger.info(name + " " + surname + " is baking a " + pizza.getSize() + " cm pizza of type " + pizza.getType() + ".");
         Thread.sleep(workingTimeMs);
         pizza.setCooked(true);
-        System.out.println(name + " завершил приготовление пиццы " + pizza.getType() + ".");
+        logger.info(name + " has finished baking the " + pizza.getType() + " pizza.");
     }
 
     /**
@@ -85,15 +77,20 @@ public class Backer implements Ibacker {
     public void run() {
         while (true) {
             try {
-                System.out.println("Пекарь: " + name + " " + surname + "Вышел на смену");
+                logger.info(name + " " + surname + " started the shift");
                 Order order = orderGetter.getOrder();
                 for (Pizza pizza : order.getPizzas()) {
+                    if (Thread.currentThread().isInterrupted()) {
+                        logger.info(name + " " + surname + " was interrupted while baking " + pizza.getType() + " pizza.");
+                        Thread.interrupted();
+                        return;
+                    }
                     makePizza(pizza);
                 }
                 Storage storage = Storage.getInstance();
                 storage.addOrder(order);
             } catch (InterruptedException e) {
-                System.out.println("Пекаря прервали");
+                logger.log(Level.INFO, "The baker thread was interrupted", e);
                 return;
             }
         }

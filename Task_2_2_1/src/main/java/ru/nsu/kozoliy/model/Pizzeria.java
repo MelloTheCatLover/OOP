@@ -3,6 +3,7 @@ package ru.nsu.kozoliy.model;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.Queue;
 import ru.nsu.kozoliy.dto.BackerDto;
 import ru.nsu.kozoliy.dto.CourierDto;
@@ -19,14 +20,14 @@ import ru.nsu.kozoliy.services.CourierService;
 import ru.nsu.kozoliy.services.UserService;
 import ru.nsu.kozoliy.storage.Storage;
 
-
-
 /**
  * Класс, представляющий пиццерию.
  * Этот класс управляет процессом приготовления
  * и доставки пиццы, используя пекарей, курьеров и пользователей.
  */
 public class Pizzeria implements Ipizzeria {
+    private static final Logger logger = Logger.getLogger(Pizzeria.class.getName());
+
     private final OrderQueueManager orderQueueManager;
     private final Queue<Order> orders;
     private final Storage storage = Storage.getInstance();
@@ -64,8 +65,6 @@ public class Pizzeria implements Ipizzeria {
         backerService = new BackerService(backers);
         courierService = new CourierService(couriers);
         userService = new UserService(this);
-
-
     }
 
     /**
@@ -125,18 +124,26 @@ public class Pizzeria implements Ipizzeria {
     public synchronized void makeOrder(List<Pizza> pizzas) {
         Order order = new Order(orderNumber++, pizzas);
         order.setUser(() ->
-                System.out.println("Заказ номер: " + order.getId() + " был получен"));
+                logger.info("Заказ номер: " + order.getId() + " был получен"));
         orderQueueManager.addOrder(order);
-        System.out.println("Поступил заказ под номером:  " + order.getId());
+        logger.info("Поступил заказ под номером:  " + order.getId());
     }
 
+    /**
+     * Возвращает сервис пекарей.
+     *
+     * @return сервис пекарей
+     */
     public BackerService getBackerService() {
         return backerService;
     }
 
+    /**
+     * Возвращает сервис курьеров.
+     *
+     * @return сервис курьеров
+     */
     public CourierService getCourierService() {
         return courierService;
     }
 }
-
-
