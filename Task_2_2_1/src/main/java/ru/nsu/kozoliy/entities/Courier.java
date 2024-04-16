@@ -1,4 +1,5 @@
 package ru.nsu.kozoliy.entities;
+
 import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.logging.Logger;
