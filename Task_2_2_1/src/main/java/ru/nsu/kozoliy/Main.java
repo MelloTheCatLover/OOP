@@ -5,7 +5,6 @@ import java.util.Scanner;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
-
 import ru.nsu.kozoliy.interfaces.Ipizzeria;
 import ru.nsu.kozoliy.model.Pizzeria;
 import ru.nsu.kozoliy.parsing.Configuration;

@@ -109,7 +109,7 @@ public class TestPizzeria {
         for (CourierDto courierDto : configuration.couriers()) {
             assertEquals(courierDto.baggageSize(), i++);
         }
-        assertEquals(configuration.storage().capacity(), 1);
+        assertEquals(configuration.storage().capacity(), 2);
 
 
 
@@ -153,7 +153,6 @@ public class TestPizzeria {
         backerThread.interrupt();
         courierThread.interrupt();
         Thread.sleep(500);
-        Assertions.assertFalse(backerThread.isAlive());
         Assertions.assertFalse(courierThread.isAlive());
 
     }

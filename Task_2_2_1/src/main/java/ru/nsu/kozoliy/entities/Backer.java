@@ -1,11 +1,11 @@
 package ru.nsu.kozoliy.entities;
 
-import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
+import java.util.logging.Logger;
 import ru.nsu.kozoliy.interfaces.Ibacker;
 import ru.nsu.kozoliy.model.OrderGetter;
+import ru.nsu.kozoliy.model.OrderQueueManager;
 import ru.nsu.kozoliy.storage.Storage;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  * Класс, представляющий пекаря в пиццерии.
@@ -19,6 +19,8 @@ public class Backer implements Ibacker {
     private final int id;
     private final OrderGetter orderGetter;
     private final int workingTimeMs;
+    private final OrderQueueManager orderQueueManager;
+    private Order order = null;
 
     /**
      * Конструктор для создания экземпляра пекаря.
@@ -35,6 +37,7 @@ public class Backer implements Ibacker {
         this.surname = surname;
         this.orderGetter = orderGetter;
         this.workingTimeMs = workingTimeMs;
+        this.orderQueueManager = new OrderQueueManager();
     }
 
     /**
@@ -42,15 +45,14 @@ public class Backer implements Ibacker {
      *
      * @return строковое представление пекаря
      */
-    @ExcludeFromJacocoGeneratedReport
     @Override
     public String toString() {
-        return "Backer{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", id=" + id +
-                ", workingTimeMs=" + workingTimeMs +
-                '}';
+        return "Backer{"
+                + "name='" + name + '\''
+                + ", surname='" + surname + '\''
+                + ", id=" + id
+                + ", workingTimeMs=" + workingTimeMs
+                + '}';
     }
 
     /**
@@ -62,10 +64,13 @@ public class Backer implements Ibacker {
      */
     @Override
     public void makePizza(Pizza pizza) throws InterruptedException {
-        logger.info(name + " " + surname + " is baking a " + pizza.getSize() + " cm pizza of type " + pizza.getType() + ".");
+        logger.info(name + " " + surname + " is baking a "
+                + pizza.getSize() + " cm pizza of type "
+                + pizza.getType() + ".");
         Thread.sleep(workingTimeMs);
         pizza.setCooked(true);
-        logger.info(name + " has finished baking the " + pizza.getType() + " pizza.");
+        logger.info(name + " has finished baking the "
+                + pizza.getType() + " pizza.");
     }
 
     /**
@@ -75,24 +80,44 @@ public class Backer implements Ibacker {
      */
     @Override
     public void run() {
-        while (true) {
+        while (!Thread.currentThread().isInterrupted()) {
             try {
-                logger.info(name + " " + surname + " started the shift");
-                Order order = orderGetter.getOrder();
-                for (Pizza pizza : order.getPizzas()) {
-                    if (Thread.currentThread().isInterrupted()) {
-                        logger.info(name + " " + surname + " was interrupted while baking " + pizza.getType() + " pizza.");
-                        Thread.interrupted();
-                        return;
-                    }
+                order = orderGetter.getOrder();
+            } catch (InterruptedException e) {
+                logger.info("Повара: " + name + " "
+                        + surname + " прервали, пока брал заказ.");
+                break;
+            }
+
+            logger.info("Повар: " + name + " " + surname + " взял заказ: " + order);
+            for (Pizza pizza : order.getPizzas()) {
+                try {
                     makePizza(pizza);
+                } catch (InterruptedException e) {
+                    logger.info("Повара: " + name + " " + surname
+                            + " прервали, пока готовил одну из пицц");
+                    break;
                 }
+            }
+
+
+            try {
                 Storage storage = Storage.getInstance();
                 storage.addOrder(order);
             } catch (InterruptedException e) {
-                logger.log(Level.INFO, "The baker thread was interrupted", e);
-                return;
+                logger.info("Повара: " + name + " " + surname
+                        + " прервали, пока стоял у склада.");
+                break;
             }
+            logger.info("Повар: " + name + " " + surname + " выполнил заказ: " + order);
         }
+
+        logger.info("Повар: " + name + " " + surname + " закончил смену");
+
+        if (order != null) {
+            orderQueueManager.addOrder(order);
+            order.getPizzas().clear();
+        }
+
     }
 }

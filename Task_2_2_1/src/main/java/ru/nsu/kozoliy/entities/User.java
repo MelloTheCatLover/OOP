@@ -2,8 +2,8 @@ package ru.nsu.kozoliy.entities;
 
 
 import java.util.List;
-import java.util.logging.Logger;
 import java.util.Random;
+import java.util.logging.Logger;
 import ru.nsu.kozoliy.model.OrderProvider;
 
 
