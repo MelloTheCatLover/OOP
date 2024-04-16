@@ -1,7 +1,7 @@
 package ru.nsu.kozoliy.model;
 
-import java.util.Queue;
 import java.util.ArrayDeque;
+import java.util.Queue;
 import ru.nsu.kozoliy.entities.Order;
 
 /**
