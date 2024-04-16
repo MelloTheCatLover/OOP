@@ -8,8 +8,8 @@ import ru.nsu.kozoliy.interfaces.Icourier;
 import ru.nsu.kozoliy.storage.Storage;
 
 /**
- * Класс, представляющий курьера в системе доставки пиццы.
- * Курьер забирает заказы с пиццей со склада и доставляет их клиентам.
+ * Class representing a courier in the pizza delivery system.
+ * The courier picks up pizza orders from the warehouse and delivers them to customers.
  */
 public class Courier implements Icourier {
     private static final Logger logger = Logger.getLogger(Courier.class.getName());
@@ -22,13 +22,13 @@ public class Courier implements Icourier {
     private final int deliveryTime;
 
     /**
-     * Конструктор для создания экземпляра курьера.
+     * Constructor for creating an instance of a courier.
      *
-     * @param name         имя курьера
-     * @param surname      фамилия курьера
-     * @param id           уникальный идентификатор курьера
-     * @param baggageSize  размер багажника курьера
-     * @param deliveryTime время доставки одной пиццы
+     * @param name         the name of the courier
+     * @param surname      the surname of the courier
+     * @param id           the unique identifier of the courier
+     * @param baggageSize  the size of the courier's baggage
+     * @param deliveryTime the time it takes to deliver one pizza
      */
     public Courier(String name, String surname, int id, int baggageSize, int deliveryTime) {
         this.name = name;
@@ -40,11 +40,11 @@ public class Courier implements Icourier {
     }
 
     /**
-     * Метод доставки пиццы клиентам.
-     * Курьер берет заказы с пиццей со склада и доставляет их клиентам.
-     * После успешной доставки курьер удаляет заказ из своего багажника.
+     * Method for delivering pizza to customers.
+     * The courier picks up pizza orders from the warehouse and delivers them to customers.
+     * After successful delivery, the courier removes the order from his bag.
      *
-     * @throws InterruptedException если поток курьера был прерван во время доставки
+     * @throws InterruptedException if the courier thread was interrupted during delivery
      */
     @Override
     public void deliverPizza() throws InterruptedException {
@@ -63,10 +63,10 @@ public class Courier implements Icourier {
     }
 
     /**
-     * Метод запуска потока доставки пиццы клиентам.
-     * При вызове метода запускается бесконечный цикл,
-     * в котором курьер доставляет пиццу.
-     * Если поток курьера был прерван во время доставки, метод завершается.
+     * Method to start the pizza delivery thread to customers.
+     * When the method is called, an infinite loop is started,
+     * in which the courier delivers pizza.
+     * If the courier thread was interrupted during delivery, the method exits.
      */
     @Override
     public void run() {
@@ -82,18 +82,18 @@ public class Courier implements Icourier {
     }
 
     /**
-     * Метод проверки, заполнен ли багажник курьера.
+     * Method to check if the courier's bag is full.
      *
-     * @return true, если багажник курьера заполнен, false в противном случае
+     * @return true if the courier's bag is full, false otherwise
      */
     private boolean isBagFull() {
         return bag.size() == baggageSize;
     }
 
     /**
-     * Переопределенный метод toString для получения строкового представления курьера.
+     * Overridden toString method to get a string representation of the courier.
      *
-     * @return строковое представление курьера
+     * @return string representation of the courier
      */
     @ExcludeFromJacocoGeneratedReport
     @Override
