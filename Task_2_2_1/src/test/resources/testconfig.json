@@ -1,0 +1,35 @@
+{
+  "backers": [
+    {
+      "name": "Alex",
+      "surname": "Jackson",
+      "id": 1,
+      "workingTimeMs": 10000
+    },
+    {
+      "name": "Alex",
+      "surname": "Jackson",
+      "id": 1,
+      "workingTimeMs": 10001
+    }
+  ],
+  "couriers": [
+    {
+      "name": "Ivan",
+      "surname": "Vlasenko",
+      "id": 1,
+      "baggageSize": 1,
+      "deliveryTimeMs": 10000
+    },
+    {
+      "name": "Anton",
+      "surname": "Tsoy",
+      "id": 2,
+      "baggageSize": 2,
+      "deliveryTimeMs": 10001
+    }
+  ],
+  "storage": {
+    "capacity": 2
+  }
+}
