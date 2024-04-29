@@ -1,23 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #2C2C54;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.nsu.kozoliy.Controller">
+<AnchorPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #2C2C54;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.nsu.kozoliy.Controller">
    <children>
       <Label fx:id="titleLabel" alignment="CENTER" layoutX="90.0" layoutY="31.0" lineSpacing="20.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="72.0" prefWidth="620.0" text="Snake by mello" textAlignment="CENTER" textFill="#ececec" underline="true">
          <font>
             <Font name="Belozersk Regular" size="60.0" />
          </font></Label>
-      <ChoiceBox fx:id="worldSizeChoiceBox" layoutX="300.0" layoutY="150.0" prefWidth="200.0" style="-fx-background-color: #474787; -fx-border-radius: 0; -fx-background-radius: 0;" />
-      <Text boundsType="VISUAL" fill="#ececec" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Размер мира:" textAlignment="CENTER" wrappingWidth="800.0">
+      <ChoiceBox fx:id="worldSizeChoiceBox" layoutX="29.0" layoutY="156.0" prefWidth="200.0" style="-fx-background-color: #474787; -fx-border-radius: 0; -fx-background-radius: 0;" />
+      <Text boundsType="VISUAL" fill="#ececec" layoutX="18.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Размер мира:    Сложность:    Размер Ячейки:" textAlignment="JUSTIFY" wrappingWidth="800.0">
          <font>
             <Font name="Belozersk Regular" size="27.0" />
          </font>
       </Text>
+      <ChoiceBox fx:id="speedChoiceBox" layoutX="280.0" layoutY="156.0" prefWidth="200.0" style="-fx-background-color: #474787; -fx-border-radius: 0; -fx-background-radius: 0;" />
+      <ChoiceBox fx:id="cellSizeChoiceBox" layoutX="552.0" layoutY="156.0" prefWidth="200.0" style="-fx-background-color: #474787; -fx-border-radius: 0; -fx-background-radius: 0;" />
+      <Text boundsType="VISUAL" fill="#ececec" layoutX="233.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Количество яблок:" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Belozersk Regular" size="27.0" />
+         </font>
+      </Text>
+      <TextField fx:id="foodCount" alignment="CENTER" layoutX="299.0" layoutY="333.0" promptText="Число" style="-fx-background-color: #474787; -fx-background-radius: 0;">
+         <font>
+            <Font name="Belozersk Regular" size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="startButton" contentDisplay="CENTER" layoutX="255.0" layoutY="470.0" mnemonicParsing="false" onAction="#submit" style="-fx-background-color: #474787; -fx-background-radius: 20; -fx-border-radius: 5;" text="НАЧАТЬ ИГРУ!" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Belozersk Regular" size="30.0" />
+         </font>
+      </Button>
 
    </children>
 </AnchorPane>
