@@ -4,6 +4,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Point2D;
 import javafx.scene.Group;
 import javafx.scene.Node;
@@ -19,13 +20,13 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Main extends Application {
 
-
     private GraphicsContext gc;
     private static final double SPEED = 0.1;
-    public static final int BLOCK_SIZE = 50;
+    public static final int BLOCK_SIZE = 20;
     public static final int FOOD_COUNT = 50;
     public static final int APP_W = 600;
     public static final int APP_H = 800;
@@ -207,8 +208,23 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("Snake by Mello");
-        Scene scene = new Scene(createContent());
+
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("StartMenu.fxml"));
+            Scene scene = new Scene(root, 800, 600);
+            primaryStage.setResizable(false);
+            scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+            primaryStage.setScene(scene);
+
+            primaryStage.show();
+            primaryStage.setTitle("Snake by Mello");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        //Scene scene = new Scene(createContent());
+        /*
 
         scene.setOnKeyPressed(event -> {
             if (!moved)
@@ -232,15 +248,15 @@ public class Main extends Application {
                         direction = Direction.RIGHT;
                     break;
             }
-
             moved = false;
         });
 
+         */
 
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        //primaryStage.setScene(scene);
+        //primaryStage.show();
 
-        startGame();
+        //startGame();
 
     }
 

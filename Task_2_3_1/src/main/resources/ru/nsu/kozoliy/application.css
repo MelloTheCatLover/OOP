@@ -1,0 +1,33 @@
+.root{
+
+}
+
+@font-face {
+    font-family: 'Belozersk';
+    src: url('Belozersk_Regular.ttf');
+}
+
+.text {
+    -fx-font-family: "Belozersk";
+}
+
+.label{
+    -fx-font-family: "Belozersk";
+    -fx-text-fill: "white";
+    -fx-alignment: center;
+}
+
+#worldSizeChoiceBox .menu-item:focused {
+  -fx-background-color: "#2B81C8" ; /* for example */
+}
+
+#worldSizeChoiceBox .context-menu {
+    -fx-background-color: "#154C79";
+    -fx-padding: 4 0 4 5;
+    -fx-alignment: center;
+}
+
+#worldSizeChoiceBox {
+  -fx-mark-color: "#474787" ;
+  -fx-font-size: 15pt;
+}
