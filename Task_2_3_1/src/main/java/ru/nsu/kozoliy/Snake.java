@@ -38,7 +38,7 @@ public class Snake extends Application {
         this.settings = settings;
     }
 
-    private Parent createContent() {
+    public Parent createContent() {
 
         Pane root = new Pane();
         Canvas canvas = new Canvas(settings.getWorldSizeX(), settings.getWorldSizeY());
@@ -105,7 +105,7 @@ public class Snake extends Application {
         return root;
     }
 
-    private ArrayList<Rectangle> generateFood() {
+    public ArrayList<Rectangle> generateFood() {
         ArrayList<Rectangle> foods = new ArrayList<>();
 
         for (int i = 0; i < settings.getFoodCount(); i++){
@@ -119,12 +119,12 @@ public class Snake extends Application {
         return foods;
     }
 
-    private void restartGame() {
+    public void restartGame() {
         stopGame();
         startGame();
     }
 
-    private void changeDirection(Node tail) {
+    public void changeDirection(Node tail) {
         switch (direction) {
             case UP:
                 tail.setTranslateX(snake.get(0).getTranslateX());
@@ -145,7 +145,7 @@ public class Snake extends Application {
         }
     }
 
-    private void detectCollision(Node tail) {
+    public void detectCollision(Node tail) {
         for (Node rect : snake) {
             if (rect != tail && tail.getTranslateX() == rect.getTranslateX()
                     && tail.getTranslateY() == rect.getTranslateY()) {
@@ -155,7 +155,7 @@ public class Snake extends Application {
         }
     }
 
-    private void eatFood(Node tail, Rectangle food, Point2D tailMemory) {
+    public void eatFood(Node tail, Rectangle food, Point2D tailMemory) {
         if (tail.getTranslateX() == food.getTranslateX()
                 && tail.getTranslateY() == food.getTranslateY()) {
             food.setTranslateX((int)(Math.random() * (settings.getWorldSizeX() - settings.getDisplaySize())) / settings.getDisplaySize() * settings.getDisplaySize());
@@ -172,14 +172,14 @@ public class Snake extends Application {
     }
 
 
-    private void stopGame() {
+    public void stopGame() {
         running = false;
         score = 0;
         timeline.stop();
         snake.clear();
     }
 
-    private void drawBackground(GraphicsContext gc) {
+    public void drawBackground(GraphicsContext gc) {
         for(int i = 0; i < settings.getWorldSizeX() / settings.getDisplaySize(); i++){
             for(int j = 0; j < settings.getWorldSizeY() / settings.getDisplaySize(); j++){
                 if((i + j) % 2 == 0) {
@@ -193,7 +193,7 @@ public class Snake extends Application {
     }
 
 
-    private void startGame() {
+    public void startGame() {
         direction = Direction.RIGHT;
         Rectangle head = new Rectangle(settings.getDisplaySize(), settings.getDisplaySize());
         head.setTranslateX(settings.getWorldSizeX() / 2);
@@ -243,7 +243,7 @@ public class Snake extends Application {
 
     }
 
-    private void drawScore() {
+    public void drawScore() {
         gc.clearRect(0, 0, settings.getWorldSizeX(), settings.getDisplaySize());
         for (int i = 0; i < settings.getWorldSizeX() / settings.getDisplaySize(); i++) {
             if((i) % 2 == 0) {
