@@ -32,11 +32,16 @@
             <Font name="Belozersk Regular" size="14.0" />
          </font>
       </TextField>
-      <Button fx:id="startButton" contentDisplay="CENTER" layoutX="255.0" layoutY="470.0" mnemonicParsing="false" onAction="#submit" style="-fx-background-color: #474787; -fx-background-radius: 20; -fx-border-radius: 5;" text="НАЧАТЬ ИГРУ!" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="startButton" contentDisplay="CENTER" layoutX="255.0" layoutY="470.0" mnemonicParsing="false" onAction="#submit" style="-fx-background-color: #474787; -fx-background-radius: 20; -fx-border-radius: 5;" text="НАЧАТЬ ИГРУ!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Belozersk Regular" size="30.0" />
          </font>
       </Button>
+      <Label fx:id="warningLabel" alignment="CENTER" layoutX="130.0" layoutY="252.0" text="Введите все данные!" textAlignment="CENTER" textFill="#a91f74" visible="false">
+         <font>
+            <Font name="Belozersk Regular" size="40.0" />
+         </font>
+      </Label>
 
    </children>
 </AnchorPane>

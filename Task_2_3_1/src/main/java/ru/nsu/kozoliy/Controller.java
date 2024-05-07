@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.net.URL;
@@ -30,6 +31,8 @@ public class Controller implements Initializable {
     @FXML
     private Button startButton;
 
+    @FXML
+    private Label warningLabel;
 
     private String[] worldSizes = {"Маленький", "Средний", "Большшой", "Огромный"};
 
@@ -67,7 +70,10 @@ public class Controller implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // Здесь можно добавить код для закрытия стартового окна, если это необходимо
+
+        if (settings.getFoodCount() == 0 || settings.getDisplaySize() == 0 || settings.getWorldSizeY() == 0) {
+            warningLabel.setVisible(true);
+        }
         ((Stage) startButton.getScene().getWindow()).close();
     }
 
@@ -120,8 +126,8 @@ public class Controller implements Initializable {
                 settings.setWorldSizeY(800);
             }
             case "Огромный" -> {
-                settings.setWorldSizeX(1920);
-                settings.setWorldSizeY(1080);
+                settings.setWorldSizeX(1800);
+                settings.setWorldSizeY(1000);
             }
         }
     }
