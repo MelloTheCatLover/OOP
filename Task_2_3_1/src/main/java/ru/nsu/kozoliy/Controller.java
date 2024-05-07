@@ -80,55 +80,65 @@ public class Controller implements Initializable {
     public void getSpeed(ActionEvent event) {
         String speed = speedChoiceBox.getValue();
         switch (speed) {
-            case "Легкая" -> {
+            case "Легкая":
                 settings.setDifficulty(0.4);
-            }
-            case "Нормальная" -> {
+                break;
+            case "Нормальная":
                 settings.setDifficulty(0.2);
-            }
-            case "Сложная" -> {
+                break;
+            case "Сложная":
                 settings.setDifficulty(0.07);
-            }
-            case "НЕВОЗМОЖНО" -> {
+                break;
+            case "НЕВОЗМОЖНО":
                 settings.setDifficulty(0.01);
-            }
+                break;
+            default:
+                // Обработка для случаев, когда значение не соответствует ни одному варианту
+                break;
         }
     }
 
     public void getCellSize(ActionEvent event) {
         String cellSize = cellSizeChoiceBox.getValue();
         switch (cellSize) {
-            case "Маленькая" -> {
+            case "Маленькая":
                 settings.setDisplaySize(10);
-            }
-            case "Нормальная" -> {
+                break;
+            case "Нормальная":
                 settings.setDisplaySize(20);
-            }
-            case "Большая" -> {
+                break;
+            case "Большая":
                 settings.setDisplaySize(50);
-            }
+                break;
+            default:
+                // Обработка для случаев, когда значение не соответствует ни одному варианту
+                break;
         }
     }
 
     public void getWorldSize(ActionEvent event) {
         String worldSize = worldSizeChoiceBox.getValue();
         switch (worldSize) {
-            case "Маленький" -> {
+            case "Маленький":
                 settings.setWorldSizeX(600);
                 settings.setWorldSizeY(400);
-            }
-            case "Средний" -> {
+                break;
+            case "Средний":
                 settings.setWorldSizeX(800);
                 settings.setWorldSizeY(600);
-            }
-            case "Большшой>" -> {
+                break;
+            case "Большшой":
                 settings.setWorldSizeX(1000);
                 settings.setWorldSizeY(800);
-            }
-            case "Огромный" -> {
+                break;
+            case "Огромный":
                 settings.setWorldSizeX(1800);
                 settings.setWorldSizeY(1000);
-            }
+                break;
+            default:
+                // Обработка для случаев, когда значение не соответствует ни одному варианту
+                break;
         }
     }
+
 }

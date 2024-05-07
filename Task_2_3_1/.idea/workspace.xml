@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="Обновил меню">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="fixin review problems" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715098678970</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixin review problems">
+      <option name="closed" value="true" />
+      <created>1715098909966</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715098909966</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -146,7 +150,8 @@
     <MESSAGE value="start screen. My laptop is dying" />
     <MESSAGE value="Добавил частично MVC, стартовое меню: выбор размера поля, сложности, кол-ва яблок, размера ячейки, переход между окнами." />
     <MESSAGE value="Обновил меню" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обновил меню" />
+    <MESSAGE value="fixin review problems" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixin review problems" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
