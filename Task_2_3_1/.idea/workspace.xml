@@ -4,20 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="fixin review problems 8">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Food.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Model.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Snake.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/SnakePart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/view/SnakeGameView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ru/nsu/kozoliy/Belozersk_Regular.ttf" afterDir="false" />
+    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="Ничего не работает. Ничего не получается. Продолжаю попытки">
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Snake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/SnakeGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/view/SnakeGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/view/SnakeGameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/TestSnake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/TestSnake.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,8 +106,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Snake" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.nsu.kozoliy.Snake" />
+    <configuration name="SnakeGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.nsu.kozoliy.SnakeGame" />
       <module name="Task_2_3_1.main" />
       <extension name="coverage">
         <pattern>
@@ -164,7 +161,7 @@
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Model" />
         <item itemvalue="Application.SnakeGameView" />
-        <item itemvalue="Application.Snake" />
+        <item itemvalue="Application.SnakeGame" />
         <item itemvalue="Gradle.TestSnake" />
       </list>
     </recent_temporary>
@@ -266,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715103735522</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Ничего не работает. Ничего не получается. Продолжаю попытки">
+      <option name="closed" value="true" />
+      <created>1715276315567</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1715276315567</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -279,7 +284,8 @@
     <MESSAGE value="fixin review problems 6" />
     <MESSAGE value="fixin review problems 7" />
     <MESSAGE value="fixin review problems 8" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixin review problems 8" />
+    <MESSAGE value="Ничего не работает. Ничего не получается. Продолжаю попытки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ничего не работает. Ничего не получается. Продолжаю попытки" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -287,6 +293,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="4" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
-public class Snake extends Application {
+public class SnakeGame extends Application {
 
     private GraphicsContext gc;
     
@@ -47,6 +47,7 @@ public class Snake extends Application {
 
         gc = canvas.getGraphicsContext2D();
         drawBackground(gc);
+
 
 
         Group snakeBody = new Group();
@@ -100,9 +101,7 @@ public class Snake extends Application {
         timeline.getKeyFrames().add(frame);
         timeline.setCycleCount(Timeline.INDEFINITE);
 
-
         root.getChildren().addAll(foods, snakeBody);
-
 
         return root;
     }
@@ -183,7 +182,7 @@ public class Snake extends Application {
 
     public void drawBackground(GraphicsContext gc) {
         for(int i = 0; i < settings.getWorldSizeX() / settings.getDisplaySize(); i++){
-            for(int j = 0; j < settings.getWorldSizeY() / settings.getDisplaySize(); j++){
+            for(int j = 1; j < settings.getWorldSizeY() / settings.getDisplaySize(); j++){
                 if((i + j) % 2 == 0) {
                     gc.setFill(Color.web("44d420"));
                 } else {
@@ -202,6 +201,7 @@ public class Snake extends Application {
         head.setTranslateY(settings.getWorldSizeY() / 2);
         head.setFill(Color.BLUE);
         snake.add(head);
+        System.out.println("ASdasd");
         timeline.play();
         running = true;
     }

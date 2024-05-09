@@ -3,6 +3,7 @@ package ru.nsu.kozoliy.view;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.geometry.Point2D;
 import javafx.scene.Group;
 import javafx.scene.Node;
@@ -32,6 +33,8 @@ public class SnakeGameView extends Application {
     private Timeline timeline = new Timeline();
     private Group foods = new Group();
 
+    private Group snakeDraw = new Group();
+
     public Group getFoods() {
         return foods;
     }
@@ -54,76 +57,133 @@ public class SnakeGameView extends Application {
 
         foods.getChildren().addAll(generateFood());
 
+        System.out.println("Calling drawScore() method");
+
+        //drawScore();
+        System.out.println(model.getSnake().getSnakeBody().get(0).getX());
         KeyFrame frame = new KeyFrame(Duration.seconds(model.getSettings().getDifficulty()), event -> {
+            //drawScore();
+
             if (!model.isRunning())
                 return;
 
 
-            boolean toRemove = model.getSnake().getSize() > 1;
+            boolean toRemove = snakeDraw.getChildren().size() > 1;
 
-            Node tail = null;
-            if (toRemove) {
-                tail.setTranslateX(model.getSnake().getSnakeBody().remove(model.getSnake().getSize() - 1).getX());
-                tail.setTranslateY(model.getSnake().getSnakeBody().remove(model.getSnake().getSize() - 1).getY());
-            } else {
-                tail.setTranslateX(model.getSnake().getSnakeBody().get(0).getX());
-                tail.setTranslateY(model.getSnake().getSnakeBody().get(0).getY());
-            }
+            Node tail = toRemove ? snakeDraw.getChildren().remove(snakeDraw.getChildren().size()-1) : snakeDraw.getChildren().get(0);
+
+
 
             SnakePart tailMemory = new SnakePart((int)tail.getTranslateX(), (int)tail.getTranslateY());
-            changeDirection(tail);
+            //System.out.println(tailMemory.getX() + tailMemory.getY());
+            switch (model.getSnake().getDirection()) {
+                case UP:
+                    tail.setTranslateX(snakeDraw.getChildren().get(0).getTranslateX());
+                    tail.setTranslateY(snakeDraw.getChildren().get(0).getTranslateY() - model.getSettings().getDisplaySize());
+                    break;
+                case DOWN:
+                    tail.setTranslateX(snakeDraw.getChildren().get(0).getTranslateX());
+                    tail.setTranslateY(snakeDraw.getChildren().get(0).getTranslateY() + model.getSettings().getDisplaySize());
+                    break;
+                case LEFT:
+                    tail.setTranslateX(snakeDraw.getChildren().get(0).getTranslateX() - model.getSettings().getDisplaySize());
+                    tail.setTranslateY(snakeDraw.getChildren().get(0).getTranslateY());
+                    break;
+                case RIGHT:
+                    tail.setTranslateX(snakeDraw.getChildren().get(0).getTranslateX() + model.getSettings().getDisplaySize());
+                    tail.setTranslateY(snakeDraw.getChildren().get(0).getTranslateY());
+                    break;
+            }
+
+            System.out.println(model.getSnake().getSnakeBody().get(0).getX());
+            //drawRectangle(model.getSettings().getDisplaySize(), model.getSettings().getDisplaySize(), tail.getX(), tail.getY(), Color.BLUE);
+
+            if (toRemove) {
+                snakeDraw.getChildren().add(0, tail);
+
+            }
 
             model.setMoved(true);
 
-            if (toRemove) {
-                model.getSnake().getSnakeBody().add(0, new SnakePart((int)tail.getTranslateX(), (int)tail.getTranslateY()));
+
+
+            detectCollision(tail);
+
+            if (tail.getTranslateX() < 0) {
+                tail.setTranslateX(model.getSettings().getWorldSizeX() - model.getSettings().getDisplaySize());
+            } else if (tail.getTranslateX() >= model.getSettings().getWorldSizeX() ) {
+                tail.setTranslateX(0);
             }
 
-            snakeGameViewModel.move(tail, tailMemory);
+            if (tail.getTranslateY() < model.getSettings().getDisplaySize()) {
+                tail.setTranslateY(model.getSettings().getWorldSizeY() - model.getSettings().getDisplaySize());
+            } else if (tail.getTranslateY() >= model.getSettings().getWorldSizeY() ) {
+                tail.setTranslateY(model.getSettings().getDisplaySize());
+            }
+
+            for (Object food : foods.getChildren().toArray()) {
+                eatFood(tail, (Rectangle)food, tailMemory);
+            }
 
             drawScore();
         });
 
+        snakeDraw.getChildren().addAll(drawSnake(model.getSnake().getSnakeBody()));
+        root.getChildren().addAll(foods, snakeDraw);
 
         timeline.getKeyFrames().add(frame);
         timeline.setCycleCount(Timeline.INDEFINITE);
 
 
-        Group snakeBody = new Group();
-        snakeBody.getChildren().addAll(drawSnake(model.getSnake().getSnakeBody()));
-        root.getChildren().addAll(foods, snakeBody);
-
-
         return root;
+
+
     }
 
-    public void changeDirection(Node tail) {
-        switch (model.getSnake().getDirection()) {
-            case UP:
-                tail.setTranslateX(model.getSnake().getSnakeBody().get(0).getX());
-                tail.setTranslateY(model.getSnake().getSnakeBody().get(0).getY() - model.getSettings().getDisplaySize());
+    public void detectCollision(Node tail) {
+        for (Node rect : snakeDraw.getChildren()) {
+            if (rect != tail && tail.getTranslateX() == rect.getTranslateX()
+                    && tail.getTranslateY() == rect.getTranslateY()) {
+                restartGame();
                 break;
-            case DOWN:
-                tail.setTranslateX(model.getSnake().getSnakeBody().get(0).getX());
-                tail.setTranslateY(model.getSnake().getSnakeBody().get(0).getY() + model.getSettings().getDisplaySize());
-                break;
-            case LEFT:
-                tail.setTranslateX(model.getSnake().getSnakeBody().get(0).getX() - model.getSettings().getDisplaySize());
-                tail.setTranslateY(model.getSnake().getSnakeBody().get(0).getY());
-                break;
-            case RIGHT:
-                tail.setTranslateX(model.getSnake().getSnakeBody().get(0).getX() + model.getSettings().getDisplaySize());
-                tail.setTranslateY(model.getSnake().getSnakeBody().get(0).getY());
-                break;
+            }
         }
     }
 
+    public void restartGame() {
+        stopGame();
+        model.startGame();
+        timeline.play();
+    }
+
+    public void stopGame() {
+        model.setRunning(false);
+        model.setScore(0);
+        timeline.stop();
+        snakeDraw.getChildren().clear();
+    }
+    public void eatFood(Node tail, Rectangle food, SnakePart tailMemory) {
+        if (tail.getTranslateX() == food.getTranslateX()
+                && tail.getTranslateY() == food.getTranslateY()) {
+            food.setTranslateX((int)(Math.random() * (model.getSettings().getWorldSizeX() - model.getSettings().getDisplaySize())) / model.getSettings().getDisplaySize() * model.getSettings().getDisplaySize());
+            food.setTranslateY((int)(Math.random() * (model.getSettings().getWorldSizeY() - model.getSettings().getDisplaySize() - model.getSettings().getDisplaySize())) / model.getSettings().getDisplaySize() * model.getSettings().getDisplaySize() + model.getSettings().getDisplaySize());
+
+            Rectangle rect = new Rectangle(model.getSettings().getDisplaySize(), model.getSettings().getDisplaySize());
+            rect.setTranslateX(tailMemory.getX());
+            rect.setTranslateY(tailMemory.getY());
+            rect.setFill(Color.BLUE);
+
+            model.setScore(model.getScore() + 10);
+            snakeDraw.getChildren().add(rect);
+        }
+    }
 
     @Override
     public void start(Stage primaryStage) {
+        System.out.println("Calling start() method");
         primaryStage.setTitle("Snake by Mello");
-        model.setSnake(new Snake(0,0, Direction.DOWN));
         Scene scene = new Scene(createContent());
+
 
         scene.setOnKeyPressed(event -> {
             if (!model.isMoved())
@@ -148,6 +208,7 @@ public class SnakeGameView extends Application {
                     break;
             }
 
+
             model.setMoved(false);
         });
 
@@ -155,22 +216,31 @@ public class SnakeGameView extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
+
         model.startGame();
+        startTimeline();
     }
 
 
 
-    public ArrayList<Node> drawSnake(ArrayList<SnakePart> snake) {
-        ArrayList<Node> snakeDraw = new ArrayList<>();
+    public ArrayList<Rectangle> drawSnake(ArrayList<SnakePart> snake) {
+        // Очищаем предыдущие отрисованные части змеи
+        snakeDraw.getChildren().clear();
+
+        // Создаем новый список для отрисованных частей змеи
+        ArrayList<Rectangle> snakeDrawL = new ArrayList<>();
         for (SnakePart snakePart : snake) {
-            Rectangle snakePartDraw = new Rectangle();
+            Rectangle snakePartDraw = new Rectangle(model.getSettings().getDisplaySize(), model.getSettings().getDisplaySize());
             snakePartDraw.setTranslateX(snakePart.getX());
             snakePartDraw.setTranslateY(snakePart.getY());
             snakePartDraw.setFill(Color.BLUE);
-            snakeDraw.add(snakePartDraw);
+            snakeDrawL.add(snakePartDraw);
         }
-        return snakeDraw;
+
+        // Добавляем новые отрисованные части змеи в группу
+        return snakeDrawL;
     }
+
 
 
 
@@ -205,6 +275,8 @@ public class SnakeGameView extends Application {
     }
 
     public void drawScore() {
+
+
         gc.clearRect(0, 0, model.getSettings().getWorldSizeX(), model.getSettings().getDisplaySize());
         for (int i = 0; i < model.getSettings().getWorldSizeX() / model.getSettings().getDisplaySize(); i++) {
             if ((i) % 2 == 0) {
@@ -214,15 +286,17 @@ public class SnakeGameView extends Application {
             }
             gc.fillRect(i * model.getSettings().getDisplaySize(), 0, model.getSettings().getDisplaySize(), model.getSettings().getDisplaySize());
         }
-        gc.setFill(Color.WHITE);
+        gc.setFill(Color.RED);
         gc.setFont(Font.font("Consolas", model.getSettings().getDisplaySize() * 0.8));
         gc.fillText("Score: " + model.getScore(), 10, model.getSettings().getDisplaySize() * 0.8);
     }
 
     public void drawRectangle(int sizeX, int sizeY, double x, double y, Color color) {
         Rectangle rect = new Rectangle(sizeX, sizeY);
-        rect.setTranslateX(x);
-        rect.setTranslateY(y);
+        gc.setFill(color);
+        gc.fillRect(x, y, model.getSettings().getWorldSizeX(), model.getSettings().getWorldSizeX());
+
+
         rect.setFill(color);
     }
 
@@ -230,12 +304,22 @@ public class SnakeGameView extends Application {
         launch();
     }
 
+    public Group getSnakeDraw() {
+        return snakeDraw;
+    }
+
     public void stopTimeline(){
         timeline.stop();
     }
 
     public void startTimeline(){
+        System.out.println("timeline");
         timeline.play();
+    }
+
+    public void restartTimeline(){
+        stopTimeline();
+        startTimeline();
     }
 
 

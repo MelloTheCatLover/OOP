@@ -61,28 +61,7 @@ public class Model {
         this.snake = snake;
     }
 
-    public SnakePart changeDirection(SnakePart tail) {
-        SnakePart newTail = new SnakePart(tail.getX(), tail.getY());
-        switch (this.getSnake().getDirection()) {
-            case UP:
-                newTail.setX(this.getSnake().getSnakeBody().get(0).getX());
-                newTail.setY(this.getSnake().getSnakeBody().get(0).getY() - this.getSettings().getDisplaySize());
-                break;
-            case DOWN:
-                newTail.setX(this.getSnake().getSnakeBody().get(0).getX());
-                newTail.setY(this.getSnake().getSnakeBody().get(0).getY() + this.getSettings().getDisplaySize());
-                break;
-            case LEFT:
-                newTail.setX(this.getSnake().getSnakeBody().get(0).getX() - this.getSettings().getDisplaySize());
-                newTail.setY(this.getSnake().getSnakeBody().get(0).getY());
-                break;
-            case RIGHT:
-                newTail.setX(this.getSnake().getSnakeBody().get(0).getX() + settings.getDisplaySize());
-                newTail.setY(this.getSnake().getSnakeBody().get(0).getY());
-                break;
-        }
-        return newTail;
-    }
+
 
     public void detectCollision(SnakePart tail) {
         for (SnakePart part : snake.getSnakeBody()) {
@@ -125,8 +104,7 @@ public class Model {
     }
 
     public void startGame() {
-        snake.setDirection(Direction.RIGHT);
-        snake.getSnakeBody().add(new SnakePart( settings.getWorldSizeX()/2, settings.getWorldSizeY()/2));
+        snake = new Snake(new SnakePart( settings.getWorldSizeX()/2, settings.getWorldSizeY()/2), Direction.RIGHT);
         snakeGameViewModel.startDrawing();
         running = true;
     }
@@ -136,5 +114,27 @@ public class Model {
         SnakeGameViewModel snakeGameViewModel = new SnakeGameViewModel(model);
         SnakeGameView snakeGameView = new SnakeGameView(model, snakeGameViewModel);
         snakeGameView.start(new Stage());
+    }
+
+    public SnakePart changeDirection(SnakePart tail) {
+        switch (snake.getDirection()) {
+            case UP:
+                tail.setX(snake.getSnakeBody().get(0).getX());
+                tail.setY(snake.getSnakeBody().get(0).getY() - settings.getDisplaySize());
+                break;
+            case DOWN:
+                tail.setX(snake.getSnakeBody().get(0).getX());
+                tail.setY(snake.getSnakeBody().get(0).getY() + settings.getDisplaySize());
+                break;
+            case LEFT:
+                tail.setX(snake.getSnakeBody().get(0).getX() - settings.getDisplaySize());
+                tail.setY(snake.getSnakeBody().get(0).getY());
+                break;
+            case RIGHT:
+                tail.setX(snake.getSnakeBody().get(0).getX() + settings.getDisplaySize());
+                tail.setY(snake.getSnakeBody().get(0).getY());
+                break;
+        }
+        return tail;
     }
 }

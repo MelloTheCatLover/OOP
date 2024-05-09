@@ -5,6 +5,7 @@ import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import ru.nsu.kozoliy.Direction;
+import ru.nsu.kozoliy.SnakeGame;
 import ru.nsu.kozoliy.models.Food;
 import ru.nsu.kozoliy.models.Model;
 import ru.nsu.kozoliy.models.SnakePart;
@@ -29,8 +30,9 @@ public class SnakeGameViewModel {
         return snakeGameView;
     }
 
-    public void move(Node nodeTail, SnakePart tailMemory) {
-        SnakePart tail = new SnakePart((int)nodeTail.getTranslateX(), (int)nodeTail.getTranslateY());
+    public void move(Node tailL, SnakePart tailMemory) {
+
+        SnakePart tail = new SnakePart((int)tailL.getTranslateX(),(int)tailL.getTranslateY());
 
         model.detectCollision(tail);
 
@@ -68,7 +70,8 @@ public class SnakeGameViewModel {
 
 
     public void stopDrawing() {
-        snakeGameView.stopTimeline();
+        snakeGameView.getSnakeDraw().getChildren().clear();
+
     }
 
     public void startDrawing() {

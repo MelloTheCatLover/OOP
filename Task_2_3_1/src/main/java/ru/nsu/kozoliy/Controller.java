@@ -12,6 +12,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import ru.nsu.kozoliy.models.Model;
+import ru.nsu.kozoliy.models.Snake;
+import ru.nsu.kozoliy.models.SnakePart;
 import ru.nsu.kozoliy.view.SnakeGameView;
 import ru.nsu.kozoliy.viewModel.SnakeGameViewModel;
 
@@ -70,6 +72,9 @@ public class Controller implements Initializable {
         try {
             Model model = new Model();
             model.setSettings(settings);
+            model.setMoved(false);
+            model.setRunning(false);
+            model.setSnake(new Snake(new SnakePart( settings.getWorldSizeX()/2, settings.getWorldSizeY()/2), Direction.RIGHT));
             SnakeGameViewModel snakeGameViewModel = new SnakeGameViewModel(model);
             SnakeGameView snakeGameView = new SnakeGameView(model, snakeGameViewModel);
             snakeGameView.start(new Stage());
