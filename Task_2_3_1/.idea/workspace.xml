@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="fixin review problems 7">
+    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="fixin review problems 8">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Food.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Model.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Snake.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/SnakePart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/view/SnakeGameView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ru/nsu/kozoliy/Belozersk_Regular.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Snake.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +42,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -50,12 +62,17 @@
     "git-widget-placeholder": "Task__2__3__1",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "17 (3)",
+    "last_opened_file_path": "D:/NSU/Second Course/First_Sem/Object_Programming/OOP/Task_2_3_1/src/main/resources/ru/nsu/kozoliy",
     "settings.editor.selected.configurable": "preferences.JavaFX"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="ru.nsu.kozoliy.models" />
       <recent name="ru.nsu.kozoliy" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\NSU\Second Course\First_Sem\Object_Programming\OOP\Task_2_3_1\src\main\resources\ru\nsu\kozoliy" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\NSU\Second Course\First_Sem\Object_Programming\OOP\Task_2_3_1\src\main\resources\ru\nsu\kozoliy" />
@@ -65,13 +82,13 @@
       <recent name="ru.nsu.kozoliy" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.TestSnake">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.nsu.kozoliy.Main" />
       <module name="Task_2_3_1.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.nsu.kozoliy.SnakeTest" />
+          <option name="PATTERN" value="ru.nsu.kozoliy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -79,27 +96,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Task_2_3_1 [jacocoTestReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="jacocoTestReport" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
+    <configuration name="Model" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.nsu.kozoliy.models.Model" />
+      <module name="Task_2_3_1.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.nsu.kozoliy.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Snake" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.nsu.kozoliy.Snake" />
+      <module name="Task_2_3_1.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.nsu.kozoliy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SnakeGameView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.nsu.kozoliy.view.SnakeGameView" />
+      <module name="Task_2_3_1.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.nsu.kozoliy.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="TestSnake" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -125,52 +159,13 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="TestSnake.testSnake" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ru.nsu.kozoliy.TestSnake.testSnake&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="TestSnake" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Task_2_3_1.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.nsu.kozoliy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.nsu.kozoliy" />
-      <option name="MAIN_CLASS_NAME" value="ru.nsu.kozoliy.TestSnake" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TestSnake" />
-        <item itemvalue="Gradle.Task_2_3_1 [jacocoTestReport]" />
-        <item itemvalue="Gradle.TestSnake.testSnake" />
-        <item itemvalue="JUnit.TestSnake" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Model" />
+        <item itemvalue="Application.SnakeGameView" />
+        <item itemvalue="Application.Snake" />
+        <item itemvalue="Gradle.TestSnake" />
       </list>
     </recent_temporary>
   </component>
@@ -263,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715101902233</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fixin review problems 8">
+      <option name="closed" value="true" />
+      <created>1715103735522</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1715103735522</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -275,7 +278,8 @@
     <MESSAGE value="fixin review problems 5" />
     <MESSAGE value="fixin review problems 6" />
     <MESSAGE value="fixin review problems 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixin review problems 7" />
+    <MESSAGE value="fixin review problems 8" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixin review problems 8" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -58,6 +58,8 @@ public class Snake extends Application {
             if (!running)
                 return;
 
+
+
             boolean toRemove = snake.size() > 1;
 
             Node tail = toRemove ? snake.remove(snake.size()-1) : snake.get(0);

@@ -11,6 +11,10 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import ru.nsu.kozoliy.models.Model;
+import ru.nsu.kozoliy.view.SnakeGameView;
+import ru.nsu.kozoliy.viewModel.SnakeGameViewModel;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -64,9 +68,11 @@ public class Controller implements Initializable {
         settings.setFoodCount(Integer.parseInt(foodCount.getText()));
 
         try {
-            Snake snake = new Snake();
-            snake.setSettings(settings);
-            snake.start(new Stage());
+            Model model = new Model();
+            model.setSettings(settings);
+            SnakeGameViewModel snakeGameViewModel = new SnakeGameViewModel(model);
+            SnakeGameView snakeGameView = new SnakeGameView(model, snakeGameViewModel);
+            snakeGameView.start(new Stage());
         } catch (Exception e) {
             e.printStackTrace();
         }
