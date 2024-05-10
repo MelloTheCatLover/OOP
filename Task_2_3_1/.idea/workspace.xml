@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="test2">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/view/SnakeGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/view/SnakeGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/Controller.java" afterDir="false" />
+    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="test5">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +85,7 @@
       <recent name="ru.nsu.kozoliy" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.SnakeGameViewModelTest.testMove">
+  <component name="RunManager" selected="Gradle.SnakeGameViewModelTest">
     <configuration name="ControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -207,9 +208,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.SnakeGameViewModelTest.testMove" />
         <item itemvalue="Gradle.SnakeGameViewModelTest" />
         <item itemvalue="Gradle.ControllerTest" />
+        <item itemvalue="Gradle.SnakeGameViewModelTest.testMove" />
         <item itemvalue="Gradle.SnakeGameViewTest.startTimeline" />
         <item itemvalue="Gradle.SnakeGameViewTest.eatFood" />
       </list>
@@ -344,7 +345,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715352689438</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="test3">
+      <option name="closed" value="true" />
+      <created>1715352900512</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1715352900512</updated>
+    </task>
+    <task id="LOCAL-00017" summary="test4">
+      <option name="closed" value="true" />
+      <created>1715353043508</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1715353043508</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -361,7 +378,10 @@
     <MESSAGE value="Думал, это займет меньше времени. Оно работает. Но я столкнулся с некоторыми проблемами, которые понял как решить. Но нет MVVM, хоть я и могу рассказать каким он должен быть, нет нормального кода, нет тестов, нет ревьюдога. Ночь не спал, но этот дедлайн мне не дался(" />
     <MESSAGE value="test" />
     <MESSAGE value="test2" />
-    <option name="LAST_COMMIT_MESSAGE" value="test2" />
+    <MESSAGE value="test3" />
+    <MESSAGE value="test4" />
+    <MESSAGE value="test5" />
+    <option name="LAST_COMMIT_MESSAGE" value="test5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -383,5 +403,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Task_2_3_1$ModelTest.ic" NAME="ModelTest Coverage Results" MODIFIED="1715352354646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Task_2_3_1$ControllerTest.ic" NAME="ControllerTest Coverage Results" MODIFIED="1715353119961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Task_2_3_1$SnakeGameViewModelTest.ic" NAME="SnakeGameViewModelTest Coverage Results" MODIFIED="1715353136899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

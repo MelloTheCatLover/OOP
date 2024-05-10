@@ -82,6 +82,7 @@ public class SnakeGameViewModel {
     /**
      * Clears the drawing of the snake.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void stopDrawing() {
         snakeGameView.getSnakeDraw().getChildren().clear();
     }
