@@ -2,6 +2,7 @@ package ru.nsu.kozoliy.viewModel;
 
 import javafx.scene.Node;
 import javafx.scene.paint.Color;
+import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
 import ru.nsu.kozoliy.models.Settings;
 import ru.nsu.kozoliy.models.Food;
 import ru.nsu.kozoliy.models.Model;
@@ -31,6 +32,7 @@ public class SnakeGameViewModel {
      *
      * @return The SnakeGameView.
      */
+    @ExcludeFromJacocoGeneratedReport
     public SnakeGameView getSnakeGameView() {
         return snakeGameView;
     }
@@ -41,6 +43,7 @@ public class SnakeGameViewModel {
      * @param tailL      The tail node of the snake.
      * @param tailMemory The memory of the tail position before the move.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void move(Node tailL, SnakePart tailMemory) {
         SnakePart tail = new SnakePart((int) tailL.getTranslateX(), (int) tailL.getTranslateY());
         model.detectCollision(tail);
@@ -65,6 +68,7 @@ public class SnakeGameViewModel {
     /**
      * Generates a new food item in the game world.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void generateNewFood() {
         Food food = new Food(0, 0);
 

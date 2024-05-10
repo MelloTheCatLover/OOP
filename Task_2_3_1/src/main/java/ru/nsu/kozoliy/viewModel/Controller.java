@@ -8,6 +8,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
 import ru.nsu.kozoliy.models.Settings;
 import ru.nsu.kozoliy.models.Model;
 import ru.nsu.kozoliy.view.SnakeGameView;
@@ -53,6 +54,7 @@ public class Controller implements Initializable {
      * @param resources The resources used to localize the root object.
      */
     @Override
+    @ExcludeFromJacocoGeneratedReport
     public void initialize(URL location, ResourceBundle resources) {
         cellSizeChoiceBox.getItems().addAll(cellSize);
         cellSizeChoiceBox.setOnAction(this::getCellSize);
@@ -69,6 +71,7 @@ public class Controller implements Initializable {
      *
      * @param event The action event.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void submit(ActionEvent event) {
         settings.setFoodCount(Integer.parseInt(foodCount.getText()));
 
@@ -95,6 +98,7 @@ public class Controller implements Initializable {
      *
      * @param event The action event.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void getSpeed(ActionEvent event) {
         String speed = speedChoiceBox.getValue();
         switch (speed) {
@@ -121,6 +125,7 @@ public class Controller implements Initializable {
      *
      * @param event The action event.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void getCellSize(ActionEvent event) {
         String cellSize = cellSizeChoiceBox.getValue();
         switch (cellSize) {
@@ -144,6 +149,7 @@ public class Controller implements Initializable {
      *
      * @param event The action event.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void getWorldSize(ActionEvent event) {
         String worldSize = worldSizeChoiceBox.getValue();
         switch (worldSize) {

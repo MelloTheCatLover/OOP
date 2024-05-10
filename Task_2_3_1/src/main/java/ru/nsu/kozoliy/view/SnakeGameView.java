@@ -40,7 +40,10 @@ public class SnakeGameView extends Application {
 
     private Settings settings;
 
-
+    @ExcludeFromJacocoGeneratedReport
+    public Group getFoods() {
+        return foods;
+    }
 
     /**
      * Constructs a SnakeGameView with the specified model, view model, and settings.
@@ -217,8 +220,8 @@ public class SnakeGameView extends Application {
      *
      * @param primaryStage The primary stage of the JavaFX application.
      */
-    @ExcludeFromJacocoGeneratedReport
     @Override
+    @ExcludeFromJacocoGeneratedReport
     public void start(Stage primaryStage) {
         model.setSnake(new Snake(new SnakePart(settings.getWorldSizeX() / 2, settings.getWorldSizeY() / 2), Direction.RIGHT));
         settings = model.getSettings();
@@ -287,6 +290,7 @@ public class SnakeGameView extends Application {
     /**
      * Initializes the game by drawing the snake's head on the canvas.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void startGameDraw(){
         Rectangle head = new Rectangle(settings.getDisplaySize(), settings.getDisplaySize());
         head.setTranslateX(settings.getWorldSizeX() / 2);

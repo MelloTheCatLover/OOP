@@ -12,6 +12,12 @@ public class Settings {
     private int displaySize;
     private int foodCount;
 
+    /**
+     * Empty constructor.
+     *
+     */
+    public Settings() {
+    }
 
     /**
      * Constructs a Settings object with specified values.
