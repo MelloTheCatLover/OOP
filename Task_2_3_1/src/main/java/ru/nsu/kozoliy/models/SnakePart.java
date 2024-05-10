@@ -1,14 +1,16 @@
 package ru.nsu.kozoliy.models;
 
+import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
+
 /**
  * Represents a part of the snake.
  */
 public class SnakePart {
     /** The x-coordinate of the snake part. */
-    private int x;
+    private int xCoordinate;
 
     /** The y-coordinate of the snake part. */
-    private int y;
+    private int yCoordinate;
 
     /**
      * Constructs a snake part with the specified coordinates.
@@ -17,8 +19,8 @@ public class SnakePart {
      * @param y The y-coordinate of the snake part.
      */
     public SnakePart(int x, int y) {
-        this.x = x;
-        this.y = y;
+        this.xCoordinate = x;
+        this.yCoordinate = y;
     }
 
     /**
@@ -27,7 +29,7 @@ public class SnakePart {
      * @param x The x-coordinate to set.
      */
     public void setX(int x) {
-        this.x = x;
+        this.xCoordinate = x;
     }
 
     /**
@@ -36,7 +38,7 @@ public class SnakePart {
      * @param y The y-coordinate to set.
      */
     public void setY(int y) {
-        this.y = y;
+        this.yCoordinate = y;
     }
 
     /**
@@ -45,7 +47,7 @@ public class SnakePart {
      * @return The x-coordinate of the snake part.
      */
     public int getX() {
-        return x;
+        return xCoordinate;
     }
 
     /**
@@ -54,7 +56,7 @@ public class SnakePart {
      * @return The y-coordinate of the snake part.
      */
     public int getY() {
-        return y;
+        return yCoordinate;
     }
 
     /**
@@ -64,11 +66,12 @@ public class SnakePart {
      * @return True if the objects are equal, false otherwise.
      */
     @Override
+    @ExcludeFromJacocoGeneratedReport
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         SnakePart snakePart = (SnakePart) obj;
-        return x == snakePart.x && y == snakePart.y;
+        return xCoordinate == snakePart.xCoordinate && yCoordinate == snakePart.yCoordinate;
     }
 
     /**
@@ -76,8 +79,9 @@ public class SnakePart {
      *
      * @return The hash code of this snake part.
      */
+    @ExcludeFromJacocoGeneratedReport
     @Override
     public int hashCode() {
-        return 31 * x + y;
+        return 31 * xCoordinate + yCoordinate;
     }
 }

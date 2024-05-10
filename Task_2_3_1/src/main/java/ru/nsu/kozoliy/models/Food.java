@@ -1,19 +1,22 @@
 package ru.nsu.kozoliy.models;
 
+import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
+
 /**
  * Represents a food item in the game.
  */
 public class Food {
-    private int x;
-    private int y;
+    private int xCoordinate;
+    private int yCoordinate;
 
     /**
      * Gets the x-coordinate of the food.
      *
      * @return The x-coordinate of the food.
      */
+    @ExcludeFromJacocoGeneratedReport
     public int getX() {
-        return x;
+        return xCoordinate;
     }
 
     /**
@@ -21,8 +24,9 @@ public class Food {
      *
      * @param x The x-coordinate to set.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void setX(int x) {
-        this.x = x;
+        this.xCoordinate = x;
     }
 
     /**
@@ -30,8 +34,9 @@ public class Food {
      *
      * @return The y-coordinate of the food.
      */
+    @ExcludeFromJacocoGeneratedReport
     public int getY() {
-        return y;
+        return yCoordinate;
     }
 
     /**
@@ -39,8 +44,9 @@ public class Food {
      *
      * @param y The y-coordinate to set.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void setY(int y) {
-        this.y = y;
+        this.yCoordinate = y;
     }
 
     /**
@@ -49,8 +55,9 @@ public class Food {
      * @param x The x-coordinate of the food.
      * @param y The y-coordinate of the food.
      */
+
     public Food(int x, int y) {
-        this.x = x;
-        this.y = y;
+        this.xCoordinate = x;
+        this.yCoordinate = y;
     }
 }

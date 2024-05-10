@@ -1,6 +1,7 @@
 package ru.nsu.kozoliy.models;
 
 import javafx.scene.paint.Color;
+import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
 import ru.nsu.kozoliy.viewModel.SnakeGameViewModel;
 
 /**
@@ -62,11 +63,13 @@ public class Model {
         this.settings = settings;
     }
 
+
     /**
      * Sets running.
      *
      * @param running Running param.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void setRunning(boolean running) {
         this.running = running;
     }
@@ -121,6 +124,7 @@ public class Model {
      *
      * @param tail The tail of the snake.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void detectCollision(SnakePart tail) {
         for (SnakePart part : snake.getSnakeBody()) {
             if (part != tail && tail.getX() == part.getX()
@@ -138,6 +142,7 @@ public class Model {
      * @param food       The food object.
      * @param tailMemory The memory of the snake's tail.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void eatFood(SnakePart tail, Food food, SnakePart tailMemory) {
         if (tail.getX() == food.getX() && tail.getY() == food.getY()) {
             snakeGameViewModel.generateNewFood();

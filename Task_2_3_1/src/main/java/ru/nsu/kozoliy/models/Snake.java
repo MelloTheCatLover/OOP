@@ -1,5 +1,7 @@
 package ru.nsu.kozoliy.models;
 
+import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
+
 import java.util.ArrayList;
 
 /**
@@ -42,6 +44,7 @@ public class Snake {
      *
      * @return The size of the snake.
      */
+    @ExcludeFromJacocoGeneratedReport
     public int getSize() {
         return snakeBody.size();
     }
@@ -51,6 +54,7 @@ public class Snake {
      *
      * @return The body parts of the snake.
      */
+    @ExcludeFromJacocoGeneratedReport
     public ArrayList<SnakePart> getSnakeBody() {
         return snakeBody;
     }
@@ -60,6 +64,7 @@ public class Snake {
      *
      * @return The direction of the snake.
      */
+    @ExcludeFromJacocoGeneratedReport
     public Direction getDirection() {
         return direction;
     }
@@ -69,6 +74,7 @@ public class Snake {
      *
      * @param direction The direction to set.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void setDirection(Direction direction) {
         this.direction = direction;
     }

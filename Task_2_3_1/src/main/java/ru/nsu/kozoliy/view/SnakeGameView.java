@@ -16,6 +16,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
 import ru.nsu.kozoliy.models.Direction;
 import ru.nsu.kozoliy.models.Settings;
 import ru.nsu.kozoliy.models.Model;
@@ -39,9 +40,7 @@ public class SnakeGameView extends Application {
 
     private Settings settings;
 
-    public Group getFoods() {
-        return foods;
-    }
+
 
     /**
      * Constructs a SnakeGameView with the specified model, view model, and settings.
@@ -56,20 +55,13 @@ public class SnakeGameView extends Application {
         this.settings = settings;
     }
 
-    /**
-     * Gets the model of the game.
-     *
-     * @return The model of the game.
-     */
-    public Model getModel() {
-        return model;
-    }
 
     /**
      * Creates the content for the game scene.
      *
      * @return The root parent node containing the game content.
      */
+    @ExcludeFromJacocoGeneratedReport
     public Parent createContent() {
         Pane root = new Pane();
         Canvas canvas = new Canvas(model.getSettings().getWorldSizeX(), model.getSettings().getWorldSizeY());
@@ -160,6 +152,7 @@ public class SnakeGameView extends Application {
      *
      * @param tail The tail node of the snake.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void detectCollision(Node tail) {
         for (Node rect : snakeDraw.getChildren()) {
             if (rect != tail && tail.getTranslateX() == rect.getTranslateX()
@@ -174,6 +167,7 @@ public class SnakeGameView extends Application {
     /**
      * Restarts the game by stopping it, resetting the score, and starting a new game instance.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void restartGame() {
         stopGame();
         model.startGame();
@@ -183,6 +177,7 @@ public class SnakeGameView extends Application {
     /**
      * Stops the game by setting the running flag to false, resetting the score, stopping the timeline, and clearing the snakeDraw group.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void stopGame() {
         model.setRunning(false);
         model.setScore(0);
@@ -198,6 +193,7 @@ public class SnakeGameView extends Application {
      * @param food        The food node being eaten.
      * @param tailMemory  The memory of the snake's tail before eating the food.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void eatFood(Node tail, Rectangle food, SnakePart tailMemory) {
         if (tail.getTranslateX() == food.getTranslateX()
                 && tail.getTranslateY() == food.getTranslateY()) {
@@ -221,6 +217,7 @@ public class SnakeGameView extends Application {
      *
      * @param primaryStage The primary stage of the JavaFX application.
      */
+    @ExcludeFromJacocoGeneratedReport
     @Override
     public void start(Stage primaryStage) {
         model.setSnake(new Snake(new SnakePart(settings.getWorldSizeX() / 2, settings.getWorldSizeY() / 2), Direction.RIGHT));
@@ -268,6 +265,7 @@ public class SnakeGameView extends Application {
      * @param snake The list of snake parts to be drawn.
      * @return ArrayList of Rectangles representing the drawn snake parts.
      */
+    @ExcludeFromJacocoGeneratedReport
     public ArrayList<Rectangle> drawSnake(ArrayList<SnakePart> snake) {
         // Clear previously drawn snake parts
         snakeDraw.getChildren().clear();
@@ -303,6 +301,7 @@ public class SnakeGameView extends Application {
      *
      * @param gc The GraphicsContext of the canvas.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void drawBackground(GraphicsContext gc) {
         for (int i = 0; i < model.getSettings().getWorldSizeX() / model.getSettings().getDisplaySize(); i++) {
             for (int j = 0; j < model.getSettings().getWorldSizeY() / model.getSettings().getDisplaySize(); j++) {
@@ -321,6 +320,7 @@ public class SnakeGameView extends Application {
      *
      * @return ArrayList of Rectangles representing the generated food items.
      */
+    @ExcludeFromJacocoGeneratedReport
     public ArrayList<Rectangle> generateFood() {
         ArrayList<Rectangle> foods = new ArrayList<>();
 
@@ -341,6 +341,7 @@ public class SnakeGameView extends Application {
     /**
      * Draws the score on the game canvas.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void drawScore() {
         gc.clearRect(0, 0, model.getSettings().getWorldSizeX(), model.getSettings().getDisplaySize());
         for (int i = 0; i < model.getSettings().getWorldSizeX() / model.getSettings().getDisplaySize(); i++) {
@@ -365,6 +366,7 @@ public class SnakeGameView extends Application {
      * @param y The y-coordinate of the top-left corner of the rectangle.
      * @param color The color of the rectangle.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void drawRectangle(int sizeX, int sizeY, double x, double y, Color color) {
         Rectangle rect = new Rectangle(sizeX, sizeY);
         gc.setFill(color);

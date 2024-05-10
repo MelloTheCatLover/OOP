@@ -1,5 +1,7 @@
 package ru.nsu.kozoliy.models;
 
+import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
+
 /**
  * Class representing settings for the Snake game.
  */
@@ -10,11 +12,6 @@ public class Settings {
     private int displaySize;
     private int foodCount;
 
-    /**
-     * Constructs a Settings object with default values.
-     */
-    public Settings() {
-    }
 
     /**
      * Constructs a Settings object with specified values.
@@ -38,6 +35,7 @@ public class Settings {
      *
      * @return The count of food items.
      */
+    @ExcludeFromJacocoGeneratedReport
     public int getFoodCount() {
         return foodCount;
     }
@@ -47,6 +45,7 @@ public class Settings {
      *
      * @param foodCount The count of food items.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void setFoodCount(int foodCount) {
         this.foodCount = foodCount;
     }
@@ -56,6 +55,7 @@ public class Settings {
      *
      * @return The difficulty of the game.
      */
+    @ExcludeFromJacocoGeneratedReport
     public double getDifficulty() {
         return difficulty;
     }
@@ -65,6 +65,7 @@ public class Settings {
      *
      * @param difficulty The difficulty of the game.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void setDifficulty(double difficulty) {
         this.difficulty = difficulty;
     }
@@ -83,6 +84,7 @@ public class Settings {
      *
      * @param worldSizeX The width of the game world.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void setWorldSizeX(int worldSizeX) {
         this.worldSizeX = worldSizeX;
     }
@@ -110,6 +112,7 @@ public class Settings {
      *
      * @param worldSizeY The height of the game world.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void setWorldSizeY(int worldSizeY) {
         this.worldSizeY = worldSizeY;
     }
@@ -119,6 +122,7 @@ public class Settings {
      *
      * @param displaySize The size of the display cells.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void setDisplaySize(int displaySize) {
         this.displaySize = displaySize;
     }

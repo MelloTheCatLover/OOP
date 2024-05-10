@@ -4,30 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="Думал, это займет меньше времени. Оно работает. Но я столкнулся с некоторыми проблемами, которые понял как решить. Но нет MVVM, хоть я и могу рассказать каким он должен быть, нет нормального кода, нет тестов, нет ревьюдога. Ночь не спал, но этот дедлайн мне не дался(">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Settings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/FoodTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/ModelTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/SnakeGameViewTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Direction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Settings.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/SnakeGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Snake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/SnakePart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/SnakePart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/view/SnakeGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/view/SnakeGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/nsu/kozoliy/StartMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/nsu/kozoliy/StartMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/TestSnake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/TestSnake.java" afterDir="false" />
-    </list>
+    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +78,7 @@
       <recent name="ru.nsu.kozoliy" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ControllerTest">
+  <component name="RunManager" selected="Gradle.SnakeGameViewModelTest.testMove">
     <configuration name="ControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -126,7 +103,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="SnakeGameViewTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SnakeGameViewModelTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -139,7 +116,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.nsu.kozoliy.SnakeGameViewTest&quot;" />
+            <option value="&quot;ru.nsu.kozoliy.SnakeGameViewModelTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -150,7 +127,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="SnakeGameViewTest.drawRectangle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SnakeGameViewModelTest.testMove" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -163,7 +140,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.nsu.kozoliy.SnakeGameViewTest.drawRectangle&quot;" />
+            <option value="&quot;ru.nsu.kozoliy.SnakeGameViewModelTest.testMove&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -224,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.SnakeGameViewModelTest.testMove" />
+        <item itemvalue="Gradle.SnakeGameViewModelTest" />
         <item itemvalue="Gradle.ControllerTest" />
         <item itemvalue="Gradle.SnakeGameViewTest.startTimeline" />
         <item itemvalue="Gradle.SnakeGameViewTest.eatFood" />
-        <item itemvalue="Gradle.SnakeGameViewTest.drawRectangle" />
-        <item itemvalue="Gradle.SnakeGameViewTest" />
       </list>
     </recent_temporary>
   </component>
@@ -345,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715295961492</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="test">
+      <option name="closed" value="true" />
+      <created>1715352123051</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1715352123051</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -360,7 +345,8 @@
     <MESSAGE value="fixin review problems 8" />
     <MESSAGE value="Ничего не работает. Ничего не получается. Продолжаю попытки" />
     <MESSAGE value="Думал, это займет меньше времени. Оно работает. Но я столкнулся с некоторыми проблемами, которые понял как решить. Но нет MVVM, хоть я и могу рассказать каким он должен быть, нет нормального кода, нет тестов, нет ревьюдога. Ночь не спал, но этот дедлайн мне не дался(" />
-    <option name="LAST_COMMIT_MESSAGE" value="Думал, это займет меньше времени. Оно работает. Но я столкнулся с некоторыми проблемами, которые понял как решить. Но нет MVVM, хоть я и могу рассказать каким он должен быть, нет нормального кода, нет тестов, нет ревьюдога. Ночь не спал, но этот дедлайн мне не дался(" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
