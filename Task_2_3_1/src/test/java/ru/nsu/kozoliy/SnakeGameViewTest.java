@@ -1,5 +1,6 @@
 package ru.nsu.kozoliy;
 
+import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,6 +11,7 @@ import ru.nsu.kozoliy.models.Model;
 import ru.nsu.kozoliy.models.Snake;
 import ru.nsu.kozoliy.models.SnakePart;
 import ru.nsu.kozoliy.view.SnakeGameView;
+import ru.nsu.kozoliy.viewModel.Controller;
 import ru.nsu.kozoliy.viewModel.SnakeGameViewModel;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -62,6 +64,15 @@ class SnakeGameViewTest {
         view.eatFood(tmp, new Rectangle(50, 50), new SnakePart(50, 50));
         assertEquals(0, model.getScore());
     }
+
+    @Test
+    void testController() {
+        Controller cntr = new Controller();
+
+        assertNotNull(cntr);
+
+    }
+
 
 
 }

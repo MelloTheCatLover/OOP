@@ -220,8 +220,8 @@ public class SnakeGameView extends Application {
      *
      * @param primaryStage The primary stage of the JavaFX application.
      */
-    @Override
     @ExcludeFromJacocoGeneratedReport
+    @Override
     public void start(Stage primaryStage) {
         model.setSnake(new Snake(new SnakePart(settings.getWorldSizeX() / 2, settings.getWorldSizeY() / 2), Direction.RIGHT));
         settings = model.getSettings();
