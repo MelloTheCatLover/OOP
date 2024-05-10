@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":2,"i1":4,"i2":2,"i3":2,"i4":2,"i5":2,"i6":2,"i7":2,"i8":2,"i9":2};
-var tabs = {65535:["t0","All Classes"],2:["t2","Class Summary"],4:["t3","Enum Summary"]};
+var data = {"i0":2,"i1":4,"i2":32,"i3":2,"i4":2,"i5":2,"i6":2,"i7":2,"i8":2,"i9":2,"i10":2};
+var tabs = {65535:["t0","All Classes"],2:["t2","Class Summary"],4:["t3","Enum Summary"],32:["t6","Annotation Types Summary"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -105,7 +105,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <table class="typeSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Classes</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Class Summary</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Enum Summary</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Classes</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Class Summary</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Enum Summary</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Annotation Types Summary</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Class</th>
 <th class="colLast" scope="col">Description</th>
@@ -123,46 +123,52 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </th>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/ExcludeFromJacocoGeneratedReport.html" title="annotation in ru.nsu.kozoliy">ExcludeFromJacocoGeneratedReport</a></td>
+<th class="colLast" scope="row">
+<div class="block">Excluding From Jacoco Test Report interface.</div>
+</th>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Food.html" title="class in ru.nsu.kozoliy.models">Food</a></td>
 <th class="colLast" scope="row">
 <div class="block">Represents a food item in the game.</div>
 </th>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/Main.html" title="class in ru.nsu.kozoliy">Main</a></td>
 <th class="colLast" scope="row">&nbsp;</th>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Model.html" title="class in ru.nsu.kozoliy.models">Model</a></td>
 <th class="colLast" scope="row">
 <div class="block">Represents the game model.</div>
 </th>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Settings.html" title="class in ru.nsu.kozoliy.models">Settings</a></td>
 <th class="colLast" scope="row">
 <div class="block">Class representing settings for the Snake game.</div>
 </th>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Snake.html" title="class in ru.nsu.kozoliy.models">Snake</a></td>
 <th class="colLast" scope="row">
 <div class="block">Represents the snake in the game.</div>
 </th>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></td>
 <th class="colLast" scope="row">
 <div class="block">The view class responsible for displaying the Snake game.</div>
 </th>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.html" title="class in ru.nsu.kozoliy.viewModel">SnakeGameViewModel</a></td>
 <th class="colLast" scope="row">
 <div class="block">ViewModel class responsible for managing the logic behind the Snake game view.</div>
 </th>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/SnakePart.html" title="class in ru.nsu.kozoliy.models">SnakePart</a></td>
 <th class="colLast" scope="row">
 <div class="block">Represents a part of the snake.</div>
