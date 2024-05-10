@@ -134,6 +134,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Snake</span>
 extends java.lang.Object</pre>
+<div class="block">Represents the snake in the game.</div>
 </li>
 </ul>
 </div>
@@ -154,15 +155,19 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,int,ru.nsu.kozoliy.Direction)">Snake</a></span>&#8203;(int&nbsp;x,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,int,ru.nsu.kozoliy.models.Direction)">Snake</a></span>&#8203;(int&nbsp;x,
      int&nbsp;y,
-     <a href="../Direction.html" title="enum in ru.nsu.kozoliy">Direction</a>&nbsp;direction)</code></th>
-<td class="colLast">&nbsp;</td>
+     <a href="Direction.html" title="enum in ru.nsu.kozoliy.models">Direction</a>&nbsp;direction)</code></th>
+<td class="colLast">
+<div class="block">Constructs a snake with the specified coordinates and direction.</div>
+</td>
 </tr>
 <tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(ru.nsu.kozoliy.models.SnakePart,ru.nsu.kozoliy.Direction)">Snake</a></span>&#8203;(<a href="SnakePart.html" title="class in ru.nsu.kozoliy.models">SnakePart</a>&nbsp;head,
-     <a href="../Direction.html" title="enum in ru.nsu.kozoliy">Direction</a>&nbsp;direction)</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(ru.nsu.kozoliy.models.SnakePart,ru.nsu.kozoliy.models.Direction)">Snake</a></span>&#8203;(<a href="SnakePart.html" title="class in ru.nsu.kozoliy.models">SnakePart</a>&nbsp;head,
+     <a href="Direction.html" title="enum in ru.nsu.kozoliy.models">Direction</a>&nbsp;direction)</code></th>
+<td class="colLast">
+<div class="block">Constructs a snake with the specified head and direction.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -183,24 +188,32 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="../Direction.html" title="enum in ru.nsu.kozoliy">Direction</a></code></td>
+<td class="colFirst"><code><a href="Direction.html" title="enum in ru.nsu.kozoliy.models">Direction</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDirection()">getDirection</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the direction of the snake.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSize()">getSize</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the size of the snake.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>java.util.ArrayList&lt;<a href="SnakePart.html" title="class in ru.nsu.kozoliy.models">SnakePart</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSnakeBody()">getSnakeBody</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the body parts of the snake.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDirection(ru.nsu.kozoliy.Direction)">setDirection</a></span>&#8203;(<a href="../Direction.html" title="enum in ru.nsu.kozoliy">Direction</a>&nbsp;direction)</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDirection(ru.nsu.kozoliy.models.Direction)">setDirection</a></span>&#8203;(<a href="Direction.html" title="enum in ru.nsu.kozoliy.models">Direction</a>&nbsp;direction)</code></th>
+<td class="colLast">
+<div class="block">Sets the direction of the snake.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -226,17 +239,23 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(ru.nsu.kozoliy.models.SnakePart,ru.nsu.kozoliy.Direction)">
+<a id="&lt;init&gt;(ru.nsu.kozoliy.models.SnakePart,ru.nsu.kozoliy.models.Direction)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>Snake</h4>
 <pre>public&nbsp;Snake&#8203;(<a href="SnakePart.html" title="class in ru.nsu.kozoliy.models">SnakePart</a>&nbsp;head,
-             <a href="../Direction.html" title="enum in ru.nsu.kozoliy">Direction</a>&nbsp;direction)</pre>
+             <a href="Direction.html" title="enum in ru.nsu.kozoliy.models">Direction</a>&nbsp;direction)</pre>
+<div class="block">Constructs a snake with the specified head and direction.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>head</code> - The head of the snake.</dd>
+<dd><code>direction</code> - The initial direction of the snake.</dd>
+</dl>
 </li>
 </ul>
-<a id="&lt;init&gt;(int,int,ru.nsu.kozoliy.Direction)">
+<a id="&lt;init&gt;(int,int,ru.nsu.kozoliy.models.Direction)">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -244,7 +263,14 @@ extends java.lang.Object</pre>
 <h4>Snake</h4>
 <pre>public&nbsp;Snake&#8203;(int&nbsp;x,
              int&nbsp;y,
-             <a href="../Direction.html" title="enum in ru.nsu.kozoliy">Direction</a>&nbsp;direction)</pre>
+             <a href="Direction.html" title="enum in ru.nsu.kozoliy.models">Direction</a>&nbsp;direction)</pre>
+<div class="block">Constructs a snake with the specified coordinates and direction.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - The x-coordinate of the snake's head.</dd>
+<dd><code>y</code> - The y-coordinate of the snake's head.</dd>
+<dd><code>direction</code> - The initial direction of the snake.</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -264,6 +290,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getSize</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getSize()</pre>
+<div class="block">Gets the size of the snake.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The size of the snake.</dd>
+</dl>
 </li>
 </ul>
 <a id="getSnakeBody()">
@@ -273,6 +304,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getSnakeBody</h4>
 <pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;<a href="SnakePart.html" title="class in ru.nsu.kozoliy.models">SnakePart</a>&gt;&nbsp;getSnakeBody()</pre>
+<div class="block">Gets the body parts of the snake.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The body parts of the snake.</dd>
+</dl>
 </li>
 </ul>
 <a id="getDirection()">
@@ -281,16 +317,26 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getDirection</h4>
-<pre class="methodSignature">public&nbsp;<a href="../Direction.html" title="enum in ru.nsu.kozoliy">Direction</a>&nbsp;getDirection()</pre>
+<pre class="methodSignature">public&nbsp;<a href="Direction.html" title="enum in ru.nsu.kozoliy.models">Direction</a>&nbsp;getDirection()</pre>
+<div class="block">Gets the direction of the snake.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The direction of the snake.</dd>
+</dl>
 </li>
 </ul>
-<a id="setDirection(ru.nsu.kozoliy.Direction)">
+<a id="setDirection(ru.nsu.kozoliy.models.Direction)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>setDirection</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setDirection&#8203;(<a href="../Direction.html" title="enum in ru.nsu.kozoliy">Direction</a>&nbsp;direction)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setDirection&#8203;(<a href="Direction.html" title="enum in ru.nsu.kozoliy.models">Direction</a>&nbsp;direction)</pre>
+<div class="block">Sets the direction of the snake.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>direction</code> - The direction to set.</dd>
+</dl>
 </li>
 </ul>
 </li>

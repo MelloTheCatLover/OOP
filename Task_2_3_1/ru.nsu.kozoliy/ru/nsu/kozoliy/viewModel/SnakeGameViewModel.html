@@ -134,6 +134,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">SnakeGameViewModel</span>
 extends java.lang.Object</pre>
+<div class="block">ViewModel class responsible for managing the logic behind the Snake game view.</div>
 </li>
 </ul>
 </div>
@@ -155,7 +156,9 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(ru.nsu.kozoliy.models.Model)">SnakeGameViewModel</a></span>&#8203;(<a href="../models/Model.html" title="class in ru.nsu.kozoliy.models">Model</a>&nbsp;model)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs a SnakeGameViewModel object with the specified model.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -178,28 +181,38 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#generateNewFood()">generateNewFood</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Generates a new food item in the game world.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSnakeGameView()">getSnakeGameView</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Retrieves the SnakeGameView associated with this view model.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#move(javafx.scene.Node,ru.nsu.kozoliy.models.SnakePart)">move</a></span>&#8203;(javafx.scene.Node&nbsp;tailL,
     <a href="../models/SnakePart.html" title="class in ru.nsu.kozoliy.models">SnakePart</a>&nbsp;tailMemory)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Moves the snake and handles collision detection.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#startDrawing()">startDrawing</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Starts drawing the snake and initializes the game.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stopDrawing()">stopDrawing</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Clears the drawing of the snake.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -232,6 +245,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>SnakeGameViewModel</h4>
 <pre>public&nbsp;SnakeGameViewModel&#8203;(<a href="../models/Model.html" title="class in ru.nsu.kozoliy.models">Model</a>&nbsp;model)</pre>
+<div class="block">Constructs a SnakeGameViewModel object with the specified model.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>model</code> - The model representing the state of the Snake game.</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -251,6 +269,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getSnakeGameView</h4>
 <pre class="methodSignature">public&nbsp;<a href="../view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a>&nbsp;getSnakeGameView()</pre>
+<div class="block">Retrieves the SnakeGameView associated with this view model.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The SnakeGameView.</dd>
+</dl>
 </li>
 </ul>
 <a id="move(javafx.scene.Node,ru.nsu.kozoliy.models.SnakePart)">
@@ -261,6 +284,12 @@ extends java.lang.Object</pre>
 <h4>move</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;move&#8203;(javafx.scene.Node&nbsp;tailL,
                  <a href="../models/SnakePart.html" title="class in ru.nsu.kozoliy.models">SnakePart</a>&nbsp;tailMemory)</pre>
+<div class="block">Moves the snake and handles collision detection.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>tailL</code> - The tail node of the snake.</dd>
+<dd><code>tailMemory</code> - The memory of the tail position before the move.</dd>
+</dl>
 </li>
 </ul>
 <a id="generateNewFood()">
@@ -270,6 +299,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>generateNewFood</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;generateNewFood()</pre>
+<div class="block">Generates a new food item in the game world.</div>
 </li>
 </ul>
 <a id="stopDrawing()">
@@ -279,6 +309,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>stopDrawing</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;stopDrawing()</pre>
+<div class="block">Clears the drawing of the snake.</div>
 </li>
 </ul>
 <a id="startDrawing()">
@@ -288,6 +319,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>startDrawing</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;startDrawing()</pre>
+<div class="block">Starts drawing the snake and initializes the game.</div>
 </li>
 </ul>
 </li>
