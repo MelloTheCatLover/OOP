@@ -1,10 +1,9 @@
 package ru.nsu.kozoliy.view;
 
+import java.util.ArrayList;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
-import javafx.collections.ObservableList;
-import javafx.geometry.Point2D;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -17,35 +16,61 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import ru.nsu.kozoliy.Direction;
+import ru.nsu.kozoliy.models.Direction;
+import ru.nsu.kozoliy.models.Settings;
 import ru.nsu.kozoliy.models.Model;
 import ru.nsu.kozoliy.models.Snake;
 import ru.nsu.kozoliy.models.SnakePart;
 import ru.nsu.kozoliy.viewModel.SnakeGameViewModel;
 
-import java.util.ArrayList;
 
+
+/**
+ * The view class responsible for displaying the Snake game.
+ */
 public class SnakeGameView extends Application {
 
     private final Model model;
     private final SnakeGameViewModel snakeGameViewModel;
     private GraphicsContext gc;
-    private Timeline timeline = new Timeline();
+    public Timeline timeline = new Timeline();
     private Group foods = new Group();
-
     private Group snakeDraw = new Group();
+
+    private Settings settings;
 
     public Group getFoods() {
         return foods;
     }
 
-    public SnakeGameView(Model model, SnakeGameViewModel snakeGameViewModel) {
+    /**
+     * Constructs a SnakeGameView with the specified model, view model, and settings.
+     *
+     * @param model              The model of the game.
+     * @param snakeGameViewModel The view model of the game.
+     * @param settings           The settings of the game.
+     */
+    public SnakeGameView(Model model, SnakeGameViewModel snakeGameViewModel, Settings settings) {
         this.model = model;
         this.snakeGameViewModel = snakeGameViewModel;
+        this.settings = settings;
     }
 
-    public Parent createContent() {
+    /**
+     * Gets the model of the game.
+     *
+     * @return The model of the game.
+     */
+    public Model getModel() {
+        return model;
+    }
 
+    /**
+     * Creates the content for the game scene.
+     *
+     * @return The root parent node containing the game content.
+     */
+    public Parent createContent() {
         Pane root = new Pane();
         Canvas canvas = new Canvas(model.getSettings().getWorldSizeX(), model.getSettings().getWorldSizeY());
         root.getChildren().add(canvas);
@@ -57,25 +82,17 @@ public class SnakeGameView extends Application {
 
         foods.getChildren().addAll(generateFood());
 
-        System.out.println("Calling drawScore() method");
 
         //drawScore();
         System.out.println(model.getSnake().getSnakeBody().get(0).getX());
         KeyFrame frame = new KeyFrame(Duration.seconds(model.getSettings().getDifficulty()), event -> {
-            //drawScore();
-
             if (!model.isRunning())
                 return;
-
-
             boolean toRemove = snakeDraw.getChildren().size() > 1;
 
             Node tail = toRemove ? snakeDraw.getChildren().remove(snakeDraw.getChildren().size()-1) : snakeDraw.getChildren().get(0);
 
-
-
             SnakePart tailMemory = new SnakePart((int)tail.getTranslateX(), (int)tail.getTranslateY());
-            //System.out.println(tailMemory.getX() + tailMemory.getY());
             switch (model.getSnake().getDirection()) {
                 case UP:
                     tail.setTranslateX(snakeDraw.getChildren().get(0).getTranslateX());
@@ -96,11 +113,9 @@ public class SnakeGameView extends Application {
             }
 
             System.out.println(model.getSnake().getSnakeBody().get(0).getX());
-            //drawRectangle(model.getSettings().getDisplaySize(), model.getSettings().getDisplaySize(), tail.getX(), tail.getY(), Color.BLUE);
 
             if (toRemove) {
                 snakeDraw.getChildren().add(0, tail);
-
             }
 
             model.setMoved(true);
@@ -139,34 +154,55 @@ public class SnakeGameView extends Application {
 
 
     }
-
+    /**
+     * Detects collision between the snake and itself or the game boundaries.
+     * If collision is detected, the game is restarted.
+     *
+     * @param tail The tail node of the snake.
+     */
     public void detectCollision(Node tail) {
         for (Node rect : snakeDraw.getChildren()) {
             if (rect != tail && tail.getTranslateX() == rect.getTranslateX()
                     && tail.getTranslateY() == rect.getTranslateY()) {
                 restartGame();
+                startGameDraw();
                 break;
             }
         }
     }
 
+    /**
+     * Restarts the game by stopping it, resetting the score, and starting a new game instance.
+     */
     public void restartGame() {
         stopGame();
         model.startGame();
         timeline.play();
     }
 
+    /**
+     * Stops the game by setting the running flag to false, resetting the score, stopping the timeline, and clearing the snakeDraw group.
+     */
     public void stopGame() {
         model.setRunning(false);
         model.setScore(0);
         timeline.stop();
         snakeDraw.getChildren().clear();
     }
+
+    /**
+     * Handles the action of eating food by the snake.
+     * If the snake eats food, a new food item is generated, the score is updated, and the snake grows.
+     *
+     * @param tail        The tail node of the snake.
+     * @param food        The food node being eaten.
+     * @param tailMemory  The memory of the snake's tail before eating the food.
+     */
     public void eatFood(Node tail, Rectangle food, SnakePart tailMemory) {
         if (tail.getTranslateX() == food.getTranslateX()
                 && tail.getTranslateY() == food.getTranslateY()) {
-            food.setTranslateX((int)(Math.random() * (model.getSettings().getWorldSizeX() - model.getSettings().getDisplaySize())) / model.getSettings().getDisplaySize() * model.getSettings().getDisplaySize());
-            food.setTranslateY((int)(Math.random() * (model.getSettings().getWorldSizeY() - model.getSettings().getDisplaySize() - model.getSettings().getDisplaySize())) / model.getSettings().getDisplaySize() * model.getSettings().getDisplaySize() + model.getSettings().getDisplaySize());
+            food.setTranslateX((int) (Math.random() * (model.getSettings().getWorldSizeX() - model.getSettings().getDisplaySize())) / model.getSettings().getDisplaySize() * model.getSettings().getDisplaySize());
+            food.setTranslateY((int) (Math.random() * (model.getSettings().getWorldSizeY() - model.getSettings().getDisplaySize() - model.getSettings().getDisplaySize())) / model.getSettings().getDisplaySize() * model.getSettings().getDisplaySize() + model.getSettings().getDisplaySize());
 
             Rectangle rect = new Rectangle(model.getSettings().getDisplaySize(), model.getSettings().getDisplaySize());
             rect.setTranslateX(tailMemory.getX());
@@ -178,12 +214,20 @@ public class SnakeGameView extends Application {
         }
     }
 
+    /**
+     * Initializes the game window and starts the game loop.
+     * Handles user input for controlling the snake's direction.
+     * Displays the game scene and starts the game rendering.
+     *
+     * @param primaryStage The primary stage of the JavaFX application.
+     */
     @Override
     public void start(Stage primaryStage) {
-        System.out.println("Calling start() method");
+        model.setSnake(new Snake(new SnakePart(settings.getWorldSizeX() / 2, settings.getWorldSizeY() / 2), Direction.RIGHT));
+        settings = model.getSettings();
+        model.startGame();
         primaryStage.setTitle("Snake by Mello");
         Scene scene = new Scene(createContent());
-
 
         scene.setOnKeyPressed(event -> {
             if (!model.isMoved())
@@ -207,27 +251,28 @@ public class SnakeGameView extends Application {
                         model.getSnake().setDirection(Direction.RIGHT);
                     break;
             }
-
-
             model.setMoved(false);
         });
-
 
         primaryStage.setScene(scene);
         primaryStage.show();
 
-
         model.startGame();
+        startGameDraw();
         startTimeline();
     }
 
-
-
+    /**
+     * Draws the snake on the game canvas based on its current state.
+     *
+     * @param snake The list of snake parts to be drawn.
+     * @return ArrayList of Rectangles representing the drawn snake parts.
+     */
     public ArrayList<Rectangle> drawSnake(ArrayList<SnakePart> snake) {
-        // Очищаем предыдущие отрисованные части змеи
+        // Clear previously drawn snake parts
         snakeDraw.getChildren().clear();
 
-        // Создаем новый список для отрисованных частей змеи
+        // Create a new list to hold the drawn snake parts
         ArrayList<Rectangle> snakeDrawL = new ArrayList<>();
         for (SnakePart snakePart : snake) {
             Rectangle snakePartDraw = new Rectangle(model.getSettings().getDisplaySize(), model.getSettings().getDisplaySize());
@@ -237,13 +282,27 @@ public class SnakeGameView extends Application {
             snakeDrawL.add(snakePartDraw);
         }
 
-        // Добавляем новые отрисованные части змеи в группу
+        // Add newly drawn snake parts to the group
         return snakeDrawL;
     }
 
+    /**
+     * Initializes the game by drawing the snake's head on the canvas.
+     */
+    public void startGameDraw(){
+        Rectangle head = new Rectangle(settings.getDisplaySize(), settings.getDisplaySize());
+        head.setTranslateX(settings.getWorldSizeX() / 2);
+        head.setTranslateY(settings.getWorldSizeY() / 2);
+        head.setFill(Color.BLUE);
+        snakeDraw.getChildren().add(head);
+    }
 
 
-
+    /**
+     * Draws the background of the game canvas with alternating colors.
+     *
+     * @param gc The GraphicsContext of the canvas.
+     */
     public void drawBackground(GraphicsContext gc) {
         for (int i = 0; i < model.getSettings().getWorldSizeX() / model.getSettings().getDisplaySize(); i++) {
             for (int j = 0; j < model.getSettings().getWorldSizeY() / model.getSettings().getDisplaySize(); j++) {
@@ -257,6 +316,11 @@ public class SnakeGameView extends Application {
         }
     }
 
+    /**
+     * Generates food items at random positions on the game canvas.
+     *
+     * @return ArrayList of Rectangles representing the generated food items.
+     */
     public ArrayList<Rectangle> generateFood() {
         ArrayList<Rectangle> foods = new ArrayList<>();
 
@@ -274,9 +338,10 @@ public class SnakeGameView extends Application {
         return foods;
     }
 
+    /**
+     * Draws the score on the game canvas.
+     */
     public void drawScore() {
-
-
         gc.clearRect(0, 0, model.getSettings().getWorldSizeX(), model.getSettings().getDisplaySize());
         for (int i = 0; i < model.getSettings().getWorldSizeX() / model.getSettings().getDisplaySize(); i++) {
             if ((i) % 2 == 0) {
@@ -291,36 +356,41 @@ public class SnakeGameView extends Application {
         gc.fillText("Score: " + model.getScore(), 10, model.getSettings().getDisplaySize() * 0.8);
     }
 
+    /**
+     * Draws a rectangle on the game canvas.
+     *
+     * @param sizeX The width of the rectangle.
+     * @param sizeY The height of the rectangle.
+     * @param x The x-coordinate of the top-left corner of the rectangle.
+     * @param y The y-coordinate of the top-left corner of the rectangle.
+     * @param color The color of the rectangle.
+     */
     public void drawRectangle(int sizeX, int sizeY, double x, double y, Color color) {
         Rectangle rect = new Rectangle(sizeX, sizeY);
         gc.setFill(color);
         gc.fillRect(x, y, model.getSettings().getWorldSizeX(), model.getSettings().getWorldSizeX());
-
-
         rect.setFill(color);
     }
 
-    public static void main(String[] args) {
-        launch();
-    }
 
+
+    /**
+     * Retrieves the Group containing the drawn snake.
+     *
+     * @return The Group containing the drawn snake.
+     */
     public Group getSnakeDraw() {
         return snakeDraw;
     }
 
-    public void stopTimeline(){
-        timeline.stop();
-    }
-
+    /**
+     * Starts the timeline for the game animation.
+     */
     public void startTimeline(){
-        System.out.println("timeline");
         timeline.play();
     }
 
-    public void restartTimeline(){
-        stopTimeline();
-        startTimeline();
-    }
+
 
 
 }
