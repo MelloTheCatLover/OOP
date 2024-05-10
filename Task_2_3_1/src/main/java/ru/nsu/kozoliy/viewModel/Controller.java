@@ -47,6 +47,7 @@ public class Controller implements Initializable {
 
     private final Settings settings = new Settings();
 
+
     /**
      * Initializes the controller with the initial values and event handlers.
      *

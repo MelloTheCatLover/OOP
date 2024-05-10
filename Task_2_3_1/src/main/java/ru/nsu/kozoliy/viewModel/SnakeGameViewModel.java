@@ -17,6 +17,7 @@ public class SnakeGameViewModel {
     private final Model model;
     private final SnakeGameView snakeGameView;
 
+
     /**
      * Constructs a SnakeGameViewModel object with the specified model.
      *
