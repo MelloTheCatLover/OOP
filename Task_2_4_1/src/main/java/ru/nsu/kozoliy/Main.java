@@ -1,19 +1,58 @@
-package ru.nsu.kozoliy;
+package nsu.fit.tsukanov;
+import groovy.lang.Binding;
+import groovy.lang.GroovyShell;
+import groovy.util.DelegatingScript;
+import nsu.fit.tsukanov.entity.Group;
+import nsu.fit.tsukanov.entity.Student;
+import org.codehaus.groovy.control.CompilerConfiguration;
+import ru.nsu.kozoliy.model.object.StudentClass;
+import ru.nsu.kozoliy.model.object.StudentGroupClass;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.io.File;
+import java.io.IOException;
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        System.out.println("Hello CATS!");
+        testGroup();
+    }
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+    private static void testStudent() {
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+
+        CompilerConfiguration cc = new CompilerConfiguration();
+        cc.setScriptBaseClass(DelegatingScript.class.getName());
+        GroovyShell sh = new GroovyShell(Main.class.getClassLoader(), new Binding(), cc);
+        DelegatingScript script = null;
+
+
+        try {
+            script = (DelegatingScript) sh.parse(new File("scripts/ts.groovy"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+
+
+        StudentClass config = new StudentClass();
+        script.setDelegate(config);
+        script.run();
+        System.out.println(config);
+    }
+
+    private static void testGroup() {
+        CompilerConfiguration cc = new CompilerConfiguration();
+        cc.setScriptBaseClass(DelegatingScript.class.getName());
+        GroovyShell sh = new GroovyShell(Main.class.getClassLoader(), new Binding(), cc);
+        DelegatingScript script = null;
+        try {
+            script = (DelegatingScript) sh.parse(new File("scripts/group.groovy"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        StudentGroupClass config = new StudentGroupClass();
+        script.setDelegate(config);
+        script.run();
+        System.out.println(config);
+
     }
 }
