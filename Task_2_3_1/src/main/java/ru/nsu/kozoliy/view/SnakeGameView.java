@@ -1,6 +1,8 @@
 package ru.nsu.kozoliy.view;
 
 import java.util.ArrayList;
+import java.util.Random;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -17,11 +19,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
-import ru.nsu.kozoliy.models.Direction;
-import ru.nsu.kozoliy.models.Settings;
-import ru.nsu.kozoliy.models.Model;
-import ru.nsu.kozoliy.models.Snake;
-import ru.nsu.kozoliy.models.SnakePart;
+import ru.nsu.kozoliy.models.*;
 import ru.nsu.kozoliy.viewModel.SnakeGameViewModel;
 
 
@@ -37,8 +35,12 @@ public class SnakeGameView extends Application {
     public Timeline timeline = new Timeline();
     private Group foods = new Group();
     private Group snakeDraw = new Group();
-
+    private Random random = new Random();
     private Settings settings;
+
+    private BadSnake badSnake;
+    private Group badSnakeDraw = new Group();
+    private Timeline badSnakeTimeline = new Timeline();
 
     @ExcludeFromJacocoGeneratedReport
     public Group getFoods() {
@@ -118,6 +120,22 @@ public class SnakeGameView extends Application {
 
 
             detectCollision(tail);
+            detectBadSnakeCollision();
+            Node badSnakeHead = badSnakeDraw.getChildren().get(0);
+            for (int i = 0; i < snakeDraw.getChildren().size(); i++) {
+                Node snakePart = snakeDraw.getChildren().get(i);
+
+                if (snakePart.getTranslateX() == badSnakeHead.getTranslateX() && snakePart.getTranslateY() == badSnakeHead.getTranslateY()) {
+                    if (badSnake.getSnakeBody().size() == 1) {
+                        badSnake.getSnakeBody().get(0).setX(model.getSettings().getWorldSizeX() / 2);
+                        badSnake.getSnakeBody().get(0).setY(model.getSettings().getWorldSizeY() / 2);
+
+                    } else {
+                        badSnake.getSnakeBody().remove(badSnake.getSnakeBody().size() - 1);
+                    }
+
+                }
+            }
 
             if (tail.getTranslateX() < 0) {
                 tail.setTranslateX(model.getSettings().getWorldSizeX() - model.getSettings().getDisplaySize());
@@ -135,14 +153,24 @@ public class SnakeGameView extends Application {
                 eatFood(tail, (Rectangle)food, tailMemory);
             }
 
+            for (int i = 0; i < foods.getChildren().size(); i++) {
+                if (badSnake.getSnakeBody().get(0).getX() == foods.getChildren().get(i).getTranslateX() &&
+                        badSnake.getSnakeBody().get(0).getY() == foods.getChildren().get(i).getTranslateY()) {
+                    badSnake.getSnakeBody().add(new SnakePart(20 , 40));;
+                }
+            }
+
+
+
             drawScore();
         });
 
         snakeDraw.getChildren().addAll(drawSnake(model.getSnake().getSnakeBody()));
-        root.getChildren().addAll(foods, snakeDraw);
+        root.getChildren().addAll(foods, snakeDraw, badSnakeDraw);
 
         timeline.getKeyFrames().add(frame);
         timeline.setCycleCount(Timeline.INDEFINITE);
+
 
 
         return root;
@@ -229,6 +257,18 @@ public class SnakeGameView extends Application {
         primaryStage.setTitle("Snake by Mello");
         Scene scene = new Scene(createContent());
 
+        badSnake = new BadSnake(settings.getWorldSizeX() / 2, settings.getWorldSizeY() / 2, settings.getDisplaySize(), settings.getWorldSizeX(), settings.getWorldSizeY());
+        KeyFrame badSnakeFrame = new KeyFrame(Duration.seconds(model.getSettings().getDifficulty()), event -> {
+            badSnake.move();
+
+            if (random.nextInt(100) < 10) { // 10% chance to change direction each frame
+                badSnake.changeDirection();
+            }
+
+            drawBadSnake();
+        });
+
+
         scene.setOnKeyPressed(event -> {
             if (!model.isMoved())
                 return;
@@ -254,6 +294,10 @@ public class SnakeGameView extends Application {
             model.setMoved(false);
         });
 
+        badSnakeTimeline.getKeyFrames().add(badSnakeFrame);
+        badSnakeTimeline.setCycleCount(Timeline.INDEFINITE);
+        badSnakeTimeline.play();
+
         primaryStage.setScene(scene);
         primaryStage.show();
 
@@ -261,6 +305,32 @@ public class SnakeGameView extends Application {
         startGameDraw();
         startTimeline();
     }
+
+    public void drawBadSnake() {
+        badSnakeDraw.getChildren().clear();
+        for (SnakePart part : badSnake.getSnakeBody()) {
+            Rectangle rect = new Rectangle(settings.getDisplaySize(), settings.getDisplaySize());
+            rect.setTranslateX(part.getX());
+            rect.setTranslateY(part.getY());
+            rect.setFill(Color.RED);
+            badSnakeDraw.getChildren().add(rect);
+        }
+
+
+    }
+
+    public void detectBadSnakeCollision() {
+        Node playerHead = snakeDraw.getChildren().get(0);
+
+        for (int i = 0; i < badSnakeDraw.getChildren().size(); i++) {
+            Node badSnakeHead = badSnakeDraw.getChildren().get(i);
+            if (playerHead.getTranslateX() == badSnakeHead.getTranslateX() && playerHead.getTranslateY() == badSnakeHead.getTranslateY()) {
+                restartGame();
+                startGameDraw();
+            }
+        }
+    }
+
 
     /**
      * Draws the snake on the game canvas based on its current state.

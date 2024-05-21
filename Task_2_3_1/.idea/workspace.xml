@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="test5">
+    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="Added BadSnake class moving at random directions can eat food. When player hits bad snake game restarts. When snake hits player minus cell in bad snake.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/BadSnake.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Direction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Snake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/view/SnakeGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/view/SnakeGameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/nsu/kozoliy/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/nsu/kozoliy/application.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +41,8 @@
         <option value="Enum" />
         <option value="FxmlFile" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -57,18 +61,18 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Task__2__3__1",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "17 (3)",
-    "last_opened_file_path": "D:/NSU/Second Course/First_Sem/Object_Programming/OOP/Task_2_3_1/src/main/resources/ru/nsu/kozoliy",
-    "settings.editor.selected.configurable": "preferences.JavaFX"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Task__2__3__1&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17 (3)&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/NSU/Second Course/First_Sem/Object_Programming/OOP/Task_2_3_1/src/main/resources/ru/nsu/kozoliy&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ru.nsu.kozoliy.models" />
@@ -85,7 +89,20 @@
       <recent name="ru.nsu.kozoliy" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.SnakeGameViewModelTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.nsu.kozoliy.Main" />
+      <module name="Task_2_3_1.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.nsu.kozoliy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -158,7 +175,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="SnakeGameViewTest.eatFood" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SnakeGameViewTest.testController" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -171,31 +188,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.nsu.kozoliy.SnakeGameViewTest.eatFood&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="SnakeGameViewTest.startTimeline" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ru.nsu.kozoliy.SnakeGameViewTest.startTimeline&quot;" />
+            <option value="&quot;ru.nsu.kozoliy.SnakeGameViewTest.testController&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -208,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.SnakeGameViewModelTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.ControllerTest" />
+        <item itemvalue="Gradle.SnakeGameViewTest.testController" />
+        <item itemvalue="Gradle.SnakeGameViewModelTest" />
         <item itemvalue="Gradle.SnakeGameViewModelTest.testMove" />
-        <item itemvalue="Gradle.SnakeGameViewTest.startTimeline" />
-        <item itemvalue="Gradle.SnakeGameViewTest.eatFood" />
       </list>
     </recent_temporary>
   </component>
@@ -361,7 +354,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715353043508</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="test5">
+      <option name="closed" value="true" />
+      <created>1715353214607</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1715353214607</updated>
+    </task>
+    <task id="LOCAL-00019" summary="test6">
+      <option name="closed" value="true" />
+      <created>1715353575119</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1715353575119</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -381,7 +390,9 @@
     <MESSAGE value="test3" />
     <MESSAGE value="test4" />
     <MESSAGE value="test5" />
-    <option name="LAST_COMMIT_MESSAGE" value="test5" />
+    <MESSAGE value="test6" />
+    <MESSAGE value="Added BadSnake class moving at random directions can eat food. When player hits bad snake game restarts. When snake hits player minus cell in bad snake." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added BadSnake class moving at random directions can eat food. When player hits bad snake game restarts. When snake hits player minus cell in bad snake." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -404,6 +415,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Task_2_3_1$ModelTest.ic" NAME="ModelTest Coverage Results" MODIFIED="1715352354646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Task_2_3_1$ControllerTest.ic" NAME="ControllerTest Coverage Results" MODIFIED="1715353119961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Task_2_3_1$SnakeGameViewModelTest.ic" NAME="SnakeGameViewModelTest Coverage Results" MODIFIED="1715353136899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Task_2_3_1$SnakeGameViewModelTest.ic" NAME="SnakeGameViewModelTest Coverage Results" MODIFIED="1715353331764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

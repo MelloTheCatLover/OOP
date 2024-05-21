@@ -22,7 +22,7 @@ public class Snake {
      * @param direction The initial direction of the snake.
      */
     public Snake(SnakePart head, Direction direction) {
-        this.snakeBody.add(head);
+        snakeBody.add(head);
         this.direction = direction;
     }
 

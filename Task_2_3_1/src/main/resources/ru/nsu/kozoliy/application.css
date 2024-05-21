@@ -7,16 +7,13 @@
 
 .text {
     -fx-font-family: "Belozersk";
+    -fx-font-fill: "white";
 }
 
 .label{
     -fx-font-family: "Belozersk";
     -fx-text-fill: "white";
     -fx-alignment: center;
-}
-
-.text{
-    -fx-font-fill: "white";
 }
 
 

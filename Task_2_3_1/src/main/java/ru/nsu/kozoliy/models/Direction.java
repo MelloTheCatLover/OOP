@@ -12,15 +12,15 @@ public enum Direction {
     /**
      * Specifies the downward direction.
      */
-    DOWN,
+    RIGHT,
 
     /**
      * Specifies the leftward direction.
      */
-    LEFT,
+    DOWN,
 
     /**
      * Specifies the rightward direction.
      */
-    RIGHT
+    LEFT
 }
