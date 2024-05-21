@@ -1,9 +1,7 @@
-package nsu.fit.tsukanov;
+package ru.nsu.kozoliy;
 import groovy.lang.Binding;
 import groovy.lang.GroovyShell;
 import groovy.util.DelegatingScript;
-import nsu.fit.tsukanov.entity.Group;
-import nsu.fit.tsukanov.entity.Student;
 import org.codehaus.groovy.control.CompilerConfiguration;
 import ru.nsu.kozoliy.model.object.StudentClass;
 import ru.nsu.kozoliy.model.object.StudentGroupClass;
