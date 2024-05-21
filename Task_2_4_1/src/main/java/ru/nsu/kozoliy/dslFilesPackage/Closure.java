@@ -8,5 +8,8 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 public @interface Closure {
-    String value() default "";
+
+    String name() default "";
+
+    boolean hasName() default false;
 }
