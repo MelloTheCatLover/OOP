@@ -44,15 +44,12 @@ public class GroovyMain {
 
     private MainConfig readGeneral() {
         MainConfig mainConfig = new MainConfig();
-
         try {
             parseScript("scripts/mainScript.groovy", mainConfig);
         } catch (IOException e) {
+            e.printStackTrace(); // Печать исключения для отладки
             throw new RuntimeException(e);
         }
-
-
-
         return mainConfig;
     }
 
@@ -61,10 +58,10 @@ public class GroovyMain {
         try {
             parseScript("scripts/task.groovy", taskConfig);
         } catch (IOException e) {
+            e.printStackTrace(); // Печать исключения для отладки
             throw new RuntimeException(e);
         }
         return taskConfig;
-
     }
 
     private Group readGroup(MainConfig generalConfig) {
@@ -72,18 +69,18 @@ public class GroovyMain {
         try {
             parseScript("scripts/22215.groovy", group);
         } catch (IOException e) {
+            e.printStackTrace(); // Печать исключения для отладки
             throw new RuntimeException(e);
         }
         return group;
-
     }
 
-
     private ChangesConfig readFixes(Map<String, StudentInfo> studentInformation) {
-        ChangesConfig changesConfig = new ChangesConfig(studentInformation); // наш бин с конфигурацией
+        ChangesConfig changesConfig = new ChangesConfig(studentInformation);
         try {
             parseScript("scripts/changes.groovy", changesConfig);
         } catch (IOException e) {
+            e.printStackTrace(); // Печать исключения для отладки
             throw new RuntimeException(e);
         }
         return changesConfig;
