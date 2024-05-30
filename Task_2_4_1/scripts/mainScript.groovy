@@ -1,3 +1,5 @@
+import ru.nsu.kozoliy.model.achievements.Achievement
+
 evaluation {
     taskScore = 1.0
     firstDeadLinePenalty = -0.5
@@ -14,3 +16,7 @@ git {
     docsBranch = 'gh-pages'
     defaultBranch = 'main'
 }
+
+
+
+enabledAchievements = [Achievement.EXCELLENT_PERFORMANCE, Achievement.PERFECT_ATTENDANCE]

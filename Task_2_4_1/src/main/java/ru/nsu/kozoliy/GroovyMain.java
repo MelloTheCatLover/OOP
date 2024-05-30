@@ -7,12 +7,14 @@ import org.codehaus.groovy.control.CompilerConfiguration;
 import ru.nsu.kozoliy.model.configs.ChangesConfig;
 import ru.nsu.kozoliy.model.configs.Group;
 import ru.nsu.kozoliy.model.configs.MainConfig;
+import ru.nsu.kozoliy.model.object.Achievement;
 import ru.nsu.kozoliy.model.object.StudentInfo;
 import ru.nsu.kozoliy.model.tasks.TaskConfig;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class GroovyMain {
@@ -37,21 +39,6 @@ public class GroovyMain {
         return (DelegatingScript) shell.parse(file);
     }
 
-
-
-
-
-
-    private MainConfig readGeneral() {
-        MainConfig mainConfig = new MainConfig();
-        try {
-            parseScript("scripts/mainScript.groovy", mainConfig);
-        } catch (IOException e) {
-            e.printStackTrace(); // Печать исключения для отладки
-            throw new RuntimeException(e);
-        }
-        return mainConfig;
-    }
 
     private TaskConfig readTasks(MainConfig generalConfig) {
         TaskConfig taskConfig = new TaskConfig(generalConfig);
@@ -86,14 +73,23 @@ public class GroovyMain {
         return changesConfig;
     }
 
-    public static Map<String, StudentInfo> getStudentInformationMap(Group groupConfig,
-                                                                           TaskConfig taskConfig) {
+    public static Map<String, StudentInfo> getStudentInformationMap(Group groupConfig, TaskConfig taskConfig, List<Achievement> enabledAchievements) {
         Map<String, StudentInfo> informationMap = new HashMap<>();
-        groupConfig.getStudentConfigs()
-                .forEach(studentConfig -> informationMap.put(studentConfig.getGitName(),
-                        new StudentInfo(studentConfig, taskConfig)
-                ));
+        groupConfig.getStudentConfigs().forEach(studentConfig ->
+                informationMap.put(studentConfig.getGitName(), new StudentInfo(studentConfig, taskConfig, enabledAchievements))
+        );
         return informationMap;
+    }
+
+    private MainConfig readGeneral() {
+        MainConfig mainConfig = new MainConfig();
+        try {
+            parseScript("scripts/mainScript.groovy", mainConfig);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+        return mainConfig;
     }
 
     public static void main(String[] args) {
@@ -101,16 +97,22 @@ public class GroovyMain {
         GroovyMain groovy = new GroovyMain();
         MainConfig generalConfig = groovy.readGeneral();
         System.out.println(generalConfig);
+
         Group group = groovy.readGroup(generalConfig);
         System.out.println(group);
+
         TaskConfig taskConfig = groovy.readTasks(generalConfig);
         System.out.println(taskConfig);
 
-        Map<String, StudentInfo> studentInformationMap =
-                getStudentInformationMap(group, taskConfig);
+        Map<String, StudentInfo> studentInformationMap = getStudentInformationMap(group, taskConfig, generalConfig.getEnabledAchievements());
 
         ChangesConfig changes = groovy.readFixes(studentInformationMap);
 
-        System.out.println(changes.getInformationMap().get("MelloTheCatLover"));
+        for (Map.Entry<String, StudentInfo> entry : changes.getInformationMap().entrySet()) {
+            String studentName = entry.getKey();
+            StudentInfo studentInfo = entry.getValue();
+            System.out.println("Student: " + studentName);
+            System.out.println("Achievements: " + studentInfo.getAchievements());
+        }
     }
 }
