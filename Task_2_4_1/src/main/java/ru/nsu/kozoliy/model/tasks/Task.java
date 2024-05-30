@@ -23,4 +23,8 @@ public class Task {
         this.points = points;
     }
 
+    public String id() {
+        return folder;
+    }
+
 }

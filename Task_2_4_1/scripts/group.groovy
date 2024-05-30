@@ -1,4 +1,4 @@
-groupName = "21214"
+groupName = "22215"
 student {
     name = "Mihail"
 }
