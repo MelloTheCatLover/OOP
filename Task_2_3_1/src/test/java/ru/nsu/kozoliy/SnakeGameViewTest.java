@@ -13,7 +13,7 @@ import ru.nsu.kozoliy.models.Model;
 import ru.nsu.kozoliy.models.Snake;
 import ru.nsu.kozoliy.models.SnakePart;
 import ru.nsu.kozoliy.view.SnakeGameView;
-import ru.nsu.kozoliy.viewModel.Controller;
+import ru.nsu.kozoliy.viewmodel.Controller;
 
 
 

@@ -2,7 +2,7 @@ package ru.nsu.kozoliy.models;
 
 import javafx.scene.paint.Color;
 import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
-import ru.nsu.kozoliy.viewModel.SnakeGameViewModel;
+import ru.nsu.kozoliy.viewmodel.SnakeGameViewModel;
 
 /**
  * Represents the game model.

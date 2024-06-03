@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="reviewdog 1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="reviewdog 3">
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/BadSnake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/BadSnake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Snake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/SnakePart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/SnakePart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/SmartSnakeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/SmartSnakeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/SmartSnake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/SmartSnake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/view/SnakeGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/view/SnakeGameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewmodel/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewmodel/SnakeGameViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/nsu/kozoliy/StartMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/nsu/kozoliy/StartMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/SnakeGameViewModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/SnakeGameViewModelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/SnakeGameViewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/SnakeGameViewTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -439,7 +441,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717447919848</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="reviewdog 2">
+      <option name="closed" value="true" />
+      <created>1717448941832</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1717448941832</updated>
+    </task>
+    <task id="LOCAL-00027" summary="reviewdog 3">
+      <option name="closed" value="true" />
+      <created>1717448955989</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1717448955989</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -466,7 +484,9 @@
     <MESSAGE value="Add test's 2" />
     <MESSAGE value="Add test's 3" />
     <MESSAGE value="reviewdog 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="reviewdog 1" />
+    <MESSAGE value="reviewdog 2" />
+    <MESSAGE value="reviewdog 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="reviewdog 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -479,6 +499,12 @@
           <properties class="java.lang.IllegalArgumentException" package="java.lang" />
           <option name="timeStamp" value="4" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewmodel/SnakeGameViewModel.java</url>
+          <line>16</line>
+          <properties field="model" class="ru.nsu.kozoliy.viewmodel.SnakeGameViewModel" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

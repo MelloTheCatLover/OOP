@@ -1,11 +1,11 @@
-package ru.nsu.kozoliy.viewModel;
+package ru.nsu.kozoliy.viewmodel;
 
 import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
-import ru.nsu.kozoliy.models.Settings;
 import ru.nsu.kozoliy.models.Food;
 import ru.nsu.kozoliy.models.Model;
+import ru.nsu.kozoliy.models.Settings;
 import ru.nsu.kozoliy.models.SnakePart;
 import ru.nsu.kozoliy.view.SnakeGameView;
 
@@ -25,7 +25,11 @@ public class SnakeGameViewModel {
      */
     public SnakeGameViewModel(Model model) {
         this.model = model;
-        this.snakeGameView = new SnakeGameView(model, new Settings(0.1, 800, 600, 20, 5));
+        this.snakeGameView = new SnakeGameView(model, new Settings(0.1,
+                800,
+                600,
+                20,
+                5));
     }
 
     /**
@@ -73,10 +77,21 @@ public class SnakeGameViewModel {
     public void generateNewFood() {
         Food food = new Food(0, 0);
 
-        food.setX((int) (Math.random() * (model.getSettings().getWorldSizeX() - model.getSettings().getDisplaySize())) / model.getSettings().getDisplaySize() * model.getSettings().getDisplaySize());
-        food.setY((int) (Math.random() * (model.getSettings().getWorldSizeY() - model.getSettings().getDisplaySize() - model.getSettings().getDisplaySize())) / model.getSettings().getDisplaySize() * model.getSettings().getDisplaySize() + model.getSettings().getDisplaySize());
+        food.setX((int) (Math.random()
+                * (model.getSettings().getWorldSizeX()
+                - model.getSettings().getDisplaySize()))
+                / model.getSettings().getDisplaySize() * model.getSettings().getDisplaySize());
+        food.setY((int) (Math.random() * (model.getSettings().getWorldSizeY()
+                - model.getSettings().getDisplaySize()
+                - model.getSettings().getDisplaySize()))
+                / model.getSettings().getDisplaySize()
+                * model.getSettings().getDisplaySize()
+                + model.getSettings().getDisplaySize());
 
-        snakeGameView.drawRectangle(model.getSettings().getDisplaySize(), model.getSettings().getDisplaySize(), food.getX(), food.getY(), Color.RED);
+        snakeGameView.drawRectangle(model.getSettings().getDisplaySize(),
+                model.getSettings().getDisplaySize(),
+                food.getX(), food.getY(),
+                Color.RED);
     }
 
     /**

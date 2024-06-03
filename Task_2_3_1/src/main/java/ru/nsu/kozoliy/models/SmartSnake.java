@@ -83,6 +83,8 @@ public class SmartSnake {
             case RIGHT:
                 newX += displaySize;
                 break;
+            default:
+                break;
         }
 
         if (newX < 0) {

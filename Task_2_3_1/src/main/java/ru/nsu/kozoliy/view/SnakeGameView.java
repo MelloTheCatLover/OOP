@@ -27,8 +27,10 @@ import ru.nsu.kozoliy.models.Snake;
 import ru.nsu.kozoliy.models.SnakePart;
 
 
-
-
+/**
+ * Class for snake game presentation.
+ *
+ */
 public class SnakeGameView extends Application {
 
     private final Model model;
@@ -75,9 +77,11 @@ public class SnakeGameView extends Application {
     @ExcludeFromJacocoGeneratedReport
     public Parent createContent() {
         Pane root = new Pane();
-        Canvas canvas = new Canvas(model.getSettings().getWorldSizeX(), model.getSettings().getWorldSizeY());
+        Canvas canvas = new Canvas(model.getSettings().getWorldSizeX(),
+                model.getSettings().getWorldSizeY());
         root.getChildren().add(canvas);
-        root.setPrefSize(model.getSettings().getWorldSizeX(), model.getSettings().getWorldSizeY());
+        root.setPrefSize(model.getSettings().getWorldSizeX(),
+                model.getSettings().getWorldSizeY());
 
         gc = canvas.getGraphicsContext2D();
         drawBackground(gc);
@@ -87,12 +91,14 @@ public class SnakeGameView extends Application {
 
         System.out.println(model.getSnake().getSnakeBody().get(0).getX());
         KeyFrame frame = new KeyFrame(Duration.seconds(model.getSettings().getDifficulty()), event -> {
-            if (!model.isRunning())
+            if (!model.isRunning()) {
                 return;
+            }
+
             boolean toRemove = snakeDraw.getChildren().size() > 1;
 
             Node tail = toRemove ? snakeDraw.getChildren()
-                    .remove(snakeDraw.getChildren().size()-1) : snakeDraw.getChildren().get(0);
+                    .remove(snakeDraw.getChildren().size() - 1) : snakeDraw.getChildren().get(0);
 
             SnakePart tailMemory = new SnakePart((int)tail.getTranslateX(), (int)tail.getTranslateY());
 
@@ -116,6 +122,8 @@ public class SnakeGameView extends Application {
                     tail.setTranslateX(snakeDraw.getChildren().get(0).getTranslateX()
                             + model.getSettings().getDisplaySize());
                     tail.setTranslateY(snakeDraw.getChildren().get(0).getTranslateY());
+                    break;
+                default:
                     break;
             }
 
@@ -248,7 +256,8 @@ public class SnakeGameView extends Application {
                     * model.getSettings().getDisplaySize()
                     + model.getSettings().getDisplaySize());
 
-            Rectangle rect = new Rectangle(model.getSettings().getDisplaySize(), model.getSettings().getDisplaySize());
+            Rectangle rect = new Rectangle(model.getSettings().getDisplaySize(),
+                    model.getSettings().getDisplaySize());
             rect.setTranslateX(tailMemory.getX());
             rect.setTranslateY(tailMemory.getY());
             rect.setFill(Color.BLUE);
@@ -304,20 +313,26 @@ public class SnakeGameView extends Application {
 
             switch (event.getCode()) {
                 case W:
-                    if (model.getSnake().getDirection() != Direction.DOWN)
+                    if (model.getSnake().getDirection() != Direction.DOWN) {
                         model.getSnake().setDirection(Direction.UP);
+                    }
                     break;
                 case S:
-                    if (model.getSnake().getDirection() != Direction.UP)
+                    if (model.getSnake().getDirection() != Direction.UP){
                         model.getSnake().setDirection(Direction.DOWN);
+                    }
                     break;
                 case A:
-                    if (model.getSnake().getDirection() != Direction.RIGHT)
+                    if (model.getSnake().getDirection() != Direction.RIGHT){
                         model.getSnake().setDirection(Direction.LEFT);
+                    }
                     break;
                 case D:
-                    if (model.getSnake().getDirection() != Direction.LEFT)
+                    if (model.getSnake().getDirection() != Direction.LEFT) {
                         model.getSnake().setDirection(Direction.RIGHT);
+                    }
+                    break;
+                default:
                     break;
             }
             model.setMoved(false);
@@ -399,8 +414,8 @@ public class SnakeGameView extends Application {
                 }
 
                 for (Object food : foods.getChildren().toArray()) {
-                    if (head.getX() == ((Rectangle) food).getTranslateX() &&
-                            head.getY() == ((Rectangle) food).getTranslateY()) {
+                    if (head.getX() == ((Rectangle) food).getTranslateX()
+                            && head.getY() == ((Rectangle) food).getTranslateY()) {
                         ((Rectangle)food).setTranslateX((int) (Math.random()
                                 * (model.getSettings().getWorldSizeX()
                                 - model.getSettings().getDisplaySize()))

@@ -87,7 +87,7 @@ public class BadSnake {
      */
     public void move() {
         ArrayList<SnakePart> body = getSnakeBody();
-        int oldLen = body.size();
+
         SnakePart head = body.get(0);
 
         // Calculate the new position of the head based on the direction
@@ -127,6 +127,7 @@ public class BadSnake {
         // Add the new head position
         body.add(0, new SnakePart(newX, newY));
 
+        int oldLen = body.size();
         // Remove the last part to maintain the length of 2
         while (body.size() > oldLen) {
             body.remove(body.size() - 1);

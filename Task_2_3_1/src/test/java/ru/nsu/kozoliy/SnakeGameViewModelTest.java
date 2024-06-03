@@ -11,7 +11,7 @@ import ru.nsu.kozoliy.models.Direction;
 import ru.nsu.kozoliy.models.Model;
 import ru.nsu.kozoliy.models.Snake;
 import ru.nsu.kozoliy.models.SnakePart;
-import ru.nsu.kozoliy.viewModel.SnakeGameViewModel;
+import ru.nsu.kozoliy.viewmodel.SnakeGameViewModel;
 
 
 /**
@@ -56,6 +56,6 @@ public class SnakeGameViewModelTest {
     public void testStartDrawing() {
         // Проверяем, что метод запуска рисования змеи работает корректно
         viewModel.startDrawing();
-        assertFalse(viewModel.getSnakeGameView().getSnakeDraw().getChildren().isEmpty()); // Проверяем, что рисунок змеи создан
+        assertFalse(viewModel.getSnakeGameView().getSnakeDraw().getChildren().isEmpty());
     }
 }

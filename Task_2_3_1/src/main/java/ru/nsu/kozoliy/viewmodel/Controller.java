@@ -1,5 +1,7 @@
-package ru.nsu.kozoliy.viewModel;
+package ru.nsu.kozoliy.viewmodel;
 
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -8,11 +10,9 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import java.net.URL;
-import java.util.ResourceBundle;
 import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
-import ru.nsu.kozoliy.models.Settings;
 import ru.nsu.kozoliy.models.Model;
+import ru.nsu.kozoliy.models.Settings;
 import ru.nsu.kozoliy.view.SnakeGameView;
 
 
@@ -88,7 +88,8 @@ public class Controller implements Initializable {
             e.printStackTrace();
         }
 
-        if (settings.getFoodCount() == 0 || settings.getDisplaySize() == 0 || settings.getWorldSizeY() == 0) {
+        if (settings.getFoodCount() == 0 || settings.getDisplaySize() == 0
+                || settings.getWorldSizeY() == 0) {
             warningLabel.setVisible(true);
         }
         ((Stage) startButton.getScene().getWindow()).close();
