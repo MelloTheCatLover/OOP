@@ -55,6 +55,15 @@ public class BadSnake {
     }
 
     /**
+     * Setter for snake direction.
+     *
+     * @param direction new snake direction.
+     */
+    public void setDirection(Direction direction) {
+        this.direction = direction;
+    }
+
+    /**
      * Changes the direction of the snake to a new random direction.
      * The new direction cannot be the direct opposite of the current direction.
      */

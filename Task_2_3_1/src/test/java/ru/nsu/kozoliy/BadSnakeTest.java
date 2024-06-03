@@ -40,6 +40,18 @@ class BadSnakeTest {
         int worldSizeY = 400;
         BadSnake badSnake = new BadSnake(startX, startY, displaySize, worldSizeX, worldSizeY);
         Direction oldDirection = badSnake.getDirection();
+        badSnake.setDirection(Direction.RIGHT);
+        badSnake.move();
+
+        badSnake.setDirection(Direction.UP);
+        badSnake.move();
+
+        badSnake.setDirection(Direction.LEFT);
+        badSnake.move();
+
+        badSnake.setDirection(Direction.DOWN);
+        badSnake.move();
+
 
         // When
         badSnake.changeDirection();
