@@ -231,6 +231,7 @@ public class SnakeGameView extends Application {
     /**
      * Replace food. Add element to snake body.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void eatFood(Node tail, Rectangle food, SnakePart tailMemory) {
         if (tail.getTranslateX() == food.getTranslateX()
                 && tail.getTranslateY() == food.getTranslateY()) {

@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="Added BadSnake class moving at random directions can eat food. When player hits bad snake game restarts. When snake hits player minus cell in bad snake.">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/SmartSnake.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task_2_4_1/.idea/modules/Task_2_4_1.main.iml" afterDir="false" />
+    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="Added SmartSnake. Fix Review dog">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/BadSnakeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/BadSnake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/BadSnake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/view/SnakeGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/view/SnakeGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/SnakeGameViewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/SnakeGameViewTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +95,7 @@
       <recent name="ru.nsu.kozoliy" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager" selected="Gradle.BadSnakeTest">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.nsu.kozoliy.Main" />
       <module name="Task_2_3_1.main" />
@@ -129,6 +122,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BadSnakeTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.nsu.kozoliy.BadSnakeTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="ControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -143,30 +160,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;ru.nsu.kozoliy.ControllerTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="SnakeGameViewModelTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ru.nsu.kozoliy.SnakeGameViewModelTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -203,11 +196,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.BadSnakeTest" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.ControllerTest" />
         <item itemvalue="Gradle.SnakeGameViewTest.testController" />
-        <item itemvalue="Gradle.SnakeGameViewModelTest" />
       </list>
     </recent_temporary>
   </component>
@@ -372,7 +365,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715353575119</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added SmartSnake. Fix Review dog">
+      <option name="closed" value="true" />
+      <created>1717445846262</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1717445846262</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -394,7 +395,8 @@
     <MESSAGE value="test5" />
     <MESSAGE value="test6" />
     <MESSAGE value="Added BadSnake class moving at random directions can eat food. When player hits bad snake game restarts. When snake hits player minus cell in bad snake." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added BadSnake class moving at random directions can eat food. When player hits bad snake game restarts. When snake hits player minus cell in bad snake." />
+    <MESSAGE value="Added SmartSnake. Fix Review dog" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added SmartSnake. Fix Review dog" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
