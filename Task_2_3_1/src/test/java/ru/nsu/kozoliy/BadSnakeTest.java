@@ -1,11 +1,14 @@
 package ru.nsu.kozoliy;
 
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import org.junit.jupiter.api.Test;
 import ru.nsu.kozoliy.models.BadSnake;
 import ru.nsu.kozoliy.models.Direction;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 
 
 class BadSnakeTest {
@@ -89,6 +92,8 @@ class BadSnakeTest {
                 break;
             case RIGHT:
                 assertEquals(startX + displaySize, badSnake.getSnakeBody().get(0).getX());
+                break;
+            default:
                 break;
         }
     }

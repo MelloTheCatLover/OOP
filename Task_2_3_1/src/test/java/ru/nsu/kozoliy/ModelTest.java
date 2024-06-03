@@ -1,15 +1,19 @@
 package ru.nsu.kozoliy;
 
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.nsu.kozoliy.models.*;
+import ru.nsu.kozoliy.models.Direction;
+import ru.nsu.kozoliy.models.Model;
+import ru.nsu.kozoliy.models.Settings;
+import ru.nsu.kozoliy.models.Snake;
+import ru.nsu.kozoliy.models.SnakePart;
 
 
 class ModelTest {

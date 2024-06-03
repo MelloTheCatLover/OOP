@@ -1,14 +1,15 @@
 package ru.nsu.kozoliy;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.nsu.kozoliy.models.Direction;
 import ru.nsu.kozoliy.models.Snake;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class SnakeTest {
+
+class TestSnake {
 
     private Snake snake;
 

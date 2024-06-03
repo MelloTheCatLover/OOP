@@ -1,9 +1,13 @@
 package ru.nsu.kozoliy;
 
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import javafx.scene.Node;
+import javafx.scene.shape.Rectangle;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import javafx.scene.shape.Rectangle;
 import ru.nsu.kozoliy.models.Direction;
 import ru.nsu.kozoliy.models.Model;
 import ru.nsu.kozoliy.models.Snake;
@@ -11,8 +15,7 @@ import ru.nsu.kozoliy.models.SnakePart;
 import ru.nsu.kozoliy.view.SnakeGameView;
 import ru.nsu.kozoliy.viewModel.Controller;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 
 class SnakeGameViewTest {
 
