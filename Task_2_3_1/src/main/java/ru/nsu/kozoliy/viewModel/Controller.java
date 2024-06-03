@@ -8,13 +8,13 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import java.net.URL;
+import java.util.ResourceBundle;
 import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
 import ru.nsu.kozoliy.models.Settings;
 import ru.nsu.kozoliy.models.Model;
 import ru.nsu.kozoliy.view.SnakeGameView;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 
 /**
  * Controller class responsible for handling user interactions with the Snake game settings UI.
@@ -82,7 +82,7 @@ public class Controller implements Initializable {
             model.setMoved(false);
             model.setRunning(false);
             SnakeGameViewModel snakeGameViewModel = new SnakeGameViewModel(model);
-            SnakeGameView snakeGameView = new SnakeGameView(model, snakeGameViewModel, settings);
+            SnakeGameView snakeGameView = new SnakeGameView(model, settings);
             snakeGameView.start(new Stage());
         } catch (Exception e) {
             e.printStackTrace();

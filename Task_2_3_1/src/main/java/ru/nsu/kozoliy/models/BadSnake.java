@@ -31,7 +31,7 @@ public class BadSnake {
         this.displaySize = displaySize;
         this.worldSizeX = worldSizeX;
         this.worldSizeY = worldSizeY;
-        for (int i = 1; i < 2; i++) {
+        for (int i = 1; i < 3; i++) {
             getSnakeBody().add(new SnakePart(worldSizeX - i * displaySize, worldSizeY));
         }
     }

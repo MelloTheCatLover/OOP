@@ -1,10 +1,8 @@
 package ru.nsu.kozoliy;
 
-import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import ru.nsu.kozoliy.models.Direction;
 import ru.nsu.kozoliy.models.Model;
@@ -18,14 +16,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class SnakeGameViewTest {
 
     private Model model;
-    private SnakeGameViewModel viewModel;
     private SnakeGameView view;
 
     @BeforeEach
     void setUp() {
         model = new Model();
-        viewModel = new SnakeGameViewModel(model);
-        view = new SnakeGameView(model, viewModel, model.getSettings());
+        view = new SnakeGameView(model, model.getSettings());
     }
 
     @Test
@@ -72,6 +68,7 @@ class SnakeGameViewTest {
         assertNotNull(cntr);
 
     }
+
 
 
 

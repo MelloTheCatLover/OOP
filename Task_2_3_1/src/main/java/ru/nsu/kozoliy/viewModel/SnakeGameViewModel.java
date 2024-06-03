@@ -25,7 +25,7 @@ public class SnakeGameViewModel {
      */
     public SnakeGameViewModel(Model model) {
         this.model = model;
-        this.snakeGameView = new SnakeGameView(model, this, new Settings(0.1, 800, 600, 20, 5));
+        this.snakeGameView = new SnakeGameView(model, new Settings(0.1, 800, 600, 20, 5));
     }
 
     /**
