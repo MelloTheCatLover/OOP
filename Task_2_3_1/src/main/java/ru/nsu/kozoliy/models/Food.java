@@ -6,8 +6,8 @@ import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
  * Represents a food item in the game.
  */
 public class Food {
-    private int xCoordinate;
-    private int yCoordinate;
+    private int xcoordinate;
+    private int ycoordinate;
 
     /**
      * Gets the x-coordinate of the food.
@@ -16,7 +16,7 @@ public class Food {
      */
     @ExcludeFromJacocoGeneratedReport
     public int getX() {
-        return xCoordinate;
+        return xcoordinate;
     }
 
     /**
@@ -26,7 +26,7 @@ public class Food {
      */
     @ExcludeFromJacocoGeneratedReport
     public void setX(int x) {
-        this.xCoordinate = x;
+        this.xcoordinate = x;
     }
 
     /**
@@ -36,7 +36,7 @@ public class Food {
      */
     @ExcludeFromJacocoGeneratedReport
     public int getY() {
-        return yCoordinate;
+        return ycoordinate;
     }
 
     /**
@@ -46,7 +46,7 @@ public class Food {
      */
     @ExcludeFromJacocoGeneratedReport
     public void setY(int y) {
-        this.yCoordinate = y;
+        this.ycoordinate = y;
     }
 
     /**
@@ -57,7 +57,7 @@ public class Food {
      */
 
     public Food(int x, int y) {
-        this.xCoordinate = x;
-        this.yCoordinate = y;
+        this.xcoordinate = x;
+        this.ycoordinate = y;
     }
 }

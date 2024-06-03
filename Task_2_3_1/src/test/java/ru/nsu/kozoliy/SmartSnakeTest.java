@@ -1,10 +1,12 @@
 package ru.nsu.kozoliy;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 import ru.nsu.kozoliy.models.Direction;
 import ru.nsu.kozoliy.models.SmartSnake;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 
 class SmartSnakeTest {
