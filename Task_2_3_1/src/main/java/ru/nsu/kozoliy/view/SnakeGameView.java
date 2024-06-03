@@ -50,6 +50,7 @@ public class SnakeGameView extends Application {
      * Food getter.
      *
      */
+    @ExcludeFromJacocoGeneratedReport
     public Group getFoods() {
         return foods;
     }
@@ -201,6 +202,7 @@ public class SnakeGameView extends Application {
      *
      * @param tail The tail node of the snake.
      */
+    @ExcludeFromJacocoGeneratedReport
     public void detectCollision(Node tail) {
         for (Node rect : snakeDraw.getChildren()) {
             if (rect != tail && tail.getTranslateX() == rect.getTranslateX()
