@@ -71,10 +71,10 @@ public class BadSnake {
         Direction oldDirection = getDirection();
         Direction newDirection = Direction.values()[random.nextInt(Direction.values().length)];
 
-        if ((oldDirection == Direction.UP && newDirection == Direction.DOWN) ||
-                (oldDirection == Direction.DOWN && newDirection == Direction.UP) ||
-                (oldDirection == Direction.LEFT && newDirection == Direction.RIGHT) ||
-                (oldDirection == Direction.RIGHT && newDirection == Direction.LEFT)) {
+        if ((oldDirection == Direction.UP && newDirection == Direction.DOWN)
+                || (oldDirection == Direction.DOWN && newDirection == Direction.UP)
+                || (oldDirection == Direction.LEFT && newDirection == Direction.RIGHT)
+                || (oldDirection == Direction.RIGHT && newDirection == Direction.LEFT)) {
             this.direction = oldDirection;
         } else {
             this.direction = newDirection;
@@ -106,6 +106,8 @@ public class BadSnake {
                 break;
             case RIGHT:
                 newX += displaySize;
+                break;
+            default:
                 break;
         }
 

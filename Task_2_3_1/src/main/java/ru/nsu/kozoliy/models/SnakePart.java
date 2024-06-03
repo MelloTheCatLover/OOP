@@ -7,10 +7,10 @@ import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
  */
 public class SnakePart {
     /** The x-coordinate of the snake part. */
-    private int xCoordinate;
+    private int xcoordinate;
 
     /** The y-coordinate of the snake part. */
-    private int yCoordinate;
+    private int ycoordinate;
 
     /**
      * Constructs a snake part with the specified coordinates.
@@ -19,8 +19,8 @@ public class SnakePart {
      * @param y The y-coordinate of the snake part.
      */
     public SnakePart(int x, int y) {
-        this.xCoordinate = x;
-        this.yCoordinate = y;
+        this.xcoordinate = x;
+        this.ycoordinate = y;
     }
 
     /**
@@ -29,7 +29,7 @@ public class SnakePart {
      * @param x The x-coordinate to set.
      */
     public void setX(int x) {
-        this.xCoordinate = x;
+        this.xcoordinate = x;
     }
 
     /**
@@ -38,7 +38,7 @@ public class SnakePart {
      * @param y The y-coordinate to set.
      */
     public void setY(int y) {
-        this.yCoordinate = y;
+        this.ycoordinate = y;
     }
 
     /**
@@ -47,7 +47,7 @@ public class SnakePart {
      * @return The x-coordinate of the snake part.
      */
     public int getX() {
-        return xCoordinate;
+        return xcoordinate;
     }
 
     /**
@@ -56,7 +56,7 @@ public class SnakePart {
      * @return The y-coordinate of the snake part.
      */
     public int getY() {
-        return yCoordinate;
+        return ycoordinate;
     }
 
     /**
@@ -68,10 +68,16 @@ public class SnakePart {
     @Override
     @ExcludeFromJacocoGeneratedReport
     public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
         SnakePart snakePart = (SnakePart) obj;
-        return xCoordinate == snakePart.xCoordinate && yCoordinate == snakePart.yCoordinate;
+        return xcoordinate == snakePart.xcoordinate && ycoordinate == snakePart.ycoordinate;
     }
 
     /**
@@ -82,6 +88,6 @@ public class SnakePart {
     @ExcludeFromJacocoGeneratedReport
     @Override
     public int hashCode() {
-        return 31 * xCoordinate + yCoordinate;
+        return 31 * xcoordinate + ycoordinate;
     }
 }

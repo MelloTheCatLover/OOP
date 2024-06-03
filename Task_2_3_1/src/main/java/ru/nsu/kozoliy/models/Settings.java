@@ -28,7 +28,11 @@ public class Settings {
      * @param displaySize The size of the display cells.
      * @param foodCount   The initial count of food items in the game.
      */
-    public Settings(double difficulty, int worldSizeX, int worldSizeY, int displaySize, int foodCount) {
+    public Settings(double difficulty,
+                    int worldSizeX,
+                    int worldSizeY,
+                    int displaySize,
+                    int foodCount) {
         this.difficulty = difficulty;
         this.worldSizeX = worldSizeX;
         this.worldSizeY = worldSizeY;

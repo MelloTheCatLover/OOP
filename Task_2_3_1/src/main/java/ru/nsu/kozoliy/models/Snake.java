@@ -1,8 +1,8 @@
 package ru.nsu.kozoliy.models;
 
+import java.util.ArrayList;
 import ru.nsu.kozoliy.ExcludeFromJacocoGeneratedReport;
 
-import java.util.ArrayList;
 
 /**
  * Represents the snake in the game.
