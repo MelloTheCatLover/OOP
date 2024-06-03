@@ -3,9 +3,9 @@ package ru.nsu.kozoliy;
 import org.junit.jupiter.api.Test;
 import ru.nsu.kozoliy.models.Direction;
 import ru.nsu.kozoliy.models.SmartSnake;
-import ru.nsu.kozoliy.models.SnakePart;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 class SmartSnakeTest {
 
@@ -79,6 +79,44 @@ class SmartSnakeTest {
         int oldLength = smartSnake.getSnakeBody().size();
 
         // When
+        smartSnake.grow();
+
+        // Then
+        assertEquals(oldLength + 1, smartSnake.getSnakeBody().size());
+    }
+
+    @Test
+    void testWrapAround() {
+        // Given
+        int startX = 0;
+        int startY = 0;
+        int displaySize = 20;
+        int worldSizeX = 100;
+        int worldSizeY = 100;
+        SmartSnake smartSnake = new SmartSnake(startX, startY, displaySize, worldSizeX, worldSizeY);
+        smartSnake.setDirection(Direction.LEFT);
+
+        // When
+        smartSnake.move();
+
+        // Then
+        assertEquals(worldSizeX - displaySize, smartSnake.getSnakeBody().get(0).getX());
+        assertEquals(startY, smartSnake.getSnakeBody().get(0).getY());
+    }
+
+    @Test
+    void testGrowAfterMove() {
+        // Given
+        int startX = 100;
+        int startY = 200;
+        int displaySize = 20;
+        int worldSizeX = 500;
+        int worldSizeY = 400;
+        SmartSnake smartSnake = new SmartSnake(startX, startY, displaySize, worldSizeX, worldSizeY);
+        int oldLength = smartSnake.getSnakeBody().size();
+
+        // When
+        smartSnake.move();
         smartSnake.grow();
 
         // Then
