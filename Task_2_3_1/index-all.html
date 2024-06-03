@@ -135,12 +135,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#detectCollision(javafx.scene.Node)">detectCollision(Node)</a></span> - Method in class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
 <dd>
-<div class="block">Detects collision between the snake and itself or the game boundaries.</div>
+<div class="block">Detects collision between the snake and other game elements.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Model.html#detectCollision(ru.nsu.kozoliy.models.SnakePart)">detectCollision(SnakePart)</a></span> - Method in class ru.nsu.kozoliy.models.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Model.html" title="class in ru.nsu.kozoliy.models">Model</a></dt>
 <dd>
 <div class="block">Detects collision between the snake and its parts.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#detectSmartSnakeCollision()">detectSmartSnakeCollision()</a></span> - Method in class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Direction.html" title="enum in ru.nsu.kozoliy.models"><span class="typeNameLink">Direction</span></a> - Enum in <a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/package-summary.html">ru.nsu.kozoliy.models</a></dt>
 <dd>
 <div class="block">Represents the directions a snake can move.</div>
@@ -150,22 +152,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Specifies the leftward direction.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#drawBackground(javafx.scene.canvas.GraphicsContext)">drawBackground(GraphicsContext)</a></span> - Method in class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
-<dd>
-<div class="block">Draws the background of the game canvas with alternating colors.</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#drawBadSnake()">drawBadSnake()</a></span> - Method in class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#drawRectangle(int,int,double,double,javafx.scene.paint.Color)">drawRectangle(int, int, double, double, Color)</a></span> - Method in class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
-<dd>
-<div class="block">Draws a rectangle on the game canvas.</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#drawScore()">drawScore()</a></span> - Method in class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
-<dd>
-<div class="block">Draws the score on the game canvas.</div>
-</dd>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#drawSmartSnake()">drawSmartSnake()</a></span> - Method in class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#drawSnake(java.util.ArrayList)">drawSnake(ArrayList&lt;SnakePart&gt;)</a></span> - Method in class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
 <dd>
-<div class="block">Draws the snake on the game canvas based on its current state.</div>
+<div class="block">Draw snake rectangles on gameworld.</div>
 </dd>
 </dl>
 <a id="I:E">
@@ -175,7 +173,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#eatFood(javafx.scene.Node,javafx.scene.shape.Rectangle,ru.nsu.kozoliy.models.SnakePart)">eatFood(Node, Rectangle, SnakePart)</a></span> - Method in class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
 <dd>
-<div class="block">Handles the action of eating food by the snake.</div>
+<div class="block">Replace food.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Model.html#eatFood(ru.nsu.kozoliy.models.SnakePart,ru.nsu.kozoliy.models.Food,ru.nsu.kozoliy.models.SnakePart)">eatFood(SnakePart, Food, SnakePart)</a></span> - Method in class ru.nsu.kozoliy.models.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Model.html" title="class in ru.nsu.kozoliy.models">Model</a></dt>
 <dd>
@@ -210,9 +208,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <h2 class="title">G</h2>
 <dl>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#generateFood()">generateFood()</a></span> - Method in class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
-<dd>
-<div class="block">Generates food items at random positions on the game canvas.</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.html#generateNewFood()">generateNewFood()</a></span> - Method in class ru.nsu.kozoliy.viewModel.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.html" title="class in ru.nsu.kozoliy.viewModel">SnakeGameViewModel</a></dt>
 <dd>
 <div class="block">Generates a new food item in the game world.</div>
@@ -229,6 +225,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Returns the current direction of the snake.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/SmartSnake.html#getDirection()">getDirection()</a></span> - Method in class ru.nsu.kozoliy.models.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/SmartSnake.html" title="class in ru.nsu.kozoliy.models">SmartSnake</a></dt>
+<dd>
+<div class="block">Gets the direction of the snake's movement.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Snake.html#getDirection()">getDirection()</a></span> - Method in class ru.nsu.kozoliy.models.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Snake.html" title="class in ru.nsu.kozoliy.models">Snake</a></dt>
 <dd>
 <div class="block">Gets the direction of the snake.</div>
@@ -242,7 +242,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Gets the count of food items in the game.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#getFoods()">getFoods()</a></span> - Method in class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Food getter.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Model.html#getScore()">getScore()</a></span> - Method in class ru.nsu.kozoliy.models.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Model.html" title="class in ru.nsu.kozoliy.models">Model</a></dt>
 <dd>
 <div class="block">Gets the current score.</div>
@@ -263,14 +265,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Returns the body of the snake.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/SmartSnake.html#getSnakeBody()">getSnakeBody()</a></span> - Method in class ru.nsu.kozoliy.models.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/SmartSnake.html" title="class in ru.nsu.kozoliy.models">SmartSnake</a></dt>
+<dd>
+<div class="block">Gets the snake's body.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Snake.html#getSnakeBody()">getSnakeBody()</a></span> - Method in class ru.nsu.kozoliy.models.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Snake.html" title="class in ru.nsu.kozoliy.models">Snake</a></dt>
 <dd>
 <div class="block">Gets the body parts of the snake.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#getSnakeDraw()">getSnakeDraw()</a></span> - Method in class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
-<dd>
-<div class="block">Retrieves the Group containing the drawn snake.</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.html#getSnakeGameView()">getSnakeGameView()</a></span> - Method in class ru.nsu.kozoliy.viewModel.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.html" title="class in ru.nsu.kozoliy.viewModel">SnakeGameViewModel</a></dt>
 <dd>
 <div class="block">Retrieves the SnakeGameView associated with this view model.</div>
@@ -306,6 +310,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/SnakePart.html#getY()">getY()</a></span> - Method in class ru.nsu.kozoliy.models.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/SnakePart.html" title="class in ru.nsu.kozoliy.models">SnakePart</a></dt>
 <dd>
 <div class="block">Gets the y-coordinate of the snake part.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/SmartSnake.html#grow()">grow()</a></span> - Method in class ru.nsu.kozoliy.models.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/SmartSnake.html" title="class in ru.nsu.kozoliy.models">SmartSnake</a></dt>
+<dd>
+<div class="block">Increases the length of the snake by adding a new body part.</div>
 </dd>
 </dl>
 <a id="I:H">
@@ -367,9 +375,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Moves the snake in its current direction.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/SmartSnake.html#move()">move()</a></span> - Method in class ru.nsu.kozoliy.models.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/SmartSnake.html" title="class in ru.nsu.kozoliy.models">SmartSnake</a></dt>
+<dd>
+<div class="block">Moves the snake's head according to its current direction.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.html#move(javafx.scene.Node,ru.nsu.kozoliy.models.SnakePart)">move(Node, SnakePart)</a></span> - Method in class ru.nsu.kozoliy.viewModel.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.html" title="class in ru.nsu.kozoliy.viewModel">SnakeGameViewModel</a></dt>
 <dd>
 <div class="block">Moves the snake and handles collision detection.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#moveSmartSnake()">moveSmartSnake()</a></span> - Method in class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
+<dd>
+<div class="block">Moves the smart snake towards the nearest food item.</div>
 </dd>
 </dl>
 <a id="I:R">
@@ -382,9 +398,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Restarts the game.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#restartGame()">restartGame()</a></span> - Method in class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
-<dd>
-<div class="block">Restarts the game by stopping it, resetting the score, and starting a new game instance.</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Direction.html#RIGHT">RIGHT</a></span> - ru.nsu.kozoliy.models.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Direction.html" title="enum in ru.nsu.kozoliy.models">Direction</a></dt>
 <dd>
 <div class="block">Specifies the downward direction.</div>
@@ -408,6 +422,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Settings.html#setDifficulty(double)">setDifficulty(double)</a></span> - Method in class ru.nsu.kozoliy.models.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Settings.html" title="class in ru.nsu.kozoliy.models">Settings</a></dt>
 <dd>
 <div class="block">Sets the difficulty of the game.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/SmartSnake.html#setDirection(ru.nsu.kozoliy.models.Direction)">setDirection(Direction)</a></span> - Method in class ru.nsu.kozoliy.models.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/SmartSnake.html" title="class in ru.nsu.kozoliy.models">SmartSnake</a></dt>
+<dd>
+<div class="block">Sets the direction of the snake's movement.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Snake.html#setDirection(ru.nsu.kozoliy.models.Direction)">setDirection(Direction)</a></span> - Method in class ru.nsu.kozoliy.models.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Snake.html" title="class in ru.nsu.kozoliy.models">Snake</a></dt>
 <dd>
@@ -477,6 +495,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Sets the y-coordinate of the snake part.</div>
 </dd>
+<dt><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/SmartSnake.html" title="class in ru.nsu.kozoliy.models"><span class="typeNameLink">SmartSnake</span></a> - Class in <a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/package-summary.html">ru.nsu.kozoliy.models</a></dt>
+<dd>
+<div class="block">Represents a smart snake in the snake game.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/SmartSnake.html#%3Cinit%3E(int,int,int,int,int)">SmartSnake(int, int, int, int, int)</a></span> - Constructor for class ru.nsu.kozoliy.models.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/SmartSnake.html" title="class in ru.nsu.kozoliy.models">SmartSnake</a></dt>
+<dd>
+<div class="block">Constructs a SmartSnake object with the specified parameters.</div>
+</dd>
 <dt><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/Snake.html" title="class in ru.nsu.kozoliy.models"><span class="typeNameLink">Snake</span></a> - Class in <a href="ru.nsu.kozoliy/ru/nsu/kozoliy/models/package-summary.html">ru.nsu.kozoliy.models</a></dt>
 <dd>
 <div class="block">Represents the snake in the game.</div>
@@ -490,12 +516,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Constructs a snake with the specified head and direction.</div>
 </dd>
 <dt><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view"><span class="typeNameLink">SnakeGameView</span></a> - Class in <a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/package-summary.html">ru.nsu.kozoliy.view</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#%3Cinit%3E(ru.nsu.kozoliy.models.Model,ru.nsu.kozoliy.models.Settings)">SnakeGameView(Model, Settings)</a></span> - Constructor for class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
 <dd>
-<div class="block">The view class responsible for displaying the Snake game.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#%3Cinit%3E(ru.nsu.kozoliy.models.Model,ru.nsu.kozoliy.viewModel.SnakeGameViewModel,ru.nsu.kozoliy.models.Settings)">SnakeGameView(Model, SnakeGameViewModel, Settings)</a></span> - Constructor for class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
-<dd>
-<div class="block">Constructs a SnakeGameView with the specified model, view model, and settings.</div>
+<div class="block">Constructs a SnakeGameView instance.</div>
 </dd>
 <dt><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.html" title="class in ru.nsu.kozoliy.viewModel"><span class="typeNameLink">SnakeGameViewModel</span></a> - Class in <a href="ru.nsu.kozoliy/ru/nsu/kozoliy/viewModel/package-summary.html">ru.nsu.kozoliy.viewModel</a></dt>
 <dd>
@@ -516,9 +540,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/Main.html#start(javafx.stage.Stage)">start(Stage)</a></span> - Method in class ru.nsu.kozoliy.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/Main.html" title="class in ru.nsu.kozoliy">Main</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#start(javafx.stage.Stage)">start(Stage)</a></span> - Method in class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
-<dd>
-<div class="block">Initializes the game window and starts the game loop.</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.html#startDrawing()">startDrawing()</a></span> - Method in class ru.nsu.kozoliy.viewModel.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.html" title="class in ru.nsu.kozoliy.viewModel">SnakeGameViewModel</a></dt>
 <dd>
 <div class="block">Starts drawing the snake and initializes the game.</div>
@@ -528,13 +550,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Starts the game.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#startGameDraw()">startGameDraw()</a></span> - Method in class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
-<dd>
-<div class="block">Initializes the game by drawing the snake's head on the canvas.</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#startTimeline()">startTimeline()</a></span> - Method in class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
-<dd>
-<div class="block">Starts the timeline for the game animation.</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.html#stopDrawing()">stopDrawing()</a></span> - Method in class ru.nsu.kozoliy.viewModel.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.html" title="class in ru.nsu.kozoliy.viewModel">SnakeGameViewModel</a></dt>
 <dd>
 <div class="block">Clears the drawing of the snake.</div>
@@ -544,9 +562,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Stops the game.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html#stopGame()">stopGame()</a></span> - Method in class ru.nsu.kozoliy.view.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/view/SnakeGameView.html" title="class in ru.nsu.kozoliy.view">SnakeGameView</a></dt>
-<dd>
-<div class="block">Stops the game by setting the running flag to false, resetting the score, stopping the timeline, and clearing the snakeDraw group.</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="ru.nsu.kozoliy/ru/nsu/kozoliy/viewModel/Controller.html#submit(javafx.event.ActionEvent)">submit(ActionEvent)</a></span> - Method in class ru.nsu.kozoliy.viewModel.<a href="ru.nsu.kozoliy/ru/nsu/kozoliy/viewModel/Controller.html" title="class in ru.nsu.kozoliy.viewModel">Controller</a></dt>
 <dd>
 <div class="block">Handles the action event when the user submits the settings.</div>

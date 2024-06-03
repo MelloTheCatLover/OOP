@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -139,7 +139,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">SnakeGameView</span>
 extends javafx.application.Application</pre>
-<div class="block">The view class responsible for displaying the Snake game.</div>
 </li>
 </ul>
 </div>
@@ -207,11 +206,10 @@ extends javafx.application.Application</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(ru.nsu.kozoliy.models.Model,ru.nsu.kozoliy.viewModel.SnakeGameViewModel,ru.nsu.kozoliy.models.Settings)">SnakeGameView</a></span>&#8203;(<a href="../models/Model.html" title="class in ru.nsu.kozoliy.models">Model</a>&nbsp;model,
-             <a href="../viewModel/SnakeGameViewModel.html" title="class in ru.nsu.kozoliy.viewModel">SnakeGameViewModel</a>&nbsp;snakeGameViewModel,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(ru.nsu.kozoliy.models.Model,ru.nsu.kozoliy.models.Settings)">SnakeGameView</a></span>&#8203;(<a href="../models/Model.html" title="class in ru.nsu.kozoliy.models">Model</a>&nbsp;model,
              <a href="../models/Settings.html" title="class in ru.nsu.kozoliy.models">Settings</a>&nbsp;settings)</code></th>
 <td class="colLast">
-<div class="block">Constructs a SnakeGameView with the specified model, view model, and settings.</div>
+<div class="block">Constructs a SnakeGameView instance.</div>
 </td>
 </tr>
 </table>
@@ -248,108 +246,107 @@ extends javafx.application.Application</pre>
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#detectCollision(javafx.scene.Node)">detectCollision</a></span>&#8203;(javafx.scene.Node&nbsp;tail)</code></th>
 <td class="colLast">
-<div class="block">Detects collision between the snake and itself or the game boundaries.</div>
+<div class="block">Detects collision between the snake and other game elements.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawBackground(javafx.scene.canvas.GraphicsContext)">drawBackground</a></span>&#8203;(javafx.scene.canvas.GraphicsContext&nbsp;gc)</code></th>
-<td class="colLast">
-<div class="block">Draws the background of the game canvas with alternating colors.</div>
-</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#detectSmartSnakeCollision()">detectSmartSnakeCollision</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawBackground(javafx.scene.canvas.GraphicsContext)">drawBackground</a></span>&#8203;(javafx.scene.canvas.GraphicsContext&nbsp;gc)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawBadSnake()">drawBadSnake</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawRectangle(int,int,double,double,javafx.scene.paint.Color)">drawRectangle</a></span>&#8203;(int&nbsp;sizeX,
              int&nbsp;sizeY,
              double&nbsp;x,
              double&nbsp;y,
              javafx.scene.paint.Color&nbsp;color)</code></th>
-<td class="colLast">
-<div class="block">Draws a rectangle on the game canvas.</div>
-</td>
-</tr>
-<tr id="i6" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawScore()">drawScore</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Draws the score on the game canvas.</div>
-</td>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawScore()">drawScore</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawSmartSnake()">drawSmartSnake</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>java.util.ArrayList&lt;javafx.scene.shape.Rectangle&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawSnake(java.util.ArrayList)">drawSnake</a></span>&#8203;(java.util.ArrayList&lt;<a href="../models/SnakePart.html" title="class in ru.nsu.kozoliy.models">SnakePart</a>&gt;&nbsp;snake)</code></th>
 <td class="colLast">
-<div class="block">Draws the snake on the game canvas based on its current state.</div>
+<div class="block">Draw snake rectangles on gameworld.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#eatFood(javafx.scene.Node,javafx.scene.shape.Rectangle,ru.nsu.kozoliy.models.SnakePart)">eatFood</a></span>&#8203;(javafx.scene.Node&nbsp;tail,
        javafx.scene.shape.Rectangle&nbsp;food,
        <a href="../models/SnakePart.html" title="class in ru.nsu.kozoliy.models">SnakePart</a>&nbsp;tailMemory)</code></th>
 <td class="colLast">
-<div class="block">Handles the action of eating food by the snake.</div>
+<div class="block">Replace food.</div>
 </td>
-</tr>
-<tr id="i9" class="rowColor">
-<td class="colFirst"><code>java.util.ArrayList&lt;javafx.scene.shape.Rectangle&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#generateFood()">generateFood</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Generates food items at random positions on the game canvas.</div>
-</td>
-</tr>
-<tr id="i10" class="altColor">
-<td class="colFirst"><code>javafx.scene.Group</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFoods()">getFoods</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i11" class="rowColor">
-<td class="colFirst"><code>javafx.scene.Group</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSnakeDraw()">getSnakeDraw</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Retrieves the Group containing the drawn snake.</div>
-</td>
+<td class="colFirst"><code>java.util.ArrayList&lt;javafx.scene.shape.Rectangle&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#generateFood()">generateFood</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i12" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#restartGame()">restartGame</a></span>()</code></th>
+<td class="colFirst"><code>javafx.scene.Group</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFoods()">getFoods</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Restarts the game by stopping it, resetting the score, and starting a new game instance.</div>
+<div class="block">Food getter.</div>
 </td>
 </tr>
 <tr id="i13" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#start(javafx.stage.Stage)">start</a></span>&#8203;(javafx.stage.Stage&nbsp;primaryStage)</code></th>
-<td class="colLast">
-<div class="block">Initializes the game window and starts the game loop.</div>
-</td>
+<td class="colFirst"><code>javafx.scene.Group</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSnakeDraw()">getSnakeDraw</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#startGameDraw()">startGameDraw</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#moveSmartSnake()">moveSmartSnake</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Initializes the game by drawing the snake's head on the canvas.</div>
+<div class="block">Moves the smart snake towards the nearest food item.</div>
 </td>
 </tr>
 <tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#startTimeline()">startTimeline</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Starts the timeline for the game animation.</div>
-</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#restartGame()">restartGame</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i16" class="altColor">
 <td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#start(javafx.stage.Stage)">start</a></span>&#8203;(javafx.stage.Stage&nbsp;primaryStage)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#startGameDraw()">startGameDraw</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#startTimeline()">startTimeline</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stopGame()">stopGame</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Stops the game by setting the running flag to false, resetting the score, stopping the timeline, and clearing the snakeDraw group.</div>
-</td>
+<td class="colLast">&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -401,21 +398,19 @@ extends javafx.application.Application</pre>
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(ru.nsu.kozoliy.models.Model,ru.nsu.kozoliy.viewModel.SnakeGameViewModel,ru.nsu.kozoliy.models.Settings)">
+<a id="&lt;init&gt;(ru.nsu.kozoliy.models.Model,ru.nsu.kozoliy.models.Settings)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>SnakeGameView</h4>
 <pre>public&nbsp;SnakeGameView&#8203;(<a href="../models/Model.html" title="class in ru.nsu.kozoliy.models">Model</a>&nbsp;model,
-                     <a href="../viewModel/SnakeGameViewModel.html" title="class in ru.nsu.kozoliy.viewModel">SnakeGameViewModel</a>&nbsp;snakeGameViewModel,
                      <a href="../models/Settings.html" title="class in ru.nsu.kozoliy.models">Settings</a>&nbsp;settings)</pre>
-<div class="block">Constructs a SnakeGameView with the specified model, view model, and settings.</div>
+<div class="block">Constructs a SnakeGameView instance.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>model</code> - The model of the game.</dd>
-<dd><code>snakeGameViewModel</code> - The view model of the game.</dd>
-<dd><code>settings</code> - The settings of the game.</dd>
+<dd><code>model</code> - The model of the Snake game.</dd>
+<dd><code>settings</code> - The settings of the Snake game.</dd>
 </dl>
 </li>
 </ul>
@@ -436,6 +431,7 @@ extends javafx.application.Application</pre>
 <li class="blockList">
 <h4>getFoods</h4>
 <pre class="methodSignature">public&nbsp;javafx.scene.Group&nbsp;getFoods()</pre>
+<div class="block">Food getter.</div>
 </li>
 </ul>
 <a id="createContent()">
@@ -459,8 +455,7 @@ extends javafx.application.Application</pre>
 <li class="blockList">
 <h4>detectCollision</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;detectCollision&#8203;(javafx.scene.Node&nbsp;tail)</pre>
-<div class="block">Detects collision between the snake and itself or the game boundaries.
- If collision is detected, the game is restarted.</div>
+<div class="block">Detects collision between the snake and other game elements.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>tail</code> - The tail node of the snake.</dd>
@@ -474,7 +469,6 @@ extends javafx.application.Application</pre>
 <li class="blockList">
 <h4>restartGame</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;restartGame()</pre>
-<div class="block">Restarts the game by stopping it, resetting the score, and starting a new game instance.</div>
 </li>
 </ul>
 <a id="stopGame()">
@@ -484,7 +478,6 @@ extends javafx.application.Application</pre>
 <li class="blockList">
 <h4>stopGame</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;stopGame()</pre>
-<div class="block">Stops the game by setting the running flag to false, resetting the score, stopping the timeline, and clearing the snakeDraw group.</div>
 </li>
 </ul>
 <a id="eatFood(javafx.scene.Node,javafx.scene.shape.Rectangle,ru.nsu.kozoliy.models.SnakePart)">
@@ -496,14 +489,7 @@ extends javafx.application.Application</pre>
 <pre class="methodSignature">public&nbsp;void&nbsp;eatFood&#8203;(javafx.scene.Node&nbsp;tail,
                     javafx.scene.shape.Rectangle&nbsp;food,
                     <a href="../models/SnakePart.html" title="class in ru.nsu.kozoliy.models">SnakePart</a>&nbsp;tailMemory)</pre>
-<div class="block">Handles the action of eating food by the snake.
- If the snake eats food, a new food item is generated, the score is updated, and the snake grows.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>tail</code> - The tail node of the snake.</dd>
-<dd><code>food</code> - The food node being eaten.</dd>
-<dd><code>tailMemory</code> - The memory of the snake's tail before eating the food.</dd>
-</dl>
+<div class="block">Replace food. Add element to snake body.</div>
 </li>
 </ul>
 <a id="start(javafx.stage.Stage)">
@@ -513,14 +499,9 @@ extends javafx.application.Application</pre>
 <li class="blockList">
 <h4>start</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;start&#8203;(javafx.stage.Stage&nbsp;primaryStage)</pre>
-<div class="block">Initializes the game window and starts the game loop.
- Handles user input for controlling the snake's direction.
- Displays the game scene and starts the game rendering.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>start</code>&nbsp;in class&nbsp;<code>javafx.application.Application</code></dd>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>primaryStage</code> - The primary stage of the JavaFX application.</dd>
 </dl>
 </li>
 </ul>
@@ -533,6 +514,25 @@ extends javafx.application.Application</pre>
 <pre class="methodSignature">public&nbsp;void&nbsp;drawBadSnake()</pre>
 </li>
 </ul>
+<a id="drawSmartSnake()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>drawSmartSnake</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;drawSmartSnake()</pre>
+</li>
+</ul>
+<a id="moveSmartSnake()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>moveSmartSnake</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;moveSmartSnake()</pre>
+<div class="block">Moves the smart snake towards the nearest food item.</div>
+</li>
+</ul>
 <a id="detectBadSnakeCollision()">
 <!--   -->
 </a>
@@ -542,6 +542,15 @@ extends javafx.application.Application</pre>
 <pre class="methodSignature">public&nbsp;void&nbsp;detectBadSnakeCollision()</pre>
 </li>
 </ul>
+<a id="detectSmartSnakeCollision()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>detectSmartSnakeCollision</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;detectSmartSnakeCollision()</pre>
+</li>
+</ul>
 <a id="drawSnake(java.util.ArrayList)">
 <!--   -->
 </a>
@@ -549,13 +558,7 @@ extends javafx.application.Application</pre>
 <li class="blockList">
 <h4>drawSnake</h4>
 <pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;javafx.scene.shape.Rectangle&gt;&nbsp;drawSnake&#8203;(java.util.ArrayList&lt;<a href="../models/SnakePart.html" title="class in ru.nsu.kozoliy.models">SnakePart</a>&gt;&nbsp;snake)</pre>
-<div class="block">Draws the snake on the game canvas based on its current state.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>snake</code> - The list of snake parts to be drawn.</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>ArrayList of Rectangles representing the drawn snake parts.</dd>
-</dl>
+<div class="block">Draw snake rectangles on gameworld.</div>
 </li>
 </ul>
 <a id="startGameDraw()">
@@ -565,7 +568,6 @@ extends javafx.application.Application</pre>
 <li class="blockList">
 <h4>startGameDraw</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;startGameDraw()</pre>
-<div class="block">Initializes the game by drawing the snake's head on the canvas.</div>
 </li>
 </ul>
 <a id="drawBackground(javafx.scene.canvas.GraphicsContext)">
@@ -575,11 +577,6 @@ extends javafx.application.Application</pre>
 <li class="blockList">
 <h4>drawBackground</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;drawBackground&#8203;(javafx.scene.canvas.GraphicsContext&nbsp;gc)</pre>
-<div class="block">Draws the background of the game canvas with alternating colors.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>gc</code> - The GraphicsContext of the canvas.</dd>
-</dl>
 </li>
 </ul>
 <a id="generateFood()">
@@ -589,11 +586,6 @@ extends javafx.application.Application</pre>
 <li class="blockList">
 <h4>generateFood</h4>
 <pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;javafx.scene.shape.Rectangle&gt;&nbsp;generateFood()</pre>
-<div class="block">Generates food items at random positions on the game canvas.</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>ArrayList of Rectangles representing the generated food items.</dd>
-</dl>
 </li>
 </ul>
 <a id="drawScore()">
@@ -603,7 +595,6 @@ extends javafx.application.Application</pre>
 <li class="blockList">
 <h4>drawScore</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;drawScore()</pre>
-<div class="block">Draws the score on the game canvas.</div>
 </li>
 </ul>
 <a id="drawRectangle(int,int,double,double,javafx.scene.paint.Color)">
@@ -617,15 +608,6 @@ extends javafx.application.Application</pre>
                           double&nbsp;x,
                           double&nbsp;y,
                           javafx.scene.paint.Color&nbsp;color)</pre>
-<div class="block">Draws a rectangle on the game canvas.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>sizeX</code> - The width of the rectangle.</dd>
-<dd><code>sizeY</code> - The height of the rectangle.</dd>
-<dd><code>x</code> - The x-coordinate of the top-left corner of the rectangle.</dd>
-<dd><code>y</code> - The y-coordinate of the top-left corner of the rectangle.</dd>
-<dd><code>color</code> - The color of the rectangle.</dd>
-</dl>
 </li>
 </ul>
 <a id="getSnakeDraw()">
@@ -635,11 +617,6 @@ extends javafx.application.Application</pre>
 <li class="blockList">
 <h4>getSnakeDraw</h4>
 <pre class="methodSignature">public&nbsp;javafx.scene.Group&nbsp;getSnakeDraw()</pre>
-<div class="block">Retrieves the Group containing the drawn snake.</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The Group containing the drawn snake.</dd>
-</dl>
 </li>
 </ul>
 <a id="startTimeline()">
@@ -649,7 +626,6 @@ extends javafx.application.Application</pre>
 <li class="blockList">
 <h4>startTimeline</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;startTimeline()</pre>
-<div class="block">Starts the timeline for the game animation.</div>
 </li>
 </ul>
 </li>
