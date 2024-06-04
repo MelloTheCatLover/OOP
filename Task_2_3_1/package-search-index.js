@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"m":"ru.nsu.kozoliy","l":"ru.nsu.kozoliy"},{"m":"ru.nsu.kozoliy","l":"ru.nsu.kozoliy.models"},{"m":"ru.nsu.kozoliy","l":"ru.nsu.kozoliy.view"},{"m":"ru.nsu.kozoliy","l":"ru.nsu.kozoliy.viewModel"}]
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"m":"ru.nsu.kozoliy","l":"ru.nsu.kozoliy"},{"m":"ru.nsu.kozoliy","l":"ru.nsu.kozoliy.models"},{"m":"ru.nsu.kozoliy","l":"ru.nsu.kozoliy.view"},{"m":"ru.nsu.kozoliy","l":"ru.nsu.kozoliy.viewmodel"}]
