@@ -163,7 +163,7 @@ public class SnakeGameView extends Application {
                 if (snakePart.getTranslateX() == smartSnakeHead.getTranslateX()
                         && snakePart.getTranslateY() == smartSnakeHead.getTranslateY()) {
 
-                    for ( int j = 0; j < smartSnake.getSnakeBody().size() - 1; j++) {
+                    for (int j = 0; j < smartSnake.getSnakeBody().size() - 1; j++) {
                         smartSnake.getSnakeBody().remove(j);
                     }
                     smartSnake.getSnakeBody().get(0).setX(model.getSettings().getWorldSizeX() / 2);
@@ -194,7 +194,7 @@ public class SnakeGameView extends Application {
                         == foods.getChildren().get(i).getTranslateX()
                         && badSnake.getSnakeBody().get(0).getY()
                         == foods.getChildren().get(i).getTranslateY()) {
-                    badSnake.getSnakeBody().add(new SnakePart(20 , 40));
+                    badSnake.getSnakeBody().add(new SnakePart(20, 40));
                 }
                 if (smartSnake.getSnakeBody().get(0).getX()
                         == foods.getChildren().get(i).getTranslateX()
@@ -234,6 +234,11 @@ public class SnakeGameView extends Application {
         }
     }
 
+
+    /**
+     * Restarts game in a model layer to.
+     *
+     */
     @ExcludeFromJacocoGeneratedReport
     public void restartGame() {
         stopGame();
@@ -297,34 +302,21 @@ public class SnakeGameView extends Application {
                 settings.getDisplaySize(),
                 settings.getWorldSizeX(),
                 settings.getWorldSizeY());
-        KeyFrame badSnakeFrame = new KeyFrame(Duration.seconds(
-                model.getSettings().getDifficulty()), event -> {
-            badSnake.move();
 
-            if (random.nextInt(100) < 10) { // 10% chance to change direction each frame
-                badSnake.changeDirection();
-            }
-
-            drawBadSnake();
-        });
 
         smartSnake = new SmartSnake(settings.getWorldSizeX() - settings.getDisplaySize(),
                 settings.getWorldSizeY() - settings.getDisplaySize(),
                 settings.getDisplaySize(),
                 settings.getWorldSizeX(),
                 settings.getWorldSizeY());
-        KeyFrame smartSnakeFrame = new KeyFrame(Duration.seconds(
-                model.getSettings().getDifficulty()), event -> {
-            moveSmartSnake();
 
-            smartSnake.move();
 
-            drawSmartSnake();
-        });
 
         scene.setOnKeyPressed(event -> {
-            if (!model.isMoved())
+            if (!model.isMoved()) {
                 return;
+            }
+
 
             switch (event.getCode()) {
                 case W:
@@ -333,12 +325,12 @@ public class SnakeGameView extends Application {
                     }
                     break;
                 case S:
-                    if (model.getSnake().getDirection() != Direction.UP){
+                    if (model.getSnake().getDirection() != Direction.UP) {
                         model.getSnake().setDirection(Direction.DOWN);
                     }
                     break;
                 case A:
-                    if (model.getSnake().getDirection() != Direction.RIGHT){
+                    if (model.getSnake().getDirection() != Direction.RIGHT) {
                         model.getSnake().setDirection(Direction.LEFT);
                     }
                     break;
@@ -353,9 +345,32 @@ public class SnakeGameView extends Application {
             model.setMoved(false);
         });
 
+
+        KeyFrame badSnakeFrame = new KeyFrame(Duration.seconds(
+                model.getSettings().getDifficulty()), event -> {
+            badSnake.move();
+
+            if (random.nextInt(100) < 10) { // 10% chance to change direction each frame
+                badSnake.changeDirection();
+            }
+
+            drawBadSnake();
+        });
+
+
         badSnakeTimeline.getKeyFrames().add(badSnakeFrame);
         badSnakeTimeline.setCycleCount(Timeline.INDEFINITE);
         badSnakeTimeline.play();
+
+
+        KeyFrame smartSnakeFrame = new KeyFrame(Duration.seconds(
+                model.getSettings().getDifficulty()), event -> {
+            moveSmartSnake();
+
+            smartSnake.move();
+
+            drawSmartSnake();
+        });
 
         smartSnakeTimeLine.getKeyFrames().add(smartSnakeFrame);
         smartSnakeTimeLine.setCycleCount(Timeline.INDEFINITE);
@@ -369,6 +384,11 @@ public class SnakeGameView extends Application {
         startTimeline();
     }
 
+
+    /**
+     * Method for drawing bad snake with individual timeline on gameWorld.
+     *
+     */
     @ExcludeFromJacocoGeneratedReport
     public void drawBadSnake() {
         badSnakeDraw.getChildren().clear();
@@ -381,6 +401,10 @@ public class SnakeGameView extends Application {
         }
     }
 
+    /**
+     * Method for drawing smart snake with individual timeline on gameWorld.
+     *
+     */
     @ExcludeFromJacocoGeneratedReport
     public void drawSmartSnake() {
         smartSnakeDraw.getChildren().clear();
@@ -450,6 +474,11 @@ public class SnakeGameView extends Application {
     }
 
 
+    /**
+     * Method for detecting collision with player snake head and bad snake body.
+     * Also detects collisions between smart snake head and bad snake body.
+     *
+     */
     @ExcludeFromJacocoGeneratedReport
     public void detectBadSnakeCollision() {
         Node playerHead = snakeDraw.getChildren().get(0);
@@ -475,6 +504,12 @@ public class SnakeGameView extends Application {
         }
     }
 
+
+    /**
+     * Method for detecting collision with player snake head and smart snake body.
+     * Also detects collisions between bad snake head and smart snake body.
+     *
+     */
     @ExcludeFromJacocoGeneratedReport
     public void detectSmartSnakeCollision() {
         Node playerHead = snakeDraw.getChildren().get(0);
@@ -526,8 +561,12 @@ public class SnakeGameView extends Application {
         return snakeDrawL;
     }
 
+    /**
+     * Set snake draw head settings, add it to snake body.
+     *
+     */
     @ExcludeFromJacocoGeneratedReport
-    public void startGameDraw(){
+    public void startGameDraw() {
         Rectangle head = new Rectangle(settings.getDisplaySize(), settings.getDisplaySize());
         head.setTranslateX(settings.getWorldSizeX() / 2);
         head.setTranslateY(settings.getWorldSizeY() / 2);
@@ -535,10 +574,16 @@ public class SnakeGameView extends Application {
         snakeDraw.getChildren().add(head);
     }
 
+    /**
+     * Method for daring background with rectangles.
+     *
+     */
     @ExcludeFromJacocoGeneratedReport
     public void drawBackground(GraphicsContext gc) {
-        for (int i = 0; i < model.getSettings().getWorldSizeX() / model.getSettings().getDisplaySize(); i++) {
-            for (int j = 0; j < model.getSettings().getWorldSizeY() / model.getSettings().getDisplaySize(); j++) {
+        for (int i = 0; i < model.getSettings().getWorldSizeX()
+                / model.getSettings().getDisplaySize(); i++) {
+            for (int j = 0; j < model.getSettings().getWorldSizeY()
+                    / model.getSettings().getDisplaySize(); j++) {
                 if ((i + j) % 2 == 0) {
                     gc.setFill(Color.web("44d420"));
                 } else {
@@ -553,16 +598,22 @@ public class SnakeGameView extends Application {
     }
 
 
+    /**
+     * Generate food with coord and draw them on gameworld.
+     *
+     */
     public ArrayList<Rectangle> generateFood() {
         ArrayList<Rectangle> foods = new ArrayList<>();
 
         for (int i = 0; i < model.getSettings().getFoodCount(); i++) {
-            Rectangle food = new Rectangle(model.getSettings().getDisplaySize(), model.getSettings().getDisplaySize());
+            Rectangle food = new Rectangle(model.getSettings().getDisplaySize(),
+                    model.getSettings().getDisplaySize());
             food.setFill(Color.ORANGERED);
             int x = model.getSettings().getWorldSizeX();
             int y = model.getSettings().getWorldSizeY();
             int displaySize = model.getSettings().getDisplaySize();
-            food.setTranslateX((int) (Math.random() * (x - displaySize)) / displaySize * displaySize);
+            food.setTranslateX((int) (Math.random() * (x - displaySize))
+                    / displaySize * displaySize);
             food.setTranslateY((int) (Math.random() * (y - displaySize - displaySize))
                     / displaySize * displaySize + displaySize);
 
@@ -571,36 +622,57 @@ public class SnakeGameView extends Application {
         return foods;
     }
 
+
+    /**
+     * Method for drawing current score.
+     */
     @ExcludeFromJacocoGeneratedReport
     public void drawScore() {
-        gc.clearRect(0, 0, model.getSettings().getWorldSizeX(), model.getSettings().getDisplaySize());
-        for (int i = 0; i < model.getSettings().getWorldSizeX() / model.getSettings().getDisplaySize(); i++) {
+        gc.clearRect(0, 0, model.getSettings().getWorldSizeX(),
+                model.getSettings().getDisplaySize());
+        for (int i = 0; i < model.getSettings().getWorldSizeX()
+                / model.getSettings().getDisplaySize(); i++) {
             if ((i) % 2 == 0) {
                 gc.setFill(Color.web("44d420"));
             } else {
                 gc.setFill(Color.web("98e805"));
             }
-            gc.fillRect(i * model.getSettings().getDisplaySize(), 0, model.getSettings().getDisplaySize(),
+            gc.fillRect(i * model.getSettings().getDisplaySize(), 0,
+                    model.getSettings().getDisplaySize(),
                     model.getSettings().getDisplaySize());
         }
         gc.setFill(Color.RED);
         gc.setFont(Font.font("Consolas", model.getSettings().getDisplaySize() * 0.8));
-        gc.fillText("Score: " + model.getScore(), 10, model.getSettings().getDisplaySize() * 0.8);
+        gc.fillText("Score: " + model.getScore(), 10,
+                model.getSettings().getDisplaySize() * 0.8);
     }
 
+    /**
+     * Supporting method for drawing rectangles on gameworld.
+     *
+     */
     @ExcludeFromJacocoGeneratedReport
     public void drawRectangle(int sizeX, int sizeY, double x, double y, Color color) {
         Rectangle rect = new Rectangle(sizeX, sizeY);
         gc.setFill(color);
-        gc.fillRect(x, y, model.getSettings().getWorldSizeX(), model.getSettings().getWorldSizeX());
+        gc.fillRect(x, y, model.getSettings().getWorldSizeX(),
+                model.getSettings().getWorldSizeX());
         rect.setFill(color);
     }
 
+    /**
+     * Getter for snake draw group of rectangles.
+     *
+     */
     @ExcludeFromJacocoGeneratedReport
     public Group getSnakeDraw() {
         return snakeDraw;
     }
 
+    /**
+     * Method that start player timeline.
+     *
+     */
     @ExcludeFromJacocoGeneratedReport
     public void startTimeline(){
         timeline.play();
