@@ -90,7 +90,8 @@ public class SnakeGameView extends Application {
         foods.getChildren().addAll(generateFood());
 
         System.out.println(model.getSnake().getSnakeBody().get(0).getX());
-        KeyFrame frame = new KeyFrame(Duration.seconds(model.getSettings().getDifficulty()), event -> {
+        KeyFrame frame = new KeyFrame(Duration.seconds(model.getSettings()
+                .getDifficulty()), event -> {
             if (!model.isRunning()) {
                 return;
             }
@@ -98,9 +99,11 @@ public class SnakeGameView extends Application {
             boolean toRemove = snakeDraw.getChildren().size() > 1;
 
             Node tail = toRemove ? snakeDraw.getChildren()
-                    .remove(snakeDraw.getChildren().size() - 1) : snakeDraw.getChildren().get(0);
+                    .remove(snakeDraw.getChildren().size() - 1)
+                    : snakeDraw.getChildren().get(0);
 
-            SnakePart tailMemory = new SnakePart((int)tail.getTranslateX(), (int)tail.getTranslateY());
+            SnakePart tailMemory = new SnakePart((int)tail.getTranslateX()
+                    , (int)tail.getTranslateY());
 
             switch (model.getSnake().getDirection()) {
                 case UP:
@@ -157,6 +160,7 @@ public class SnakeGameView extends Application {
                 }
                 if (snakePart.getTranslateX() == smartSnakeHead.getTranslateX()
                         && snakePart.getTranslateY() == smartSnakeHead.getTranslateY()) {
+
                     for(int j = 0; j < smartSnake.getSnakeBody().size() - 1; j++) {
                         smartSnake.getSnakeBody().remove(j);
                     }
@@ -166,13 +170,15 @@ public class SnakeGameView extends Application {
             }
 
             if (tail.getTranslateX() < 0) {
-                tail.setTranslateX(model.getSettings().getWorldSizeX() - model.getSettings().getDisplaySize());
+                tail.setTranslateX(model.getSettings().getWorldSizeX()
+                        - model.getSettings().getDisplaySize());
             } else if (tail.getTranslateX() >= model.getSettings().getWorldSizeX() ) {
                 tail.setTranslateX(0);
             }
 
             if (tail.getTranslateY() < model.getSettings().getDisplaySize()) {
-                tail.setTranslateY(model.getSettings().getWorldSizeY() - model.getSettings().getDisplaySize());
+                tail.setTranslateY(model.getSettings().getWorldSizeY()
+                        - model.getSettings().getDisplaySize());
             } else if (tail.getTranslateY() >= model.getSettings().getWorldSizeY() ) {
                 tail.setTranslateY(model.getSettings().getDisplaySize());
             }
@@ -182,12 +188,16 @@ public class SnakeGameView extends Application {
             }
 
             for (int i = 0; i < foods.getChildren().size(); i++) {
-                if (badSnake.getSnakeBody().get(0).getX() == foods.getChildren().get(i).getTranslateX() &&
-                        badSnake.getSnakeBody().get(0).getY() == foods.getChildren().get(i).getTranslateY()) {
+                if (badSnake.getSnakeBody().get(0).getX()
+                        == foods.getChildren().get(i).getTranslateX()
+                        && badSnake.getSnakeBody().get(0).getY()
+                        == foods.getChildren().get(i).getTranslateY()) {
                     badSnake.getSnakeBody().add(new SnakePart(20 , 40));
                 }
-                if (smartSnake.getSnakeBody().get(0).getX() == foods.getChildren().get(i).getTranslateX() &&
-                        smartSnake.getSnakeBody().get(0).getY() == foods.getChildren().get(i).getTranslateY()) {
+                if (smartSnake.getSnakeBody().get(0).getX()
+                        == foods.getChildren().get(i).getTranslateX()
+                        && smartSnake.getSnakeBody().get(0).getY()
+                                == foods.getChildren().get(i).getTranslateY()) {
                     smartSnake.getSnakeBody().add(new SnakePart(20, 40));
                 }
             }
@@ -268,8 +278,9 @@ public class SnakeGameView extends Application {
     }
 
 
-    @ExcludeFromJacocoGeneratedReport
+
     @Override
+    @ExcludeFromJacocoGeneratedReport
     public void start(Stage primaryStage) {
         model.setSnake(new Snake(new SnakePart(settings.getWorldSizeX() / 2,
                 settings.getWorldSizeY() / 2),
@@ -284,7 +295,8 @@ public class SnakeGameView extends Application {
                 settings.getDisplaySize(),
                 settings.getWorldSizeX(),
                 settings.getWorldSizeY());
-        KeyFrame badSnakeFrame = new KeyFrame(Duration.seconds(model.getSettings().getDifficulty()), event -> {
+        KeyFrame badSnakeFrame = new KeyFrame(Duration.seconds(
+                model.getSettings().getDifficulty()), event -> {
             badSnake.move();
 
             if (random.nextInt(100) < 10) { // 10% chance to change direction each frame
@@ -299,7 +311,8 @@ public class SnakeGameView extends Application {
                 settings.getDisplaySize(),
                 settings.getWorldSizeX(),
                 settings.getWorldSizeY());
-        KeyFrame smartSnakeFrame = new KeyFrame(Duration.seconds(model.getSettings().getDifficulty()), event -> {
+        KeyFrame smartSnakeFrame = new KeyFrame(Duration.seconds(
+                model.getSettings().getDifficulty()), event -> {
             moveSmartSnake();
 
             smartSnake.move();

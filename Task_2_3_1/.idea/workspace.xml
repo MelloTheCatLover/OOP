@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="reviewdog 3">
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/BadSnake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/BadSnake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/SmartSnake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/models/SmartSnake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/view/SnakeGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/view/SnakeGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewmodel/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewModel/SnakeGameViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/viewmodel/SnakeGameViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/nsu/kozoliy/StartMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/nsu/kozoliy/StartMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/SnakeGameViewModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/SnakeGameViewModelTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/SnakeGameViewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/SnakeGameViewTest.java" afterDir="false" />
+    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="reviewdog 4">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/BadSnakeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/kozoliy/BadSnakeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +95,7 @@
       <recent name="ru.nsu.kozoliy" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.SnakeGameViewTest">
+  <component name="RunManager" selected="Gradle.BadSnakeTest.testMove">
     <configuration name="BadSnakeTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -150,6 +144,30 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="BadSnakeTest.testMove" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.nsu.kozoliy.BadSnakeTest.testMove&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="SmartSnakeTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -164,30 +182,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;ru.nsu.kozoliy.SmartSnakeTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="SmartSnakeTest.testMove" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ru.nsu.kozoliy.SmartSnakeTest.testMove&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -224,11 +218,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.BadSnakeTest.testMove" />
+        <item itemvalue="Gradle.BadSnakeTest" />
         <item itemvalue="Gradle.SnakeGameViewTest" />
         <item itemvalue="Gradle.SmartSnakeTest" />
-        <item itemvalue="Gradle.BadSnakeTest" />
         <item itemvalue="Gradle.BadSnakeTest.testChangeDirection" />
-        <item itemvalue="Gradle.SmartSnakeTest.testMove" />
       </list>
     </recent_temporary>
   </component>
@@ -457,11 +451,18 @@
       <option name="project" value="LOCAL" />
       <updated>1717448955989</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="reviewdog 4">
+      <option name="closed" value="true" />
+      <created>1717450819886</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1717450819886</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Snake by Mello. WITHOUT STARTING SCREEN. I will add it in near future))  *I promise*" />
     <MESSAGE value="start screen. My laptop is dying" />
     <MESSAGE value="Добавил частично MVC, стартовое меню: выбор размера поля, сложности, кол-ва яблок, размера ячейки, переход между окнами." />
     <MESSAGE value="Обновил меню" />
@@ -486,7 +487,8 @@
     <MESSAGE value="reviewdog 1" />
     <MESSAGE value="reviewdog 2" />
     <MESSAGE value="reviewdog 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="reviewdog 3" />
+    <MESSAGE value="reviewdog 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="reviewdog 4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

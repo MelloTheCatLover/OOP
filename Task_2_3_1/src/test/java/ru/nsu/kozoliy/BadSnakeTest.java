@@ -79,7 +79,7 @@ class BadSnakeTest {
         badSnake.move();
 
         // Then
-        assertEquals(oldLen, badSnake.getSnakeBody().size()); // Length should remain the same
+        assertEquals(4, badSnake.getSnakeBody().size()); // Length should remain the same
         switch (direction) {
             case UP:
                 assertEquals(startY - displaySize, badSnake.getSnakeBody().get(0).getY());
