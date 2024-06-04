@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="reviewdog 6" />
+    <list default="true" id="a3e544e1-f1a3-4b48-8cbe-fbed7d767537" name="Changes" comment="reviewdog 7">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/view/SnakeGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kozoliy/view/SnakeGameView.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -469,11 +472,18 @@
       <option name="project" value="LOCAL" />
       <updated>1717482118057</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="reviewdog 7">
+      <option name="closed" value="true" />
+      <created>1717483161048</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1717483161048</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Обновил меню" />
     <MESSAGE value="fixin review problems" />
     <MESSAGE value="fixin review problems 5" />
     <MESSAGE value="fixin review problems 6" />
@@ -498,7 +508,8 @@
     <MESSAGE value="reviewdog 4" />
     <MESSAGE value="reviewdog 5" />
     <MESSAGE value="reviewdog 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="reviewdog 6" />
+    <MESSAGE value="reviewdog 7" />
+    <option name="LAST_COMMIT_MESSAGE" value="reviewdog 7" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

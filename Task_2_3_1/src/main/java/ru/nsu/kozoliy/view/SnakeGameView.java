@@ -246,6 +246,10 @@ public class SnakeGameView extends Application {
         timeline.play();
     }
 
+    /**
+     * Method for stopping the game and reset score.
+     *
+     */
     @ExcludeFromJacocoGeneratedReport
     public void stopGame() {
         model.setRunning(false);
@@ -455,12 +459,12 @@ public class SnakeGameView extends Application {
                 for (Object food : foods.getChildren().toArray()) {
                     if (head.getX() == ((Rectangle) food).getTranslateX()
                             && head.getY() == ((Rectangle) food).getTranslateY()) {
-                        ((Rectangle)food).setTranslateX((int) (Math.random()
+                        ((Rectangle) food).setTranslateX((int) (Math.random()
                                 * (model.getSettings().getWorldSizeX()
                                 - model.getSettings().getDisplaySize()))
                                 / model.getSettings().getDisplaySize()
                                 * model.getSettings().getDisplaySize());
-                        ((Rectangle)food).setTranslateY((int) (Math.random()
+                        ((Rectangle) food).setTranslateY((int) (Math.random()
                                 * (model.getSettings().getWorldSizeY()
                                 - model.getSettings().getDisplaySize()
                                 - model.getSettings().getDisplaySize()))
@@ -674,7 +678,7 @@ public class SnakeGameView extends Application {
      *
      */
     @ExcludeFromJacocoGeneratedReport
-    public void startTimeline(){
+    public void startTimeline() {
         timeline.play();
     }
 }
