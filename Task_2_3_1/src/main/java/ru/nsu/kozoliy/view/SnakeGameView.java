@@ -102,8 +102,8 @@ public class SnakeGameView extends Application {
                     .remove(snakeDraw.getChildren().size() - 1)
                     : snakeDraw.getChildren().get(0);
 
-            SnakePart tailMemory = new SnakePart((int)tail.getTranslateX()
-                    , (int)tail.getTranslateY());
+            SnakePart tailMemory = new SnakePart((int) tail.getTranslateX(),
+                    (int) tail.getTranslateY());
 
             switch (model.getSnake().getDirection()) {
                 case UP:
@@ -152,8 +152,10 @@ public class SnakeGameView extends Application {
                 if (snakePart.getTranslateX() == badSnakeHead.getTranslateX()
                         && snakePart.getTranslateY() == badSnakeHead.getTranslateY()) {
                     if (badSnake.getSnakeBody().size() == 1) {
-                        badSnake.getSnakeBody().get(0).setX(model.getSettings().getWorldSizeX() / 2);
-                        badSnake.getSnakeBody().get(0).setY(model.getSettings().getWorldSizeY() / 2);
+                        badSnake.getSnakeBody().get(0).setX(
+                                model.getSettings().getWorldSizeX() / 2);
+                        badSnake.getSnakeBody().get(0).setY(
+                                model.getSettings().getWorldSizeY() / 2);
                     } else {
                         badSnake.getSnakeBody().remove(badSnake.getSnakeBody().size() - 1);
                     }
@@ -161,7 +163,7 @@ public class SnakeGameView extends Application {
                 if (snakePart.getTranslateX() == smartSnakeHead.getTranslateX()
                         && snakePart.getTranslateY() == smartSnakeHead.getTranslateY()) {
 
-                    for(int j = 0; j < smartSnake.getSnakeBody().size() - 1; j++) {
+                    for ( int j = 0; j < smartSnake.getSnakeBody().size() - 1; j++) {
                         smartSnake.getSnakeBody().remove(j);
                     }
                     smartSnake.getSnakeBody().get(0).setX(model.getSettings().getWorldSizeX() / 2);
@@ -172,19 +174,19 @@ public class SnakeGameView extends Application {
             if (tail.getTranslateX() < 0) {
                 tail.setTranslateX(model.getSettings().getWorldSizeX()
                         - model.getSettings().getDisplaySize());
-            } else if (tail.getTranslateX() >= model.getSettings().getWorldSizeX() ) {
+            } else if (tail.getTranslateX() >= model.getSettings().getWorldSizeX()) {
                 tail.setTranslateX(0);
             }
 
             if (tail.getTranslateY() < model.getSettings().getDisplaySize()) {
                 tail.setTranslateY(model.getSettings().getWorldSizeY()
                         - model.getSettings().getDisplaySize());
-            } else if (tail.getTranslateY() >= model.getSettings().getWorldSizeY() ) {
+            } else if (tail.getTranslateY() >= model.getSettings().getWorldSizeY()) {
                 tail.setTranslateY(model.getSettings().getDisplaySize());
             }
 
             for (Object food : foods.getChildren().toArray()) {
-                eatFood(tail, (Rectangle)food, tailMemory);
+                eatFood(tail, (Rectangle) food, tailMemory);
             }
 
             for (int i = 0; i < foods.getChildren().size(); i++) {
