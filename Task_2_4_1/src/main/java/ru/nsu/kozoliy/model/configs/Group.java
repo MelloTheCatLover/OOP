@@ -18,8 +18,8 @@ public class Group {
     List<Student> studentConfigs = new ArrayList<>();
 
     public Group(MainConfig mainConfig) {
-        defaultBranch = mainConfig.getGit().getDefaultBranch();
-        defaultRepository = mainConfig.getGit().getDefaultRepository();
+        defaultBranch = mainConfig.getGitConf().getDefaultBranch();
+        defaultRepository = mainConfig.getGitConf().getDefaultRepository();
     }
 
     public void group(String groupName, Closure<?> closure) {

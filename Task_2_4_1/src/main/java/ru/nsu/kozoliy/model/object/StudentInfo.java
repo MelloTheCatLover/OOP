@@ -1,40 +1,36 @@
 package ru.nsu.kozoliy.model.object;
 
-import ru.nsu.kozoliy.model.object.Achievement;
+import lombok.Data;
 import ru.nsu.kozoliy.model.configs.Student;
 import ru.nsu.kozoliy.model.tasks.TaskConfig;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.Set;
 
+@Data
 public class StudentInfo {
-    private final Student studentConfig;
-    private final TaskConfig taskConfig;
-    private final List<Achievement> achievements;
+    Student studentConfig;
+    Map<String, String> branchRename = new HashMap<>();
+    Map<String, String> folderRename = new HashMap<>();
+    Map<String, Double> extraScore = new HashMap<>();
+    String branchPattern;
+    String folderPattern;
 
-    public StudentInfo(Student studentConfig, TaskConfig taskConfig, List<Achievement> achievements) {
+    Set<LessonClass> studentAttendance = new LinkedHashSet<>();
+
+    public StudentInfo(Student studentConfig) {
         this.studentConfig = studentConfig;
-        this.taskConfig = taskConfig;
-        this.achievements = achievements;
     }
 
-    public Student getStudentConfig() {
-        return studentConfig;
+    public StudentInfo(Student studentConfig, TaskConfig taskConfig) {
+        this(studentConfig);
+        branchPattern = taskConfig.getBranchPattern();
+        folderPattern = taskConfig.getFolderPattern();
+        taskConfig.getTasks().forEach(task -> {
+            extraScore.put(task.id(), 0.0);
+        });
     }
 
-    public TaskConfig getTaskConfig() {
-        return taskConfig;
-    }
-
-    public List<Achievement> getAchievements() {
-        return achievements;
-    }
-
-    @Override
-    public String toString() {
-        return "StudentInfo{" +
-                "studentConfig=" + studentConfig +
-                ", taskConfig=" + taskConfig +
-                ", achievements=" + achievements +
-                '}';
-    }
 }

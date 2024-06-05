@@ -2,40 +2,19 @@ package ru.nsu.kozoliy.model.configs;
 
 import groovy.lang.Closure;
 import lombok.Data;
-import lombok.Getter;
 import ru.nsu.kozoliy.dslFilesPackage.DslDelegate;
-import ru.nsu.kozoliy.model.object.Achievement;
-
-import java.util.List;
 
 @Data
 public class MainConfig {
-
-    @Getter
-    private List<Achievement> enabledAchievements;
-    Git git = new Git();
+    GitConf gitConf = new GitConf();
     Evaluation evaluation = new Evaluation();
 
     public void git(Closure<?> closure) {
-        DslDelegate.groovyDelegate(git, closure);
+        DslDelegate.groovyDelegate(gitConf, closure);
     }
 
     public void evaluation(Closure<?> closure) {
         DslDelegate.groovyDelegate(evaluation, closure);
     }
 
-    public void setEnabledAchievements(List<Achievement> enabledAchievements) {
-        this.enabledAchievements = enabledAchievements;
-    }
-
-    @Override
-    public String toString() {
-        return "MainConfig{" +
-                "enabledAchievements=" + enabledAchievements +
-                '}';
-    }
-
-
-
 }
-

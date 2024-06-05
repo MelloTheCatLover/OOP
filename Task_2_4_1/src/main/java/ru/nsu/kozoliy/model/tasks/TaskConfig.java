@@ -1,6 +1,5 @@
 package ru.nsu.kozoliy.model.tasks;
 
-
 import groovy.lang.Closure;
 import lombok.Data;
 import ru.nsu.kozoliy.dslFilesPackage.DslDelegate;
@@ -15,15 +14,12 @@ public class TaskConfig {
     Double taskScore;
     private String branchPattern = "task-$1-$2-$3";
     private String folderPattern = "Task_$1_$2_$3";
-
     public TaskConfig(MainConfig generalConfig) {
         taskScore = generalConfig.getEvaluation().getTaskScore();
     }
-
     public void tasks(Closure<?> closure) {
         DslDelegate.groovyDelegate(this, closure);
     }
-
     public void createTask(String name, Integer fst, Integer snd,
                            Integer thd) {
         String branchName = branchPattern
@@ -34,7 +30,9 @@ public class TaskConfig {
                 .replace("$1", fst.toString())
                 .replace("$2", snd.toString())
                 .replace("$3", thd.toString());
-        task(name, folderName, branchName);
+
+        Task tsk = task(name, folderName, branchName);
+        tsk.numbers = List.of(fst, snd, thd);
     }
 
     public void createTask(String name, Integer fst, Integer snd,
@@ -47,18 +45,24 @@ public class TaskConfig {
                 .replace("$1", fst.toString())
                 .replace("$2", snd.toString())
                 .replace("$3", thd.toString());
-        task(name, branchName, folderName, closure);
+        Task tsk = task(name, folderName, branchName, closure);
+        tsk.numbers = List.of(fst, snd, thd);
     }
 
-    public void task(String name, String folder, String branch) {
+
+
+    public Task task(String name, String folder, String branch) {
         Task task = new Task(name, folder, branch, taskScore);
         tasks.add(task);
+        return task;
     }
 
-    public void task(String name, String folder,
-                     String branch, Closure<?> closure) {
-        Task task = new Task(name, folder, branch);
+
+    public Task task(String name, String folder,
+                String branch, Closure<?> closure) {
+        Task task = new Task(name, folder, branch, taskScore);
         DslDelegate.groovyDelegate(task, closure);
         tasks.add(task);
+        return task;
     }
 }

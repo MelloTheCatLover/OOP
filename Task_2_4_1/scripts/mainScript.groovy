@@ -1,5 +1,3 @@
-import ru.nsu.kozoliy.model.achievements.Achievement
-
 evaluation {
     taskScore = 1.0
     firstDeadLinePenalty = -0.5
@@ -17,6 +15,5 @@ git {
     defaultBranch = 'main'
 }
 
-
-
-enabledAchievements = [Achievement.EXCELLENT_PERFORMANCE, Achievement.PERFECT_ATTENDANCE]
+enabledAchievements = [Achievement.EXCELLENT_PERFORMANCE,
+                       Achievement.PERFECT_ATTENDANCE]

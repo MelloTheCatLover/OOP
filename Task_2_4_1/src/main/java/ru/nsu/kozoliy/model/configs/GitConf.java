@@ -3,7 +3,7 @@ package ru.nsu.kozoliy.model.configs;
 import lombok.Data;
 
 @Data
-public class Git {
+public class GitConf {
     String repoLinkPrefix = "https://github.com/";
     String repoLinkPostfix = ".git";
     String defaultRepository;
